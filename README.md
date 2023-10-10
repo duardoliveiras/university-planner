@@ -33,7 +33,7 @@ To open the program, open the terminal and run the following command
   
   > Read studennts_classes.csv;
 
-* Create menu;
+* [DONE] Create menu ;
 
 * Schedule managents system - functions:
   
@@ -105,6 +105,7 @@ To open the program, open the terminal and run the following command
 ## Other information
 
 Note: Everytime you add a file, add to Makefile too
+
 //Povoar - https://www.mockaroo.com/
 
 Dead line: 3 nov 2023
