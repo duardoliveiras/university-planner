@@ -5,14 +5,16 @@
 This C++ application is designed to manage schedules after they have been elaborated. This app include various functionalities related to schedules, such as modifying, searching, viewing, sorting, listing, among others.
 
 ## Install and Run the Project
-[working]
-To run the program, open the termminal and run the following command 
+
+To open the program, open the terminal and run the following command 
 ```make && ./a.out```
 
 ## Colaboration
 
-> Bernardo Jose Ponce Figueirado de Brito, up 
+> Bernardo Jose Ponce Figueirado de Brito, up
+
 > Clarisse Maria Teixeira de Carvalho, up202008444
+
 > Eduardo Oliveira Silva, up
 
 ## Features
@@ -91,6 +93,7 @@ To run the program, open the termminal and run the following command
   1.A student cannot be registered in more than 7 UCs at any given time;
   2.There must be at least one class with a vacancy in the new UC;
   3.The resulting schedule will not conflict with the student’s original schedule.
+
 > For class changes, consider the following rules:
   1.A student cannot be in more than one class at once for a given UC;
   2.A class can only accept a new student if its capacity has not been exceeded. Consider that there is a maximum capacity Cap for classes;
