@@ -7,7 +7,7 @@
 void workingMessage();
 
 std::vector<myStudent> orderInfoStudent(int n,
-                                       std::vector<myStudent> myVector) {
+                                        std::vector<myStudent> myVector) {
   workingMessage();
   return myVector;
 }

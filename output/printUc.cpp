@@ -4,7 +4,6 @@
 
 #include "../classes/uc.h"
 
-void printUc(std::vector<myUc> vecUc) {
+void workingMessage();
 
-  std::cout << "This functions printUc its not working" << std::endl;
-}
+void printUc(std::vector<myUc> vecUc) { workingMessage(); }

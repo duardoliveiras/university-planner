@@ -7,23 +7,21 @@ int menuGroup(int n) {
   int group = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
-
-  // students
   switch (n) {
-  case 1:
+  case 1: // students
     // fix posterior
     std::cout << "1) See all student with x year" << std::endl;
     // maybe acrescentar mais funcoes order
     break;
-  case 2:
+  case 2: // classes
     // fix posterior
-    std::cout << "1) See all all calsses of x uc" << std::endl;
+    std::cout << "1) See all all classes of x uc" << std::endl;
     // maybe acrescentar mais funcoes order
     break;
-  case 3:
-    std::cout << "1) See all 1year ucs" << std::endl;
-    std::cout << "2) See all 2year ucs" << std::endl;
-    std::cout << "3) See all 3year ucs" << std::endl;
+  case 3: // ucs
+    std::cout << "1) See all ucs of 1year" << std::endl;
+    std::cout << "2) See all ucs of 2year" << std::endl;
+    std::cout << "3) See all ucs of 3year" << std::endl;
 
     // maybe acrescentar mais funcoes order
   default:

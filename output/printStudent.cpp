@@ -4,7 +4,6 @@
 
 #include "../classes/student.h"
 
-void printStudent(std::vector<myStudent> vecStudent) {
+void workingMessage();
 
-  std::cout << "This functions printStudent its not working" << std::endl;
-}
+void printStudent(std::vector<myStudent> vecStudent) { workingMessage(); }

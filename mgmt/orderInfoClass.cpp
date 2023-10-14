@@ -6,8 +6,7 @@
 
 void workingMessage();
 
-std::vector<myClass> orderInfoClass(int n,
-                                     std::vector<myClass> myVector) {
+std::vector<myClass> orderInfoClass(int n, std::vector<myClass> myVector) {
   workingMessage();
   return myVector;
 }

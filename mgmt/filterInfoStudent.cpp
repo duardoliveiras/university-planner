@@ -7,7 +7,7 @@
 void workingMessage();
 
 std::vector<myStudent> filterInfoStudent(int n,
-                                       std::vector<myStudent> myVector) {
+                                         std::vector<myStudent> myVector) {
   workingMessage();
   return myVector;
 }

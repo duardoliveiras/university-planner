@@ -4,7 +4,9 @@
 
 #include "../classes/class.h"
 
+void workingMessage();
+
 void printClass(std::vector<myClass> vecClass) {
 
-  std::cout << "This functions printClass its not working" << std::endl;
+  workingMessage();
 }

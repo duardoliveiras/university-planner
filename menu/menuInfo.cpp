@@ -7,17 +7,16 @@ int menuInfo(int n) {
   int info = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
-  // students
   switch (n) {
-  case 1:
-    std::cout << "1) Insert student code: " << std::endl;
-    std::cout << "1) Insert student name: " << std::endl;
+  case 1: // students
+    std::cout << "1) Insert student code" << std::endl;
+    std::cout << "2) Insert student name" << std::endl;
     // maybe acrescentar mais funcoes
     break;
-  case 2:
-  case 3:
+  case 2: // classes
+  case 3: // ucs
     std::cout << "1) Insert uc code" << std::endl;
-    std::cout << "1) Insert class code" << std::endl;
+    std::cout << "2) Insert class code" << std::endl;
     // maybe acrescentar mais funcoes order
     break;
   default:
@@ -25,9 +24,11 @@ int menuInfo(int n) {
     break;
   }
 
+  std::cout << "Choose an option: ";
   std::cin >> info;
 
   checkError(info);
 
+  // should return info and the info that the user show and inputed
   return info;
 }
