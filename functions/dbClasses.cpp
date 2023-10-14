@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void dbClasses() {
+void dbClasses(int submenu, int order) {
   cout << "This functions is not ready yet." << endl;
 
   
