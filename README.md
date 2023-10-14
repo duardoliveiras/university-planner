@@ -6,20 +6,18 @@ This C++ application is designed to manage schedules after they have been elabor
 
 ## Install and Run the Project
 
-To open the program, open the terminal and run the following command
+To open the program, run the following command in terminal:
 `make && ./a.out`
 
-## Structure
+## Structure of the App
 
-
+![uml](uml.drawio.png)
 
 ## Colaboration
 
-> Bernardo Jose Ponce Figueirado de Brito, up
-
-> Clarisse Maria Teixeira de Carvalho, up202008444
-
-> Eduardo Oliveira Silva, up
+- Bernardo Jose Ponce Figueirado de Brito, up
+- Clarisse Maria Teixeira de Carvalho, up202008444
+- Eduardo Oliveira Silva, up
 
 ## Features
 
@@ -67,9 +65,9 @@ To open the program, open the terminal and run the following command
 
   > [✘] Switch;
 
-- [✘] Store all changes in the vecDB;
+- [✘] Store all changes in the vec;
 
-- [✘] Print vecDB:
+- [✘] Print vec:
 
 - [✘] PDF;
 
