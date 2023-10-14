@@ -1,6 +1,7 @@
 #include <iostream>
 
 void checkError(int n);
+void errorMessage();
 
 int menuOrder(int flag) {
   int suborder = 0;
@@ -27,7 +28,7 @@ int menuOrder(int flag) {
     std::cout << "2) Sort by class code" << std::endl;
     // maybe acrescentar mais funcoes order
   default:
-    std::cout << "ERROR: Invalid choice." << std::endl;
+    errorMessage();
     break;
   }
 
@@ -35,7 +36,6 @@ int menuOrder(int flag) {
   std::cin >> suborder;
 
   checkError(suborder);
-
 
   return suborder;
 }

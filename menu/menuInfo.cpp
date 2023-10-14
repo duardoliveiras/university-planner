@@ -1,6 +1,7 @@
 #include <iostream>
 
 void checkError(int n);
+void errorMessage();
 
 int menuOrder(int flag) {
   int info = 0;
@@ -20,12 +21,12 @@ int menuOrder(int flag) {
     // maybe acrescentar mais funcoes order
     break;
   default:
-    std::cout << "ERROR: Invalid choice." << std::endl;
+    errorMessage();
     break;
   }
 
   std::cin >> info;
-  
+
   checkError(info);
 
   return info;

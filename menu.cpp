@@ -3,6 +3,7 @@
 
 int menuPrincipal();
 int menuSub();
+void errorMessage();
 
 void dbStudents(int submenu);
 void dbUcs(int submenu);
@@ -29,7 +30,7 @@ void menu() {
     dbClasses(subflag);
     break;
   default:
-    std::cout << "ERROR: Invalid choice." << std::endl;
+    errorMessage();
     break;
   }
 }
