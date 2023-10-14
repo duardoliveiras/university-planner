@@ -21,8 +21,7 @@ void menu() {
   cout << "1) Students" << endl;
   cout << "2) Classes" << endl;
   cout << "3) UC's" << endl;
-
-  cout << "Choose an option: " << endl;
+  cout << "Choose an option: ";
   cin >> flag;
 
   // When user inserts an invalid integer or a not integer.
@@ -36,9 +35,9 @@ void menu() {
   cout << "-----------------------------------------------" << endl; 
 
   cout << "1) See all" << endl;
-  cout << "2) See a particulara group" << endl;
+  cout << "2) See a particular group" << endl;
   cout << "3) See one" << endl;
-  cout << "Choose an option: " << endl;
+  cout << "Choose an option: ";
   cin >> subflag;
 
   // When user inserts an invalid integer or a not integer.
@@ -51,10 +50,10 @@ void menu() {
   // suborder menu
   cout << "-----------------------------------------------" << endl; 
 
-  cout << "1) Sort alphabetically" << endl; 
+  cout << "g1) Sort alphabetically" << endl; 
   cout << "2) Sort by year" << endl;
-  cout << "3) Sort by number of classes" << endl;
-  cout << "Choose an option" << endl;
+  //cout << "3) Sort by number" << endl;
+  cout << "Choose an option: ";
   
   cin >> suborder;
 
@@ -63,7 +62,9 @@ void menu() {
     cout << "ERROR: Invalid number" << endl;
     exit(0);
   }
-  
+
+  cout << "-----------------------------------------------" << endl; 
+
 
   switch (flag) {
     case 1:

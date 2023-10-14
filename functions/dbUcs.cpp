@@ -6,7 +6,7 @@ using namespace std;
 void printDB(vector<int> vecDB);
 
 void dbUcs(int submenu, int order) {
-  cout << "This functions is not ready yet." << endl;
+  cout << "This function dbUcs is not ready yet." << endl;
 
     // It will not be a vector of integers but of class student or uc.
   vector <int> vecDB; 

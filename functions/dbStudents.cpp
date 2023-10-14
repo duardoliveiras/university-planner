@@ -7,7 +7,7 @@ void printDB(vector<int> vecDB);
 
 
 void dbStudents(int submenu, int order) {
-  cout << "This functions is not ready yet." << endl;
+  cout << "This function dbStudents is not ready yet." << endl;
   // It will not be a vector of integers but of class student or uc.
   vector <int> vecDB; 
 
