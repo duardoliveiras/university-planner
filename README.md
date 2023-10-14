@@ -33,7 +33,7 @@ To open the program, open the terminal and run the following command
 
   > [✘] Read classes.csv;
 
-  > [✘] Read studennts_classes.csv;
+  > [✘] Read students_classes.csv;
 
 - [✔] Create menu ;
 
