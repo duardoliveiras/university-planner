@@ -1,35 +1,32 @@
 #include <iostream>
 #include <vector>
 
-int menuOrder();
 int menuPrincipal();
 int menuSub();
 
-void dbStudents(int submenu, int order);
-void dbUcs(int submenu, int order);
-void dbClasses(int submenu, int order);
+void dbStudents(int submenu);
+void dbUcs(int submenu);
+void dbClasses(int submenu);
 
 void menu() {
 
   int flag = 0;
   int subflag = 0;
-  int suborder = 0;
 
   system("clear");
 
   flag = menuPrincipal();
   subflag = menuSub();
-  suborder = menuOrder();
 
   switch (flag) {
   case 1:
-    dbStudents(subflag, suborder);
+    dbStudents(subflag);
     break;
   case 2:
-    dbUcs(subflag, suborder);
+    dbUcs(subflag);
     break;
   case 3:
-    dbClasses(subflag, suborder);
+    dbClasses(subflag);
     break;
   default:
     std::cout << "ERROR: Invalid choice." << std::endl;

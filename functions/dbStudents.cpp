@@ -4,20 +4,44 @@
 #include "../classes/student.h"
 
 std::vector<myStudent> readAllStudents();
-void printDB(std::vector<int> vecDB);
+void printStudent(std::vector<myStudent> vecDB);
 
-void dbStudents(int submenu, int order) {
+int menuGroup(int flag);
+int menuOrder(int flag);
+int menuInfo(int flag);
+std::vector<myStudent> filterInfo(int info,
+                                  std::vector<myStudent> myStudentVector);
+std::vector<myStudent> orderInfo(int order,
+                                 std::vector<myStudent> myStudentVector);
+
+void dbStudents(int submenu) {
   std::cout << "This function dbStudents is not ready yet." << std::endl;
-
-  // It will not be a vector of integers but of x class.
-  std::vector<int> vecDB;
+  int flag = submenu;
+  int info = 0;
+  int group = 0;
+  int order = 0;
 
   // read students
   std::vector<myStudent> ucsData = readAllStudents();
 
-  // filter students depeding on submenu and order and put that info in vecDB
-  // vecDB = ucsData
+  switch (flag) {
+  case 1:
+    info = menuInfo(flag);
+    ucsData = filterInfo(info, ucsData);
+    break;
+  case 2:
+    group = menuGroup(flag);
+    order = menuOrder(flag);
+    ucsData = filterInfo(group, ucsData);
+    ucsData = orderInfo(order, ucsData);
+    break;
+  case 3:
+    ucsData = orderInfo(order, ucsData);
+    break;
+  default:
+    std::cout << "ERROR: Invalid choice." << std::endl;
+    break;
+  }
 
-  // print information in vecDB
-  printDB(vecDB);
+  printStudent(ucsData);
 }

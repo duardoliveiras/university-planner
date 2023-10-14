@@ -6,7 +6,7 @@
 std::vector<myUc> readAllUcs();
 void printDB(std::vector<int> vecDB);
 
-void dbUcs(int submenu, int order) {
+void dbUcs(int submenu) {
   std::cout << "This function dbUcs is not ready yet." << std::endl;
 
   // It will not be a vector of integers but of x class.
