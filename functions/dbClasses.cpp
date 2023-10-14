@@ -1,18 +1,16 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include "../classes/class.h"
 
-std::vector<myClass> readAllClasses();
-void printClass(std::vector<myClass> vecDB);
-
 int menuGroup(int n);
 int menuOrder(int n);
 int menuInfo(int n);
-std::vector<myClass> filterInfoClass(int n,
-                                     std::vector<myClass> myVector);
-std::vector<myClass> orderInfoClass(int n,
-                                    std::vector<myClass> myVector);
+std::vector<myClass> readAllClasses();
+std::vector<myClass> filterInfoClass(int n, std::vector<myClass> myVector);
+std::vector<myClass> orderInfoClass(int n, std::vector<myClass> myClassVector);
+void printClass(std::vector<myClass> vecDB);
 
 void dbClasses(int submenu) {
   std::cout << "This function dbClasses is not ready yet." << std::endl;

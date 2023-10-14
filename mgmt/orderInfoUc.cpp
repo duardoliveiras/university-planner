@@ -4,9 +4,9 @@
 
 #include "../classes/uc.h"
 
-void workignMessage();
+void workingMessage();
 
 std::vector<myUc> orderInfoUc(int n, std::vector<myUc> myVector) {
-  workignMessage();
+  workingMessage();
   return myVector;
 }

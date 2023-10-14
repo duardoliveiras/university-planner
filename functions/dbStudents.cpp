@@ -1,18 +1,18 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include "../classes/student.h"
 
-std::vector<myStudent> readAllStudents();
-void printStudent(std::vector<myStudent> vecDB);
-
 int menuGroup(int n);
 int menuOrder(int n);
 int menuInfo(int n);
+std::vector<myStudent> readAllStudents();
 std::vector<myStudent> filterInfoStudent(int n,
-                                  std::vector<myStudent> myVector);
-std::vector<myStudent> orderInfoStudent(int n,
-                                 std::vector<myStudent> myVector);
+                                         std::vector<myStudent> myVector);
+std::vector<myStudent> orderInfoStudent(int n, std::vector<myStudent> myVector);
+void printStudent(std::vector<myStudent> vecDB);
+
 
 void dbStudents(int submenu) {
   std::cout << "This function dbStudents is not ready yet." << std::endl;

@@ -4,10 +4,10 @@
 
 #include "../classes/student.h"
 
-void workignMessage();
+void workingMessage();
 
 std::vector<myStudent> filterInfoStudent(int n,
                                        std::vector<myStudent> myVector) {
-  workignMessage();
+  workingMessage();
   return myVector;
 }

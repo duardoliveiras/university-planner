@@ -1,16 +1,16 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include "../classes/uc.h"
 
-std::vector<myUc> readAllUcs();
-void printUc(std::vector<myUc> vecDB);
-
 int menuGroup(int n);
 int menuOrder(int n);
 int menuInfo(int n);
+std::vector<myUc> readAllUcs();
 std::vector<myUc> filterInfoUc(int n, std::vector<myUc> myVector);
 std::vector<myUc> orderInfoUc(int n, std::vector<myUc> myVector);
+void printUc(std::vector<myUc> vecDB);
 
 void dbUcs(int submenu) {
   std::cout << "This function dbUcs is not ready yet." << std::endl;

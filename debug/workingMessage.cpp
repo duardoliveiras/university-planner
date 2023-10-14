@@ -1,3 +1,5 @@
 #include <iostream>
 
-void errorMessage() { std::cout << "WARNING: Function not done." << std::endl; }
+void workingMessage() {
+  std::cout << "WARNING: Function not done." << std::endl;
+}

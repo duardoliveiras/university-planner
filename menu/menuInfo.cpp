@@ -3,7 +3,7 @@
 void checkError(int n);
 void errorMessage();
 
-int menuOrder(int n) {
+int menuInfo(int n) {
   int info = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;

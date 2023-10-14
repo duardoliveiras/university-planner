@@ -23,11 +23,8 @@ CPP_FILES+=functions/dbClasses.cpp functions/dbStudents.cpp functions/dbUcs.cpp
 CPP_FILES+=output/printClass.cpp output/printStudent.cpp output/printUc.cpp 
 CPP_FILES+=menu/menuGroup.cpp menu/menuInfo.cpp menu/menuOrder.cpp menu/menuPrincipal.cpp menu/menuSub.cpp
 CPP_FILES+=input/readAllClasses.cpp input/readAllStudents.cpp input/readAllUcs.cpp
-CPP_FILES+=debug/checkError.cpp debug/errorMessage.cpp debub/workingMessage.cpp
+CPP_FILES+=debug/checkError.cpp debug/errorMessage.cpp debug/workingMessage.cpp
 CPP_FILES+=mgmt/filterInfoClass.cpp mgmt/filterInfoStudent.cpp mgmt/filterInfoUc.cpp mgmt/orderInfoClass.cpp mgmt/orderInfoStudent.cpp mgmt/orderInfoUc.cpp
-
-# Specify the path to the header files
-INCLUDES=
 
 # C++ header files to consider in compilation
 HEADERS=classes/class.h classes/student.h classes/uc.h
