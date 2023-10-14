@@ -35,29 +35,25 @@ To open the program, open the terminal and run the following command
 
   > [✘] Read students_classes.csv;
 
-- [✔] Create menu ;
+- [✔] Create menu;
 
 - Schedule managents system - functions:
 
   > [✘] Consult schedule of given student or class;
 
-  > [✘] Consult the students within a given class, course or year;
+  > [✘] Consult the students within a given class or year;
 
-  > [✘] Consult the number of students registered in at least n UCs;
+  > [✘] Consult the number of students registered in class/uc;
 
-  > [✘] Consult the class/year/UC occupation (sorting by UC, ascending or descending order, …):
+  > [✘] Consult the class/student/uc occupation (sorting by UC, ascending or descending order, …):
 
-  > [✘] Consult class/year/UC sortig by UC;
+  > [✘] Consult class/student/uc sortig by UC;
 
-  > [✘] Consult class/year/UC sortig by Alfabetic ascending;
+  > [✘] Consult class/student/uc sortig by Alfabetic ascending/descending;
 
-  > [✘] Consult class/year/UC sortig by Alfabetic descending;
+  > [✘] Consult class/uc sortig by day of week;
 
-  > [✘] Consult class/year/UC sortig by day of week;
-
-  > [✘] Consult class/year/UC sortig by time of the day;
-
-  > [✘] Consult the UCs with the greatest number of students;
+  > [✘] Consult class/uc sortig by time of the day;
 
 - Requests:
 
