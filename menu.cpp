@@ -3,11 +3,16 @@
 
 int menuPrincipal();
 int menuSub();
+int menuRequests();
+
 void errorMessage();
+void checkError(int n);
 
 void dbStudents(int submenu);
 void dbUcs(int submenu);
 void dbClasses(int submenu);
+
+void requests(int n);
 
 void menu() {
 
@@ -17,7 +22,16 @@ void menu() {
   system("clear");
 
   flag = menuPrincipal();
-  subflag = menuSub();
+
+  checkError(flag);
+
+  if (flag == 4) {
+    subflag = menuRequests();
+  } else {
+    subflag = menuSub();
+  }
+
+  checkError(subflag);
 
   switch (flag) {
   case 1:
@@ -29,6 +43,8 @@ void menu() {
   case 3:
     dbClasses(subflag);
     break;
+  case 4:
+    requests(subflag);
   default:
     errorMessage();
     break;
