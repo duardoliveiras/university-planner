@@ -9,10 +9,10 @@ void printStudent(std::vector<myStudent> vecDB);
 int menuGroup(int n);
 int menuOrder(int n);
 int menuInfo(int n);
-std::vector<myStudent> filterInfo(int info,
-                                  std::vector<myStudent> myStudentVector);
-std::vector<myStudent> orderInfo(int order,
-                                 std::vector<myStudent> myStudentVector);
+std::vector<myStudent> filterInfoStudent(int n,
+                                  std::vector<myStudent> myVector);
+std::vector<myStudent> orderInfoStudent(int n,
+                                 std::vector<myStudent> myVector);
 
 void dbStudents(int submenu) {
   std::cout << "This function dbStudents is not ready yet." << std::endl;
@@ -27,16 +27,16 @@ void dbStudents(int submenu) {
   switch (flag) {
   case 1:
     info = menuInfo(flag);
-    data = filterInfo(info, data);
+    data = filterInfoStudent(info, data);
     break;
   case 2:
     group = menuGroup(flag);
     order = menuOrder(flag);
-    data = filterInfo(group, data);
-    data = orderInfo(order, data);
+    data = filterInfoStudent(group, data);
+    data = orderInfoStudent(order, data);
     break;
   case 3:
-    data = orderInfo(order, data);
+    data = orderInfoStudent(order, data);
     break;
   default:
     std::cout << "ERROR: Invalid choice." << std::endl;

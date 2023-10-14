@@ -9,8 +9,8 @@ void printUc(std::vector<myUc> vecDB);
 int menuGroup(int n);
 int menuOrder(int n);
 int menuInfo(int n);
-std::vector<myUc> filterInfo(int info, std::vector<myUc> myStudentVector);
-std::vector<myUc> orderInfo(int order, std::vector<myUc> myStudentVector);
+std::vector<myUc> filterInfoUc(int n, std::vector<myUc> myVector);
+std::vector<myUc> orderInfoUc(int n, std::vector<myUc> myVector);
 
 void dbUcs(int submenu) {
   std::cout << "This function dbUcs is not ready yet." << std::endl;
@@ -25,16 +25,16 @@ void dbUcs(int submenu) {
   switch (flag) {
   case 1:
     info = menuInfo(flag);
-    data = filterInfo(info, data);
+    data = filterInfoUc(info, data);
     break;
   case 2:
     group = menuGroup(flag);
     order = menuOrder(flag);
-    data = filterInfo(group, data);
-    data = orderInfo(order, data);
+    data = filterInfoUc(group, data);
+    data = orderInfoUc(order, data);
     break;
   case 3:
-    data = orderInfo(order, data);
+    data = orderInfoUc(order, data);
     break;
   default:
     std::cout << "ERROR: Invalid choice." << std::endl;
