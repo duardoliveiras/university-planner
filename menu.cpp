@@ -15,22 +15,28 @@ void dbClasses(int submenu);
 void requests(int n);
 
 void menu() {
-
+  int type = 0;
   int flag = 0;
   int subflag = 0;
 
   system("clear");
+  std::cout << "------------ Welcome to our app :) ------------" << std::endl;
+  std::cout << "1) See database" << std::endl;
+  std::cout << "2) Change database" << std::endl;
+  std::cout << "Choose an option: ";
+  std::cin >> type;
 
-  flag = menuPrincipal();
+  checkError(type);
 
-  checkError(flag);
-
-  if (flag == 4) {
-    subflag = menuRequests();
-  } else {
+  if (type == 1) {
+    flag = menuPrincipal();
     subflag = menuSub();
+  } else {
+    flag = 4;
+    subflag = menuRequests();
   }
 
+  checkError(flag);
   checkError(subflag);
 
   switch (flag) {
@@ -45,6 +51,7 @@ void menu() {
     break;
   case 4:
     requests(subflag);
+    break;
   default:
     errorMessage();
     break;
