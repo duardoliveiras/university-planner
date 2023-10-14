@@ -6,9 +6,9 @@
 std::vector<myStudent> readAllStudents();
 void printStudent(std::vector<myStudent> vecDB);
 
-int menuGroup(int flag);
-int menuOrder(int flag);
-int menuInfo(int flag);
+int menuGroup(int n);
+int menuOrder(int n);
+int menuInfo(int n);
 std::vector<myStudent> filterInfo(int info,
                                   std::vector<myStudent> myStudentVector);
 std::vector<myStudent> orderInfo(int order,
@@ -22,26 +22,26 @@ void dbStudents(int submenu) {
   int order = 0;
 
   // read students
-  std::vector<myStudent> ucsData = readAllStudents();
+  std::vector<myStudent> data = readAllStudents();
 
   switch (flag) {
   case 1:
     info = menuInfo(flag);
-    ucsData = filterInfo(info, ucsData);
+    data = filterInfo(info, data);
     break;
   case 2:
     group = menuGroup(flag);
     order = menuOrder(flag);
-    ucsData = filterInfo(group, ucsData);
-    ucsData = orderInfo(order, ucsData);
+    data = filterInfo(group, data);
+    data = orderInfo(order, data);
     break;
   case 3:
-    ucsData = orderInfo(order, ucsData);
+    data = orderInfo(order, data);
     break;
   default:
     std::cout << "ERROR: Invalid choice." << std::endl;
     break;
   }
 
-  printStudent(ucsData);
+  printStudent(data);
 }

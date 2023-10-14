@@ -3,12 +3,12 @@
 void checkError(int n);
 void errorMessage();
 
-int menuOrder(int flag) {
+int menuOrder(int n) {
   int info = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
   // students
-  switch (flag) {
+  switch (n) {
   case 1:
     std::cout << "1) Insert student code: " << std::endl;
     std::cout << "1) Insert student name: " << std::endl;

@@ -3,13 +3,13 @@
 void checkError(int n);
 void errorMessage();
 
-int menuOrder(int flag) {
+int menuOrder(int n) {
   int suborder = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
 
   // students
-  switch (flag) {
+  switch (n) {
   case 1:
     std::cout << "1) Sort by name alphabetically ascending" << std::endl;
     std::cout << "2) Sort by name alphabetically descending" << std::endl;

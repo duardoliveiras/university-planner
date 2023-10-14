@@ -3,13 +3,13 @@
 void checkError(int n);
 void errorMessage();
 
-int menuOrder(int flag) {
+int menuOrder(int n) {
   int group = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
 
   // students
-  switch (flag) {
+  switch (n) {
   case 1:
     // fix posterior
     std::cout << "1) See all student with x year" << std::endl;

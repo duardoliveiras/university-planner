@@ -4,20 +4,42 @@
 #include "../classes/uc.h"
 
 std::vector<myUc> readAllUcs();
-void printDB(std::vector<int> vecDB);
+void printUc(std::vector<myUc> vecDB);
+
+int menuGroup(int n);
+int menuOrder(int n);
+int menuInfo(int n);
+std::vector<myUc> filterInfo(int info, std::vector<myUc> myStudentVector);
+std::vector<myUc> orderInfo(int order, std::vector<myUc> myStudentVector);
 
 void dbUcs(int submenu) {
   std::cout << "This function dbUcs is not ready yet." << std::endl;
+  int flag = submenu;
+  int info = 0;
+  int group = 0;
+  int order = 0;
 
-  // It will not be a vector of integers but of x class.
-  std::vector<int> vecDB;
+  // read ucs
+  std::vector<myUc> data = readAllUcs();
 
-  // read UCS
-  std::vector<myUc> ucsData = readAllUcs();
+  switch (flag) {
+  case 1:
+    info = menuInfo(flag);
+    data = filterInfo(info, data);
+    break;
+  case 2:
+    group = menuGroup(flag);
+    order = menuOrder(flag);
+    data = filterInfo(group, data);
+    data = orderInfo(order, data);
+    break;
+  case 3:
+    data = orderInfo(order, data);
+    break;
+  default:
+    std::cout << "ERROR: Invalid choice." << std::endl;
+    break;
+  }
 
-  // filter Ucs depeding on submenu and order and put that info in vecDB
-  // vecDB = ucsData
-
-  // print information in vecDB
-  printDB(vecDB);
+  printUc(data);
 }
