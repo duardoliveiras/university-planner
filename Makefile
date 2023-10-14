@@ -18,8 +18,12 @@ CXXFLAGS+= -lm
 CXXFLAGS+=-fsanitize=address -fsanitize=undefined
 
 # C++ source files to consider in compilation
-CPP_FILES=main.cpp menu.cpp functions/dbClasses.cpp functions/dbStudents.cpp functions/dbUcs.cpp output/printDB.cpp menu/menuOrder.cpp menu/menuPrincipal.cpp menu/menuSub.cpp
-
+CPP_FILES=main.cpp menu.cpp 
+CPP_FILES+=functions/dbClasses.cpp functions/dbStudents.cpp functions/dbUcs.cpp 
+CPP_FILES+=output/printClass.cpp output/printStudent.cpp output/printUc.cpp 
+CPP_FILES+=menu/menuGroup.cpp menu/menuInfo.cpp menu/menuOrder.cpp menu/menuPrincipal.cpp menu/menuSub.cpp
+CPP_FILES+=readDB/readAllClasses.cpp readDB/readAllStudents.cpp readDB/readAllUcs.cpp
+CPP_FILES+=debug/checkError.cpp debug/errorMessage.cpp
 # C++ header files to consider in compilation
 HEADERS=
 # Name of executable program ('main' by default)
