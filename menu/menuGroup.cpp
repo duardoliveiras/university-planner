@@ -3,7 +3,7 @@
 void checkError(int n);
 
 int menuOrder(int flag) {
-  int suborder = 0;
+  int group = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
 
@@ -11,20 +11,14 @@ int menuOrder(int flag) {
   switch (flag) {
   case 1:
     std::cout << "1) Sort by name alphabetically ascending" << std::endl;
-    std::cout << "2) Sort by name alphabetically descending" << std::endl;
-    std::cout << "3) Sort by student code" << std::endl;
-    std::cout << "4) Sort by number of ucs" << std::endl;
     // maybe acrescentar mais funcoes order
     break;
   case 2:
     std::cout << "1) Sort by class code" << std::endl;
-    std::cout << "2) Sort by day of week" << std::endl;
-    std::cout << "3) Sort by time of day" << std::endl;
     // maybe acrescentar mais funcoes order
     break;
   case 3:
     std::cout << "1) Sort by uc code" << std::endl;
-    std::cout << "2) Sort by class code" << std::endl;
     // maybe acrescentar mais funcoes order
   default:
     std::cout << "ERROR: Invalid choice." << std::endl;
@@ -32,10 +26,9 @@ int menuOrder(int flag) {
   }
 
   std::cout << "Choose an option: ";
-  std::cin >> suborder;
+  std::cin >> group;
+  
+  checkError(group);
 
-  checkError(suborder);
-
-
-  return suborder;
+  return group;
 }

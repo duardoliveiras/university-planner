@@ -1,5 +1,8 @@
 #include <iostream>
 
+void checkError(int n);
+
+
 int menuPrincipal() {
   int flag = 0;
 
@@ -10,12 +13,8 @@ int menuPrincipal() {
   std::cout << "3) UC's" << std::endl;
   std::cout << "Choose an option: ";
   std::cin >> flag;
-
-  // When user inserts an invalid integer or a not integer.
-  if (flag == 0) {
-    std::cout << "ERROR: Invalid number" << std::endl;
-    exit(0);
-  }
+  
+  checkError(flag);
 
   return flag;
 }
