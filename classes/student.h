@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#ifndef STUDENT_H
-#define STUDENT_H
+#ifndef MYSTUDENT_H
+#define MYSTUDENT_H
 
-class Student {
+class myStudent {
 private:
   int studentCode;
   std::string studentName;
@@ -12,14 +12,14 @@ private:
   std::vector<std::string> classCode;
 
 public:
-  Student(int sCode, std::string sName, std::vector<std::string> ucC,
-          std::vector<std::string> classC) {
+  myStudent(int sCode, std::string sName, std::vector<std::string> ucC,
+            std::vector<std::string> classC) {
     studentCode = sCode;
     studentName = sName;
     ucCode = ucC;
     classCode = classC;
   }
-  Student() {
+  myStudent() {
     studentCode = 0;
     studentName = "";
     ucCode = {};
