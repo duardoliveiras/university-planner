@@ -24,10 +24,15 @@ CPP_FILES+=output/printClass.cpp output/printStudent.cpp output/printUc.cpp
 CPP_FILES+=menu/menuGroup.cpp menu/menuInfo.cpp menu/menuOrder.cpp menu/menuPrincipal.cpp menu/menuSub.cpp
 CPP_FILES+=readDB/readAllClasses.cpp readDB/readAllStudents.cpp readDB/readAllUcs.cpp
 CPP_FILES+=debug/checkError.cpp debug/errorMessage.cpp
+
+# Specify the path to the header files
+INCLUDES=
+
 # C++ header files to consider in compilation
-HEADERS=
+HEADERS=classes/class.h classes/student.h classes/uc.h
+
 # Name of executable program ('main' by default)
 PROG=a.out
 
 $(PROG): $(CPP_FILES) $(HEADERS)
-	$(CXX) $(CXXFLAGS) $(CPP_FILES) -o $(PROG)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(CPP_FILES) -o $(PROG)

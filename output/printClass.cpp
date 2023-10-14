@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-#include "../classes/classe.h"
+#include "../classes/class.h"
 
 void printClass(std::vector<myClass> vecClass) {
 
