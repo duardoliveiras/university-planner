@@ -1,13 +1,12 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
-void printDB(vector<int> vecDB);
+void printDB(std::vector<int> vecDB);
 void dbClasses(int submenu, int order) {
-  cout << "This function dbClasses is not ready yet." << endl;
+  std::cout << "This function dbClasses is not ready yet." << std::endl;
+  
   // It will not be a vector of integers but of class student or uc.
-  vector <int> vecDB; 
+  std::vector <int> vecDB; 
 
   // put information that user choose in vecDB
 

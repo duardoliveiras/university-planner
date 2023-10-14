@@ -1,10 +1,8 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
+void printDB(std::vector<int> vecDB) {
 
-void printDB(vector<int> vecDB) {
-
-  cout << "This function printDB is not ready yet. " << endl;
+  std::cout << "This function printDB is not ready yet. " << std::endl;
 
 }

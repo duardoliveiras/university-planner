@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 void dbStudents(int submenu, int order);
 void dbUcs(int submenu, int order);
 void dbClasses(int submenu, int order);
@@ -16,54 +14,54 @@ void menu() {
   system("clear");
 
   // principal menu
-  cout << "------------ Welcome to our app :) ------------" << endl;
+  std::cout << "------------ Welcome to our app :) ------------" << std::endl;
 
-  cout << "1) Students" << endl;
-  cout << "2) Classes" << endl;
-  cout << "3) UC's" << endl;
-  cout << "Choose an option: ";
-  cin >> flag;
+  std::cout << "1) Students" << std::endl;
+  std::cout << "2) Classes" << std::endl;
+  std::cout << "3) UC's" << std::endl;
+  std::cout << "Choose an option: ";
+  std::cin >> flag;
 
   // When user inserts an invalid integer or a not integer.
   if(flag==0) {
-    cout << "ERROR: Invalid number" << endl;
+    std::cout << "ERROR: Invalid number" << std::endl;
     exit(0);
   }
 
 
   // submenu menu
-  cout << "-----------------------------------------------" << endl; 
+  std::cout << "-----------------------------------------------" <<std::endl; 
 
-  cout << "1) See all" << endl;
-  cout << "2) See a particular group" << endl;
-  cout << "3) See one" << endl;
-  cout << "Choose an option: ";
-  cin >> subflag;
+  std::cout << "1) See all" << std::endl;
+  std::cout << "2) See a particular group" <<std::endl;
+  std::cout << "3) See one" << std::endl;
+  std::cout << "Choose an option: ";
+  std::cin >> subflag;
 
   // When user inserts an invalid integer or a not integer.
   if(subflag==0) {
-    cout << "ERROR: Invalid number" << endl;
+    std::cout << "ERROR: Invalid number" << std::endl;
     exit(0);
   }
   
 
   // suborder menu
-  cout << "-----------------------------------------------" << endl; 
+  std::cout << "-----------------------------------------------" << std::endl; 
 
-  cout << "g1) Sort alphabetically" << endl; 
-  cout << "2) Sort by year" << endl;
-  //cout << "3) Sort by number" << endl;
-  cout << "Choose an option: ";
+  std::cout << "1) Sort alphabetically" << std::endl; 
+  std::cout << "2) Sort by year" << std::endl;
+  //cout << "3) Sort by number" <<std::endl;
+  std::cout << "Choose an option: ";
   
-  cin >> suborder;
+  std::cin >> suborder;
 
   // When user inserts an invalid integer or a not integer.
   if(suborder==0) {
-    cout << "ERROR: Invalid number" << endl;
+    std::cout << "ERROR: Invalid number" << std::endl;
     exit(0);
   }
 
-  cout << "-----------------------------------------------" << endl; 
+  std::cout << "-----------------------------------------------" << std::endl; 
 
 
   switch (flag) {
@@ -77,7 +75,7 @@ void menu() {
       dbClasses(subflag, suborder);
       break;       
     default:
-      cout << "ERROR: Invalid choice." << endl;
+     std::cout << "ERROR: Invalid choice." <<std::endl;
       break;
   }
  }
