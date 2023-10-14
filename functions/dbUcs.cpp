@@ -6,16 +6,17 @@
 
 int menuGroup(int n);
 int menuOrder(int n);
-int menuInfo(int n);
+std::string menuInfo(int n);
 std::vector<myUc> readAllUcs();
 std::vector<myUc> filterInfoUc(int n, std::vector<myUc> myVector);
 std::vector<myUc> orderInfoUc(int n, std::vector<myUc> myVector);
+std::vector<myUc> selectUc(std::string str, std::vector<myUc> myVector);
+
 void printUc(std::vector<myUc> vecDB);
 
 void dbUcs(int submenu) {
-  std::cout << "This function dbUcs is not ready yet." << std::endl;
   int flag = submenu;
-  int info = 0;
+  std::string info = "";
   int group = 0;
   int order = 0;
 
@@ -25,7 +26,7 @@ void dbUcs(int submenu) {
   switch (flag) {
   case 1:
     info = menuInfo(flag);
-    data = filterInfoUc(info, data);
+    data = selectUc(info, data);
     break;
   case 2:
     group = menuGroup(flag);

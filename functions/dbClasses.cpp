@@ -6,16 +6,18 @@
 
 int menuGroup(int n);
 int menuOrder(int n);
-int menuInfo(int n);
+std::string menuInfo(int n);
 std::vector<myClass> readAllClasses();
 std::vector<myClass> filterInfoClass(int n, std::vector<myClass> myVector);
-std::vector<myClass> orderInfoClass(int n, std::vector<myClass> myClassVector);
+std::vector<myClass> orderInfoClass(int n, std::vector<myClass> myVector);
+std::vector<myClass> selectClass(std::string std, std::vector<myClass> myVector);
+
 void printClass(std::vector<myClass> vecDB);
 
+
 void dbClasses(int submenu) {
-  std::cout << "This function dbClasses is not ready yet." << std::endl;
   int flag = submenu;
-  int info = 0;
+  std::string info = "";
   int group = 0;
   int order = 0;
 
@@ -25,7 +27,7 @@ void dbClasses(int submenu) {
   switch (flag) {
   case 1:
     info = menuInfo(flag);
-    data = filterInfoClass(info, data);
+    data = selectClass(info, data);
     break;
   case 2:
     group = menuGroup(flag);

@@ -1,5 +1,5 @@
 #include <iostream>
 
 void workingMessage() {
-  std::cout << "WARNING: Function yet not done." << std::endl;
+  std::cout << "WARNING: Function not done yet." << std::endl;
 }

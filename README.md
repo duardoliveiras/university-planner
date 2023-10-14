@@ -9,6 +9,10 @@ This C++ application is designed to manage schedules after they have been elabor
 To open the program, open the terminal and run the following command
 `make && ./a.out`
 
+## Structure
+
+
+
 ## Colaboration
 
 > Bernardo Jose Ponce Figueirado de Brito, up

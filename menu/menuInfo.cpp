@@ -1,9 +1,11 @@
 #include <iostream>
+#include <string>
 
 void checkError(int n);
 void errorMessage();
+std::string menuSelectInfo(int n);
 
-int menuInfo(int n) {
+std::string menuInfo(int n) {
   int info = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
@@ -29,6 +31,8 @@ int menuInfo(int n) {
 
   checkError(info);
 
+  std::string selectInfo = menuSelectInfo(info);
+
   // should return info and the info that the user show and inputed
-  return info;
+  return selectInfo;
 }
