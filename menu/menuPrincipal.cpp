@@ -12,7 +12,7 @@ int menuPrincipal() {
   std::cin >> flag;
 
   // When user inserts an invalid integer or a not integer.
-  if(flag==0) {
+  if (flag == 0) {
     std::cout << "ERROR: Invalid number" << std::endl;
     exit(0);
   }

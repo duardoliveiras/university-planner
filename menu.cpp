@@ -22,17 +22,17 @@ void menu() {
   suborder = menuOrder();
 
   switch (flag) {
-    case 1:
-      dbStudents(subflag, suborder);
-      break;
-    case 2:
-      dbUcs(subflag, suborder);
-      break;
-    case 3:
-      dbClasses(subflag, suborder);
-      break;       
-    default:
-     std::cout << "ERROR: Invalid choice." <<std::endl;
-      break;
+  case 1:
+    dbStudents(subflag, suborder);
+    break;
+  case 2:
+    dbUcs(subflag, suborder);
+    break;
+  case 3:
+    dbClasses(subflag, suborder);
+    break;
+  default:
+    std::cout << "ERROR: Invalid choice." << std::endl;
+    break;
   }
- }
+}
