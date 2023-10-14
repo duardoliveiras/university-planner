@@ -1,56 +1,82 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void dbStudents();
-void dbUcs();
-void dbClasses();
-void dbOneUc();
-void dbOneStudent();
-
+void dbStudents(int submenu, int order);
+void dbUcs(int submenu, int order);
+void dbClasses(int submenu, int order);
 
 void menu() {
 
-  int flag;
+  int flag = 0;
+  int subflag = 0;
+  int suborder = 0;
 
   system("clear");
 
+  // principal menu
   cout << "------------ Welcome to our app :) ------------" << endl;
 
-  cout << " 1) See all the students" << endl;
-  cout << " 2) See all the ucs" << endl;
-  cout << " 3) See all the classes" << endl;
-  cout << " 4) See the schedule of a particular uc" << endl;
-  cout << " 5) See the schedule of a particular student" << endl;
-  cout << "-----------------------------------------------" << endl; 
+  cout << "1) Students" << endl;
+  cout << "2) Classes" << endl;
+  cout << "3) UC's" << endl;
 
-  cout << "Choose an option: ";
-
+  cout << "Choose an option: " << endl;
   cin >> flag;
+
+  // When user inserts an invalid integer or a not integer.
   if(flag==0) {
     cout << "ERROR: Invalid number" << endl;
     exit(0);
   }
-  else {
-    switch (flag) {
-      case 1:
-        dbStudents();
-        break;
-      case 2:
-        dbUcs();
-        break;
-      case 3:
-        dbClasses();
-        break;    
-      case 4:
-        dbOneUc();
-        break;
-      case 5:
-        dbOneStudent();
-        break;
-      default:
-        cout << "ERROR: Invalid choice." << endl;
-        break;
-    }
+
+
+  // submenu menu
+  cout << "-----------------------------------------------" << endl; 
+
+  cout << "1) See all" << endl;
+  cout << "2) See a particulara group" << endl;
+  cout << "3) See one" << endl;
+  cout << "Choose an option: " << endl;
+  cin >> subflag;
+
+  // When user inserts an invalid integer or a not integer.
+  if(subflag==0) {
+    cout << "ERROR: Invalid number" << endl;
+    exit(0);
   }
-} 
+  
+
+  // suborder menu
+  cout << "-----------------------------------------------" << endl; 
+
+  cout << "1) Sort alphabetically" << endl; 
+  cout << "2) Sort by year" << endl;
+  cout << "3) Sort by number of classes" << endl;
+  cout << "Choose an option" << endl;
+  
+  cin >> suborder;
+
+  // When user inserts an invalid integer or a not integer.
+  if(suborder==0) {
+    cout << "ERROR: Invalid number" << endl;
+    exit(0);
+  }
+  
+
+  switch (flag) {
+    case 1:
+      dbStudents(subflag, suborder);
+      break;
+    case 2:
+      dbUcs(subflag, suborder);
+      break;
+    case 3:
+      dbClasses(subflag, suborder);
+      break;       
+    default:
+      cout << "ERROR: Invalid choice." << endl;
+      break;
+  }
+ }
