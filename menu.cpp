@@ -15,7 +15,7 @@ void dbClasses(int submenu);
 void requests(int n);
 
 void menu() {
-  int type = 0;
+  int menu = 0;
   int flag = 0;
   int subflag = 0;
 
@@ -24,11 +24,11 @@ void menu() {
   std::cout << "1) See database" << std::endl;
   std::cout << "2) Change database" << std::endl;
   std::cout << "Choose an option: ";
-  std::cin >> type;
+  std::cin >> menu;
 
-  checkError(type);
+  checkError(menu);
 
-  if (type == 1) {
+  if (menu == 1) {
     flag = menuPrincipal();
     subflag = menuSub();
   } else {

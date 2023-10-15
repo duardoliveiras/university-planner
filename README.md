@@ -2,14 +2,19 @@
 
 ## Project Description
 
-This C++ application is designed to manage schedules after they have been elaborated. This app include various functionalities related to schedules, such as modifying, searching, viewing, sorting, listing, among others.
+This is a C++ application designed to manage schedules after they have been elaborated. If offers multiple functionalities such as schedule modification, searching, viewing, sorting and listing, among others. The main goal of this tool is to simplify the complexities of managing student schedules and class assignments.
 
-## Install and Run the Project
+## Installation and Usage
 
-To open the program, run the following command in terminal:
+To run the program, execute the following command in your terminal:
+
 `make && ./a.out`
 
-## Structure of the App
+Note: The program will take about 10 seconds to compile before it can be executed.
+
+## Project Scructure
+
+The application is structured around key components and classes. Understanding the UML diagram is essential for grasping the relationships between different modules.
 
 ![uml](uml.drawio.png)
 
@@ -21,7 +26,7 @@ To open the program, run the following command in terminal:
 
 ## Features
 
-- Create class:
+- Student/UC/Class Creation:
 
   > [✔] Create student;
 
@@ -29,7 +34,7 @@ To open the program, run the following command in terminal:
 
   > [✔] Create class;
 
-- Read Database:
+- Database Operations:
 
   > [✘] Read classes_per_uc.csv;
 
@@ -37,37 +42,27 @@ To open the program, run the following command in terminal:
 
   > [✘] Read students_classes.csv;
 
+  > [✘] Keep requests and changes made in database files
+
 - [✔] Create menu;
 
-- Schedule managents system - functions:
+- Schedule Managents:
 
-  > [✘] Consult schedule of given student or class;
+  > [✘] Schedule consultation by student/class;
 
-  > [✘] Consult the students within a given class or year;
+  > [✘] List of students withing a class/uc/year
 
-  > [✘] Consult the number of students registered in class/uc;
+  > [✘] Number of class/students withing a class/uc/year
 
-  > [✘] Consult the class/student/uc occupation (sorting by UC, ascending or descending order, …):
+  > [✘] Sort class/student/Uc (asc, desc, by UC, day of the week, time of the day, etc)
 
-  > [✘] Consult class/student/uc sortig by UC;
+- Requests Handling:
 
-  > [✘] Consult class/student/uc sortig by Alfabetic ascending/descending;
+  > [✘] Add, remove, switch (Accept/Deny)
 
-  > [✘] Consult class/uc sortig by day of week;
+  > [✘] Undo requests managements (Accept/Deny)
 
-  > [✘] Consult class/uc sortig by time of the day;
-
-- Requests:
-
-  > [✘] Add;
-
-  > [✘] Remove;
-
-  > [✘] Switch;
-
-- [✘] Store all changes in the vec;
-
-- [✘] Print vec:
+- [✘] Print:
 
 - [✘] PDF;
 
@@ -90,10 +85,10 @@ To open the program, run the following command in terminal:
 
 > Undo requests can be accepected or denied
 
-## Other information
+## Known Issues
 
-Note: Everytime you add a file, add to Makefile too
+> Everytime you create a file, you must add it to the Makefile.
 
-//Povoar - https://www.mockaroo.com/
+## Deadline
 
-Dead line: 3 nov 2023
+Project Deadline: November 3, 2023
