@@ -18,16 +18,10 @@ CXXFLAGS+= -lm
 CXXFLAGS+=-fsanitize=address -fsanitize=undefined
 
 # C++ source files to consider in compilation
-CPP_FILES=main.cpp menu.cpp 
+CPP_FILES=main.cpp menu.cpp errorMsgs.cpp
 CPP_FILES+=functions/dbClasses.cpp functions/dbStudents.cpp functions/dbUcs.cpp functions/requests.cpp
-CPP_FILES+=output/printClass.cpp output/printStudent.cpp output/printUc.cpp 
-CPP_FILES+=menu/menuGroup.cpp menu/menuInfo.cpp menu/menuOrder.cpp menu/menuPrincipal.cpp  menu/menuRequests.cpp menu/menuSelectInfo.cpp menu/menuSub.cpp
-CPP_FILES+=input/readAllClasses.cpp input/readAllStudents.cpp input/readAllUcs.cpp input/keepAllChanges.cpp
-CPP_FILES+=debug/errorMessages.cpp debug/workingMessage.cpp
-CPP_FILES+=mgmt/filterInfoClass.cpp mgmt/filterInfoStudent.cpp mgmt/filterInfoUc.cpp 
-CPP_FILES+=mgmt/orderInfoClass.cpp mgmt/orderInfoStudent.cpp mgmt/orderInfoUc.cpp
-CPP_FILES+=mgmt/selectClass.cpp mgmt/selectStudent.cpp mgmt/selectUc.cpp
-CPP_FILES+=requests/addClass.cpp requests/removeClass.cpp requests/switchClass.cpp
+CPP_FILES+=inputoutput/readAllClasses.cpp inputoutput/readAllStudents.cpp inputoutput/readAllUcs.cpp inputoutput/keepAllChanges.cpp inputoutput/print.cpp 
+CPP_FILES+=mgmt/filterInfo.cpp mgmt/orderInfo.cpp mgmt/selectInfo.cpp mgmt/requests.cpp
 
 # C++ header files to consider in compilation
 HEADERS=classes/class.h classes/student.h classes/uc.h

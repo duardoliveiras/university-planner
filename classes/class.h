@@ -4,48 +4,60 @@
 #ifndef MYCLASS_H
 #define MYCLASS_H
 
-struct ClassDate {
-  std::string date;
-  int day;
-  int month;
-  std::string year;
+struct Slot {
+  std::string weekday;
+  float startHour;
+  float duration;
+  std::string type;
+
+  Slot(std::string wd, float startH, float dur, std::string t) {
+    weekday = wd;
+    startHour = startH;
+    duration = dur;
+    type = t;
+  }
+
+  // getter
+  std::string getWeekday() const { return weekday; }
+  float getStartHour() const { return startHour; }
+  float getDuration() const { return duration; }
+  std::string getType() const { return type; }
 };
 
 class myClass {
 private:
   std::string classCode;
   std::string ucCode;
-  std::vector<ClassDate> classDate;
+  std::vector<Slot> slot;
 
 public:
-  myClass(std::string cCode, std::string ucC,
-          const std::vector<ClassDate> &date) {
+  myClass(std::string cCode, std::string ucC, const std::vector<Slot> &s) {
     classCode = cCode;
     ucCode = ucC;
-    classDate = date;
+    slot = s;
   }
 
   myClass() {
     classCode = "";
     ucCode = "";
-    classDate = {};
+    slot = {};
   }
 
   void setClass(std::string cCode, std::string ucC,
-                const std::vector<ClassDate> &date) {
+                const std::vector<Slot> &s) {
     classCode = cCode;
     ucCode = ucC;
-    classDate = date;
+    slot = s;
   }
 
-  // SET
+  // setter
   void setclassCode(std::string n) { classCode = n; }
-  void setUcCodee(std::string n) { ucCode = n; }
-  void setClassDate(std::vector<ClassDate> n) { classDate = n; }
+  void setUcCode(std::string n) { ucCode = n; }
+  void setSlot(std::vector<Slot> n) { slot = n; }
 
-  // GET
+  // getter
   std::string getclassCode() const { return classCode; }
-  std::string getUcCodee() const { return ucCode; }
-  std::vector<ClassDate> getClassDate() const { return classDate; }
+  std::string getUcCode() const { return ucCode; }
+  std::vector<Slot> getSlot() const { return slot; }
 };
 #endif

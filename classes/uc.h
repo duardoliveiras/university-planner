@@ -24,11 +24,11 @@ public:
     classCode = classC;
   }
 
-  // SET
+  // setter
   void setUcCode(std::string n) { ucCode = n; }
   void setClassCode(std::vector<std::string> n) { classCode = n; }
 
-  // GET
+  // getter
   std::string getUcCode() const { return ucCode; }
   std::vector<std::string> getClassCode() const { return classCode; }
 };

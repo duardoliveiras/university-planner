@@ -49,8 +49,8 @@ std::vector<myStudent> readAllStudents() {
     std::vector<std::string> ucCode = {tokens[2]};
     std::vector<std::string> classCode = {tokens[3]};
 
-    myStudent student(studentCode, studentName, ucCode, classCode);
-    data.push_back(student);
+    myStudent mystudent(studentCode, studentName, ucCode, classCode);
+    data.push_back(mystudent);
   }
 
   studentsdata.close();

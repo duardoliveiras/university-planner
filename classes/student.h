@@ -34,13 +34,13 @@ public:
     classCode = classC;
   }
 
-  // SET
+  // setter
   void setStudentCode(int n) { studentCode = n; }
   void setStudentName(std::string n) { studentName = n; }
   void setUcCode(std::vector<std::string> n) { ucCode = n; }
   void setClassCode(std::vector<std::string> n) { classCode = n; }
 
-  // GET
+  // getter
   int getStudentCode() const { return studentCode; }
   std::string getStudentName() const { return studentName; }
   std::vector<std::string> getUcCode() const { return ucCode; }

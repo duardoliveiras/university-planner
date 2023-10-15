@@ -6,7 +6,7 @@ void errorMessage() {
   exit(0);
 }
 
-void checkError(int n) {
+void errorCheck(int n) {
   if (n == 0) {
     std::cout << "ERROR: Invalid number" << std::endl;
     exit(0);
@@ -21,4 +21,8 @@ void errorMessageFile() {
 void errorMessageLine(std::string line) {
   std::cerr << "Error: Invalid data format in line: " << line << std::endl;
   exit(0);
+}
+
+void workingMessage() {
+  std::cout << "WARNING: Function not done yet." << std::endl;
 }
