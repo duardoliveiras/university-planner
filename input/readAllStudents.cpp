@@ -21,12 +21,13 @@ std::vector<myStudent> readAllStudents() {
   }
 
   std::string line;
-  bool isFirstLine = true;
+  bool header = true;
 
   while (std::getline(studentsdata, line)) {
-    if (isFirstLine) {
-      isFirstLine = false;
-      continue; // Skip the first line (header)
+
+    if (header) {
+      header = false;
+      continue;
     }
 
     std::stringstream ss(line);
