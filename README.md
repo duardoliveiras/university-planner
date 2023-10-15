@@ -10,7 +10,7 @@ To run the program, execute the following command in your terminal:
 
 `make && ./a.out`
 
-Note: The program will take about 10 seconds to compile before it can be executed.
+Note: The program will take about 15 seconds (for the first time) to compile before it can be executed.
 
 ## Project Scructure
 
