@@ -10,7 +10,7 @@ void workingMessage();
 void errorMessageFile();
 void errorMessageLine(std::string);
 
-std::vector<myStudent> readAllStudents() {
+std::vector<myStudent> readAllStudents() { // FUNCTION FINISH
   std::vector<myStudent> data;
 
   std::ifstream studentsdata("schedule/students_classes.csv");

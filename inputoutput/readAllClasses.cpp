@@ -10,7 +10,7 @@ void workingMessage();
 void errorMessageFile();
 void errorMessageLine(std::string);
 
-std::vector<myClass> readAllClasses() {
+std::vector<myClass> readAllClasses() { // FUNCTION FINISH
   std::vector<myClass> data;
 
   std::ifstream classesdata("schedule/classes.csv");
