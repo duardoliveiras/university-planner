@@ -14,7 +14,7 @@ std::vector<myStudent> orderInfoStudent(int n, std::vector<myStudent> myVector);
 std::vector<myStudent> selectStudent(std::string str,
                                      std::vector<myStudent> myVector);
 
-void printStudent(std::vector<myStudent> vecDB);
+void printStudent(const std::vector<myStudent> &students);
 
 void dbStudents(int submenu) {
   int flag = submenu;

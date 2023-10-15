@@ -41,9 +41,9 @@ public:
   void setClassCode(std::vector<std::string> n) { classCode = n; }
 
   // GET
-  int getStudentCode() { return studentCode; }
-  std::string getStudentName() { return studentName; }
-  std::vector<std::string> getUcCode() { return ucCode; }
-  std::vector<std::string> getClassCode() { return classCode; }
+  int getStudentCode() const { return studentCode; }
+  std::string getStudentName() const { return studentName; }
+  std::vector<std::string> getUcCode() const { return ucCode; }
+  std::vector<std::string> getClassCode() const { return classCode; }
 };
 #endif

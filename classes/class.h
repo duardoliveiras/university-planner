@@ -44,8 +44,8 @@ public:
   void setClassDate(std::vector<ClassDate> n) { classDate = n; }
 
   // GET
-  std::string getclassCode() { return classCode; }
-  std::string getUcCodee() { return ucCode; }
-  std::vector<ClassDate> getClassDate() { return classDate; }
+  std::string getclassCode() const { return classCode; }
+  std::string getUcCodee() const { return ucCode; }
+  std::vector<ClassDate> getClassDate() const { return classDate; }
 };
 #endif

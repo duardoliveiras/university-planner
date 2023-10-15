@@ -29,7 +29,7 @@ public:
   void setClassCode(std::vector<std::string> n) { classCode = n; }
 
   // GET
-  std::string getUcCode() { return ucCode; }
-  std::vector<std::string> getClassCode() { return classCode; }
+  std::string getUcCode() const { return ucCode; }
+  std::vector<std::string> getClassCode() const { return classCode; }
 };
 #endif

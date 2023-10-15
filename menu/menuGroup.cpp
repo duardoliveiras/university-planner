@@ -10,7 +10,9 @@ int menuGroup(int n) {
   switch (n) {
   case 1: // students
           // fix posterior
-    std::cout << "| 1) See all student with x year              |" << std::endl;
+    std::cout << "| 1) See all student of 2019 year             |" << std::endl;
+    std::cout << "| 2) See all student of 2020 year             |" << std::endl;
+
     // maybe acrescentar mais funcoes order
     break;
   case 2: // classes
