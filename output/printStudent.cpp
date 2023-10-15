@@ -4,7 +4,7 @@
 #include "../classes/student.h"
 
 void printStudent(const std::vector<myStudent> &students) {
-  std::cout << "| Student Code | Student Name | Uc Code | Class Code |"
+  std::cout << "Student Code | Student Name | Uc Code | Class Code"
             << std::endl;
 
   for (const auto &student : students) {
