@@ -6,7 +6,7 @@ This is a C++ application designed to manage schedules after they have been elab
 
 ## Installation and Usage
 
-To run the program, execute the following command in your terminal:
+Go to directory src and execute the following command in your terminal:
 
 `make && ./a.out`
 
