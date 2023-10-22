@@ -1,4 +1,5 @@
 #include "read.h"
+#include <sstream>
 
 std::vector<myClass> readAllClasses() {
   std::vector<myClass> data;
@@ -106,9 +107,42 @@ std::vector<myStudent> readAllStudents() {
 std::vector<myUc> readAllUcs() {
   std::vector<myUc> data;
 
-  workingMessage();
+  std::ifstream ucdata("schedule/classes_per_uc.csv");
 
-  // READ FILE AND STORE INFO IN DATA
+  // check if open
+  if (!ucdata.is_open()) {
+    errorMessageFile();
+  }
 
+  std::string line;
+  bool header = true;
+
+  while (std::getline(ucdata, line)) {
+    if (header) {
+      header = false;
+      continue;
+    }
+
+    std::stringstream ss(line);
+    std::string token;
+    std::vector<std::string> tokens;
+
+    while (std::getline(ss, token, ',')) {
+      tokens.push_back(token);
+    }
+
+    // Check if file have 2 parameters:
+    // UcCode,ClassCode
+    if (tokens.size() < 2) {
+      errorMessageLine(line);
+    }
+
+    std::string ucCode = tokens[0];
+    std::vector<std::string> classCode = {tokens[1]};
+
+    myUc uc(ucCode, classCode);
+    data.push_back(uc);
+  }
+  ucdata.close();
   return data;
 }

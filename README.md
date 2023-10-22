@@ -6,11 +6,19 @@ This is a C++ application designed to manage schedules after they have been elab
 
 ## Installation and Usage
 
-Go to directory src and execute the following command in your terminal:
+To run our application, follow these simple steps:
 
+1. Open a terminal window.
+2. Navigate to the src folder using the cd command:
+`cd src`
+3. Execute the following command to compile and run the program:
 `make && ./a.out`
 
-Note: The program will take about 15 seconds (for the first time) to compile before it can be executed.
+Please be aware that the initial compilation process may take up to 15 seconds to complete before the program can be executed.
+
+**Note**: If the program's output exceeds the terminal window's size, you can use the following command to view the entire output and save it to a file for future reference:
+`make && ./a.out | tee output.txt`
+
 
 ## Project Scructure
 
@@ -36,13 +44,9 @@ The application is structured around key components and classes. Understanding t
 
 - Database Operations:
 
-  > [✘] Read classes_per_uc.csv;
+  > [✔] Read database files;
 
-  > [✘] Read classes.csv;
-
-  > [✘] Read students_classes.csv;
-
-  > [✘] Keep requests and changes made in database files
+  > [✘] Keep requests and changes made in database files;
 
 - [✔] Create menu;
 
@@ -50,17 +54,17 @@ The application is structured around key components and classes. Understanding t
 
   > [✘] Schedule consultation by student/class;
 
-  > [✘] List of students withing a class/uc/year
+  > [✘] List of students withing a class/uc/year;
 
-  > [✘] Number of class/students withing a class/uc/year
+  > [✘] Number of class/students withing a class/uc/year;
 
-  > [✘] Sort class/student/Uc (asc, desc, by UC, day of the week, time of the day, etc)
+  > [✘] Sort class/student/Uc (asc, desc, by UC, day of the week, time of the day, etc);
 
 - Requests Handling:
 
-  > [✘] Add, remove, switch (Accept/Deny)
+  > [✘] Add, remove, switch (Accept/Deny);
 
-  > [✘] Undo requests managements (Accept/Deny)
+  > [✘] Undo requests managements (Accept/Deny);
 
 - [✔] Print:
 
