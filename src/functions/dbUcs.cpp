@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "dbUcs.h"
 
 void menuUcs(std::string code, int type, int filter, int order) {

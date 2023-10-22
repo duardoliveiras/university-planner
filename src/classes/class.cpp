@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "class.h"
 
 Slot::Slot(std::string wd, float startH, float dur, std::string t) {

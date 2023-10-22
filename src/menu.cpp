@@ -1,7 +1,3 @@
-#include <iostream>
-#include <utility>
-#include <vector>
-
 #include "menu.h"
 
 void menu() {

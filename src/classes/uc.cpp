@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "uc.h"
 
 myUc::myUc(std::string ucC, std::vector<std::string> classC) {

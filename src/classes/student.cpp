@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "student.h"
 
 myStudent::myStudent(int sCode, std::string sName, std::vector<std::string> ucC,

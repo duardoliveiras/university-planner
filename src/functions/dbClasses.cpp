@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "dbClasses.h"
 
 void menuClasses(std::string code, int type, int filter, int order) {

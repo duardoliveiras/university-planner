@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "dbStudents.h"
 
 void menuStudents(std::string code, int type, int filter, int order) {
