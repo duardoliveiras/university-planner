@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "print.h"
 
 void printClass(const std::vector<myClass> &classes) {
