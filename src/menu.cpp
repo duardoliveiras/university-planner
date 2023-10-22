@@ -4,16 +4,6 @@
 
 #include "menu.h"
 
-void errorMessage();
-void errorCheck(int n);
-void workingMessage();
-
-void dbStudents(int submenu);
-void dbUcs(int submenu);
-void dbClasses(int submenu);
-
-std::string menuSelectInfo(int n);
-
 void menu() {
   int flag = 0;
 
@@ -60,32 +50,35 @@ void menuSeeDatabase() {
   int type = selectType();
 
   if (type == 1) {
+    std::string code = selectCode();
     switch (flag) {
     case 1:
-      menuStudents(type);
+      menuStudents(code);
       break;
     case 2:
-      menuClasses(type);
+      menuClasses(code);
       break;
     case 3:
-      menuUcs(type);
+      menuUcs(code);
       break;
     default:
       errorMessage();
       break;
     }
   } else {
+    if (type == 2) {
+      int filter = selectFilter();
+    }
     int order = selectOrder();
-
     switch (flag) {
     case 1:
-      menuStudents(type, order);
+      menuStudents(type, filter, order);
       break;
     case 2:
-      menuClasses(type, order);
+      menuClasses(type, filter, order);
       break;
     case 3:
-      menuUcs(type, order);
+      menuUcs(type, filter, order);
       break;
     default:
       errorMessage();
@@ -142,6 +135,33 @@ int selectType() {
   std::cout << "| 1) See one                                  |" << std::endl;
   std::cout << "| 2) See a particular group                   |" << std::endl;
   std::cout << "| 3) See all                                  |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+
+  std::cout << "Choose an option: ";
+  std::cin >> flag;
+  errorCheck(flag);
+
+  return flag;
+}
+
+std::string selectCode() {
+  std::string str;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "| 1) Search by code                           |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "Enter the code: ";
+  std::cin >> str;
+  // add error check
+  return str;
+}
+
+int SelectFilter() {
+  int flag = 0;
+
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "| 1) Year 2019                                |" << std::endl;
+  std::cout << "| 2) Year 2020                                |" << std::endl;
+  // add more filter
   std::cout << "-----------------------------------------------" << std::endl;
 
   std::cout << "Choose an option: ";
