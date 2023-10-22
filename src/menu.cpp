@@ -3,8 +3,6 @@
 void menu() {
   int flag = 0;
 
-  system("clear");
-
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
   std::cout << "| 2) Change database                          |" << std::endl;
