@@ -15,15 +15,15 @@ void menuUcs(std::string code, int type, int filter, int order) {
 
   printUc(data);
 }
-std::vector<myUc> filterInfoUc(int n, std::vector<myUc> myVector) {
+std::vector<myUc> filterInfoUc(int n, std::vector<myUc> &myVector) {
   workingMessage();
   return myVector;
 }
-std::vector<myUc> orderInfoUc(int n, std::vector<myUc> myVector) {
+std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &myVector) {
   workingMessage();
   return myVector;
 }
-std::vector<myUc> selectUc(std::string str, std::vector<myUc> myVector) {
+std::vector<myUc> selectUc(std::string str, std::vector<myUc> &myVector) {
   workingMessage();
   return myVector;
 }

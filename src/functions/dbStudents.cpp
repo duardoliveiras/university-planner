@@ -17,17 +17,17 @@ void menuStudents(std::string code, int type, int filter, int order) {
 }
 
 std::vector<myStudent> filterInfoStudent(int n,
-                                         std::vector<myStudent> myVector) {
+                                         std::vector<myStudent> &myVector) {
   workingMessage();
   return myVector;
 }
 std::vector<myStudent> orderInfoStudent(int n,
-                                        std::vector<myStudent> myVector) {
+                                        std::vector<myStudent> &myVector) {
   workingMessage();
   return myVector;
 }
 std::vector<myStudent> selectStudent(std::string str,
-                                     std::vector<myStudent> myVector) {
+                                     std::vector<myStudent> &myVector) {
   workingMessage();
   return myVector;
 }

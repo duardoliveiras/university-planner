@@ -48,6 +48,8 @@ The application is structured around key components and classes. Understanding t
 
   > [✘] Keep requests and changes made in database files;
 
+  > [✔] Print data;
+
 - [✔] Create menu;
 
 - Schedule Managents:
@@ -65,8 +67,6 @@ The application is structured around key components and classes. Understanding t
   > [✘] Add, remove, switch (Accept/Deny);
 
   > [✘] Undo requests managements (Accept/Deny);
-
-- [✔] Print:
 
 - [✘] PDF;
 

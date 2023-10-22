@@ -9,10 +9,11 @@ int menuOrder(int n);
 std::string menuInfo(int n);
 std::vector<myStudent> readAllStudents();
 std::vector<myStudent> filterInfoStudent(int n,
-                                         std::vector<myStudent> myVector);
-std::vector<myStudent> orderInfoStudent(int n, std::vector<myStudent> myVector);
+                                         std::vector<myStudent> &myVector);
+std::vector<myStudent> orderInfoStudent(int n,
+                                        std::vector<myStudent> &myVector);
 std::vector<myStudent> selectStudent(std::string str,
-                                     std::vector<myStudent> myVector);
+                                     std::vector<myStudent> &myVector);
 
 void printStudent(const std::vector<myStudent> &students);
 

@@ -16,16 +16,16 @@ void menuClasses(std::string code, int type, int filter, int order) {
   printClass(data);
 }
 
-std::vector<myClass> filterInfoClass(int n, std::vector<myClass> myVector) {
+std::vector<myClass> filterInfoClass(int n, std::vector<myClass> &myVector) {
 
   return myVector;
 }
-std::vector<myClass> orderInfoClass(int n, std::vector<myClass> myVector) {
+std::vector<myClass> orderInfoClass(int n, std::vector<myClass> &myVector) {
   workingMessage();
   return myVector;
 }
 std::vector<myClass> selectClass(std::string str,
-                                 std::vector<myClass> myVector) {
+                                 std::vector<myClass> &myVector) {
   workingMessage();
   return myVector;
 }
