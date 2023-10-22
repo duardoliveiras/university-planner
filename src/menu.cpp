@@ -66,19 +66,20 @@ void menuSeeDatabase() {
       break;
     }
   } else {
+    int filter;
     if (type == 2) {
-      int filter = selectFilter();
+      filter = selectFilter();
     }
     int order = selectOrder();
     switch (flag) {
     case 1:
-      menuStudents(type, filter, order);
+      menuStudents("", type, filter, order);
       break;
     case 2:
-      menuClasses(type, filter, order);
+      menuClasses("", type, filter, order);
       break;
     case 3:
-      menuUcs(type, filter, order);
+      menuUcs("", type, filter, order);
       break;
     default:
       errorMessage();
@@ -155,7 +156,7 @@ std::string selectCode() {
   return str;
 }
 
-int SelectFilter() {
+int selectFilter() {
   int flag = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;

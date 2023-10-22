@@ -17,5 +17,19 @@ void menuClasses(std::string code, int type, int filter, int order) {
     orderInfoClass(order, data);
   }
 
-  printClass(data);
+  // printClass(data);
+}
+
+std::vector<myClass> filterInfoClass(int n, std::vector<myClass> myVector) {
+  workingMessage();
+  return myVector;
+}
+std::vector<myClass> orderInfoClass(int n, std::vector<myClass> myVector) {
+  workingMessage();
+  return myVector;
+}
+std::vector<myClass> selectClass(std::string str,
+                                 std::vector<myClass> myVector) {
+  workingMessage();
+  return myVector;
 }

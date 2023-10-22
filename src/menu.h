@@ -7,27 +7,20 @@ void errorMessage();
 void errorCheck(int n);
 void workingMessage();
 
-void dbStudents(int submenu);
-void dbUcs(int submenu);
-void dbClasses(int submenu);
+void menu();
 
 void menuSeeDatabase();
 void menuRequests();
 
 void menuStudents(std::string str = "", int type = 0, int filter = 0,
                   int order = 0);
-void menuClasses(int type, int order = 0);
-void menuUcs(int type, int order = 0);
-void requests(int flag, int code);
+void menuClasses(std::string str = "", int type = 0, int filter = 0,
+                 int order = 0);
+void menuUcs(std::string str = "", int type = 0, int filter = 0, int order = 0);
+
 int selectOrder();
 int selectType();
+int selectFilter();
 std::string selectCode();
-int menuCode();
-
-void requests(int n);
-
-std::string menuSelectInfo(int n);
-
-void menu();
 
 #endif

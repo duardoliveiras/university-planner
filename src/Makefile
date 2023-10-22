@@ -20,11 +20,13 @@ CXXFLAGS+=-fsanitize=address -fsanitize=undefined
 # C++ source files to consider in compilation
 CPP_FILES=main.cpp menu.cpp errorMsgs.cpp
 CPP_FILES+=functions/dbClasses.cpp functions/dbStudents.cpp functions/dbUcs.cpp functions/requests.cpp
-CPP_FILES+=inputoutput/readAllClasses.cpp inputoutput/readAllStudents.cpp inputoutput/readAllUcs.cpp inputoutput/keepAllChanges.cpp inputoutput/print.cpp 
-CPP_FILES+=mgmt/filterInfo.cpp mgmt/orderInfo.cpp mgmt/selectInfo.cpp mgmt/requests.cpp
+CPP_FILES+=inputoutput/readAllClasses.cpp inputoutput/readAllStudents.cpp inputoutput/readAllUcs.cpp inputoutput/keepAllChanges.cpp inputoutput/print.cpp  inputoutput/read.cpp
 
 # C++ header files to consider in compilation
-HEADERS=classes/class.h classes/student.h classes/uc.h
+HEADERS=menu.h
+HEADERS+=classes/class.h classes/student.h classes/uc.h
+HEADERS+=functions/dbClasses.h functions/dbStudents.h functions/dbUcs.h 
+
 
 # Name of executable program ('main' by default)
 PROG=a.out

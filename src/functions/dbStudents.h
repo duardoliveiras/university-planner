@@ -18,3 +18,5 @@ void printStudent(const std::vector<myStudent> &students);
 
 void menuStudents(std::string code = "", int type = 0, int filter = 0,
                   int order = 0);
+
+void workingMessage();

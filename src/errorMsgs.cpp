@@ -25,4 +25,4 @@ void errorMessageLine(std::string line) {
 
 void workingMessage() {
   std::cout << "WARNING: Function not done yet." << std::endl;
-}
+} 

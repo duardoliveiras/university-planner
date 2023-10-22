@@ -20,9 +20,9 @@ The application is structured around key components and classes. Understanding t
 
 ## Colaboration
 
-- Bernardo Jose Ponce Figueirado de Brito, up20
+- Bernardo Jose Ponce Figueirado de Brito, -
 - Clarisse Maria Teixeira de Carvalho, up202008444
-- Eduardo Oliveira Silva, up20
+- Eduardo Oliveira Silva, -
 
 ## Features
 

@@ -1,9 +1,9 @@
 #include <iostream>
 
 void workingMessage();
-void addClass();
-void removeClass();
-void switchClass();
+void addClass() { workingMessage(); }
+void removeClass() { workingMessage(); }
+void switchClass() { workingMessage(); }
 
 void requests(int n) {
   switch (n) {

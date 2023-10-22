@@ -1,6 +1,6 @@
+#include <fstream>
 #include <iostream>
 #include <vector>
-#include <fstream>
 
 #include "../classes/uc.h"
 

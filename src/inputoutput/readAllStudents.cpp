@@ -13,46 +13,46 @@ void errorMessageLine(std::string);
 std::vector<myStudent> readAllStudents() { // FUNCTION FINISH
   std::vector<myStudent> data;
 
-  std::ifstream studentsdata("schedule/students_classes.csv");
+  // std::ifstream studentsdata("schedule/students_classes.csv");
 
-  // check if open
-  if (!studentsdata.is_open()) {
-    errorMessageFile();
-  }
+  // // check if open
+  // if (!studentsdata.is_open()) {
+  //   errorMessageFile();
+  // }
 
-  std::string line;
-  bool header = true;
+  // std::string line;
+  // bool header = true;
 
-  while (std::getline(studentsdata, line)) {
+  // while (std::getline(studentsdata, line)) {
 
-    if (header) {
-      header = false;
-      continue;
-    }
+  //   if (header) {
+  //     header = false;
+  //     continue;
+  //   }
 
-    std::stringstream ss(line);
-    std::string token;
-    std::vector<std::string> tokens;
+  //   std::stringstream ss(line);
+  //   std::string token;
+  //   std::vector<std::string> tokens;
 
-    while (std::getline(ss, token, ',')) {
-      tokens.push_back(token);
-    }
+  //   while (std::getline(ss, token, ',')) {
+  //     tokens.push_back(token);
+  //   }
 
-    // Check if file have 4 parameters:
-    // StudentCode,StudentName,UcCode,ClassCode
-    if (tokens.size() < 4) {
-      errorMessageLine(line);
-    }
+  //   // Check if file have 4 parameters:
+  //   // StudentCode,StudentName,UcCode,ClassCode
+  //   if (tokens.size() < 4) {
+  //     errorMessageLine(line);
+  //   }
 
-    int studentCode = std::stoi(tokens[0]);
-    std::string studentName = tokens[1];
-    std::vector<std::string> ucCode = {tokens[2]};
-    std::vector<std::string> classCode = {tokens[3]};
+  //   int studentCode = std::stoi(tokens[0]);
+  //   std::string studentName = tokens[1];
+  //   std::vector<std::string> ucCode = {tokens[2]};
+  //   std::vector<std::string> classCode = {tokens[3]};
 
-    myStudent mystudent(studentCode, studentName, ucCode, classCode);
-    data.push_back(mystudent);
-  }
+  //   myStudent mystudent(studentCode, studentName, ucCode, classCode);
+  //   data.push_back(mystudent);
+  // }
 
-  studentsdata.close();
+  // studentsdata.close();
   return data;
 }
