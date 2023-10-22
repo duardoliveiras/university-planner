@@ -17,7 +17,7 @@ void menuUcs(std::string code, int type, int filter, int order) {
     orderInfoUc(order, data);
   }
 
-  //printUc(data);
+  printUc(data);
 }
 std::vector<myUc> filterInfoUc(int n, std::vector<myUc> myVector) {
   workingMessage();

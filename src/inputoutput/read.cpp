@@ -4,11 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "../classes/class.h"
-
-void workingMessage();
-void errorMessageFile();
-void errorMessageLine(std::string);
+#include "read.h"
 
 std::vector<myClass> readAllClasses() { // FUNCTION FINISH
   std::vector<myClass> data;
@@ -65,17 +61,6 @@ std::vector<myClass> readAllClasses() { // FUNCTION FINISH
   // classesdata.close();
   return data;
 }
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <vector>
-
-#include "../classes/student.h"
-
-void workingMessage();
-void errorMessageFile();
-void errorMessageLine(std::string);
 
 std::vector<myStudent> readAllStudents() { // FUNCTION FINISH
   std::vector<myStudent> data;
@@ -123,13 +108,6 @@ std::vector<myStudent> readAllStudents() { // FUNCTION FINISH
   // studentsdata.close();
   return data;
 }
-#include <fstream>
-#include <iostream>
-#include <vector>
-
-#include "../classes/uc.h"
-
-void workingMessage();
 
 std::vector<myUc> readAllUcs() {
   std::vector<myUc> data;

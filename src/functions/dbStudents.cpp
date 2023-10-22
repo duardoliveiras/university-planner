@@ -17,7 +17,7 @@ void menuStudents(std::string code, int type, int filter, int order) {
     orderInfoStudent(order, data);
   }
 
-  //printStudent(data);
+  printStudent(data);
 }
 
 std::vector<myStudent> filterInfoStudent(int n,

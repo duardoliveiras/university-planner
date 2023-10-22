@@ -62,7 +62,7 @@ The application is structured around key components and classes. Understanding t
 
   > [✘] Undo requests managements (Accept/Deny)
 
-- [✘] Print:
+- [✔] Print:
 
 - [✘] PDF;
 
