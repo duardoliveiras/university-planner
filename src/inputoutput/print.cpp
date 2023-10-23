@@ -2,10 +2,19 @@
 
 // make it better but not now
 void printClass(const std::vector<myClass> &classes) {
-  std::cout << "ClassCode | UcCode " << std::endl;
+  std::cout << "ClassCode | UcCode | Weekday | StartHour | Duration | Type"
+            << std::endl;
 
   for (const auto &myclass : classes) {
-    std::cout << myclass.getClassCode() << " | " << myclass.getUcCode();
+    std::cout << myclass.getClassCode() << " | " << myclass.getUcCode()
+              << " | ";
+
+    const auto &slots = myclass.getSlot();
+    for (const auto &slot : slots) {
+      std::cout << slot.getWeekday() << " | " << slot.getStartHour() << " | "
+                << slot.getDuration() << " | " << slot.getType();
+    }
+
     std::cout << std::endl;
   }
 }

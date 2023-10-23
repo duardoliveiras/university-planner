@@ -11,6 +11,11 @@ struct Slot {
   std::string type;
 
   Slot(std::string wd, float startH, float dur, std::string t);
+
+  std::string getWeekday() const;
+  float getStartHour() const;
+  float getDuration() const;
+  std::string getType() const;
 };
 
 class myClass {
