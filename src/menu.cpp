@@ -116,7 +116,8 @@ int selectOrder() {
   std::cout << "| 2) Sort by uc code desc                     |" << std::endl;
   std::cout << "| 3) Sort by class code asc                   |" << std::endl;
   std::cout << "| 4) Sort by class code desc                  |" << std::endl;
-  std::cout << "| 5) Sort by year                             |" << std::endl;
+  std::cout << "| 5) Sort by year asc                         |" << std::endl;
+  std::cout << "| 6) Sort by year desc                        |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   // add more order like - nº ucs,
   std::cout << "Choose an option: ";

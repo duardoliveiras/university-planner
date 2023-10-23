@@ -36,7 +36,10 @@ std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &myVector) {
     // 4) Sort by class code desc
     break;
   case 5:
-    // 5) Sort by year
+    // 5) Sort by student code asc
+    break;
+  case 6:
+    // 5) Sort by student code desc
     break;
   default:
     errorMessage();

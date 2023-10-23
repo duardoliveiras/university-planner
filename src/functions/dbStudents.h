@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -22,3 +23,7 @@ void menuStudents(std::string code = "", int type = 0, int filter = 0,
 
 void workingMessage();
 void errorMessage();
+
+bool compareStudentsCode(const myStudent &student1, const myStudent &student2);
+bool compareClassesCode(const myStudent &student1, const myStudent &student2);
+bool compareUcsCode(const myStudent &student1, const myStudent &student2);

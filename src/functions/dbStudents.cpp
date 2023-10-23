@@ -22,25 +22,49 @@ std::vector<myStudent> filterInfoStudent(int n,
   workingMessage();
   return myVector;
 }
+
+bool compareStudentsCode(const myStudent &student1, const myStudent &student2) {
+  return student1.getStudentCode() < student2.getStudentCode();
+}
+bool compareClassesCode(const myStudent &student1, const myStudent &student2) {
+  return student1.getClassCode() < student2.getClassCode();
+}
+bool compareUcsCode(const myStudent &student1, const myStudent &student2) {
+  return student1.getUcCode() < student2.getUcCode();
+}
+
 std::vector<myStudent> orderInfoStudent(int n,
                                         std::vector<myStudent> &students) {
-  std::vector<myStudent> orderStudent;
+  std::vector<myStudent> orderStudent = students;
 
   switch (n) {
   case 1:
     // 2) Sort by uc code asc
+    std::sort(orderStudent.begin(), orderStudent.end(), compareUcsCode);
     break;
   case 2:
     // 2) Sort by uc code desc
+    std::sort(orderStudent.begin(), orderStudent.end(), compareUcsCode);
+    std::reverse(orderStudent.begin(), orderStudent.end());
     break;
   case 3:
     // 3) Sort by class code asc
+    std::sort(orderStudent.begin(), orderStudent.end(), compareClassesCode);
+
     break;
   case 4:
     // 4) Sort by class code desc
+    std::sort(orderStudent.begin(), orderStudent.end(), compareClassesCode);
+    std::reverse(orderStudent.begin(), orderStudent.end());
     break;
   case 5:
-    // 5) Sort by year
+    // 5) Sort by student code asc
+    std::sort(orderStudent.begin(), orderStudent.end(), compareStudentsCode);
+    break;
+  case 6:
+    // 6) Sort by student code desc
+    std::sort(orderStudent.begin(), orderStudent.end(), compareStudentsCode);
+    std::reverse(orderStudent.begin(), orderStudent.end());
     break;
   default:
     errorMessage();
