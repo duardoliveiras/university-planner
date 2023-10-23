@@ -119,11 +119,13 @@ void menuRequests() {
 void menuRemove(std::string registrationNumber){
 
     std::string ucCode;
+    std::string classCode;
 
     menuStudents(registrationNumber, 1, 1, 1);
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter UC code to remove " << std::endl;
     std::cin >> ucCode;
+    std::cout << "-----------------------------------------------" << std::endl;
 
     removeUcStudent(ucCode, registrationNumber);
 

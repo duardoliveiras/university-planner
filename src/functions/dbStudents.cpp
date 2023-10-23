@@ -1,5 +1,6 @@
 #include "dbStudents.h"
 #include <algorithm>
+#include <fstream>
 
 void menuStudents(std::string str, int type, int filter, int order) {
   // read Database
@@ -97,15 +98,39 @@ std::vector<myStudent> selectStudent(std::string str, std::vector<myStudent> &st
   return selectStudent;
 }
 
-void removeUcStudent(std::string ucCode, std::string registrationNumber){
+void removeUcStudent(std::string ucCod, std::string registrationNumber){
 
-    std::vector<myStudent> data = readAllStudents();
-    std::vector<myStudent>::iterator it = data.begin();
 
-    data = selectStudent(registrationNumber, data);
-    bool find = false;
 
-   // printStudent(data);
+    std::string studentData = "schedule/students_classes.csv";
+    std::string studentDataNew = "output/studentes_classes_new.csv";
 
+    std::string lineRemove;
     
+
+    std::ifstream in(studentData);
+    std::ofstream out(studentDataNew);
+
+    if(!in.is_open() || !out.is_open()){
+      std::cerr << "Error in open archives" << std::endl;
+    }
+    
+    std::string line;
+
+    while(std::getline(in,line)){
+     
+      size_t studentCodePos = line.find(registrationNumber);
+      size_t ucCodePos = line.find(ucCod);
+
+      if(studentCodePos != std::string::npos && ucCodePos != std::string::npos ){
+        continue;
+      }
+
+      out << line << '\n';
+
+    }
+  
+
+    in.close();
+    out.close();
 }
