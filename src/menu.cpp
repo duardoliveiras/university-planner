@@ -87,28 +87,50 @@ void menuSeeDatabase() {
 }
 
 void menuRequests() {
-  int flag = 0;
+    int flag = 0;
+    std::string registrationNumber;
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "| 1) Add                                      |" << std::endl;
+    std::cout << "| 2) Remove                                   |" << std::endl;
+    std::cout << "| 3) Switch                                   |" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cin >> flag;
 
-  std::cout << flag;
-  // // necessary if user wants to change the classes by usercode
-  // int code = 0;
-  // std::vector<std::pair<int, int>> codes = {{0, 0}};
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter your registration number: " << std::endl;
+    std::cin >> registrationNumber;
 
-  // std::cout << "-----------------------------------------------" <<
-  // std::endl; std::cout << "| 1) Enrollment                               |"
-  // << std::endl; std::cout << "| 2) Removal |" << std::endl; std::cout << "|
-  // 3) Changing                                 |" << std::endl; std::cout <<
-  // "-----------------------------------------------" << std::endl; std::cout
-  // << "Choose an option: "; std::cin >> flag;
+    switch(flag){
+        case(1):
+            break;
+        case(2):
+            menuRemove(registrationNumber);
+            break;
+        case(3):
+            break;
+        default:
+            errorMessage();
+    }
 
-  // errorCheck(flag);
 
-  // code = menuCode();
 
-  // errorCheck(code);
-
-  // requests(flag, code);
 }
+
+void menuRemove(std::string registrationNumber){
+
+    std::string ucCode;
+
+    menuStudents(registrationNumber, 1, 1, 1);
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter UC code to remove " << std::endl;
+    std::cin >> ucCode;
+
+    removeUcStudent(ucCode, registrationNumber);
+
+    
+
+}
+
 
 int selectOrder() {
   int flag = 0;

@@ -31,5 +31,6 @@ void myStudent::setClassCode(std::vector<std::string> n) { classCode = n; }
 
 int myStudent::getStudentCode() const { return studentCode; }
 std::string myStudent::getStudentName() const { return studentName; }
+
 std::vector<std::string> myStudent::getUcCode() const { return ucCode; }
 std::vector<std::string> myStudent::getClassCode() const { return classCode; }

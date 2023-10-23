@@ -1,0 +1,14 @@
+# ninja log v5
+2	595	1698087639146670633	CMakeFiles/AED2324.dir/src/functions/requests.cpp.o	e2daa23be8d5e2e6
+4	620	1698087639170669898	CMakeFiles/AED2324.dir/src/main.cpp.o	db2a625b168aa0e7
+3	653	1698087639206668795	CMakeFiles/AED2324.dir/src/inputoutput/keepAllChanges.cpp.o	273b94826a450d45
+4	698	1698087639250667447	CMakeFiles/AED2324.dir/src/errorMsgs.cpp.o	500e86ee7d26e33e
+4	703	1698087639254667325	CMakeFiles/AED2324.dir/src/menu.cpp.o	3fd436aa4522b4c4
+0	729	1698087639282666467	CMakeFiles/AED2324.dir/src/classes/class.cpp.o	592b6b74fe4be297
+1	825	1698087639378663527	CMakeFiles/AED2324.dir/src/functions/dbClasses.cpp.o	9eb38e18a76da40d
+1	832	1698087639382663403	CMakeFiles/AED2324.dir/src/classes/uc.cpp.o	81a6d65b7d60abf4
+2	841	1698087639394663036	CMakeFiles/AED2324.dir/src/functions/dbStudents.cpp.o	8e0fd6be9b1053eb
+1	846	1698087639398662914	CMakeFiles/AED2324.dir/src/classes/student.cpp.o	cf9569e4beabc406
+2	853	1698087639406662668	CMakeFiles/AED2324.dir/src/functions/dbUcs.cpp.o	b5d6bb6408e9f1a9
+3	977	1698087639530658870	CMakeFiles/AED2324.dir/src/inputoutput/print.cpp.o	f01be6bec681038a
+3	1023	1698087639574657522	CMakeFiles/AED2324.dir/src/inputoutput/read.cpp.o	aa44e413d5b93103

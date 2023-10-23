@@ -6,7 +6,6 @@ void menuStudents(std::string str, int type, int filter, int order) {
   std::vector<myStudent> data = readAllStudents();
 
   if (type == 1) {
-    std::cout << "polaaaaaaa";
     data = selectStudent(str, data);
   } else {
     if (type == 2) {
@@ -86,8 +85,7 @@ std::vector<myStudent> orderInfoStudent(int n,
   return orderStudent;
 }
 
-std::vector<myStudent> selectStudent(std::string str,
-                                     std::vector<myStudent> &students) {
+std::vector<myStudent> selectStudent(std::string str, std::vector<myStudent> &students) {
   std::vector<myStudent> selectStudent;
 
   for (const auto &mystudent : students) {
@@ -97,4 +95,17 @@ std::vector<myStudent> selectStudent(std::string str,
   }
 
   return selectStudent;
+}
+
+void removeUcStudent(std::string ucCode, std::string registrationNumber){
+
+    std::vector<myStudent> data = readAllStudents();
+    std::vector<myStudent>::iterator it = data.begin();
+
+    data = selectStudent(registrationNumber, data);
+    bool find = false;
+
+   // printStudent(data);
+
+    
 }

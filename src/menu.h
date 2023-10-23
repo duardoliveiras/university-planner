@@ -11,6 +11,7 @@ void menu();
 
 void menuSeeDatabase();
 void menuRequests();
+void menuRemove(std::string registrationNumber);
 
 void menuStudents(std::string str = "", int type = 0, int filter = 0,
                   int order = 0);
@@ -23,5 +24,7 @@ int selectType();
 int selectFilter();
 std::string selectCode();
 std::string selectValue();
+
+void removeUcStudent(std::string ucCode, std::string registrationNumber);
 
 #endif
