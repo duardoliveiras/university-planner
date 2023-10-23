@@ -28,9 +28,7 @@ The application is structured around key components and classes. Understanding t
 
 ## Colaboration
 
-- Bernardo Jose Ponce Figueirado de Brito, -
 - Clarisse Maria Teixeira de Carvalho, up202008444
-- Eduardo Oliveira Silva, -
 
 ## Features
 
@@ -56,11 +54,11 @@ The application is structured around key components and classes. Understanding t
 
   > [✘] Schedule consultation by student/class;
 
-  > [✘] List of students withing a class/uc/year;
+  > [✔] List of students withing a class/uc/year;
 
   > [✘] Number of class/students withing a class/uc/year;
 
-  > [✘] Sort class/student/Uc (asc, desc, by UC, day of the week, time of the day, etc);
+  > [✔] Sort class/student/Uc (asc, desc, by code, by year, etc);
 
 - Requests Handling:
 
