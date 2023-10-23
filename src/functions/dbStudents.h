@@ -13,7 +13,7 @@ std::vector<myStudent> filterInfoStudent(int n,
 std::vector<myStudent> orderInfoStudent(int n,
                                         std::vector<myStudent> &myVector);
 std::vector<myStudent> selectStudent(std::string str,
-                                     std::vector<myStudent> &myVector);
+                                     std::vector<myStudent> &students);
 
 void printStudent(const std::vector<myStudent> &students);
 

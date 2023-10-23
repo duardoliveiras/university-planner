@@ -1,0 +1,23 @@
+[H[2J[3J------------ Welcome to our app :) ------------
+| 1) See database                             |
+| 2) Change database                          |
+| 3) Exit                                     |
+-----------------------------------------------
+Choose an option: -----------------------------------------------
+| 1) See students                             |
+| 2) See classes                              |
+| 3) See UC's                                 |
+-----------------------------------------------
+Choose an option: -----------------------------------------------
+| 1) See one                                  |
+| 2) See a particular group                   |
+| 3) See all                                  |
+-----------------------------------------------
+Choose an option: 1-----------------------------------------------
+| 1) Search by code                           |
+-----------------------------------------------
+Enter the code: 202020047100polaaaaaaaStudent Code | Student Name | Uc Code | Class Code
+202020047 | Maria | L.EIC001 | 1LEIC07
+202020047 | Maria | L.EIC002 | 1LEIC07
+202020047 | Maria | L.EIC003 | 1LEIC07
+202020047 | Maria | L.EIC005 | 1LEIC07

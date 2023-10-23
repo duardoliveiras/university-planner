@@ -10,6 +10,7 @@ void menu() {
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Choose an option: ";
   std::cin >> flag;
+  // std::cout << flag;
 
   errorCheck(flag);
 
@@ -42,18 +43,19 @@ void menuSeeDatabase() {
   errorCheck(flag);
 
   int type = selectType();
+  // std::cout << type;
 
   if (type == 1) {
     std::string code = selectCode();
     switch (flag) {
     case 1:
-      menuStudents(code);
+      menuStudents(code, type);
       break;
     case 2:
-      menuClasses(code);
+      menuClasses(code, type);
       break;
     case 3:
-      menuUcs(code);
+      menuUcs(code, type);
       break;
     default:
       errorMessage();
