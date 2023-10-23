@@ -22,10 +22,23 @@ std::vector<myClass> filterInfoClass(int n, std::string str,
   switch (n) {
   case 1:
     // 1) Uc Code
+    for (const auto &myclass : classes) {
+      if (str == myclass.getUcCode()) {
+        filterClass.push_back(myclass);
+      }
+    }
+    break;
   case 2:
     // 2) Class Code
+    for (const auto &myclass : classes) {
+      if (str == myclass.getClassCode()) {
+        filterClass.push_back(myclass);
+      }
+    }
+    break;
   case 3:
     // 3) Year
+    break;
   default:
     errorMessage();
     break;

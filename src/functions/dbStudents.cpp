@@ -24,10 +24,14 @@ std::vector<myStudent> filterInfoStudent(int n, std::string str,
   switch (n) {
   case 1:
     // 1) Uc Code
+
+    break;
   case 2:
     // 2) Class Code
+    break;
   case 3:
     // 3) Year
+    break;
   default:
     errorMessage();
     break;

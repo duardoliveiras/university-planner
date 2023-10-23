@@ -72,6 +72,8 @@ The application is structured around key components and classes. Understanding t
 
 - [✘] Presentation.
 
+**Schedule Class**: press: `1` -> `2` -> `2` -> `2` -> <classcode> -> <ordem>
+
 ## Restrictions
 
 > Note that a student’s schedule may overlap classes if they are neither TP nor PL. That is, there may be overlapping classes between T and TP, between T and T, and between T and PL.
