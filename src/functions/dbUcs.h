@@ -20,3 +20,6 @@ void menuUcs(std::string code = "", int type = 0, int filter = 0,
 
 void workingMessage();
 void errorMessage();
+
+bool compareClassesCode(const myUc &uc1, const myUc &uc2);
+bool compareUcsCode(const myUc &uc1, const myUc &uc2);

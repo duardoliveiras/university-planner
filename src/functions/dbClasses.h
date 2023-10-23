@@ -21,3 +21,6 @@ void menuClasses(std::string code = "", int type = 0, int filter = 0,
 
 void workingMessage();
 void errorMessage();
+
+bool compareClassesCode(const myClass &class1, const myClass &class2);
+bool compareUcsCode(const myClass &class1, const myClass &class2);
