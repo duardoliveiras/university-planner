@@ -1,15 +1,16 @@
 #include "dbStudents.h"
+#include <algorithm>
 
-void menuStudents(std::string code, int type, int filter, int order) {
+void menuStudents(std::string str, int type, int filter, int order) {
   // read Database
   std::vector<myStudent> data = readAllStudents();
 
   if (type == 1) {
     std::cout << "polaaaaaaa";
-    data = selectStudent(code, data);
+    data = selectStudent(str, data);
   } else {
     if (type == 2) {
-      data = filterInfoStudent(filter, data);
+      data = filterInfoStudent(filter, str, data);
     }
     data = orderInfoStudent(order, data);
   }
@@ -17,10 +18,21 @@ void menuStudents(std::string code, int type, int filter, int order) {
   printStudent(data);
 }
 
-std::vector<myStudent> filterInfoStudent(int n,
-                                         std::vector<myStudent> &myVector) {
-  workingMessage();
-  return myVector;
+std::vector<myStudent> filterInfoStudent(int n, std::string str,
+                                         std::vector<myStudent> &students) {
+  std::vector<myStudent> filterStudent;
+  switch (n) {
+  case 1:
+    // 1) Uc Code
+  case 2:
+    // 2) Class Code
+  case 3:
+    // 3) Year
+  default:
+    errorMessage();
+    break;
+  }
+  return filterStudent;
 }
 
 bool compareStudentsCode(const myStudent &student1, const myStudent &student2) {

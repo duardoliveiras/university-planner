@@ -63,19 +63,21 @@ void menuSeeDatabase() {
     }
   } else {
     int filter;
+    std::string value;
     if (type == 2) {
       filter = selectFilter();
+      value = selectValue();
     }
     int order = selectOrder();
     switch (flag) {
     case 1:
-      menuStudents("", type, filter, order);
+      menuStudents(value, type, filter, order);
       break;
     case 2:
-      menuClasses("", type, filter, order);
+      menuClasses(value, type, filter, order);
       break;
     case 3:
-      menuUcs("", type, filter, order);
+      menuUcs(value, type, filter, order);
       break;
     default:
       errorMessage();
@@ -151,19 +153,19 @@ std::string selectCode() {
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Enter the code: ";
   std::cin >> str;
-  // add error check
+  // errorcheck (str)
+
   return str;
 }
 
 int selectFilter() {
   int flag = 0;
 
+  // add more filter
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "| 1) Uc Code                                  |" << std::endl;
   std::cout << "| 2) Class Code                               |" << std::endl;
-  std::cout << "| 2) Year                                     |" << std::endl;
-
-  // add more filter
+  std::cout << "| 3) Year                                     |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
 
   std::cout << "Choose an option: ";
@@ -171,4 +173,14 @@ int selectFilter() {
   errorCheck(flag);
 
   return flag;
+}
+
+std::string selectValue() {
+  std::string str;
+
+  std::cout << "Enter the value: ";
+  std::cin >> str;
+  // errorcheck (str)
+
+  return str;
 }

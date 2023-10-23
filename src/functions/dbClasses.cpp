@@ -1,14 +1,14 @@
 #include "dbClasses.h"
 
-void menuClasses(std::string code, int type, int filter, int order) {
+void menuClasses(std::string str, int type, int filter, int order) {
   // read Database
   std::vector<myClass> data = readAllClasses();
 
   if (type == 1) {
-    data = selectClass(code, data);
+    data = selectClass(str, data);
   } else {
     if (type == 2) {
-      data = filterInfoClass(filter, data);
+      data = filterInfoClass(filter, str, data);
     }
     data = orderInfoClass(order, data);
   }
@@ -16,9 +16,21 @@ void menuClasses(std::string code, int type, int filter, int order) {
   printClass(data);
 }
 
-std::vector<myClass> filterInfoClass(int n, std::vector<myClass> &myVector) {
-  workingMessage();
-  return myVector;
+std::vector<myClass> filterInfoClass(int n, std::string str,
+                                     std::vector<myClass> &classes) {
+  std::vector<myClass> filterClass;
+  switch (n) {
+  case 1:
+    // 1) Uc Code
+  case 2:
+    // 2) Class Code
+  case 3:
+    // 3) Year
+  default:
+    errorMessage();
+    break;
+  }
+  return filterClass;
 }
 
 bool compareClassesCode(const myClass &class1, const myClass &class2) {

@@ -12,9 +12,9 @@ int menuGroup(int n);
 int menuOrder(int n);
 std::string menuInfo(int n);
 std::vector<myUc> readAllUcs();
-std::vector<myUc> filterInfoUc(int n, std::vector<myUc> &myVector);
-std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &myVector);
-std::vector<myUc> selectUc(std::string str, std::vector<myUc> &myVector);
+std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs);
+std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs);
+std::vector<myUc> selectUc(std::string str, std::vector<myUc> &ucs);
 
 void printUc(const std::vector<myUc> &ucs);
 

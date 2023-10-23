@@ -1,23 +1,34 @@
 #include "dbUcs.h"
 
-void menuUcs(std::string code, int type, int filter, int order) {
+void menuUcs(std::string str, int type, int filter, int order) {
   // read Database
   std::vector<myUc> data = readAllUcs();
 
   if (type == 1) {
-    data = selectUc(code, data);
+    data = selectUc(str, data);
   } else {
     if (type == 2) {
-      data = filterInfoUc(filter, data);
+      data = filterInfoUc(filter, str, data);
     }
     data = orderInfoUc(order, data);
   }
 
   printUc(data);
 }
-std::vector<myUc> filterInfoUc(int n, std::vector<myUc> &myVector) {
-  workingMessage();
-  return myVector;
+std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs) {
+  std::vector<myUc> filterUc;
+  switch (n) {
+  case 1:
+    // 1) Uc Code
+  case 2:
+    // 2) Class Code
+  case 3:
+    // 3) Year
+  default:
+    errorMessage();
+    break;
+  }
+  return filterUc;
 }
 
 bool compareClassesCode(const myUc &uc1, const myUc &uc2) {

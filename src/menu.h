@@ -22,5 +22,6 @@ int selectOrder();
 int selectType();
 int selectFilter();
 std::string selectCode();
+std::string selectValue();
 
 #endif

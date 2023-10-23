@@ -12,10 +12,10 @@ int menuGroup(int n);
 int menuOrder(int n);
 std::string menuInfo(int n);
 std::vector<myStudent> readAllStudents();
-std::vector<myStudent> filterInfoStudent(int n,
-                                         std::vector<myStudent> &myVector);
+std::vector<myStudent> filterInfoStudent(int n, std::string str,
+                                         std::vector<myStudent> &students);
 std::vector<myStudent> orderInfoStudent(int n,
-                                        std::vector<myStudent> &myVector);
+                                        std::vector<myStudent> &students);
 std::vector<myStudent> selectStudent(std::string str,
                                      std::vector<myStudent> &students);
 

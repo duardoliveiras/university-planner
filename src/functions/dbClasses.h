@@ -12,10 +12,11 @@ int menuGroup(int n);
 int menuOrder(int n);
 std::string menuInfo(int n);
 std::vector<myClass> readAllClasses();
-std::vector<myClass> filterInfoClass(int n, std::vector<myClass> &myVector);
-std::vector<myClass> orderInfoClass(int n, std::vector<myClass> &myVector);
+std::vector<myClass> filterInfoClass(int n, std::string str,
+                                     std::vector<myClass> &classes);
+std::vector<myClass> orderInfoClass(int n, std::vector<myClass> &classes);
 std::vector<myClass> selectClass(std::string str,
-                                 std::vector<myClass> &myVector);
+                                 std::vector<myClass> &classes);
 
 void printClass(const std::vector<myClass> &classes);
 
