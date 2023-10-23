@@ -11,7 +11,6 @@
 #include "../classes/student.h"
 #include "../classes/uc.h"
 
-void workingMessage();
 void errorMessageFile();
 void errorMessageLine(std::string);
 

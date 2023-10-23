@@ -1,6 +1,5 @@
 #include "print.h"
 
-// make it better but not now
 void printClass(const std::vector<myClass> &classes) {
   std::cout << "ClassCode | UcCode | Weekday | StartHour | Duration | Type"
             << std::endl;

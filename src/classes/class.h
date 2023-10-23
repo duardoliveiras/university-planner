@@ -1,8 +1,9 @@
+#ifndef MYCLASS_H
+#define MYCLASS_H
+
 #include <iostream>
 #include <string>
 #include <vector>
-#ifndef MYCLASS_H
-#define MYCLASS_H
 
 struct Slot {
   std::string weekday;
@@ -10,8 +11,10 @@ struct Slot {
   float duration;
   std::string type;
 
+  // Constructor functions
   Slot(std::string wd, float startH, float dur, std::string t);
 
+  // Getters functions
   std::string getWeekday() const;
   float getStartHour() const;
   float getDuration() const;
@@ -25,6 +28,7 @@ private:
   std::vector<Slot> slot;
 
 public:
+  // Constructor functions
   myClass(std::string cCode, std::string ucC, const std::vector<Slot> &s);
   myClass();
 
@@ -39,4 +43,5 @@ public:
   std::string getUcCode() const;
   std::vector<Slot> getSlot() const;
 };
+
 #endif

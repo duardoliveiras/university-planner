@@ -1,8 +1,9 @@
+#ifndef MYSTUDENT_H
+#define MYSTUDENT_H
+
 #include <iostream>
 #include <string>
 #include <vector>
-#ifndef MYSTUDENT_H
-#define MYSTUDENT_H
 
 class myStudent {
 private:
@@ -12,6 +13,7 @@ private:
   std::vector<std::string> classCode;
 
 public:
+  // Constructor functions
   myStudent(int sCode, std::string sName, std::vector<std::string> ucC,
             std::vector<std::string> classC);
   myStudent();
@@ -30,4 +32,5 @@ public:
   std::vector<std::string> getUcCode() const;
   std::vector<std::string> getClassCode() const;
 };
+
 #endif

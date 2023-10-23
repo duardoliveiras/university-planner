@@ -1,8 +1,9 @@
+#ifndef MYUC_H
+#define MYUC_H
+
 #include <iostream>
 #include <string>
 #include <vector>
-#ifndef MYUC_H
-#define MYUC_H
 
 class myUc {
 private:
@@ -10,6 +11,7 @@ private:
   std::vector<std::string> classCode;
 
 public:
+  // Constructor functions
   myUc(std::string ucC, std::vector<std::string> classC);
   myUc();
 
@@ -22,4 +24,5 @@ public:
   std::string getUcCode() const;
   std::vector<std::string> getClassCode() const;
 };
+
 #endif

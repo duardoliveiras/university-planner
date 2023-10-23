@@ -6,7 +6,7 @@ std::vector<myClass> readAllClasses() {
 
   std::ifstream classesdata("schedule/classes.csv");
 
-  // check if open
+  // Check if open
   if (!classesdata.is_open()) {
     errorMessageFile();
   }
@@ -38,13 +38,11 @@ std::vector<myClass> readAllClasses() {
     std::string classCode = tokens[0];
     std::string ucCode = tokens[1];
 
-    // Parse Slot data
     std::string weekday = tokens[2];
     float startHour = std::stof(tokens[3]);
     float duration = std::stof(tokens[4]);
     std::string type = tokens[5];
 
-    // Create Slot object and add it to the vector
     Slot slot{weekday, startHour, duration, type};
 
     std::vector<Slot> slots = {slot};
@@ -61,7 +59,7 @@ std::vector<myStudent> readAllStudents() {
 
   std::ifstream studentsdata("schedule/students_classes.csv");
 
-  // check if open
+  // Check if open
   if (!studentsdata.is_open()) {
     errorMessageFile();
   }
@@ -90,6 +88,7 @@ std::vector<myStudent> readAllStudents() {
       errorMessageLine(line);
     }
 
+    // Store information
     int studentCode = std::stoi(tokens[0]);
     std::string studentName = tokens[1];
     std::vector<std::string> ucCode = {tokens[2]};
@@ -108,7 +107,7 @@ std::vector<myUc> readAllUcs() {
 
   std::ifstream ucdata("schedule/classes_per_uc.csv");
 
-  // check if open
+  // Check if open
   if (!ucdata.is_open()) {
     errorMessageFile();
   }
@@ -136,6 +135,7 @@ std::vector<myUc> readAllUcs() {
       errorMessageLine(line);
     }
 
+    // Store information
     std::string ucCode = tokens[0];
     std::vector<std::string> classCode = {tokens[1]};
 

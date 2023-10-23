@@ -1,3 +1,6 @@
+#ifndef DBCLASSES_H
+#define DBCLASSES_H
+
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -24,3 +27,5 @@ void errorMessage();
 
 bool compareClassesCode(const myClass &class1, const myClass &class2);
 bool compareUcsCode(const myClass &class1, const myClass &class2);
+
+#endif

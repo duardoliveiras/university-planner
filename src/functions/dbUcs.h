@@ -1,3 +1,6 @@
+#ifndef DBUCS_H
+#define DBUCS_H
+
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -23,3 +26,5 @@ void errorMessage();
 
 bool compareClassesCode(const myUc &uc1, const myUc &uc2);
 bool compareUcsCode(const myUc &uc1, const myUc &uc2);
+
+#endif

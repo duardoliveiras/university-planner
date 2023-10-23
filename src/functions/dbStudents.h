@@ -1,3 +1,6 @@
+#ifndef DBSTUDENTS_H
+#define DBSTUDENTS_H
+
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -27,3 +30,5 @@ void errorMessage();
 bool compareStudentsCode(const myStudent &student1, const myStudent &student2);
 bool compareClassesCode(const myStudent &student1, const myStudent &student2);
 bool compareUcsCode(const myStudent &student1, const myStudent &student2);
+
+#endif
