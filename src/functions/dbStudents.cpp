@@ -3,10 +3,7 @@
 void menuStudents(std::string code, int type, int filter, int order) {
   // read Database
   std::vector<myStudent> data = readAllStudents();
-  std::cout << code;
-  std::cout << type;
-  std::cout << filter;
-  std::cout << order;
+
   if (type == 1) {
     std::cout << "polaaaaaaa";
     data = selectStudent(code, data);

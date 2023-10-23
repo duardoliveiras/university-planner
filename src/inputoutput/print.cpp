@@ -35,7 +35,7 @@ void printUc(const std::vector<myUc> &ucs) {
   std::cout << "UcCode | ClassCode" << std::endl;
 
   for (const auto &myuc : ucs) {
-    std::cout << myuc.getUcCode();
+    std::cout << myuc.getUcCode() << " | ";
 
     const auto &classCodes = myuc.getClassCode();
     for (const auto &classCode : classCodes) {
