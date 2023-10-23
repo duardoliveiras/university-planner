@@ -24,7 +24,7 @@ Please be aware that the initial compilation process may take up to 15 seconds t
 
 The application is structured around key components and classes. Understanding the UML diagram is essential for grasping the relationships between different modules.
 
-![uml](uml.drawio.png)
+![uml](docs/uml.drawio.png)
 
 ## Colaboration
 
