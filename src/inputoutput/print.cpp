@@ -1,14 +1,13 @@
 #include "print.h"
 
+// make it better but not now
 void printClass(const std::vector<myClass> &classes) {
-  std::cout
-      << "ClassCode | UcCode | Weekday | StartHour | Duration | Type | Date"
-      << std::endl;
+  std::cout << "ClassCode | UcCode " << std::endl;
 
   for (const auto &myclass : classes) {
     std::cout << myclass.getClassCode() << " | " << myclass.getUcCode();
+    std::cout << std::endl;
   }
-  std::cout << std::endl;
 }
 
 void printStudent(const std::vector<myStudent> &students) {

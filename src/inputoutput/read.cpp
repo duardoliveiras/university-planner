@@ -30,7 +30,7 @@ std::vector<myClass> readAllClasses() {
 
     // Check if file has at least 7 parameters:
     // ClassCode,UcCode,Weekday,StartHour,Duration,Type,Date
-    if (tokens.size() < 7) {
+    if (tokens.size() < 6) {
       errorMessageLine(line);
     }
 
@@ -43,7 +43,6 @@ std::vector<myClass> readAllClasses() {
     float startHour = std::stof(tokens[3]);
     float duration = std::stof(tokens[4]);
     std::string type = tokens[5];
-    std::string date = tokens[6];
 
     // Create Slot object and add it to the vector
     Slot slot{weekday, startHour, duration, type};

@@ -33,13 +33,13 @@ std::vector<myStudent> orderInfoStudent(int n,
 
 std::vector<myStudent> selectStudent(std::string str,
                                      std::vector<myStudent> &students) {
-  std::vector<myStudent> scheduleStudent;
+  std::vector<myStudent> selectStudent;
 
-  for (const auto &student : students) {
-    if (str == std::to_string(student.getStudentCode())) {
-      scheduleStudent.push_back(student);
+  for (const auto &mystudent : students) {
+    if (str == std::to_string(mystudent.getStudentCode())) {
+      selectStudent.push_back(mystudent);
     }
   }
 
-  return scheduleStudent;
+  return selectStudent;
 }
