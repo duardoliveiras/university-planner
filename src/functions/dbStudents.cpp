@@ -9,9 +9,9 @@ void menuStudents(std::string code, int type, int filter, int order) {
     data = selectStudent(code, data);
   } else {
     if (type == 2) {
-      // filterInfoStudent(filter, data);
+      data = filterInfoStudent(filter, data);
     }
-    // orderInfoStudent(order, data);
+    data = orderInfoStudent(order, data);
   }
 
   printStudent(data);
@@ -23,9 +23,31 @@ std::vector<myStudent> filterInfoStudent(int n,
   return myVector;
 }
 std::vector<myStudent> orderInfoStudent(int n,
-                                        std::vector<myStudent> &myVector) {
-  workingMessage();
-  return myVector;
+                                        std::vector<myStudent> &students) {
+  std::vector<myStudent> orderStudent;
+
+  switch (n) {
+  case 1:
+    // 2) Sort by uc code asc
+    break;
+  case 2:
+    // 2) Sort by uc code desc
+    break;
+  case 3:
+    // 3) Sort by class code asc
+    break;
+  case 4:
+    // 4) Sort by class code desc
+    break;
+  case 5:
+    // 5) Sort by year
+    break;
+  default:
+    errorMessage();
+    break;
+  }
+
+  return orderStudent;
 }
 
 std::vector<myStudent> selectStudent(std::string str,

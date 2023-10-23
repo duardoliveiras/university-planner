@@ -8,9 +8,9 @@ void menuUcs(std::string code, int type, int filter, int order) {
     data = selectUc(code, data);
   } else {
     if (type == 2) {
-      // filterInfoUc(filter, data);
+      data = filterInfoUc(filter, data);
     }
-    // orderInfoUc(order, data);
+    data = orderInfoUc(order, data);
   }
 
   printUc(data);
@@ -20,8 +20,30 @@ std::vector<myUc> filterInfoUc(int n, std::vector<myUc> &myVector) {
   return myVector;
 }
 std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &myVector) {
-  workingMessage();
-  return myVector;
+  std::vector<myUc> orderUc;
+
+  switch (n) {
+  case 1:
+    // 2) Sort by uc code asc
+    break;
+  case 2:
+    // 2) Sort by uc code desc
+    break;
+  case 3:
+    // 3) Sort by class code asc
+    break;
+  case 4:
+    // 4) Sort by class code desc
+    break;
+  case 5:
+    // 5) Sort by year
+    break;
+  default:
+    errorMessage();
+    break;
+  }
+
+  return orderUc;
 }
 std::vector<myUc> selectUc(std::string str, std::vector<myUc> &ucs) {
   std::vector<myUc> selectUc;

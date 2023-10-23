@@ -112,9 +112,11 @@ int selectOrder() {
   int flag = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
-  std::cout << "| 1) Sort alphabetic asc                      |" << std::endl;
-  std::cout << "| 2) Sort alphabetic desc                     |" << std::endl;
-  std::cout << "| 3) Sort by code                             |" << std::endl;
+  std::cout << "| 1) Sort by uc code asc                      |" << std::endl;
+  std::cout << "| 2) Sort by uc code desc                     |" << std::endl;
+  std::cout << "| 3) Sort by class code asc                   |" << std::endl;
+  std::cout << "| 4) Sort by class code desc                  |" << std::endl;
+  std::cout << "| 5) Sort by year                             |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   // add more order like - nº ucs,
   std::cout << "Choose an option: ";
@@ -156,8 +158,10 @@ int selectFilter() {
   int flag = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
-  std::cout << "| 1) Year 2019                                |" << std::endl;
-  std::cout << "| 2) Year 2020                                |" << std::endl;
+  std::cout << "| 1) Uc Code                                  |" << std::endl;
+  std::cout << "| 2) Class Code                               |" << std::endl;
+  std::cout << "| 2) Year                                     |" << std::endl;
+
   // add more filter
   std::cout << "-----------------------------------------------" << std::endl;
 

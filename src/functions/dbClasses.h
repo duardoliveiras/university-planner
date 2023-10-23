@@ -19,3 +19,4 @@ void menuClasses(std::string code = "", int type = 0, int filter = 0,
                  int order = 0);
 
 void workingMessage();
+void errorMessage();
