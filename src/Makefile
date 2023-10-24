@@ -21,13 +21,15 @@ CXXFLAGS+=-fsanitize=address -fsanitize=undefined
 CPP_FILES=main.cpp menu.cpp errorMsgs.cpp
 CPP_FILES+=functions/dbClasses.cpp functions/dbStudents.cpp functions/dbUcs.cpp functions/requests.cpp
 CPP_FILES+=inputoutput/read.cpp inputoutput/keepAllChanges.cpp inputoutput/print.cpp
+# Adicione os arquivos studentComp.cpp e ClassComp.cpp aqui
+CPP_FILES+=classes/studentComp.cpp classes/ClassComp.cpp
 
 # C++ header files to consider in compilation
 HEADERS=menu.h
+HEADERS+=classes/ClassComp.h classes/studentComp.h
 HEADERS+=classes/class.h classes/student.h classes/uc.h
 HEADERS+=functions/dbClasses.h functions/dbStudents.h functions/dbUcs.h 
 HEADERS+=inputoutput/print.h inputoutput/read.h
-
 
 # Name of executable program ('main' by default)
 PROG=a.out
