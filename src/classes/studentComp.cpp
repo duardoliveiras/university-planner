@@ -22,3 +22,5 @@ void studentComp::addClass(const ClassComp& classe) {
     classes.push_back(classe);
 }
 
+
+

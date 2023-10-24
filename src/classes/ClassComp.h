@@ -16,6 +16,13 @@ public:
     double getDuration() const;
     std::string getType() const;
 
+    void setDay(std::string day);
+    void setStartTime(double startTime);
+    void setDuration(double duration);
+    void setType(std::string type);
+
+    bool operator<(const ClassComp& other) const;
+
 private:
     std::string classCode;
     std::string ucCode;

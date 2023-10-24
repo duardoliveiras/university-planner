@@ -6,6 +6,10 @@ ClassComp::ClassComp(const std::string& classCode, const std::string& ucCode){
     this->ucCode = ucCode;
 }
 
+bool ClassComp::operator<(const ClassComp& other) const {
+    return classCode < other.classCode;
+}
+
 std::string ClassComp::getClassCode() const {
     return classCode;
 }
@@ -30,3 +34,18 @@ std::string ClassComp::getType() const {
     return type;
 }
 
+void ClassComp::setDay(std::string day) {
+    this->day = day;
+}
+
+void ClassComp::setStartTime(double startTime) {
+    this->startTime = startTime;
+}
+
+void ClassComp::setDuration(double duration) {
+    this->duration = duration;
+}
+
+void ClassComp::setType(std::string type) {
+    this->type = type;
+}

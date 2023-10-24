@@ -7,12 +7,63 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <set>
 
 void menu();
 
 int main() {
   system("clear");
 
+
+std::map<std::string, ClassComp> classes;
+std::ifstream file2("schedule/classes.csv");
+std::string line2;
+
+if (!file2.is_open()) {
+    std::cerr << "Error opening file" << std::endl;
+}
+
+std::getline(file2, line2);
+
+while (std::getline(file2, line2)) {
+    std::istringstream ss(line2);
+    std::string classCode, ucCode, day, type;
+    double startTime, duration;
+
+    std::getline(ss, classCode, ',');
+    std::getline(ss, ucCode, ',');
+    std::getline(ss, day, ',');
+    ss >> startTime;
+    ss.ignore();
+    ss >> duration;
+    ss.ignore();
+    getline(ss, type, ',');
+
+    ClassComp classe(classCode, ucCode);
+
+    classe.setDay(day);
+    classe.setStartTime(startTime);
+    classe.setDuration(duration);
+    classe.setType(type);
+
+
+    classes.emplace(classCode + ucCode + type, classe);
+
+}
+
+file2.close();
+
+/*
+for(const auto& pair : classes){
+  ClassComp classe = pair.second;
+  std::cout << classe.getClassCode() << " - ";
+  std::cout << classe.getUcCode() << " - ";
+  std::cout << classe.getDay() << " - ";
+  std::cout << classe.getStartTime() << " - ";
+  std::cout << classe.getDuration() << " - ";
+  std::cout << classe.getType() << std::endl;
+}
+*/
 
 
 std::map<std::string, studentComp> students;
@@ -49,14 +100,32 @@ while (std::getline(file, line)) {
 file.close();
 
 
+
+
+// print tree
+/*
 for(const auto& pair : students){
   std::string studentCode = pair.first;
   studentComp student = pair.second;
-
-  std::cout << "Student code: " << studentCode << std::endl;
+  int count = 0;
+  std::cout << "Student code: " << studentCode << " ";
   std::cout << "Student name: " << student.getName() << std::endl;
+  std::cout << "--- Classes ---" << std::endl;
+
+  for(const ClassComp& classe : student.getClasses()){
+    std::cout << classe.getUcCode() << " - ";
+    std::cout << classe.getClassCode() << std::endl;
+   
+    count++;
+
+  }
+  std::cout << "Total classes: " << count << std::endl;
 
 }
+*/
+
+  
+  
   
   menu();
 
