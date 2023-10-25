@@ -98,9 +98,20 @@ std::vector<myStudent> selectStudent(std::string str, std::vector<myStudent> &st
   return selectStudent;
 }
 
+
+
+void removeUcStudent(std::string ucCod, std::map<std::string, studentComp> &students){
+
+  std::cout<<"chama no pagode" << std::endl;
+
+}
+
+
+
+
+
+/* 
 void removeUcStudent(std::string ucCod, std::string registrationNumber){
-
-
 
     std::string studentData = "schedule/students_classes.csv";
     std::string studentDataNew = "output/studentes_classes_new.csv";
@@ -134,3 +145,4 @@ void removeUcStudent(std::string ucCod, std::string registrationNumber){
     in.close();
     out.close();
 }
+*/

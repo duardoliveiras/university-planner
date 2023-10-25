@@ -121,13 +121,34 @@ void menuRemove(std::string registrationNumber){
     std::string ucCode;
     std::string classCode;
 
-    menuStudents(registrationNumber, 1, 1, 1);
+    std::map<std::string, ClassComp> classes = read_classes();
+    std::map<std::string, studentComp> students = read_students();
+
+    auto it = students.find(registrationNumber);
+
+
+    if(it == students.end()){
+        std::cout << "-----------------------------------------------" << std::endl;
+        std::cout << "Registration number not found" << std::endl;
+        std::cout << "-----------------------------------------------" << std::endl;
+        menuRequests();
+    }else{
+        std::cout << "-----------------------------------------------" << std::endl;
+        for(const auto& classe : it->second.getClasses()){
+              std::cout << classe.getUcCode() << " - ";
+              std::cout << classe.getClassCode() << std::endl;
+        }
+        
+        
+    }
+
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter UC code to remove " << std::endl;
     std::cin >> ucCode;
     std::cout << "-----------------------------------------------" << std::endl;
 
-    removeUcStudent(ucCode, registrationNumber);
+    
+
 
     
 

@@ -5,8 +5,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
 #include "../classes/student.h"
+#include "../classes/studentComp.h"
 
 int menuGroup(int n);
 int menuOrder(int n);
@@ -24,7 +26,7 @@ void printStudent(const std::vector<myStudent> &students);
 void menuStudents(std::string code = "", int type = 0, int filter = 0,
                   int order = 0);
 
-void removeUcStudent(std::string ucCode, std::string registrationNumber);
+void removeUcStudent(std::string ucCod, std::map<std::string, studentComp> &students);
 
 void workingMessage();
 void errorMessage();

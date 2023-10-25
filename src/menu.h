@@ -2,6 +2,11 @@
 #define MENU_H
 
 #include <iostream>
+#include <map>
+
+#include "classes/studentComp.h"
+#include "classes/ClassComp.h"
+#include "inputoutput/read.h"
 
 void errorMessage();
 void errorCheck(int n);
@@ -25,6 +30,8 @@ int selectFilter();
 std::string selectCode();
 std::string selectValue();
 
-void removeUcStudent(std::string ucCode, std::string registrationNumber);
+
+
+
 
 #endif

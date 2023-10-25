@@ -18,9 +18,12 @@ const std::vector<ClassComp>& studentComp::getClasses() const {
     return classes;
 }
 
+
 void studentComp::addClass(const ClassComp& classe) {
     classes.push_back(classe);
 }
+
+
 
 
 
