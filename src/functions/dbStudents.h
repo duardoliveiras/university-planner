@@ -26,7 +26,7 @@ void printStudent(const std::vector<myStudent> &students);
 void menuStudents(std::string code = "", int type = 0, int filter = 0,
                   int order = 0);
 
-void removeUcStudent(std::string ucCod, std::map<std::string, studentComp> &students);
+void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
 
 void workingMessage();
 void errorMessage();

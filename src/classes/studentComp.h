@@ -14,7 +14,7 @@ public:
     std::string getCode() const;
     std::string getName() const;
     //const std::vector<ClassComp>& getClasses() const;
-    const std::vector<ClassComp>& getClasses() const;
+    std::vector<ClassComp>& getClasses();
     void addClass(const ClassComp& classe);
 
 

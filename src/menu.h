@@ -30,6 +30,7 @@ int selectFilter();
 std::string selectCode();
 std::string selectValue();
 
+void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
 
 
 

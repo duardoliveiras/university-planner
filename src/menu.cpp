@@ -147,7 +147,13 @@ void menuRemove(std::string registrationNumber){
     std::cin >> ucCode;
     std::cout << "-----------------------------------------------" << std::endl;
 
-    
+    removeUcStudent(ucCode, it); 
+
+    std::cout<< "Removido com sucesso" << std::endl;
+     for(const auto& classe : it->second.getClasses()){
+              std::cout << classe.getUcCode() << " - ";
+              std::cout << classe.getClassCode() << std::endl;
+        }
 
 
     

@@ -100,10 +100,13 @@ std::vector<myStudent> selectStudent(std::string str, std::vector<myStudent> &st
 
 
 
-void removeUcStudent(std::string ucCod, std::map<std::string, studentComp> &students){
+void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it){
 
-  std::cout<<"chama no pagode" << std::endl;
-
+    for(unsigned i = 0; i < it->second.getClasses().size(); i++){
+        if(it->second.getClasses()[i].getUcCode() == ucCod){
+            it->second.getClasses().erase(it->second.getClasses().begin() + i);
+        }
+    }
 }
 
 

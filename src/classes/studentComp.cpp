@@ -14,9 +14,11 @@ std::string studentComp::getName() const {
     return name;
 }
 
-const std::vector<ClassComp>& studentComp::getClasses() const {
+std::vector<ClassComp>& studentComp::getClasses() {
     return classes;
 }
+
+
 
 
 void studentComp::addClass(const ClassComp& classe) {
