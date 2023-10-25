@@ -13,6 +13,7 @@ private:
 public:
   // Constructor functions
   myUc(std::string ucC, std::vector<std::string> classC);
+  myUc(std::string ucC);
   myUc();
 
   // Setter functions
@@ -23,6 +24,8 @@ public:
   // Getters functions
   std::string getUcCode() const;
   std::vector<std::string> getClassCode() const;
+
+  void addClass(std::string classCode);
 };
 
 #endif

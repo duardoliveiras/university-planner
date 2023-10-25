@@ -1,8 +1,18 @@
 #include "menu.h"
 
+
+std::map<std::string, studentComp> students = read_students();
+std::map<std::string, myUc> uc_tree = read_ucs();
+std::vector<ClassComp> classes = read_classes();
+
+
+
 void menu() {
   int flag = 0;
 
+
+
+  std::vector<myUc> ucs = readAllUcs();
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
   std::cout << "| 2) Change database                          |" << std::endl;
@@ -88,44 +98,27 @@ void menuSeeDatabase() {
 
 void menuRequests() {
     int flag = 0;
-    std::string registrationNumber;
+    
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "| 1) Add                                      |" << std::endl;
     std::cout << "| 2) Remove                                   |" << std::endl;
     std::cout << "| 3) Switch                                   |" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
     std::cin >> flag;
-
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "Enter your registration number: " << std::endl;
-    std::cin >> registrationNumber;
-
-    switch(flag){
-        case(1):
-            break;
-        case(2):
-            menuRemove(registrationNumber);
-            break;
-        case(3):
-            break;
-        default:
-            errorMessage();
-    }
+    menuStudentCode(flag);
 
 
 
 }
 
-void menuRemove(std::string registrationNumber){
+void menuStudentCode(int flag){
 
-    std::string ucCode;
-    std::string classCode;
-
-    std::map<std::string, ClassComp> classes = read_classes();
-    std::map<std::string, studentComp> students = read_students();
+    std::string registrationNumber;
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter your registration number: " << std::endl;
+    std::cin >> registrationNumber;
 
     auto it = students.find(registrationNumber);
-
 
     if(it == students.end()){
         std::cout << "-----------------------------------------------" << std::endl;
@@ -137,10 +130,29 @@ void menuRemove(std::string registrationNumber){
         for(const auto& classe : it->second.getClasses()){
               std::cout << classe.getUcCode() << " - ";
               std::cout << classe.getClassCode() << std::endl;
-        }
-        
-        
+        }        
     }
+
+        switch(flag){
+        case(1):
+            menuAdd(it);
+            break;
+        case(2):
+            menuRemove(it);
+            break;
+        case(3):
+            break;
+        default:
+            errorMessage();
+    }
+
+
+}
+
+void menuRemove(std::map<std::string, studentComp>::iterator& it){
+
+    std::string ucCode;
+   // std::string classCode;
 
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter UC code to remove " << std::endl;
@@ -154,9 +166,39 @@ void menuRemove(std::string registrationNumber){
               std::cout << classe.getUcCode() << " - ";
               std::cout << classe.getClassCode() << std::endl;
         }
+}
 
+void menuAdd(std::map<std::string, studentComp>::iterator& it){
 
-    
+    std::string ucCode;
+
+    if(it->second.getClasses().size() >= 7){
+      std::cout << "-----------------------------------------------" << std::endl;
+      std::cout << " You have already 7 classes" << std::endl;
+    }else{
+      std::cout << "-----------------------------------------------" << std::endl;
+      std::cout << "Enter UC code to add: " << std::endl;
+      std::cin >> ucCode;
+
+      auto it = uc_tree.find(ucCode);
+      
+      if(it == uc_tree.end()){
+        std::cout << "-----------------------------------------------" << std::endl;
+        std::cout << "UC code not found" << std::endl;
+        std::cout << "-----------------------------------------------" << std::endl;
+        menuRequests();
+      }else{
+        std::cout << "-----------------------------------------------" << std::endl;
+        std::cout << "Uc. Code: " << it->second.getUcCode() << std::endl;
+        std::cout << "   Classes: " << std::endl;
+        for(const auto& classCode : it->second.getClassCode()){
+          std::string a = classCode;
+          std::cout<< "   " << a << std::endl;
+        }
+      }
+
+    }
+  
 
 }
 

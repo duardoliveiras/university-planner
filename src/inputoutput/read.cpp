@@ -148,20 +148,20 @@ std::vector<myUc> readAllUcs() {
 }
 
 
-std::map<std::string, ClassComp> read_classes(){
+std::vector<ClassComp> read_classes(){
 
-std::map<std::string, ClassComp> classes;
-std::ifstream file2("schedule/classes.csv");
-std::string line2;
+std::vector<ClassComp> classes;
+std::ifstream file("schedule/classes.csv");
+std::string line;
 
-if (!file2.is_open()) {
+if (!file.is_open()) {
     std::cerr << "Error opening file" << std::endl;
 }
 
-std::getline(file2, line2);
+std::getline(file, line);
 
-while (std::getline(file2, line2)) {
-    std::istringstream ss(line2);
+while (std::getline(file, line)) {
+    std::istringstream ss(line);
     std::string classCode, ucCode, day, type;
     double startTime, duration;
 
@@ -182,25 +182,69 @@ while (std::getline(file2, line2)) {
     classe.setType(type);
 
 
-    classes.emplace(classCode + ucCode + type, classe);
+    classes.push_back(classe);
 
 }
+  file.close();
+  /*
+  for(const auto& classe : classes){
+    std::cout << classe.getUcCode() << " - ";
+    std::cout << classe.getClassCode() << " - ";
+    std::cout << classe.getDay() << " - ";
+    std::cout << classe.getStartTime() << " - ";
+    std::cout << classe.getDuration() << " - ";
+    std::cout << classe.getType() << std::endl;
+  }
+  */
 
-file2.close();
-
-/*
-for(const auto& pair : classes){
-  ClassComp classe = pair.second;
-  std::cout << classe.getClassCode() << " - ";
-  std::cout << classe.getUcCode() << " - ";
-  std::cout << classe.getDay() << " - ";
-  std::cout << classe.getStartTime() << " - ";
-  std::cout << classe.getDuration() << " - ";
-  std::cout << classe.getType() << std::endl;
-}
-*/
   return classes;
 }
+
+std::map<std::string, myUc> read_ucs(){
+      
+      std::map<std::string, myUc> ucs;
+      std::ifstream file("schedule/classes_per_uc.csv");
+      std::string line;
+
+      if (!file.is_open()) {
+          std::cerr << "Error opening file" << std::endl;
+      }
+
+      while (std::getline(file,line)){
+         std::istringstream ss(line);
+         std::string ucCode, classCode;
+
+        if(std::getline(ss, ucCode, ',') && std::getline(ss, classCode)){
+            myUc uc(ucCode);
+            auto it = ucs.find(ucCode);
+
+            if(it == ucs.end()){
+               uc.addClass(classCode);
+               ucs.emplace(ucCode, uc);
+            
+         }else{
+            it->second.addClass(classCode);
+         }
+        }
+      
+      
+      }
+      file.close();
+
+      /*
+      for(const auto& myUc : ucs){
+        std::cout << myUc.second.getUcCode() << std::endl;
+        std::cout<< " --- Classes: " << std::endl;
+
+        for(const auto& classCode : myUc.second.getClassCode()){
+          std::string a = classCode;
+          std::cout<< a << std::endl;
+        }
+      }
+      */
+      return ucs;
+}
+
 
 std::map<std::string, studentComp> read_students(){
 
@@ -217,7 +261,7 @@ std::map<std::string, studentComp> read_students(){
       std::string studentCode, name, uc, classCode;
 
       if (std::getline(ss, studentCode, ',') && std::getline(ss, name, ',') &&
-          std::getline(ss, uc, ',') && std::getline(ss, classCode)) {
+          std::getline(ss, uc, ',') && std::getline(ss, classCode)) { 
 
           ClassComp classe(classCode, uc);
           studentComp student(studentCode, name);
