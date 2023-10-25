@@ -7,7 +7,7 @@
 
 class ClassComp {
 public:
-    ClassComp(const std::string& classCode, const std::string& ucCode);
+    ClassComp(const std::string& ucCode, const std::string& classCode);
 
     std::string getClassCode() const;
     std::string getUcCode() const;

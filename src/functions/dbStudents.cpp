@@ -109,7 +109,12 @@ void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iter
     }
 }
 
+void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it){
 
+    ClassComp classe(ucCode, classCode);
+
+    it->second.getClasses().push_back(classe);
+}
 
 
 

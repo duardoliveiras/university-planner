@@ -1,7 +1,7 @@
 #include "ClassComp.h"
 
 
-ClassComp::ClassComp(const std::string& classCode, const std::string& ucCode){
+ClassComp::ClassComp(const std::string& ucCode, const std::string& classCode){
     this->classCode = classCode;
     this->ucCode = ucCode;
 }

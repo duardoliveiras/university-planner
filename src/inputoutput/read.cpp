@@ -174,7 +174,7 @@ while (std::getline(file, line)) {
     ss.ignore();
     getline(ss, type, ',');
 
-    ClassComp classe(classCode, ucCode);
+    ClassComp classe(ucCode, classCode);
 
     classe.setDay(day);
     classe.setStartTime(startTime);
@@ -263,7 +263,7 @@ std::map<std::string, studentComp> read_students(){
       if (std::getline(ss, studentCode, ',') && std::getline(ss, name, ',') &&
           std::getline(ss, uc, ',') && std::getline(ss, classCode)) { 
 
-          ClassComp classe(classCode, uc);
+          ClassComp classe(uc, classCode);
           studentComp student(studentCode, name);
 
           auto it = students.find(studentCode);

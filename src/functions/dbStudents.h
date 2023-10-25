@@ -27,6 +27,7 @@ void menuStudents(std::string code = "", int type = 0, int filter = 0,
                   int order = 0);
 
 void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
+void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it);
 
 void workingMessage();
 void errorMessage();
