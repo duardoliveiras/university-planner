@@ -1,7 +1,7 @@
 #include "ClassComp.h"
 
 
-ClassComp::ClassComp(const std::string& ucCode, const std::string& classCode){
+ClassComp::ClassComp(const std::string& ucCode,  std::string& classCode){
     this->classCode = classCode;
     this->ucCode = ucCode;
 }
@@ -34,8 +34,12 @@ std::string ClassComp::getType() const {
     return type;
 }
 
+void ClassComp::setClassCode(std::string classCode) {
+    this->classCode = std::move(classCode);
+}
+
 void ClassComp::setDay(std::string day) {
-    this->day = day;
+    this->day = std::move(day);
 }
 
 void ClassComp::setStartTime(double startTime) {

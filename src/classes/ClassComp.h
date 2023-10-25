@@ -7,7 +7,7 @@
 
 class ClassComp {
 public:
-    ClassComp(const std::string& ucCode, const std::string& classCode);
+    ClassComp(const std::string& ucCode, std::string& classCode);
 
     std::string getClassCode() const;
     std::string getUcCode() const;
@@ -16,6 +16,7 @@ public:
     double getDuration() const;
     std::string getType() const;
 
+    void setClassCode(std::string classCode);
     void setDay(std::string day);
     void setStartTime(double startTime);
     void setDuration(double duration);

@@ -20,6 +20,7 @@ void menuRequests();
 void menuRemove(std::map<std::string, studentComp>::iterator& it);
 void menuAdd(std::map<std::string, studentComp>::iterator& it);
 void menuStudentCode(int flag);
+void menuSwitch(std::map<std::string, studentComp>::iterator& it);
 
 void menuStudents(std::string str = "", int type = 0, int filter = 0,
                   int order = 0);

@@ -138,6 +138,7 @@ void menuStudentCode(int flag){
             menuRemove(it);
             break;
         case(3):
+            menuSwitch(it);
             break;
         default:
             errorMessage();
@@ -211,6 +212,59 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
 
     }
   
+
+}
+
+void menuSwitch(std::map<std::string, studentComp>::iterator &it){
+
+      std::string ucCode, classCode;
+
+      for(const auto& classe : it->second.getClasses()){
+            std::cout << classe.getUcCode() << " - ";
+            std::cout << classe.getClassCode() << std::endl;
+      }
+
+      std::cout<< "-----------------------------------------------" << std::endl;
+      std::cout << "Enter UC code to switch: " << std::endl;
+      std::cin >> ucCode;
+
+      for(const auto& classe : it->second.getClasses()){
+            if(classe.getUcCode() == ucCode){
+
+              auto it_uc = uc_tree.find(ucCode);
+
+              if(it_uc == uc_tree.end()){
+                std::cout << "-----------------------------------------------" << std::endl;
+                std::cout << "UC code not found" << std::endl;
+
+                menuRequests();
+              }else{
+                std::cout << "-----------------------------------------------" << std::endl;
+                std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
+                std::cout << "   Classes: " << std::endl;
+                for(const auto& classCode : it_uc->second.getClassCode()){
+                  std::string a = classCode;
+                  std::cout<< a << std::endl;
+
+                }
+              }
+
+              std::cout << "-----------------------------------------------" << std::endl;
+              std::cout << "Enter class code to switch: " << std::endl;
+              std::cin >> classCode;
+
+              for(auto& classe : it->second.getClasses()){
+                if(ucCode == classe.getUcCode()){
+                    classe.setClassCode(classCode);
+                }
+              }       std::cout<< "Adicionado com sucesso" << std::endl;
+                       for(const auto& classe : it->second.getClasses()){
+                          std::cout << classe.getUcCode() << " - ";
+                          std::cout << classe.getClassCode() << std::endl;
+                        }
+          } 
+      }
+
 
 }
 
