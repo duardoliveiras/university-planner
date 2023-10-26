@@ -41,4 +41,6 @@ std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, stude
 bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 
 
+void printStudentClasses(std::map<std::string, studentComp>::iterator& it);
+
 #endif

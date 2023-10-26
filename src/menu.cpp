@@ -212,12 +212,7 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
           std::cout << "Error in add class" << std::endl;
         }
         
-
-
-        for(const auto& classe : it->second.getClasses()){
-              std::cout << classe.getUcCode() << " - ";
-              std::cout << classe.getClassCode() << std::endl;
-        }
+        printStudentClasses(it);
       }
 
     }

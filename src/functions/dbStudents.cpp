@@ -132,8 +132,6 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
 
     auto it_class =  classes.find(value);
     
-
-
     if(it_class == classes.end()){
         std::cerr << "Error in find class" << std::endl;
         return true;
@@ -142,10 +140,6 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
       for(const auto& class_info : it_class->second.getClassInfoVec()){
         const std::set<classInfo>& classesOfDay = orderClasses[class_info.dayInt];
         for(const auto& aula : classesOfDay){
-
-          std::cout << "Aula: " << aula.startTime << " - " << aula.startTime + aula.duration << std::endl;
-          std::cout << "info: " << class_info.startTime << " - " << class_info.startTime + class_info.duration << std::endl;
-
           if(class_info.startTime >= aula.startTime && class_info.startTime < aula.startTime + aula.duration){
             return true;
           }
@@ -153,6 +147,15 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
       }
       return false;
     }
+}
+
+void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
+  std::cout<< "\nCode: " << it->first << " - ";
+  std::cout<< "Name: " << it->second.getName() << std::endl;
+  std::cout<< "Classes: " << std::endl;
+  for(const auto& classe : it->second.getClasses()){
+    std::cout << "  " << classe.getUcCode() << " - " << classe.getClassCode() << std::endl;
+  }
 }
 
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
