@@ -116,6 +116,44 @@ void addClassStudent(std::string ucCode, std::string classCode, std::map<std::st
     it->second.getClasses().push_back(classe);
 }
 
+bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
+
+    std::map<int, std::set<classInfo>> orderClasses = orderStudentClass(it, classes);
+
+    std::string value = ucCode + classCode;
+
+      // Remove blank spaces
+      value.erase(value.begin(), std::find_if(value.begin(), value.end(), [](unsigned char ch) {
+          return !std::isspace(ch);
+      }));
+      value.erase(std::find_if(value.rbegin(), value.rend(), [](unsigned char ch) {
+          return !std::isspace(ch);
+      }).base(), value.end());
+
+    auto it_class =  classes.find(value);
+    
+
+
+    if(it_class == classes.end()){
+        std::cerr << "Error in find class" << std::endl;
+        return true;
+    }else{
+
+      for(const auto& class_info : it_class->second.getClassInfoVec()){
+        const std::set<classInfo>& classesOfDay = orderClasses[class_info.dayInt];
+        for(const auto& aula : classesOfDay){
+
+          std::cout << "Aula: " << aula.startTime << " - " << aula.startTime + aula.duration << std::endl;
+          std::cout << "info: " << class_info.startTime << " - " << class_info.startTime + class_info.duration << std::endl;
+
+          if(class_info.startTime >= aula.startTime && class_info.startTime < aula.startTime + aula.duration){
+            return true;
+          }
+        } 
+      }
+      return false;
+    }
+}
 
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
 
@@ -139,6 +177,7 @@ std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, stude
       }else{
         for(const auto& classInfo : it_class->second.getClassInfoVec()){
           orderClasses[classInfo.dayInt].insert(classInfo);
+          
         }
       }
     }

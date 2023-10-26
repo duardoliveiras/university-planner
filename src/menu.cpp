@@ -171,12 +171,7 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
 
     std::string ucCode;
     std::string classCode;
-
-    std::map<int, std::set<classInfo>> orderStudent = orderStudentClass(it, classes);
-
-
-
-    
+ 
     if(it->second.getClasses().size() >= 7){
       std::cout << "-----------------------------------------------" << std::endl;
       std::cout << " You have already 7 classes" << std::endl;
@@ -207,9 +202,18 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
 
         std::cin >> classCode;
 
-        addClassStudent(ucCode, classCode, it);
+        bool validate = valideNewClass(ucCode, classCode, it, classes);
 
-        std::cout<< "Adicionado com sucesso" << std::endl;
+        if(!validate){
+          addClassStudent(ucCode, classCode, it);
+          std::cout<< "Adicionado com sucesso" << std::endl;
+        }else{
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "Error in add class" << std::endl;
+        }
+        
+
+
         for(const auto& classe : it->second.getClasses()){
               std::cout << classe.getUcCode() << " - ";
               std::cout << classe.getClassCode() << std::endl;
