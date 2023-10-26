@@ -34,7 +34,7 @@ int selectFilter();
 std::string selectCode();
 std::string selectValue();
 
-void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
+bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
 void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it);
 
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);

@@ -16,6 +16,7 @@ public:
     //const std::vector<ClassComp>& getClasses() const;
     std::vector<ClassComp>& getClasses();
     void addClass(const ClassComp& classe);
+    bool valideQtClasses();
 
 
 private:

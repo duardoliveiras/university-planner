@@ -19,7 +19,12 @@ std::vector<ClassComp>& studentComp::getClasses() {
 }
 
 
-
+bool studentComp::valideQtClasses(){
+    if(classes.size() > 6){
+        return true;
+    }
+    return false;
+}
 
 void studentComp::addClass(const ClassComp& classe) {
     classes.push_back(classe);

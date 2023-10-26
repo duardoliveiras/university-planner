@@ -100,13 +100,15 @@ std::vector<myStudent> selectStudent(std::string str, std::vector<myStudent> &st
 
 
 
-void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it){
-
+bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it){
+    bool remove = false;
     for(unsigned i = 0; i < it->second.getClasses().size(); i++){
         if(it->second.getClasses()[i].getUcCode() == ucCod){
             it->second.getClasses().erase(it->second.getClasses().begin() + i);
+            remove = true;
         }
     }
+    return remove;
 }
 
 void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it){
@@ -150,6 +152,7 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
 }
 
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
+  system("clear");
   std::cout<< "\nCode: " << it->first << " - ";
   std::cout<< "Name: " << it->second.getName() << std::endl;
   std::cout<< "Classes: " << std::endl;

@@ -27,7 +27,7 @@ void printStudent(const std::vector<myStudent> &students);
 void menuStudents(std::string code = "", int type = 0, int filter = 0,
                   int order = 0);
 
-void removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
+bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
 void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it);
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);

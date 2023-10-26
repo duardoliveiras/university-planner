@@ -128,7 +128,7 @@ void menuStudentCode(int flag){
         menuRequests();
     }else{
         std::cout << "-----------------------------------------------" << std::endl;
-       
+        printStudentClasses(it);
     }
 
         switch(flag){
@@ -158,13 +158,16 @@ void menuRemove(std::map<std::string, studentComp>::iterator& it){
     std::cin >> ucCode;
     std::cout << "-----------------------------------------------" << std::endl;
 
-    removeUcStudent(ucCode, it); 
+    bool remove = removeUcStudent(ucCode, it); 
 
-    std::cout<< "Removido com sucesso" << std::endl;
-     for(const auto& classe : it->second.getClasses()){
-              std::cout << classe.getUcCode() << " - ";
-              std::cout << classe.getClassCode() << std::endl;
-        }
+    if(remove){
+      printStudentClasses(it);
+      std::cout<< "\nRemovido com sucesso" << std::endl;
+    }else{
+      std::cout << "-----------------------------------------------" << std::endl;
+      std::cout << "Error in remove class" << std::endl;
+    }
+
 }
 
 void menuAdd(std::map<std::string, studentComp>::iterator& it){
@@ -172,7 +175,7 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
     std::string ucCode;
     std::string classCode;
  
-    if(it->second.getClasses().size() >= 7){
+    if(it->second.valideQtClasses()){
       std::cout << "-----------------------------------------------" << std::endl;
       std::cout << " You have already 7 classes" << std::endl;
     }else{
@@ -206,13 +209,15 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
 
         if(!validate){
           addClassStudent(ucCode, classCode, it);
-          std::cout<< "Adicionado com sucesso" << std::endl;
+          
+          printStudentClasses(it);
+          std::cout<< "\nAdicionado com sucesso" << std::endl;
         }else{
           std::cout << "-----------------------------------------------" << std::endl;
           std::cout << "Error in add class" << std::endl;
         }
         
-        printStudentClasses(it);
+        
       }
 
     }
@@ -223,10 +228,7 @@ void menuSwitch(std::map<std::string, studentComp>::iterator &it){
 
       std::string ucCode, classCode;
 
-      for(const auto& classe : it->second.getClasses()){
-            std::cout << classe.getUcCode() << " - ";
-            std::cout << classe.getClassCode() << std::endl;
-      }
+      printStudentClasses(it);
 
       std::cout<< "-----------------------------------------------" << std::endl;
       std::cout << "Enter UC code to switch: " << std::endl;
@@ -261,11 +263,11 @@ void menuSwitch(std::map<std::string, studentComp>::iterator &it){
                 if(ucCode == classe.getUcCode()){
                     classe.setClassCode(classCode);
                 }
-              }       std::cout<< "Adicionado com sucesso" << std::endl;
-                       for(const auto& classe : it->second.getClasses()){
-                          std::cout << classe.getUcCode() << " - ";
-                          std::cout << classe.getClassCode() << std::endl;
-                        }
+              }       
+
+              printStudentClasses(it);
+              std::cout<< "Successful switched" << std::endl;
+                       
           } 
       }
 
