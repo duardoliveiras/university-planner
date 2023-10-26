@@ -13,6 +13,10 @@ struct classInfo
     int dayInt;
     double startTime;
     double duration;
+
+    bool operator<(const classInfo& other) const {
+        return startTime < other.startTime;
+    }
     
 };
 

@@ -117,6 +117,44 @@ void addClassStudent(std::string ucCode, std::string classCode, std::map<std::st
 }
 
 
+std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
+
+    std::map<int, std::set<classInfo>> orderClasses;
+
+    for(const auto& classe : it->second.getClasses()){
+    std::string value = classe.getUcCode() + classe.getClassCode();
+
+      // Remove blank spaces
+      value.erase(value.begin(), std::find_if(value.begin(), value.end(), [](unsigned char ch) {
+          return !std::isspace(ch);
+      }));
+      value.erase(std::find_if(value.rbegin(), value.rend(), [](unsigned char ch) {
+          return !std::isspace(ch);
+      }).base(), value.end());
+
+      auto it_class = classes.find(value);
+
+      if(it_class == classes.end()){
+        std::cerr << "Error in find class" << std::endl;
+      }else{
+        for(const auto& classInfo : it_class->second.getClassInfoVec()){
+          orderClasses[classInfo.dayInt].insert(classInfo);
+        }
+      }
+    }
+    /*
+    for(const auto& pair : orderClasses ){
+      std::cout << "Day: " << pair.first << std::endl;
+      for(const auto& info : pair.second){
+        std::cout << info.startTime << " - ";
+        std::cout << info.duration << " - ";
+        std::cout << info.type << std::endl;
+      }
+      std::cout << std::endl;
+    }
+    */
+    return orderClasses;
+}
 
 /* 
 void removeUcStudent(std::string ucCod, std::string registrationNumber){

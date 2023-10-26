@@ -7,8 +7,11 @@ std::map<std::string, ClassComp> classes = read_classes();
 
 
 
+
 void menu() {
   int flag = 0;
+
+std::map<std::string, ClassComp> classes = read_classes();
 
   std::vector<myUc> ucs = readAllUcs();
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
@@ -169,6 +172,11 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
     std::string ucCode;
     std::string classCode;
 
+    std::map<int, std::set<classInfo>> orderStudent = orderStudentClass(it, classes);
+
+
+
+    
     if(it->second.getClasses().size() >= 7){
       std::cout << "-----------------------------------------------" << std::endl;
       std::cout << " You have already 7 classes" << std::endl;
@@ -209,7 +217,6 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
       }
 
     }
-  
 
 }
 
