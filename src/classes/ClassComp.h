@@ -10,6 +10,7 @@ struct classInfo
 {
     std::string type;  
     std::string day;
+    int dayInt;
     double startTime;
     double duration;
     
@@ -23,7 +24,10 @@ public:
     std::string getClassCode() const;
     std::string getUcCode() const;
 
-    void addClassInfo(std::string type, std::string day, double startTime, double duration);
+    std::vector<classInfo> getClassInfoVec() const;
+
+    void addClassInfo(std::string type, std::string day, int dayInt, double startTime, double duration);
+    void setClassCode(std::string classCode);
 
     bool operator<(const ClassComp& other) const;
 

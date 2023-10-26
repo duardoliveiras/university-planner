@@ -148,6 +148,8 @@ std::vector<myUc> readAllUcs() {
 }
 
 
+// read to vector ClasseComp
+/* 
 std::vector<ClassComp> read_classes(){
 
 std::vector<ClassComp> classes;
@@ -186,7 +188,7 @@ while (std::getline(file, line)) {
 
 }
   file.close();
-  /*
+  
   for(const auto& classe : classes){
     std::cout << classe.getUcCode() << " - ";
     std::cout << classe.getClassCode() << " - ";
@@ -195,9 +197,80 @@ while (std::getline(file, line)) {
     std::cout << classe.getDuration() << " - ";
     std::cout << classe.getType() << std::endl;
   }
-  */
+  
 
   return classes;
+}
+*/ 
+
+// read to tree classeComp with vector classInfo
+
+std::map<std::string, ClassComp> read_classes(){
+    
+    std::map<std::string, ClassComp> classes;
+    std::ifstream file("schedule/classes.csv");
+    std::string line;
+
+    if(!file.is_open()){
+      std::cerr<< "Error opening file" << std::endl;
+    }
+
+    while(std::getline(file,line)){
+      std::istringstream ss(line);
+      std::string classCode, ucCode, day, type; 
+      int dayInt;
+      double startTime, duration;
+
+      if(std::getline(ss, classCode, ',') && std::getline(ss, ucCode, ',') && std::getline(ss, day, ',')
+       && ss >> startTime && ss.ignore() && ss >> duration && ss.ignore() && std::getline(ss, type)){
+
+        if(day == "Monday"){
+          dayInt = 2;
+        }else if(day == "Tuesday"){
+          dayInt = 3;
+        }else if(day == "Wednesday"){
+          dayInt = 4;
+        }else if(day == "Thursday"){
+          dayInt = 5;
+        }else if(day == "Friday"){
+          dayInt = 6;
+        }else if(day == "Saturday"){
+          dayInt = 7;
+        }else{
+          dayInt = 0;
+        }
+        
+        ClassComp classe(ucCode, classCode);
+        classe.addClassInfo(type, day, dayInt, startTime, duration);
+
+        auto it = classes.find(ucCode + classCode);
+
+        if(it == classes.end()){
+          classes.emplace(ucCode + classCode, classe);
+        }else{
+          it->second.addClassInfo(type, day, dayInt, startTime, duration);
+        }
+      }
+
+    }
+
+    file.close();
+    /*
+      for(const auto& classe : classes){
+        std::cout << classe.second.getUcCode() << " - ";
+        std::cout << classe.second.getClassCode() << std::endl;
+        for(const auto& info : classe.second.getClassInfoVec()){
+          std::cout<< "   ";
+          std::cout << info.day << " - ";
+          std::cout << info.dayInt << " - ";
+          std::cout << info.startTime << " - ";
+          std::cout << info.duration << " - ";
+          std::cout << info.type << std::endl;
+        }
+      }
+    */
+    
+    return classes;
 }
 
 std::map<std::string, myUc> read_ucs(){

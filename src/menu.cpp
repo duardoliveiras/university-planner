@@ -3,14 +3,12 @@
 
 std::map<std::string, studentComp> students = read_students();
 std::map<std::string, myUc> uc_tree = read_ucs();
-std::vector<ClassComp> classes = read_classes();
+std::map<std::string, ClassComp> classes = read_classes();
 
 
 
 void menu() {
   int flag = 0;
-
-
 
   std::vector<myUc> ucs = readAllUcs();
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;

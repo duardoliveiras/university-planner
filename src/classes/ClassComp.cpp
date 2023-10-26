@@ -18,15 +18,22 @@ std::string ClassComp::getUcCode() const {
     return ucCode;
 }
 
-void ClassComp::addClassInfo(std::string type, std::string day, double startTime, double duration){
+std::vector<classInfo> ClassComp::getClassInfoVec() const {
+    return classInfoVec;
+}
 
+void ClassComp::setClassCode(std::string classCode){
+    this->classCode = classCode;
+}
+
+void ClassComp::addClassInfo(std::string type, std::string day, int dayInt, double startTime, double duration){
     classInfo newClassInfo;
     newClassInfo.type = type;
     newClassInfo.day = day;
+    newClassInfo.dayInt = dayInt;
     newClassInfo.startTime = startTime;
     newClassInfo.duration = duration;
 
     classInfoVec.push_back(newClassInfo);
-
-
 }
+

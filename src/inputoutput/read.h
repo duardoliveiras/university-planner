@@ -22,7 +22,8 @@ std::vector<myClass> readAllClasses();
 std::vector<myStudent> readAllStudents();
 std::vector<myUc> readAllUcs();
 
-std::vector<ClassComp> read_classes();
+//std::vector<ClassComp> read_classes();
+std::map<std::string, ClassComp> read_classes();
 std::map<std::string, studentComp> read_students();
 std::map<std::string, myUc> read_ucs();
 
