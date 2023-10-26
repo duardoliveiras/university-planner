@@ -1,5 +1,7 @@
 #include "read.h"
 #include <sstream>
+#include <algorithm>
+
 
 
 std::vector<myClass> readAllClasses() {
@@ -206,7 +208,6 @@ while (std::getline(file, line)) {
 // read to tree classeComp with vector classInfo
 
 std::map<std::string, ClassComp> read_classes(){
-    
     std::map<std::string, ClassComp> classes;
     std::ifstream file("schedule/classes.csv");
     std::string line;
@@ -320,27 +321,40 @@ std::map<std::string, myUc> read_ucs(){
 }
 
 
-std::map<std::string, studentComp> read_students(){
-
+std::map<std::string, studentComp> read_students(std::map<std::string, int>& count){
+  
   std::map<std::string, studentComp> students;
   std::ifstream file("schedule/students_classes.csv");
   std::string line;
+
+  bool header = true;
 
   if (!file.is_open()) {
       std::cerr << "Error opening file" << std::endl;
   }
 
   while (std::getline(file, line)) {
+      if(header){
+        header = false;
+        continue;
+      }
       std::istringstream ss(line);
       std::string studentCode, name, uc, classCode;
+
 
       if (std::getline(ss, studentCode, ',') && std::getline(ss, name, ',') &&
           std::getline(ss, uc, ',') && std::getline(ss, classCode)) { 
 
           ClassComp classe(uc, classCode);
+
           studentComp student(studentCode, name);
 
           auto it = students.find(studentCode);
+
+      classCode.erase(std::find_if(classCode.rbegin(), classCode.rend(), [](unsigned char ch) {
+          return !std::isspace(ch);
+      }).base(), classCode.end());
+
 
           if (it == students.end()) {
               // studant not found
@@ -350,10 +364,18 @@ std::map<std::string, studentComp> read_students(){
               // student found add class to him
               it->second.addClass(classe);
           }
+          auto it_count = count.find(uc + classCode);
+          if (it_count == count.end()) {
+              count.emplace(uc + classCode, 1);
+          } else {
+              it_count->second++;
+          }
+
       }
   }
 
   file.close();
+
 
   /*
   for(const auto& pair : students){
@@ -377,3 +399,4 @@ std::map<std::string, studentComp> read_students(){
   return students;
 
 }
+

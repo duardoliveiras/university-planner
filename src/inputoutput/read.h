@@ -24,7 +24,9 @@ std::vector<myUc> readAllUcs();
 
 //std::vector<ClassComp> read_classes();
 std::map<std::string, ClassComp> read_classes();
-std::map<std::string, studentComp> read_students();
+std::map<std::string, studentComp> read_students(std::map<std::string, int>& count);
 std::map<std::string, myUc> read_ucs();
+std::map<std::string, int> readCountClasses();
+
 
 #endif

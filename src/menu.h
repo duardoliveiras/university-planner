@@ -8,6 +8,7 @@
 #include "classes/ClassComp.h"
 #include "inputoutput/read.h"
 
+
 void errorMessage();
 void errorCheck(int n);
 void workingMessage();

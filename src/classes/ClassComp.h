@@ -16,8 +16,7 @@ struct classInfo
 
     bool operator<(const classInfo& other) const {
         return startTime < other.startTime;
-    }
-    
+    }  
 };
 
 
