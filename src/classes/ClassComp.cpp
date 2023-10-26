@@ -18,38 +18,15 @@ std::string ClassComp::getUcCode() const {
     return ucCode;
 }
 
-std::string ClassComp::getDay() const {
-    return day;
-}
+void ClassComp::addClassInfo(std::string type, std::string day, double startTime, double duration){
 
-double ClassComp::getStartTime() const {
-    return startTime;
-}
+    classInfo newClassInfo;
+    newClassInfo.type = type;
+    newClassInfo.day = day;
+    newClassInfo.startTime = startTime;
+    newClassInfo.duration = duration;
 
-double ClassComp::getDuration() const {
-    return duration;
-}
+    classInfoVec.push_back(newClassInfo);
 
-std::string ClassComp::getType() const {
-    return type;
-}
 
-void ClassComp::setClassCode(std::string classCode) {
-    this->classCode = std::move(classCode);
-}
-
-void ClassComp::setDay(std::string day) {
-    this->day = std::move(day);
-}
-
-void ClassComp::setStartTime(double startTime) {
-    this->startTime = startTime;
-}
-
-void ClassComp::setDuration(double duration) {
-    this->duration = duration;
-}
-
-void ClassComp::setType(std::string type) {
-    this->type = type;
 }

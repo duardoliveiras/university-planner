@@ -5,33 +5,33 @@
 #include <vector>
 #include <iostream>
 
+
+struct classInfo
+{
+    std::string type;  
+    std::string day;
+    double startTime;
+    double duration;
+    
+};
+
+
 class ClassComp {
 public:
     ClassComp(const std::string& ucCode, std::string& classCode);
 
     std::string getClassCode() const;
     std::string getUcCode() const;
-    std::string getDay() const;
-    double getStartTime() const;
-    double getDuration() const;
-    std::string getType() const;
 
-    void setClassCode(std::string classCode);
-    void setDay(std::string day);
-    void setStartTime(double startTime);
-    void setDuration(double duration);
-    void setType(std::string type);
+    void addClassInfo(std::string type, std::string day, double startTime, double duration);
 
     bool operator<(const ClassComp& other) const;
 
 private:
     std::string classCode;
     std::string ucCode;
+    std::vector<classInfo> classInfoVec;
 
-    std::string day;
-    double startTime;
-    double duration;
-    std::string type;
 };
 
 #endif
