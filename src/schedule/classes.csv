@@ -501,7 +501,7 @@ ClassCode,UcCode,Weekday,StartHour,Duration,Type
 1LEIC10,UP001,Wednesday,13.5,1.5,TP
 1LEIC11,UP001,Wednesday,15,1.5,TP
 1LEIC12,UP001,Wednesday,15,1.5,TP
-TESTE,TESTE,Monday,15,2,TP
+TESTE1,TESTE,Monday,15,2,TP
 TESTE2,TESTE,Monday,17,2,TP
 TESTE3,TESTE,Monday,16.5,2,TP
 TESTE4,TESTE,Monday,19,2,TP

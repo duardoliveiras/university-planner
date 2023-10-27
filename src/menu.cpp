@@ -3,7 +3,7 @@
 
 
 std::map<std::string, myUc> uc_tree = read_ucs();
-std::map<std::string, int> count;
+std::map<std::string, std::vector<classQtd>> count;
 std::map<std::string, studentComp> students = read_students(count);
 std::map<std::string, ClassComp> classes = read_classes();
 
@@ -14,6 +14,7 @@ void menu() {
   int flag = 0;
 
   std::vector<myUc> ucs = readAllUcs();
+
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
   std::cout << "| 2) Change database                          |" << std::endl;
@@ -193,11 +194,13 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
       }else{
         std::cout << "-----------------------------------------------" << std::endl;
         std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
-        std::cout << "   Classes: " << std::endl;
-        for(const auto& classCode : it_uc->second.getClassCode()){
-          std::string a = classCode;
-          std::cout<< a << std::endl;
-
+        auto it_count = count.find(ucCode);
+        if(it_count != count.end()){
+          std::list<std::string> free_classes = valideFreeClass(it_count);
+          std::cout << "   Classes: " << std::endl;
+          for(auto it_list = free_classes.begin(); it_list != free_classes.end(); it_list++){
+            std::cout << "      " << *it_list << std::endl;
+          }
         }
 
         std::cout << "-----------------------------------------------" << std::endl;

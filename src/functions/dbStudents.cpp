@@ -1,4 +1,5 @@
 #include "dbStudents.h"
+#include <climits>
 #include <algorithm>
 #include <fstream>
 
@@ -149,6 +150,24 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
       }
       return false;
     }
+}
+
+std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQtd>>::iterator it_count){
+  int min = INT_MAX;
+  std::list<std::string> free_classes;
+
+  for(auto& classe : it_count->second){
+    if(classe.qtd < min){
+      min = classe.qtd;
+    }
+  }
+  for(auto& classe : it_count->second){
+    if(!(classe.qtd+1 - min > 3) && classe.qtd+1  <= 6 ){
+       free_classes.push_back(classe.classCode);
+    }
+  }
+
+  return free_classes;
 }
 
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it){

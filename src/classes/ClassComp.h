@@ -19,6 +19,15 @@ struct classInfo
     }  
 };
 
+struct classQtd
+{
+    std::string classCode;
+    int qtd;
+
+    bool operator<(const classQtd& other) const {
+        return classCode < other.classCode;
+    }  
+};
 
 class ClassComp {
 public:

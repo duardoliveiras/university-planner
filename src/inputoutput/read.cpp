@@ -321,7 +321,7 @@ std::map<std::string, myUc> read_ucs(){
 }
 
 
-std::map<std::string, studentComp> read_students(std::map<std::string, int>& count){
+std::map<std::string, studentComp> read_students(std::map<std::string, std::vector<classQtd>>& count){
   
   std::map<std::string, studentComp> students;
   std::ifstream file("schedule/students_classes.csv");
@@ -364,11 +364,23 @@ std::map<std::string, studentComp> read_students(std::map<std::string, int>& cou
               // student found add class to him
               it->second.addClass(classe);
           }
-          auto it_count = count.find(uc + classCode);
+          auto it_count = count.find(uc);
           if (it_count == count.end()) {
-              count.emplace(uc + classCode, 1);
+              std::vector<classQtd> classVec;
+              classVec.push_back({classCode, 1});
+              count.emplace(uc, classVec);
           } else {
-              it_count->second++;
+              bool exist = false;
+              for(auto& class_it : it_count->second){
+                if(class_it.classCode == classCode){
+                  class_it.qtd++;
+                  exist = true;
+                  break;
+                }
+              }
+              if(!exist){
+                it_count->second.push_back({classCode, 1});
+              }
           }
 
       }

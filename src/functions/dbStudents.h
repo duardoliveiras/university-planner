@@ -7,6 +7,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <list>
 
 #include "../classes/student.h"
 #include "../classes/studentComp.h"
@@ -31,6 +32,7 @@ bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iter
 void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it);
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
+std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQtd>>::iterator it_count);
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it);
 
 
