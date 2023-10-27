@@ -3,6 +3,10 @@
 #include <algorithm>
 #include <fstream>
 
+
+int equilibre = 3;
+int max_students = 6;
+
 void menuStudents(std::string str, int type, int filter, int order) {
   // read Database
   std::vector<myStudent> data = readAllStudents();
@@ -162,7 +166,7 @@ std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQt
     }
   }
   for(auto& classe : it_count->second){
-    if(!(classe.qtd+1 - min > 3) && classe.qtd+1  <= 6 ){
+    if(!(classe.qtd+1 - min > equilibre) && classe.qtd+1  <= max_students ){
        free_classes.push_back(classe.classCode);
     }
   }
