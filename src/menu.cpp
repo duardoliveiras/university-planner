@@ -2,9 +2,9 @@
 
 
 
-std::map<std::string, myUc> uc_tree = read_ucs();
 std::map<std::string, std::vector<classQtd>> count;
 std::map<std::string, studentComp> students = read_students(count);
+std::map<std::string, myUc> uc_tree = read_ucs(count);
 std::map<std::string, ClassComp> classes = read_classes();
 
 

@@ -275,7 +275,7 @@ std::map<std::string, ClassComp> read_classes(){
     return classes;
 }
 
-std::map<std::string, myUc> read_ucs(){
+std::map<std::string, myUc> read_ucs(std::map<std::string, std::vector<classQtd>>& count){
       
       std::map<std::string, myUc> ucs;
       std::ifstream file("schedule/classes_per_uc.csv");
@@ -292,6 +292,11 @@ std::map<std::string, myUc> read_ucs(){
         if(std::getline(ss, ucCode, ',') && std::getline(ss, classCode)){
             myUc uc(ucCode);
             auto it = ucs.find(ucCode);
+            
+          classCode.erase(std::find_if(classCode.rbegin(), classCode.rend(), [](unsigned char ch) {
+          return !std::isspace(ch);
+          }).base(), classCode.end());
+
 
             if(it == ucs.end()){
                uc.addClass(classCode);
@@ -300,6 +305,23 @@ std::map<std::string, myUc> read_ucs(){
          }else{
             it->second.addClass(classCode);
          }
+            bool exist = false;
+            auto it_count = count.find(ucCode);
+
+            if(it_count != count.end()){
+              for(auto& class_it : it_count->second){
+                if(class_it.classCode == classCode){
+                  exist = true;
+                }
+              }
+              if(!exist){
+                it_count->second.push_back({classCode, 0});
+              }
+            }else{
+              std::vector<classQtd> classVec;
+              classVec.push_back({classCode, 0});
+              count.emplace(ucCode, classVec);
+            }
         }
       
       
