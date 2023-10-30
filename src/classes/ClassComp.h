@@ -42,6 +42,7 @@ public:
     void setClassCode(std::string classCode);
 
     bool operator<(const ClassComp& other) const;
+    static bool compareUcCode(const ClassComp& a, const ClassComp& b);
 
 private:
     std::string classCode;

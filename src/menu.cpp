@@ -101,6 +101,8 @@ void menuSeeDatabase() {
 void menuRequests() {
     int flag = 0;
     
+    system("clear");
+    std::cout << "Change database" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "| 1) Add                                      |" << std::endl;
     std::cout << "| 2) Remove                                   |" << std::endl;
@@ -209,7 +211,9 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
         if(!validate){
           addClassStudent(ucCode, classCode, it);    
           printStudentClasses(it);
-          std::cout<< "\nAdicionado com sucesso" << std::endl;
+          std::cout<< "\nSucessfully added" << std::endl;
+
+          saveOrReturn();
         }
         
       }
@@ -255,6 +259,8 @@ void menuSwitch(std::map<std::string, studentComp>::iterator &it){
             addClassStudent(ucCode, classCode, it);
             printStudentClasses(it);
             std::cout<< "\nSuccessfully switched" << std::endl;
+
+            saveOrReturn();
           }
           break;
         
@@ -276,14 +282,49 @@ void menuSwitch(std::map<std::string, studentComp>::iterator &it){
             addClassStudent(ucCode, classCode, it);
             printStudentClasses(it);
             std::cout<< "\nSuccessfully switched" << std::endl;
+
+            saveOrReturn();
           }
           break;
 
+        default:
+          errorMessage();
+          break;
       }
 
       
 }
 
+void saveOrReturn(){
+  int flag = 0;
+
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "| 1) Save                                     |" << std::endl;
+  std::cout << "| 2) Return                                   |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "Choose an option: ";
+  std::cin >> flag;
+
+  errorCheck(flag);
+
+  switch (flag) {
+  case 1:
+    save();
+    break;
+  case 2:
+    menuRequests();
+    break;
+  default:
+    errorMessage();
+    break;
+  }
+
+}
+
+void save(){
+   makeBackup();
+   exit(0);
+}
 
 int selectOrder() {
   int flag = 0;

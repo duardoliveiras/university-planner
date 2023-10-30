@@ -37,3 +37,6 @@ void ClassComp::addClassInfo(std::string type, std::string day, int dayInt, doub
     classInfoVec.push_back(newClassInfo);
 }
 
+bool ClassComp::compareUcCode(const ClassComp& a, const ClassComp& b){
+    return a.ucCode < b.ucCode;
+}

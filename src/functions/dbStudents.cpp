@@ -188,10 +188,16 @@ std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQt
   return free_classes;
 }
 
+void organizerUcStudent(std::map<std::string, studentComp>::iterator& it){
+
+    std::sort(it->second.getClasses().begin(), it->second.getClasses().end(), ClassComp::compareUcCode);
+
+}
 
 // Receives the student pointer and print your classes
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
   system("clear");
+  organizerUcStudent(it);
   std::cout<< "\nCode: " << it->first << " - ";
   std::cout<< "Name: " << it->second.getName() << std::endl;
   std::cout<< "Classes: " << std::endl;

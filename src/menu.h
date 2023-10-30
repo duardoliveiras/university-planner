@@ -7,10 +7,12 @@
 #include "classes/studentComp.h"
 #include "classes/ClassComp.h"
 #include "inputoutput/read.h"
+#include "inputoutput/keepAllChanges.h"
+
 
 void errorMessage();
 void errorCheck(int n);
-void workingMessage();
+
 
 void menu();
 
@@ -43,5 +45,8 @@ std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQt
 
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it);
 void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<classQtd>>& count);
+void saveOrReturn();
+void save();
+
 
 #endif
