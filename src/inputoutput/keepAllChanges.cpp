@@ -1,6 +1,10 @@
 #include "keepAllChanges.h"
 #include <ctime>
 
+
+
+// Make a backup with the lastest archive modified
+// add the date on the name of the backup
 void makeBackup() {
     std::ifstream file("schedule/students_classes.csv", std::ios::binary);
 
@@ -29,11 +33,34 @@ void makeBackup() {
 
 }
 
-void keepAllChanges(std::map<std::string, studentComp>::iterator& it) {
 
-    makeBackup();
+// Save all changes made in the tree of students
+// in the file students_classes.csv
+void keepAllChanges(std::map<std::string, studentComp> &students) {
+
+      makeBackup();
+      
+      std::ofstream file("schedule/students_classes.csv");
+
+      if(!file.is_open()){
+        std::cerr<< "Error opening file" << std::endl;
+      }
+
+      // Header
+      file << "StudentCode,StudentName,UcCode,ClassCode" << std::endl;
+
+      // Write the tree in the file
+      for(auto it = students.begin(); it != students.end(); it++){
+        for(auto classe : it->second.getClasses()){
+          //std::cout<< it->second.getCode() << "," << it->second.getName() << "," << classe.getUcCode() << "," << classe.getClassCode() << std::endl;
+          file << it->second.getCode() << "," << it->second.getName() << "," << classe.getUcCode() << "," << classe.getClassCode() << std::endl;
+        }
+      }
+
 
     
+
+
 
 }
 

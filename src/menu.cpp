@@ -322,7 +322,7 @@ void saveOrReturn(){
 }
 
 void save(){
-   makeBackup();
+   keepAllChanges(students);
    exit(0);
 }
 

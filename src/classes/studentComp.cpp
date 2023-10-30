@@ -31,6 +31,3 @@ void studentComp::addClass(const ClassComp& classe) {
 }
 
 
-
-
-

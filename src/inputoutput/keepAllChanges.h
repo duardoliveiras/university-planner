@@ -9,7 +9,7 @@
 #include "../classes/studentComp.h"
 
 void makeBackup();
-void keepAllChanges(std::map<std::string, studentComp>::iterator& it);
+void keepAllChanges(std::map<std::string, studentComp> &students);
 
 
 #endif
