@@ -8,7 +8,6 @@
 #include "classes/ClassComp.h"
 #include "inputoutput/read.h"
 
-
 void errorMessage();
 void errorCheck(int n);
 void workingMessage();
@@ -43,5 +42,6 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
 std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQtd>>::iterator it_count);
 
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it);
+void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<classQtd>>& count);
 
 #endif

@@ -175,7 +175,7 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
 
     std::string ucCode;
     std::string classCode;
- 
+    // validates if the student is enrolled in more than 7 classes
     if(it->second.valideQtClasses()){
       std::cout << "-----------------------------------------------" << std::endl;
       std::cout << " You have already 7 classes" << std::endl;
@@ -184,6 +184,7 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
       std::cout << "Enter UC code to see all classes: " << std::endl;
       std::cin >> ucCode;
 
+      // checks if ucCode exists
       auto it_uc = uc_tree.find(ucCode);
       
       if(it_uc == uc_tree.end()){
@@ -194,32 +195,22 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
       }else{
         std::cout << "-----------------------------------------------" << std::endl;
         std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
-        auto it_count = count.find(ucCode);
-        if(it_count != count.end()){
-          std::list<std::string> free_classes = valideFreeClass(it_count);
-          std::cout << "   Classes: " << std::endl;
-          for(auto it_list = free_classes.begin(); it_list != free_classes.end(); it_list++){
-            std::cout << "      " << *it_list << std::endl;
-          }
-        }
+
+        printFreeClasses(ucCode, count);
 
         std::cout << "-----------------------------------------------" << std::endl;
         std::cout << "Enter class code to add: " << std::endl;
 
         std::cin >> classCode;
 
+        // validates that the class chosen by the student does not conflict with the schedule of other classes
         bool validate = valideNewClass(ucCode, classCode, it, classes);
 
         if(!validate){
-          addClassStudent(ucCode, classCode, it);
-          
+          addClassStudent(ucCode, classCode, it);    
           printStudentClasses(it);
           std::cout<< "\nAdicionado com sucesso" << std::endl;
-        }else{
-          std::cout << "-----------------------------------------------" << std::endl;
-          std::cout << "Error in add class" << std::endl;
         }
-        
         
       }
 
@@ -230,51 +221,67 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
 void menuSwitch(std::map<std::string, studentComp>::iterator &it){
 
       std::string ucCode, classCode;
+      int flag;
+      bool validate = false;
 
       printStudentClasses(it);
 
       std::cout<< "-----------------------------------------------" << std::endl;
-      std::cout << "Enter UC code to switch: " << std::endl;
-      std::cin >> ucCode;
+      std::cout<< "|1 - Switch UC                                |" << std::endl;
+      std::cout<< "|2 - Switch class                             |" << std::endl;
+      std::cout<< "-----------------------------------------------" << std::endl;
+      std::cin >> flag;
 
-      for(const auto& classe : it->second.getClasses()){
-            if(classe.getUcCode() == ucCode){
+      switch(flag){
+        case(1):
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "Enter UC code to remove: " << std::endl;
+          std::cin >> ucCode;
+          removeUcStudent(ucCode, it);
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "Enter UC code to add: " << std::endl;
+          std::cin >> ucCode;
 
-              auto it_uc = uc_tree.find(ucCode);
+          printFreeClasses(ucCode, count);
 
-              if(it_uc == uc_tree.end()){
-                std::cout << "-----------------------------------------------" << std::endl;
-                std::cout << "UC code not found" << std::endl;
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "Enter class code to add: " << std::endl;
 
-                menuRequests();
-              }else{
-                std::cout << "-----------------------------------------------" << std::endl;
-                std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
-                std::cout << "   Classes: " << std::endl;
-                for(const auto& classCode : it_uc->second.getClassCode()){
-                  std::string a = classCode;
-                  std::cout<< a << std::endl;
+          std::cin >> classCode;
 
-                }
-              }
+          validate = valideNewClass(ucCode, classCode, it, classes);
 
-              std::cout << "-----------------------------------------------" << std::endl;
-              std::cout << "Enter class code to switch: " << std::endl;
-              std::cin >> classCode;
+          if(!validate){
+            addClassStudent(ucCode, classCode, it);
+            printStudentClasses(it);
+            std::cout<< "\nSuccessfully switched" << std::endl;
+          }
+          break;
+        
+        case(2):
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "Enter UC to change class: " << std::endl;
+          std::cin >> ucCode;
+          printFreeClasses(ucCode, count);
 
-              for(auto& classe : it->second.getClasses()){
-                if(ucCode == classe.getUcCode()){
-                    classe.setClassCode(classCode);
-                }
-              }       
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "Enter class code to add: " << std::endl;
+          std::cin >> classCode;
 
-              printStudentClasses(it);
-              std::cout<< "Successful switched" << std::endl;
-                       
-          } 
+          removeUcStudent(ucCode, it);
+
+          validate = valideNewClass(ucCode, classCode, it, classes);
+
+          if(!validate){
+            addClassStudent(ucCode, classCode, it);
+            printStudentClasses(it);
+            std::cout<< "\nSuccessfully switched" << std::endl;
+          }
+          break;
+
       }
 
-
+      
 }
 
 

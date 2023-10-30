@@ -140,7 +140,7 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
     auto it_class =  classes.find(value);
     
     if(it_class == classes.end()){
-        std::cerr << "Error in find class" << std::endl;
+        std::cout << "Error in find class" << std::endl;
         return true;
     }else{
 
@@ -148,6 +148,7 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
         const std::set<classInfo>& classesOfDay = orderClasses[class_info.dayInt];
         for(const auto& aula : classesOfDay){
           if(class_info.startTime >= aula.startTime && class_info.startTime < aula.startTime + aula.duration){
+            std::cout << "Error: Incompatible schedules" << std::endl;
             return true;
           }
         } 
@@ -182,6 +183,28 @@ void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
   for(const auto& classe : it->second.getClasses()){
     std::cout << "  " << classe.getUcCode() << " - " << classe.getClassCode() << std::endl;
   }
+}
+
+void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<classQtd>>& count){
+        
+        auto it_count = count.find(ucCode);
+
+        // searches for Code in the classCont tree and returns a list of all classes that are able to accept new students
+        if(it_count != count.end()){
+          std::list<std::string> free_classes = valideFreeClass(it_count);
+          std::cout << "   Classes: " << std::endl;
+
+          if(!free_classes.empty()){
+            for(auto it_list = free_classes.begin(); it_list != free_classes.end(); it_list++){
+              std::cout << "      " << *it_list << std::endl;
+            }
+          }else{
+            std::cout << "      No classes available" << std::endl;
+          }
+        }else{
+          std::cout << " Uc not found" << std::endl;
+        }
+
 }
 
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){

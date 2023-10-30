@@ -20,7 +20,7 @@ std::vector<ClassComp>& studentComp::getClasses() {
 
 
 bool studentComp::valideQtClasses(){
-    if(classes.size() > 6){
+    if(classes.size() > 7){
         return true;
     }
     return false;

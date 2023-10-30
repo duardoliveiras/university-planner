@@ -4,15 +4,19 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <map>
+
 
 #include "../classes/class.cpp"
 #include "../classes/student.cpp"
 #include "../classes/uc.cpp"
 
+
 void printClass(const std::vector<myClass> &classes);
 void printStudent(const std::vector<myStudent> &students);
 void printUc(const std::vector<myUc> &vecUc);
+
+
+
 
 
 #endif
