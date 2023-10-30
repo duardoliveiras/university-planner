@@ -103,8 +103,9 @@ std::vector<myStudent> selectStudent(std::string str, std::vector<myStudent> &st
   return selectStudent;
 }
 
+// ------------------------------------------------ //
 
-
+// receives the student pointer by reference and removes the UC
 bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it){
     bool remove = false;
     for(unsigned i = 0; i < it->second.getClasses().size(); i++){
@@ -116,15 +117,18 @@ bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iter
     return remove;
 }
 
+// receives the stuede pointer by reference and add the new Class
 void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it){
 
     ClassComp classe(ucCode, classCode);
-
     it->second.getClasses().push_back(classe);
 }
 
+
+// receives the student pointer by reference and class Tree (classes) and th UC code and class code
 bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
 
+    // call function to order the classes of the student by int day
     std::map<int, std::set<classInfo>> orderClasses = orderStudentClass(it, classes);
 
     std::string value = ucCode + classCode;
@@ -143,9 +147,14 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
         std::cout << "Error in find class" << std::endl;
         return true;
     }else{
-
+      // verify if has a class in the same day and time
       for(const auto& class_info : it_class->second.getClassInfoVec()){
+        // get all classes of the day of class 
         const std::set<classInfo>& classesOfDay = orderClasses[class_info.dayInt];
+
+        // and verify if the student has a class in the same time  
+        // aula -> student classes
+        // class_info -> class to add
         for(const auto& aula : classesOfDay){
           if(class_info.startTime >= aula.startTime && class_info.startTime < aula.startTime + aula.duration){
             std::cout << "Error: Incompatible schedules" << std::endl;
@@ -157,24 +166,30 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
     }
 }
 
+// receives classCount Tree pointer and verify if the class is able to accept new students
 std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQtd>>::iterator it_count){
   int min = INT_MAX;
   std::list<std::string> free_classes;
 
+  // first verify the class with the minimum number of students
   for(auto& classe : it_count->second){
     if(classe.qtd < min){
       min = classe.qtd;
     }
   }
+  // then verify if the class is able to accept new students and add to the list
   for(auto& classe : it_count->second){
     if(!(classe.qtd+1 - min > equilibre) && classe.qtd+1  <= max_students ){
        free_classes.push_back(classe.classCode);
     }
   }
 
+  // return list
   return free_classes;
 }
 
+
+// Receives the student pointer and print your classes
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
   system("clear");
   std::cout<< "\nCode: " << it->first << " - ";
@@ -185,6 +200,8 @@ void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
   }
 }
 
+// Receives the classCount by reference and verify if the new uc is already in the tree
+// then print  the classes that are able to accept new students
 void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<classQtd>>& count){
         
         auto it_count = count.find(ucCode);
@@ -207,14 +224,18 @@ void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<clas
 
 }
 
+
+// This function receives the student pointer, the class tree (classes)
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
 
+    // map to order the classes by day
     std::map<int, std::set<classInfo>> orderClasses;
 
+    // for each class of the student, search in the class tree and add the classInfo in the orderClasses map
     for(const auto& classe : it->second.getClasses()){
-    std::string value = classe.getUcCode() + classe.getClassCode();
+      std::string value = classe.getUcCode() + classe.getClassCode();
 
-      // Remove blank spaces
+      // remove blank spaces
       value.erase(value.begin(), std::find_if(value.begin(), value.end(), [](unsigned char ch) {
           return !std::isspace(ch);
       }));
@@ -222,11 +243,14 @@ std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, stude
           return !std::isspace(ch);
       }).base(), value.end());
 
+      // student one class pointer, verify if the class exists in the class tree
       auto it_class = classes.find(value);
 
+      // if the class does not exist, print error
       if(it_class == classes.end()){
         std::cerr << "Error in find class" << std::endl;
       }else{
+        // if exists, add the classInfo in the orderClasses map
         for(const auto& classInfo : it_class->second.getClassInfoVec()){
           orderClasses[classInfo.dayInt].insert(classInfo);
           
