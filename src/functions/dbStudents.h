@@ -5,8 +5,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
+#include <set>
+#include <list>
 
 #include "../classes/student.h"
+#include "../classes/studentComp.h"
 
 int menuGroup(int n);
 int menuOrder(int n);
@@ -23,6 +27,15 @@ void printStudent(const std::vector<myStudent> &students);
 
 void menuStudents(std::string code = "", int type = 0, int filter = 0,
                   int order = 0);
+
+bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
+void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it);
+std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
+bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
+std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQtd>>::iterator it_count);
+void printStudentClasses(std::map<std::string, studentComp>::iterator& it);
+void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<classQtd>>& count);
+
 
 void workingMessage();
 void errorMessage();

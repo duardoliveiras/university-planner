@@ -1,7 +1,14 @@
 #include "menu.h"
 
+std::map<std::string, std::vector<classQtd>> count;
+std::map<std::string, studentComp> students = read_students(count);
+std::map<std::string, myUc> uc_tree = read_ucs(count);
+std::map<std::string, ClassComp> classes = read_classes();
+
 void menu() {
   int flag = 0;
+
+  std::vector<myUc> ucs = readAllUcs();
 
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
@@ -89,25 +96,221 @@ void menuSeeDatabase() {
 void menuRequests() {
   int flag = 0;
 
-  std::cout << flag;
-  // // necessary if user wants to change the classes by usercode
-  // int code = 0;
-  // std::vector<std::pair<int, int>> codes = {{0, 0}};
+  system("clear");
+  std::cout << "Change database" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "| 1) Add                                      |" << std::endl;
+  std::cout << "| 2) Remove                                   |" << std::endl;
+  std::cout << "| 3) Switch                                   |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cin >> flag;
+  menuStudentCode(flag);
+}
 
-  // std::cout << "-----------------------------------------------" <<
-  // std::endl; std::cout << "| 1) Enrollment                               |"
-  // << std::endl; std::cout << "| 2) Removal |" << std::endl; std::cout << "|
-  // 3) Changing                                 |" << std::endl; std::cout <<
-  // "-----------------------------------------------" << std::endl; std::cout
-  // << "Choose an option: "; std::cin >> flag;
+void menuStudentCode(int flag) {
 
-  // errorCheck(flag);
+  std::string registrationNumber;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "Enter your registration number: " << std::endl;
+  std::cin >> registrationNumber;
 
-  // code = menuCode();
+  auto it = students.find(registrationNumber);
 
-  // errorCheck(code);
+  if (it == students.end()) {
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Registration number not found" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    menuRequests();
+  } else {
+    std::cout << "-----------------------------------------------" << std::endl;
+    printStudentClasses(it);
+  }
 
-  // requests(flag, code);
+  switch (flag) {
+  case (1):
+    menuAdd(it);
+    break;
+  case (2):
+    menuRemove(it);
+    break;
+  case (3):
+    menuSwitch(it);
+    break;
+  default:
+    errorMessage();
+  }
+}
+
+void menuRemove(std::map<std::string, studentComp>::iterator &it) {
+
+  std::string ucCode;
+  // std::string classCode;
+
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "Enter UC code to remove " << std::endl;
+  std::cin >> ucCode;
+  std::cout << "-----------------------------------------------" << std::endl;
+
+  bool remove = removeUcStudent(ucCode, it);
+
+  if (remove) {
+    printStudentClasses(it);
+    std::cout << "\nRemovido com sucesso" << std::endl;
+  } else {
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Error in remove class" << std::endl;
+  }
+}
+
+void menuAdd(std::map<std::string, studentComp>::iterator &it) {
+
+  std::string ucCode;
+  std::string classCode;
+  // validates if the student is enrolled in more than 7 classes
+  if (it->second.valideQtClasses()) {
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << " You have already 7 classes" << std::endl;
+  } else {
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter UC code to see all classes: " << std::endl;
+    std::cin >> ucCode;
+
+    // checks if ucCode exists
+    auto it_uc = uc_tree.find(ucCode);
+
+    if (it_uc == uc_tree.end()) {
+      std::cout << "-----------------------------------------------"
+                << std::endl;
+      std::cout << "UC code not found" << std::endl;
+
+      menuRequests();
+    } else {
+      std::cout << "-----------------------------------------------"
+                << std::endl;
+      std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
+
+      printFreeClasses(ucCode, count);
+
+      std::cout << "-----------------------------------------------"
+                << std::endl;
+      std::cout << "Enter class code to add: " << std::endl;
+
+      std::cin >> classCode;
+
+      // validates that the class chosen by the student does not conflict with
+      // the schedule of other classes
+      bool validate = valideNewClass(ucCode, classCode, it, classes);
+
+      if (!validate) {
+        addClassStudent(ucCode, classCode, it);
+        printStudentClasses(it);
+        std::cout << "\nSucessfully added" << std::endl;
+
+        saveOrReturn();
+      }
+    }
+  }
+}
+
+void menuSwitch(std::map<std::string, studentComp>::iterator &it) {
+
+  std::string ucCode, classCode;
+  int flag;
+  bool validate = false;
+
+  printStudentClasses(it);
+
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "| 1) Switch UC                                |" << std::endl;
+  std::cout << "| 2) Switch class                             |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cin >> flag;
+
+  switch (flag) {
+  case (1):
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter UC code to remove: " << std::endl;
+    std::cin >> ucCode;
+    removeUcStudent(ucCode, it);
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter UC code to add: " << std::endl;
+    std::cin >> ucCode;
+
+    printFreeClasses(ucCode, count);
+
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter class code to add: " << std::endl;
+
+    std::cin >> classCode;
+
+    validate = valideNewClass(ucCode, classCode, it, classes);
+
+    if (!validate) {
+      addClassStudent(ucCode, classCode, it);
+      printStudentClasses(it);
+      std::cout << "\nSuccessfully switched" << std::endl;
+
+      saveOrReturn();
+    }
+    break;
+
+  case (2):
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter UC to change class: " << std::endl;
+    std::cin >> ucCode;
+    printFreeClasses(ucCode, count);
+
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter class code to add: " << std::endl;
+    std::cin >> classCode;
+
+    removeUcStudent(ucCode, it);
+
+    validate = valideNewClass(ucCode, classCode, it, classes);
+
+    if (!validate) {
+      addClassStudent(ucCode, classCode, it);
+      printStudentClasses(it);
+      std::cout << "\nSuccessfully switched" << std::endl;
+
+      saveOrReturn();
+    }
+    break;
+
+  default:
+    errorMessage();
+    break;
+  }
+}
+
+void saveOrReturn() {
+  int flag = 0;
+
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "| 1) Save                                     |" << std::endl;
+  std::cout << "| 2) Return                                   |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "Choose an option: ";
+  std::cin >> flag;
+
+  errorCheck(flag);
+
+  switch (flag) {
+  case 1:
+    save();
+    break;
+  case 2:
+    menuRequests();
+    break;
+  default:
+    errorMessage();
+    break;
+  }
+}
+
+void save() {
+  keepAllChanges(students);
+  exit(0);
 }
 
 int selectOrder() {
