@@ -1,5 +1,6 @@
 #include "dbStudents.h"
 #include <algorithm>
+#include <string>
 
 void menuStudents(std::string str, int type, int filter, int order) {
   // read Database
@@ -24,10 +25,20 @@ std::vector<myStudent> filterInfoStudent(int n, std::string str,
   switch (n) {
   case 1:
     // 1) Uc Code
+    for (const auto &mystudent : students) {
+      // if (str == mystudent.getUcCode()) {
+      //   selectStudent.push_back(mystudent);
+      // }
+    }
 
     break;
   case 2:
     // 2) Class Code
+    for (const auto &mystudent : students) {
+      // if (str == mystudent.getClassCode()) {
+      //   filterStudent.push_back(mystudent);
+      // }
+    }
     break;
   case 3:
     // 3) Year

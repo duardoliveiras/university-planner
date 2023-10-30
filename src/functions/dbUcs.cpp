@@ -20,9 +20,20 @@ std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs) {
   switch (n) {
   case 1:
     // 1) Uc Code
+    for (const auto &myuc : ucs) {
+      if (str == myuc.getUcCode()) {
+        filterUc.push_back(myuc);
+      }
+    }
     break;
   case 2:
     // 2) Class Code
+    for (const auto &myuc : ucs) {
+      auto myuc.getClassCode();
+      // if (str == myuc.getClassCode()) {
+      //   filterUc.push_back(myuc);
+      // }(str ==  
+    }
     break;
   case 3:
     // 3) Year
