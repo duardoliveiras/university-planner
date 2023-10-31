@@ -16,5 +16,6 @@ std::string getSysdate();
 void listAllBackups();
 void listChanges(int cdBkp);
 void printAllBackups();
+void backupFile(int cdBkp);
 
 #endif

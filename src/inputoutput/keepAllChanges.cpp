@@ -30,7 +30,7 @@ void makeBackup()
 
   if (!backup)
   {
-    std::cerr << "Backup already exists" << std::endl;
+    std::cerr << "Error to create a backup file" << std::endl;
     return;
   }
 
@@ -117,5 +117,40 @@ void listChanges(int cdBkp){
     std::cout << "   " << line << std::endl;
   }
   file.close();
+
+}
+
+void backupFile(int cdBkp){
+
+  std::string path = "schedule/backup/" + backups[cdBkp];
+
+  std::ifstream backup(path, std::ios::binary);
+
+  if (!backup)
+  {
+    std::cerr << "Error opening file" << std::endl;
+  } 
+
+  std::ofstream file("schedule/students_classes.csv", std::ios::binary);
+
+  if (!file)
+  {
+    std::cerr << "Error opening file" << std::endl;
+  }
+
+  file << backup.rdbuf();
+  file.close();
+  backup.close();
+
+  if(std::filesystem::exists("schedule/alter/" + backups[cdBkp])){
+    try{
+      std::filesystem::remove("schedule/alter/" + backups[cdBkp]);
+      std::filesystem::remove("schedule/backup/" + backups[cdBkp]);
+    } catch (const std::filesystem::filesystem_error& e){
+      std::cerr << "Error to remove the file" << e.what() << std::endl;
+    }
+  }else{
+    std::cout << "The file of changes not exist" << std::endl;
+  }
 
 }

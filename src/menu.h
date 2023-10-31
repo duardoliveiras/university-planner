@@ -34,6 +34,8 @@ void menuUcs(std::string str = "", int type = 0, int filter = 0, int order = 0);
 
 void menuBackup();
 void menuChanges();
+int selectBackupCode();
+void restoreBackup();
 
 int selectOrder();
 int selectType();

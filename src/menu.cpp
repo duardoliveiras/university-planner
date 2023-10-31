@@ -12,6 +12,8 @@ std::stack<alter> stackAlter;
 
 
 void menu() {
+  system("clear");
+
   int flag = 0;
 
   std::vector<myUc> ucs = readAllUcs();
@@ -25,6 +27,7 @@ void menu() {
   //     std::cout << "Class: " << j.classCode << " Qtd: " << j.qtd << std::endl;
   //   }
   // }
+
 
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
@@ -343,18 +346,27 @@ void save(){
    exit(0);
 }
 
-void menuBackup(){
-  system("clear");
-  listAllBackups();
-  printAllBackups();
-  
+int selectBackupCode(){
   int cdBkp;
 
   std::cout << "Choose a backup to view changes: ";
   std::cin >> cdBkp;
 
-  listChanges(cdBkp);
+  return cdBkp;
+}
+
+void menuBackup(){
+  system("clear");
+  listAllBackups();
+  printAllBackups();
+
+  listChanges(selectBackupCode());
   menuChanges();
+}
+
+void restoreBackup(){
+  backupFile(selectBackupCode());
+  menu();
 }
 
 void menuChanges(){
@@ -364,6 +376,7 @@ void menuChanges(){
   std::cout<< "-----------------------------------------------" << std::endl;
   std::cout<< "|1 - Return                                   |" << std::endl;
   std::cout<< "|2 - Main menu                                |" << std::endl;
+  std::cout<< "|3 - Restore                                  |" << std::endl;
   std::cout<< "-----------------------------------------------" << std::endl;
 
   std::cin >> flag;
@@ -375,12 +388,17 @@ void menuChanges(){
   case(2):
     menu();
     break;
+  case(3):
+    restoreBackup();
+    break;
   default:
     errorMessage();
     break;
   }
 
 }
+
+
 
 int selectOrder() {
   int flag = 0;
