@@ -13,6 +13,8 @@
 void makeBackup();
 void keepAllChanges(std::map<std::string, studentComp> &students, std::stack<alter>& stackAlter);
 std::string getSysdate();   
-void listAllChanges();
+void listAllBackups();
+void listChanges(int cdBkp);
+void printAllBackups();
 
 #endif

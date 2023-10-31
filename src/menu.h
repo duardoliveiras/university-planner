@@ -33,6 +33,7 @@ void menuClasses(std::string str = "", int type = 0, int filter = 0,
 void menuUcs(std::string str = "", int type = 0, int filter = 0, int order = 0);
 
 void menuBackup();
+void menuChanges();
 
 int selectOrder();
 int selectType();

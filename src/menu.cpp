@@ -343,6 +343,45 @@ void save(){
    exit(0);
 }
 
+void menuBackup(){
+  system("clear");
+  listAllBackups();
+  printAllBackups();
+  
+  int cdBkp;
+
+  std::cout << "Choose a backup to view changes: ";
+  std::cin >> cdBkp;
+
+  listChanges(cdBkp);
+  menuChanges();
+}
+
+void menuChanges(){
+
+  int flag; 
+
+  std::cout<< "-----------------------------------------------" << std::endl;
+  std::cout<< "|1 - Return                                   |" << std::endl;
+  std::cout<< "|2 - Main menu                                |" << std::endl;
+  std::cout<< "-----------------------------------------------" << std::endl;
+
+  std::cin >> flag;
+
+  switch (flag) {
+  case (1):
+    menuBackup();
+    break;
+  case(2):
+    menu();
+    break;
+  default:
+    errorMessage();
+    break;
+  }
+
+}
+
 int selectOrder() {
   int flag = 0;
 

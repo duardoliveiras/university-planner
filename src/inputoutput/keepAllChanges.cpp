@@ -1,6 +1,7 @@
 #include "keepAllChanges.h"
 #include <ctime>
 
+std::vector<std::string> backups;
 
 std::string getSysdate(){
 
@@ -45,7 +46,7 @@ void keepAllChanges(std::map<std::string, studentComp> &students, std::stack<alt
 
   makeBackup();
 
-  std::ofstream alter("schedule/alter.txt", std::ios::app);
+  std::ofstream alter("schedule/alter/students_classes-" + getSysdate() + ".csv", std::ios::app);
 
   if (!alter.is_open())
   {
@@ -55,7 +56,7 @@ void keepAllChanges(std::map<std::string, studentComp> &students, std::stack<alt
 
   while (!stackAlter.empty())
   {
-    alter << stackAlter.top().studentCode << "," << stackAlter.top().studentName << "," << stackAlter.top().type << "," << stackAlter.top().ucCode << "," << stackAlter.top().classCode << getSysdate() << std::endl;
+    alter << "The student: " << stackAlter.top().studentCode << " - " << stackAlter.top().studentName << " " << stackAlter.top().type << " UC: " << stackAlter.top().ucCode << " Class: " << stackAlter.top().classCode << std::endl;
     stackAlter.pop();
   }
 
@@ -81,16 +82,40 @@ void keepAllChanges(std::map<std::string, studentComp> &students, std::stack<alt
 }
 
 
-void listAllChanges(){
-  std::string way = "schedule/backup";
-  std::vector<std::string> backups;
-
+void listAllBackups(){
+  if(backups.size() == 0){
+      std::string way = "schedule/backup";
   for(const auto &in : std::filesystem::directory_iterator(way)){
     if(std::filesystem::is_regular_file(in)){
-      backups.push_back(in.path());
+      backups.push_back(in.path().filename().string());
     }
-  for(unsigned i = 0; i < backups.size(); i++){
-    std::cout << i << " - " << backups[i] << std::endl;
   }
   }
+
+}
+
+void printAllBackups(){
+    std::cout<< "Backups: " << std::endl;
+    for(unsigned i = 0; i < backups.size(); i++){
+    std::cout << i << " - " << backups.at(i) << std::endl;
+  }
+}
+
+void listChanges(int cdBkp){
+
+  std::ifstream file("schedule/alter/" + backups[cdBkp], std::ios::binary);
+
+  if (!file)
+  {
+    std::cerr << "Error opening file" << std::endl;
+  }
+
+  std::string line;
+
+  while (std::getline(file, line))
+  {
+    std::cout << "   " << line << std::endl;
+  }
+  file.close();
+
 }
