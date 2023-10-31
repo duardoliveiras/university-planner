@@ -7,10 +7,12 @@
 #include <string>
 #include <stack>
 #include <map>
+#include <filesystem>   
 #include "../classes/studentComp.h"
 
 void makeBackup();
 void keepAllChanges(std::map<std::string, studentComp> &students, std::stack<alter>& stackAlter);
-
+std::string getSysdate();   
+void listAllChanges();
 
 #endif

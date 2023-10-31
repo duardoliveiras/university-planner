@@ -30,6 +30,7 @@ void menu() {
   std::cout << "| 1) See database                             |" << std::endl;
   std::cout << "| 2) Change database                          |" << std::endl;
   std::cout << "| 3) Exit                                     |" << std::endl;
+  std::cout << "| 4) Backup                                   |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Choose an option: ";
   std::cin >> flag;
@@ -46,6 +47,9 @@ void menu() {
     break;
   case 3:
     exit(0);
+  case 4:
+    menuBackup();
+    break;
   default:
     errorMessage();
     break;
