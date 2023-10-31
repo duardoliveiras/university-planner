@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 #include "classes/studentComp.h"
 #include "classes/ClassComp.h"
 #include <map>
@@ -12,7 +11,8 @@
 
 void menu();
 
-int main() {
+int main()
+{
 
   system("clear");
   menu();

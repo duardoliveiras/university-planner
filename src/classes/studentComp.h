@@ -7,6 +7,16 @@
 #include "ClassComp.h" // Inclua o cabeçalho completo da classe ClassComp
 #include <set>
 
+struct alter
+{
+    std::string studentCode;
+    std::string studentName;
+    std::string type;
+    std::string ucCode;
+    std::string classCode;
+};
+
+
 class studentComp {
 public:
     studentComp(const std::string& code, const std::string& name);

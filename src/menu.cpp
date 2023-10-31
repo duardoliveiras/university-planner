@@ -6,6 +6,7 @@ std::map<std::string, std::vector<classQtd>> count;
 std::map<std::string, studentComp> students = read_students(count);
 std::map<std::string, myUc> uc_tree = read_ucs(count);
 std::map<std::string, ClassComp> classes = read_classes();
+std::stack<alter> stackAlter;
 
 
 
@@ -221,7 +222,7 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
         bool validate = valideNewClass(ucCode, classCode, it, classes);
 
         if(!validate){
-          addClassStudent(ucCode, classCode, it);    
+          addClassStudent(ucCode, classCode, it, stackAlter);    
           printStudentClasses(it);
           std::cout<< "\nSucessfully added" << std::endl;
 
@@ -268,7 +269,7 @@ void menuSwitch(std::map<std::string, studentComp>::iterator &it){
           validate = valideNewClass(ucCode, classCode, it, classes);
 
           if(!validate){
-            addClassStudent(ucCode, classCode, it);
+            addClassStudent(ucCode, classCode, it, stackAlter);
             printStudentClasses(it);
             std::cout<< "\nSuccessfully switched" << std::endl;
 
@@ -291,7 +292,7 @@ void menuSwitch(std::map<std::string, studentComp>::iterator &it){
           validate = valideNewClass(ucCode, classCode, it, classes);
 
           if(!validate){
-            addClassStudent(ucCode, classCode, it);
+            addClassStudent(ucCode, classCode, it, stackAlter);
             printStudentClasses(it);
             std::cout<< "\nSuccessfully switched" << std::endl;
 
@@ -334,7 +335,7 @@ void saveOrReturn(){
 }
 
 void save(){
-   keepAllChanges(students);
+   keepAllChanges(students, stackAlter);
    exit(0);
 }
 

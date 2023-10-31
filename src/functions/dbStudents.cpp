@@ -4,6 +4,10 @@
 #include <fstream>
 
 
+
+
+
+
 int equilibre = 3;
 int max_students = 6;
 
@@ -118,10 +122,12 @@ bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iter
 }
 
 // receives the stuede pointer by reference and add the new Class
-void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it){
+void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::stack<alter>& stackAlter){
 
     ClassComp classe(ucCode, classCode);
     it->second.getClasses().push_back(classe);
+
+    stackAlter.push({it->second.getCode(), it->second.getName(), "add", ucCode, classCode});
 }
 
 
@@ -196,7 +202,7 @@ void organizerUcStudent(std::map<std::string, studentComp>::iterator& it){
 
 // Receives the student pointer and print your classes
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
-  system("clear");
+  //  system("clear");
   organizerUcStudent(it);
   std::cout<< "\nCode: " << it->first << " - ";
   std::cout<< "Name: " << it->second.getName() << std::endl;

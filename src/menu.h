@@ -4,6 +4,8 @@
 #include <iostream>
 #include <map>
 #include <list>
+#include <stack>
+
 #include "classes/studentComp.h"
 #include "classes/ClassComp.h"
 #include "inputoutput/read.h"
@@ -37,7 +39,7 @@ std::string selectCode();
 std::string selectValue();
 
 bool removeUcStudent(std::string ucCod, std::map<std::string, studentComp>::iterator& it);
-void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it);
+void addClassStudent(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::stack<alter>& stackAlter);
 
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
