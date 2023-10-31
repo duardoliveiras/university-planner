@@ -40,6 +40,7 @@ void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<clas
 
 void showStudentClasses(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 std::string weekDayString(int day);
+bool verifyUcCode(std::string ucCode, std::map<std::string, studentComp>::iterator& it);
 
 void workingMessage();
 void errorMessage();

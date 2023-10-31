@@ -128,14 +128,16 @@ void menuRequests() {
     std::cout << "| 4) View schedules                           |" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
     std::cin >> flag;
-    menuStudentCode(flag);
 
-
-
+    if(flag > 4 || flag == 0){
+      errorMessage();
+    }else{
+      menuStudentCode(flag);
+    }
 }
 
 void menuStudentCode(int flag){
-  
+    system("clear");
     std::string registrationNumber;
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter your registration number: " << std::endl;
@@ -147,6 +149,26 @@ void menuStudentCode(int flag){
         std::cout << "-----------------------------------------------" << std::endl;
         std::cout << "Registration number not found" << std::endl;
         std::cout << "-----------------------------------------------" << std::endl;
+
+        std::cout << "1 - Try again" << std::endl;
+        std::cout << "2 - Exit" << std::endl;
+        
+        int flag2;
+
+        std::cin >> flag2;
+
+        switch (flag2)
+        {
+        case 1:    
+          menuStudentCode(flag);
+          break;
+        case 2: 
+          exit(0);
+        default:
+          errorMessage();
+          break;
+        }
+
         menuRequests();
     }else{
         std::cout << "-----------------------------------------------" << std::endl;
@@ -210,37 +232,61 @@ void menuAdd(std::map<std::string, studentComp>::iterator& it){
       std::cout << "Enter UC code to see all classes: " << std::endl;
       std::cin >> ucCode;
 
-      // checks if ucCode exists
-      auto it_uc = uc_tree.find(ucCode);
-      
-      if(it_uc == uc_tree.end()){
-        std::cout << "-----------------------------------------------" << std::endl;
-        std::cout << "UC code not found" << std::endl;
+        if(!verifyUcCode(ucCode, it)){
+          // checks if ucCode exists
+          auto it_uc = uc_tree.find(ucCode);
+          
+          if(it_uc == uc_tree.end()){
+            std::cout << "-----------------------------------------------" << std::endl;
+            std::cout << "UC code not found" << std::endl;
 
-        menuRequests();
-      }else{
-        std::cout << "-----------------------------------------------" << std::endl;
-        std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
+            menuRequests();
+          }else{
+            std::cout << "-----------------------------------------------" << std::endl;
+            std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
 
-        printFreeClasses(ucCode, count);
+            printFreeClasses(ucCode, count);
 
-        std::cout << "-----------------------------------------------" << std::endl;
-        std::cout << "Enter class code to add: " << std::endl;
+            std::cout << "-----------------------------------------------" << std::endl;
+            std::cout << "Enter class code to add: " << std::endl;
 
-        std::cin >> classCode;
+            std::cin >> classCode;
 
-        // validates that the class chosen by the student does not conflict with the schedule of other classes
-        bool validate = valideNewClass(ucCode, classCode, it, classes);
+            // validates that the class chosen by the student does not conflict with the schedule of other classes
+            bool validate = valideNewClass(ucCode, classCode, it, classes);
 
-        if(!validate){
-          addClassStudent(ucCode, classCode, it, stackAlter);    
-          printStudentClasses(it);
-          std::cout<< "\nSucessfully added" << std::endl;
+            if(!validate){
+              addClassStudent(ucCode, classCode, it, stackAlter);    
+              printStudentClasses(it);
+              std::cout<< "\nSucessfully added" << std::endl;
 
-          saveOrReturn();
+              saveOrReturn();
+            }
+            
+          }
+        }else{
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "You are already enrolled in this UC" << std::endl;
+
+          int flag;
+          std::cout << "-----------------------------------------------" << std::endl;
+          std::cout << "1 - Add another class" << std::endl;
+          std::cout << "2 - Exit" << std::endl;
+          std::cin >> flag;
+
+          switch(flag){
+            case(1):
+              system("clear");
+              menuAdd(it);
+              break;
+            case(2):
+              exit(0);
+            default:
+              errorMessage();
+              break;
+          }
+
         }
-        
-      }
 
     }
 
@@ -350,10 +396,16 @@ void save(){
    exit(0);
 }
 
-int selectBackupCode(){
+int selectBackupCode(int type){
   int cdBkp;
 
-  std::cout << "Choose a backup to view changes: ";
+  if(type == 0){
+    std::cout << "Choose a backup to view changes: ";
+  }
+  else if(type == 1){
+    std::cout << "Choose a backup to restore: ";
+  }
+  
   std::cin >> cdBkp;
 
   return cdBkp;
@@ -364,12 +416,12 @@ void menuBackup(){
   listAllBackups();
   printAllBackups();
 
-  listChanges(selectBackupCode());
+  listChanges(selectBackupCode(0));
   menuChanges();
 }
 
 void restoreBackup(){
-  backupFile(selectBackupCode());
+  backupFile(selectBackupCode(1));
   menu();
 }
 

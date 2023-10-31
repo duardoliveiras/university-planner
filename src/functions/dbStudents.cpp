@@ -275,14 +275,14 @@ std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, stude
 
 void showStudentClasses(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
       auto orderClasses = orderStudentClass(it, classes);
-
+      std::cout<< "\nSchedules: " << std::endl;
       for(const auto& pair : orderClasses ){
         std::string day = weekDayString(pair.first);
         std::cout << "Day: " << day << std::endl;
       for(const auto& info : pair.second){
         std::cout << info.code << " - ";
-        std::cout << info.startTime << " - ";
-        std::cout << info.duration << " - ";
+        std::cout << info.startTime << " to ";
+        std::cout << info.startTime + info.duration << " - ";
         std::cout << info.type << std::endl;
       }
       std::cout << std::endl;
@@ -315,4 +315,17 @@ std::string weekDayString(int day){
     return "Error Day";
     break;
   }
+}
+
+
+// Checks whether the student is already enrolled in a UC class. If it returns true it means a problem was found
+bool verifyUcCode(std::string ucCode, std::map<std::string, studentComp>::iterator& it){
+
+    for(const auto& classe : it->second.getClasses()){
+        if(classe.getUcCode() == ucCode){
+            return true;
+        }
+    }
+
+    return false;
 }

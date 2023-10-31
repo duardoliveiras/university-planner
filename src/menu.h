@@ -51,6 +51,7 @@ bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::str
 std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQtd>>::iterator it_count);
 void showStudentClasses(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 
+bool verifyUcCode(std::string ucCode, std::map<std::string, studentComp>::iterator& it);
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it);
 void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<classQtd>>& count);
 void saveOrReturn();
