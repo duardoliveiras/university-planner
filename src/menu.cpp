@@ -14,6 +14,16 @@ void menu() {
   int flag = 0;
 
   std::vector<myUc> ucs = readAllUcs();
+  
+  // auto i = count.find("L.EIC003");
+
+  // if(i != count.end()){
+  //   std::cout << "Encontrou" << std::endl;
+  //   std::cout << "UC: " << i->first << std::endl;
+  //   for(auto j : i->second){
+  //     std::cout << "Class: " << j.classCode << " Qtd: " << j.qtd << std::endl;
+  //   }
+  // }
 
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
@@ -156,6 +166,7 @@ void menuRemove(std::map<std::string, studentComp>::iterator& it){
     std::string ucCode;
    // std::string classCode;
 
+
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter UC code to remove " << std::endl;
     std::cin >> ucCode;
@@ -166,6 +177,7 @@ void menuRemove(std::map<std::string, studentComp>::iterator& it){
     if(remove){
       printStudentClasses(it);
       std::cout<< "\nRemovido com sucesso" << std::endl;
+      saveOrReturn();
     }else{
       std::cout << "-----------------------------------------------" << std::endl;
       std::cout << "Error in remove class" << std::endl;
