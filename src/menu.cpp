@@ -32,8 +32,8 @@ void menu() {
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
   std::cout << "| 2) Change database                          |" << std::endl;
-  std::cout << "| 3) Exit                                     |" << std::endl;
-  std::cout << "| 4) Backup                                   |" << std::endl;
+  std::cout << "| 3) Backup                                   |" << std::endl;
+  std::cout << "| 4) Exit                                     |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Choose an option: ";
   std::cin >> flag;
@@ -49,10 +49,10 @@ void menu() {
     menuRequests();
     break;
   case 3:
-    exit(0);
-  case 4:
     menuBackup();
     break;
+  case 4:
+    exit(0);
   default:
     errorMessage();
     break;
@@ -125,6 +125,7 @@ void menuRequests() {
     std::cout << "| 1) Add                                      |" << std::endl;
     std::cout << "| 2) Remove                                   |" << std::endl;
     std::cout << "| 3) Switch                                   |" << std::endl;
+    std::cout << "| 4) View schedules                           |" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
     std::cin >> flag;
     menuStudentCode(flag);
@@ -134,7 +135,7 @@ void menuRequests() {
 }
 
 void menuStudentCode(int flag){
-
+  
     std::string registrationNumber;
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter your registration number: " << std::endl;
@@ -161,6 +162,9 @@ void menuStudentCode(int flag){
             break;
         case(3):
             menuSwitch(it);
+            break;
+        case(4):
+            showStudentClasses(it, classes);
             break;
         default:
             errorMessage();

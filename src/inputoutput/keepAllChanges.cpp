@@ -3,6 +3,8 @@
 
 std::vector<std::string> backups;
 
+
+// Get the system date
 std::string getSysdate(){
 
   std::time_t date = std::time(0);
@@ -82,6 +84,7 @@ void keepAllChanges(std::map<std::string, studentComp> &students, std::stack<alt
 }
 
 
+// List all backups in the folder schedule/backup
 void listAllBackups(){
   if(backups.size() == 0){
       std::string way = "schedule/backup";
@@ -94,6 +97,7 @@ void listAllBackups(){
 
 }
 
+// Print all backups save in public vector backups
 void printAllBackups(){
     std::cout<< "Backups: " << std::endl;
     for(unsigned i = 0; i < backups.size(); i++){
@@ -101,25 +105,34 @@ void printAllBackups(){
   }
 }
 
+
+// Go through the /schedule/alter folder to the indicated position
+// Print the changes made in the file
+// from 0 (most recent) to cdBkp
 void listChanges(int cdBkp){
+  unsigned size = cdBkp;
+  for(unsigned i = 0; i <= size; i++){
+      std::ifstream file("schedule/alter/" + backups[i], std::ios::binary);
 
-  std::ifstream file("schedule/alter/" + backups[cdBkp], std::ios::binary);
+      if (!file)
+      {
+        std::cerr << "Error opening file" << std::endl;
+      }
 
-  if (!file)
-  {
-    std::cerr << "Error opening file" << std::endl;
+      std::string line;
+
+      while (std::getline(file, line))
+      {
+        std::cout << "   " << line << std::endl;
+      }
+      file.close();
   }
-
-  std::string line;
-
-  while (std::getline(file, line))
-  {
-    std::cout << "   " << line << std::endl;
-  }
-  file.close();
 
 }
 
+
+// Update te file students_classes.csv with the file backup
+// delete the backup and alter files
 void backupFile(int cdBkp){
 
   std::string path = "schedule/backup/" + backups[cdBkp];

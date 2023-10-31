@@ -49,6 +49,7 @@ void addClassStudent(std::string ucCode, std::string classCode, std::map<std::st
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 bool valideNewClass(std::string ucCode, std::string classCode, std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 std::list<std::string> valideFreeClass(std::map<std::string, std::vector<classQtd>>::iterator it_count);
+void showStudentClasses(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes);
 
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it);
 void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<classQtd>>& count);

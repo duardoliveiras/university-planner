@@ -202,7 +202,7 @@ void organizerUcStudent(std::map<std::string, studentComp>::iterator& it){
 
 // Receives the student pointer and print your classes
 void printStudentClasses(std::map<std::string, studentComp>::iterator& it){
-  //  system("clear");
+  system("clear");
   organizerUcStudent(it);
   std::cout<< "\nCode: " << it->first << " - ";
   std::cout<< "Name: " << it->second.getName() << std::endl;
@@ -237,7 +237,7 @@ void printFreeClasses(std::string ucCode, std::map<std::string, std::vector<clas
 }
 
 
-// This function receives the student pointer, the class tree (classes)
+// This function receives the student pointer and the class tree (classes)
 std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
 
     // map to order the classes by day
@@ -263,59 +263,56 @@ std::map<int, std::set<classInfo>> orderStudentClass(std::map<std::string, stude
         std::cerr << "Error in find class" << std::endl;
       }else{
         // if exists, add the classInfo in the orderClasses map
-        for(const auto& classInfo : it_class->second.getClassInfoVec()){
+        for(auto& classInfo : it_class->second.getClassInfoVec()){
+          classInfo.code = classe.getUcCode();
           orderClasses[classInfo.dayInt].insert(classInfo);
-          
         }
       }
     }
-    /*
-    for(const auto& pair : orderClasses ){
-      std::cout << "Day: " << pair.first << std::endl;
+
+    return orderClasses;
+}
+
+void showStudentClasses(std::map<std::string, studentComp>::iterator& it, std::map<std::string, ClassComp>& classes){
+      auto orderClasses = orderStudentClass(it, classes);
+
+      for(const auto& pair : orderClasses ){
+        std::string day = weekDayString(pair.first);
+        std::cout << "Day: " << day << std::endl;
       for(const auto& info : pair.second){
+        std::cout << info.code << " - ";
         std::cout << info.startTime << " - ";
         std::cout << info.duration << " - ";
         std::cout << info.type << std::endl;
       }
       std::cout << std::endl;
     }
-    */
-    return orderClasses;
 }
 
-/* 
-void removeUcStudent(std::string ucCod, std::string registrationNumber){
 
-    std::string studentData = "schedule/students_classes.csv";
-    std::string studentDataNew = "output/studentes_classes_new.csv";
-
-    std::string lineRemove;
-    
-
-    std::ifstream in(studentData);
-    std::ofstream out(studentDataNew);
-
-    if(!in.is_open() || !out.is_open()){
-      std::cerr << "Error in open archives" << std::endl;
-    }
-    
-    std::string line;
-
-    while(std::getline(in,line)){
-     
-      size_t studentCodePos = line.find(registrationNumber);
-      size_t ucCodePos = line.find(ucCod);
-
-      if(studentCodePos != std::string::npos && ucCodePos != std::string::npos ){
-        continue;
-      }
-
-      out << line << '\n';
-
-    }
-  
-
-    in.close();
-    out.close();
+std::string weekDayString(int day){
+  switch (day)
+  {
+  case 2:
+    return "Monday";
+    break;
+  case 3:
+    return "Tuesday";
+    break;
+  case 4:
+    return "Wednesday";
+    break;
+  case 5:
+    return "Thursday";
+    break;
+  case 6:
+    return "Friday";
+    break;
+  case 7:
+    return "Saturday";
+    break; 
+  default:
+    return "Error Day";
+    break;
+  }
 }
-*/

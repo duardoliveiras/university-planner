@@ -8,6 +8,7 @@
 
 struct classInfo
 {
+    std::string code;
     std::string type;  
     std::string day;
     int dayInt;
