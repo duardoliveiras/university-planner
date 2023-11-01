@@ -2,21 +2,20 @@
 #define PRINT_H
 
 #include <iostream>
+#include <map>
 #include <string>
 #include <vector>
 
+#include "../classes/student.h"
+#include "../classes/uc.h"
 
-#include "../classes/class.cpp"
-#include "../classes/student.cpp"
-#include "../classes/uc.cpp"
+void workingMessage();
+void errorMessage();
 
-
-void printClass(const std::vector<myClass> &classes);
-void printStudent(const std::vector<myStudent> &students);
-void printUc(const std::vector<myUc> &vecUc);
-
-
-
-
+void printStudents(const std::vector<myStudent> &students);
+void printUcs(const std::vector<myUc> &ucs);
+void printStudentClasses(std::map<std::string, myStudent>::iterator &it);
+void printFreeClasses(std::string ucCode,
+                      std::map<std::string, std::vector<classQtd>> &count);
 
 #endif

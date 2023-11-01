@@ -1,10 +1,6 @@
-#include <iostream>
-
-#include "classes/ClassComp.h"
-#include "classes/studentComp.h"
-#include <map>
-
 #include <fstream>
+#include <iostream>
+#include <map>
 #include <set>
 #include <sstream>
 #include <string>

@@ -1,18 +1,15 @@
 #include "menu.h"
 
 std::map<std::string, std::vector<classQtd>> count;
-std::map<std::string, studentComp> students = read_students(count);
-std::map<std::string, myUc> uc_tree = read_ucs(count);
-std::map<std::string, ClassComp> classes = read_classes();
+std::map<std::string, myStudent> students = readStudents(count);
+std::map<std::string, myUc> ucs = readUcs(count);
 
 void menu() {
   int flag = 0;
 
-  std::vector<myUc> ucs = readAllUcs();
-
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
-  std::cout << "| 1) See database                             |" << std::endl;
-  std::cout << "| 2) Change database                          |" << std::endl;
+  std::cout << "| 1) See Database                             |" << std::endl;
+  std::cout << "| 2) Change Database                          |" << std::endl;
   std::cout << "| 3) Exit                                     |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Choose an option: ";
@@ -40,9 +37,8 @@ void menuSeeDatabase() {
   int flag = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
-  std::cout << "| 1) See students                             |" << std::endl;
-  std::cout << "| 2) See classes                              |" << std::endl;
-  std::cout << "| 3) See UC's                                 |" << std::endl;
+  std::cout << "| 1) See Students                             |" << std::endl;
+  std::cout << "| 2) See Classes and UC's                     |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Choose an option: ";
   std::cin >> flag;
@@ -59,9 +55,6 @@ void menuSeeDatabase() {
       menuStudents(code, type);
       break;
     case 2:
-      menuClasses(code, type);
-      break;
-    case 3:
       menuUcs(code, type);
       break;
     default:
@@ -81,9 +74,6 @@ void menuSeeDatabase() {
       menuStudents(value, type, filter, order);
       break;
     case 2:
-      menuClasses(value, type, filter, order);
-      break;
-    case 3:
       menuUcs(value, type, filter, order);
       break;
     default:
@@ -141,7 +131,7 @@ void menuStudentCode(int flag) {
   }
 }
 
-void menuRemove(std::map<std::string, studentComp>::iterator &it) {
+void menuRemove(std::map<std::string, myStudent>::iterator &it) {
 
   std::string ucCode;
   // std::string classCode;
@@ -161,8 +151,7 @@ void menuRemove(std::map<std::string, studentComp>::iterator &it) {
     std::cout << "Error in remove class" << std::endl;
   }
 }
-
-void menuAdd(std::map<std::string, studentComp>::iterator &it) {
+void menuAdd(std::map<std::string, myStudent>::iterator &it) {
 
   std::string ucCode;
   std::string classCode;
@@ -175,44 +164,69 @@ void menuAdd(std::map<std::string, studentComp>::iterator &it) {
     std::cout << "Enter UC code to see all classes: " << std::endl;
     std::cin >> ucCode;
 
-    // checks if ucCode exists
-    auto it_uc = uc_tree.find(ucCode);
+    if (!verifyUcCode(ucCode, it)) {
+      // checks if ucCode exists
+      auto it_uc = ucs.find(ucCode);
 
-    if (it_uc == uc_tree.end()) {
-      std::cout << "-----------------------------------------------"
-                << std::endl;
-      std::cout << "UC code not found" << std::endl;
+      if (it_uc == ucs.end()) {
+        std::cout << "-----------------------------------------------"
+                  << std::endl;
+        std::cout << "UC code not found" << std::endl;
 
-      menuRequests();
+        menuRequests();
+      } else {
+        std::cout << "-----------------------------------------------"
+                  << std::endl;
+        std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
+
+        printFreeClasses(ucCode, count);
+
+        std::cout << "-----------------------------------------------"
+                  << std::endl;
+        std::cout << "Enter class code to add: " << std::endl;
+
+        std::cin >> classCode;
+
+        // validates that the class chosen by the student does not conflict with
+        // the schedule of other classes
+        bool validate = valideNewClass(ucCode, classCode, it, classes);
+
+        if (!validate) {
+          addClassStudent(ucCode, classCode, it, stackAlter);
+          printStudentClasses(it);
+          std::cout << "\nSucessfully added" << std::endl;
+
+          saveOrReturn();
+        }
+      }
     } else {
       std::cout << "-----------------------------------------------"
                 << std::endl;
-      std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
+      std::cout << "You are already enrolled in this UC" << std::endl;
 
-      printFreeClasses(ucCode, count);
-
+      int flag;
       std::cout << "-----------------------------------------------"
                 << std::endl;
-      std::cout << "Enter class code to add: " << std::endl;
+      std::cout << "1 - Add another class" << std::endl;
+      std::cout << "2 - Exit" << std::endl;
+      std::cin >> flag;
 
-      std::cin >> classCode;
-
-      // validates that the class chosen by the student does not conflict with
-      // the schedule of other classes
-      bool validate = valideNewClass(ucCode, classCode, it, classes);
-
-      if (!validate) {
-        addClassStudent(ucCode, classCode, it);
-        printStudentClasses(it);
-        std::cout << "\nSucessfully added" << std::endl;
-
-        saveOrReturn();
+      switch (flag) {
+      case (1):
+        system("clear");
+        menuAdd(it);
+        break;
+      case (2):
+        exit(0);
+      default:
+        errorMessage();
+        break;
       }
     }
   }
 }
 
-void menuSwitch(std::map<std::string, studentComp>::iterator &it) {
+void menuSwitch(std::map<std::string, myStudent>::iterator &it) {
 
   std::string ucCode, classCode;
   int flag;
@@ -386,4 +400,34 @@ std::string selectValue() {
   // errorcheck (str)
 
   return str;
+}
+
+void menuStudents(std::string str = "", int type = 0, int filter = 0,
+                  int order = 0) {
+  std::map<std::string, myStudent> data = students;
+
+  if (type == 1) {
+    data = selectStudent(str, data);
+  } else {
+    if (type == 2) {
+      data = filterInfoStudent(filter, str, data);
+    }
+    data = orderInfoStudent(order, data);
+  }
+  printStudents(data);
+}
+
+void menuUcs(std::string str, int type, int filter, int order) {
+  // read Database
+  std::map<std::string, myUc> data = ucs;
+
+  if (type == 1) {
+    data = selectUc(str, data);
+  } else {
+    if (type == 2) {
+      data = filterInfoUc(filter, str, data);
+    }
+    data = orderInfoUc(order, data);
+  }
+  printUcs(data);
 }

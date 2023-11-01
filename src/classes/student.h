@@ -5,32 +5,35 @@
 #include <string>
 #include <vector>
 
+#include "uc.h"
+
 class myStudent {
 private:
-  int studentCode;
+  std::string studentCode;
   std::string studentName;
-  std::vector<std::string> ucCode;
-  std::vector<std::string> classCode;
+  std::vector<myUc> classes;
 
 public:
   // Constructor functions
-  myStudent(int sCode, std::string sName, std::vector<std::string> ucC,
-            std::vector<std::string> classC);
+  myStudent(std::string &sCode, std::string &sName);
   myStudent();
 
   // Setter functions
-  void setStudent(int sCode, std::string sName, std::vector<std::string> ucC,
-                  std::vector<std::string> classC);
-  void setStudentCode(int n);
-  void setStudentName(std::string n);
-  void setUcCode(std::vector<std::string> n);
-  void setClassCode(std::vector<std::string> n);
+  void setStudent(std::string &sCode, std::string &sName);
+  void setStudentCode(std::string &n);
+  void setStudentName(std::string &n);
 
   // Getters functions
-  int getStudentCode() const;
+  std::string getStudentCode() const;
   std::string getStudentName() const;
-  std::vector<std::string> getUcCode() const;
-  std::vector<std::string> getClassCode() const;
+  // get student classes;
+
+  void addClass(const myUc &myClass);
+  void changeClass(const myUc &myClass);
+  void addUc(const myUc &myClass);
+  void removeUc(const myUc &myClass);
+
+  bool valideQtClasses();
 };
 
 #endif

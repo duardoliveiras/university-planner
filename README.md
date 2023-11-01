@@ -68,9 +68,11 @@ The application is structured around key components and classes. Understanding t
 
   > [✘] Undo requests managements (Accept/Deny);
 
-- [✘] PDF;
+- [✔] PDF;
 
-- [✘] Presentation.
+- [✘] Complexidade;
+
+- [✘] Doxeg...
 
 **Schedule Class**: press: `1` -> `2` -> `2` -> `2` -> <classcode> -> <ordem>
 

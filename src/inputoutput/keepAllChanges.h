@@ -1,15 +1,18 @@
 #ifndef KEEPALLCHANGES_H
 #define KEEPALLCHANGES_H
 
-#include <iostream>
-#include <vector>
+#include <ctime>
 #include <fstream>
-#include <string>
+#include <iostream>
 #include <map>
-#include "../classes/studentComp.h"
+#include <string>
+#include <vector>
+
+#include "../classes/student.h"
 
 void makeBackup();
-void keepAllChanges(std::map<std::string, studentComp> &students);
+void keepAllChanges(std::map<std::string, myStudent> &students);
 
+void workingMessage();
 
 #endif
