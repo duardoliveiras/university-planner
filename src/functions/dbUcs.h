@@ -7,24 +7,18 @@
 #include <vector>
 
 #include "../classes/uc.h"
+#include "../inputoutput/read.h"
 
 void workingMessage();
 void errorMessage();
 
-// int menuGroup(int n);
-// int menuOrder(int n);
-// std::string menuInfo(int n);
-// std::vector<myUc> readUcs();
+bool compareClassesCode(const myUc &uc1, const myUc &uc2);
+bool compareUcsCode(const myUc &uc1, const myUc &uc2);
+
+std::map<std::string, myUc> selectUc(const std::string &str,
+                                     const std::map<std::string, myUc> &ucs);
+
 // std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc>
 // &ucs); std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs);
-// std::vector<myUc> selectUc(std::string str, std::vector<myUc> &ucs);
-
-// void printUc(const std::vector<myUc> &ucs);
-
-void menuUcs(std::string code = "", int type = 0, int filter = 0,
-             int order = 0);
-
-// bool compareClassesCode(const myUc &uc1, const myUc &uc2);
-// bool compareUcsCode(const myUc &uc1, const myUc &uc2);
 
 #endif

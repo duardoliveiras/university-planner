@@ -1,5 +1,12 @@
 #include "dbUcs.h"
 
+bool compareClassesCode(const myUc &uc1, const myUc &uc2) {
+  return uc1.getClassCode() < uc2.getClassCode();
+}
+bool compareUcsCode(const myUc &uc1, const myUc &uc2) {
+  return uc1.getUcCode() < uc2.getUcCode();
+}
+
 // std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc>
 // &ucs) {
 //   std::vector<myUc> filterUc;
@@ -29,13 +36,6 @@
 //     break;
 //   }
 //   return filterUc;
-// }
-
-// bool compareClassesCode(const myUc &uc1, const myUc &uc2) {
-//   return uc1.getClassCode() < uc2.getClassCode();
-// }
-// bool compareUcsCode(const myUc &uc1, const myUc &uc2) {
-//   return uc1.getUcCode() < uc2.getUcCode();
 // }
 
 // std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
@@ -77,14 +77,16 @@
 //   return orderUc;
 // }
 
-// std::vector<myUc> selectUc(std::string str, std::vector<myUc> &ucs) {
-//   std::vector<myUc> selectUc;
+std::map<std::string, myUc> selectUc(const std::string &str,
+                                     const std::map<std::string, myUc> &ucs) {
+  std::map<std::string, myUc> selectedUcs;
 
-//   for (const auto &myuc : ucs) {
-//     if (str == myuc.getUcCode()) {
-//       selectUc.push_back(myuc);
-//     }
-//   }
+  for (auto &ucPair : ucs) {
+    const myUc &myuc = ucPair.second;
+    if (str == myuc.getUcCode()) {
+      selectedUcs[ucPair.first] = myuc;
+    }
+  }
 
-//   return selectUc;
-// }
+  return selectedUcs;
+}

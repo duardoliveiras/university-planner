@@ -27,14 +27,10 @@ readStudents(std::map<std::string, std::vector<classQtd>> &count) {
 
     auto it = students.find(studentCode);
     if (it != students.end()) {
-      std::vector<std::string> classes;
-      classes.push_back(classCode);
-      it->second.addClass(myUc(ucCode, classes));
+      it->second.addClass(myUc(ucCode, classCode));
     } else {
       myStudent newStudent(studentCode, studentName);
-      std::vector<std::string> classes;
-      classes.push_back(classCode);
-      newStudent.addClass(myUc(ucCode, classes));
+      newStudent.addClass(myUc(ucCode, classCode));
       students[studentCode] = newStudent;
     }
 

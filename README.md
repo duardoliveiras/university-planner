@@ -64,9 +64,9 @@ The application is structured around key components and classes. Understanding t
 
 - Requests Handling:
 
-  > [✘] Add, remove, switch (Accept/Deny);
+  > [✔] Add, remove, switch (Accept/Deny);
 
-  > [✘] Undo requests managements (Accept/Deny);
+  > [✔] Undo requests managements (Accept/Deny);
 
 - [✔] PDF;
 

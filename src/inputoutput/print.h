@@ -12,8 +12,8 @@
 void workingMessage();
 void errorMessage();
 
-void printStudents(const std::vector<myStudent> &students);
-void printUcs(const std::vector<myUc> &ucs);
+void printStudents(const std::map<std::string, myStudent> &students);
+void printUcs(const std::map<std::string, myUc> &ucs);
 void printStudentClasses(std::map<std::string, myStudent>::iterator &it);
 void printFreeClasses(std::string ucCode,
                       std::map<std::string, std::vector<classQtd>> &count);

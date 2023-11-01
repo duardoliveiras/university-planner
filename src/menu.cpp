@@ -1,20 +1,25 @@
 #include "menu.h"
+#include "inputoutput/read.h"
 
 std::map<std::string, std::vector<classQtd>> count;
 std::map<std::string, myStudent> students = readStudents(count);
 std::map<std::string, myUc> ucs = readUcs(count);
+std::map<std::string, myUc> classes = readSchedules();
+std::stack<alter> stackAlter;
 
 void menu() {
+  // system("clear");
+
   int flag = 0;
 
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
-  std::cout << "| 1) See Database                             |" << std::endl;
-  std::cout << "| 2) Change Database                          |" << std::endl;
-  std::cout << "| 3) Exit                                     |" << std::endl;
+  std::cout << "| 1) See database                             |" << std::endl;
+  std::cout << "| 2) Change database                          |" << std::endl;
+  std::cout << "| 3) Backup                                   |" << std::endl;
+  std::cout << "| 4) Exit                                     |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Choose an option: ";
   std::cin >> flag;
-  // std::cout << flag;
 
   errorCheck(flag);
 
@@ -26,6 +31,9 @@ void menu() {
     menuRequests();
     break;
   case 3:
+    menuBackup();
+    break;
+  case 4:
     exit(0);
   default:
     errorMessage();
@@ -92,13 +100,19 @@ void menuRequests() {
   std::cout << "| 1) Add                                      |" << std::endl;
   std::cout << "| 2) Remove                                   |" << std::endl;
   std::cout << "| 3) Switch                                   |" << std::endl;
+  std::cout << "| 4) View schedules                           |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cin >> flag;
-  menuStudentCode(flag);
+
+  if (flag > 4 || flag == 0) {
+    errorMessage();
+  } else {
+    menuStudentCode(flag);
+  }
 }
 
 void menuStudentCode(int flag) {
-
+  system("clear");
   std::string registrationNumber;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Enter your registration number: " << std::endl;
@@ -110,6 +124,25 @@ void menuStudentCode(int flag) {
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Registration number not found" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
+
+    std::cout << "1 - Try again" << std::endl;
+    std::cout << "2 - Exit" << std::endl;
+
+    int flag2;
+
+    std::cin >> flag2;
+
+    switch (flag2) {
+    case 1:
+      menuStudentCode(flag);
+      break;
+    case 2:
+      exit(0);
+    default:
+      errorMessage();
+      break;
+    }
+
     menuRequests();
   } else {
     std::cout << "-----------------------------------------------" << std::endl;
@@ -126,6 +159,9 @@ void menuStudentCode(int flag) {
   case (3):
     menuSwitch(it);
     break;
+  case (4):
+    showStudentClasses(it, classes);
+    break;
   default:
     errorMessage();
   }
@@ -137,20 +173,9 @@ void menuRemove(std::map<std::string, myStudent>::iterator &it) {
   // std::string classCode;
 
   std::cout << "-----------------------------------------------" << std::endl;
-  std::cout << "Enter UC code to remove " << std::endl;
-  std::cin >> ucCode;
-  std::cout << "-----------------------------------------------" << std::endl;
-
-  bool remove = removeUcStudent(ucCode, it);
-
-  if (remove) {
-    printStudentClasses(it);
-    std::cout << "\nRemovido com sucesso" << std::endl;
-  } else {
-    std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "Error in remove class" << std::endl;
-  }
+  std::cout << "Error in remove class" << std::endl;
 }
+
 void menuAdd(std::map<std::string, myStudent>::iterator &it) {
 
   std::string ucCode;
@@ -236,7 +261,7 @@ void menuSwitch(std::map<std::string, myStudent>::iterator &it) {
 
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "| 1) Switch UC                                |" << std::endl;
-  std::cout << "| 2) Switch class                             |" << std::endl;
+  std::cout << "| 2) Switch Class                             |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cin >> flag;
 
@@ -260,7 +285,7 @@ void menuSwitch(std::map<std::string, myStudent>::iterator &it) {
     validate = valideNewClass(ucCode, classCode, it, classes);
 
     if (!validate) {
-      addClassStudent(ucCode, classCode, it);
+      addClassStudent(ucCode, classCode, it, stackAlter);
       printStudentClasses(it);
       std::cout << "\nSuccessfully switched" << std::endl;
 
@@ -283,7 +308,7 @@ void menuSwitch(std::map<std::string, myStudent>::iterator &it) {
     validate = valideNewClass(ucCode, classCode, it, classes);
 
     if (!validate) {
-      addClassStudent(ucCode, classCode, it);
+      addClassStudent(ucCode, classCode, it, stackAlter);
       printStudentClasses(it);
       std::cout << "\nSuccessfully switched" << std::endl;
 
@@ -323,8 +348,64 @@ void saveOrReturn() {
 }
 
 void save() {
-  keepAllChanges(students);
+  keepAllChanges(students, stackAlter);
   exit(0);
+}
+
+int selectBackupCode(int type) {
+  int cdBkp;
+
+  if (type == 0) {
+    std::cout << "Choose a backup to view changes: ";
+  } else if (type == 1) {
+    std::cout << "Choose a backup to restore: ";
+  }
+
+  std::cin >> cdBkp;
+
+  return cdBkp;
+}
+
+void menuBackup() {
+  system("clear");
+  listAllBackups();
+  printAllBackups();
+
+  listChanges(selectBackupCode(0));
+  menuChanges();
+}
+
+void restoreBackup() {
+  backupFile(selectBackupCode(1));
+  menu();
+}
+
+void menuChanges() {
+
+  int flag;
+
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "|1 - Return                                   |" << std::endl;
+  std::cout << "|2 - Main menu                                |" << std::endl;
+  std::cout << "|3 - Restore                                  |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+
+  std::cin >> flag;
+
+  switch (flag) {
+  case (1):
+    menuBackup();
+    break;
+  case (2):
+    menu();
+    break;
+  case (3):
+    restoreBackup();
+    break;
+  default:
+    errorMessage();
+    break;
+  }
 }
 
 int selectOrder() {
@@ -402,17 +483,16 @@ std::string selectValue() {
   return str;
 }
 
-void menuStudents(std::string str = "", int type = 0, int filter = 0,
-                  int order = 0) {
+void menuStudents(std::string str, int type, int filter, int order) {
   std::map<std::string, myStudent> data = students;
 
   if (type == 1) {
     data = selectStudent(str, data);
   } else {
     if (type == 2) {
-      data = filterInfoStudent(filter, str, data);
+      // data = filterInfoStudent(filter, str, data);
     }
-    data = orderInfoStudent(order, data);
+    // data = orderInfoStudent(order, data);
   }
   printStudents(data);
 }
@@ -425,9 +505,9 @@ void menuUcs(std::string str, int type, int filter, int order) {
     data = selectUc(str, data);
   } else {
     if (type == 2) {
-      data = filterInfoUc(filter, str, data);
+      // data = filterInfoUc(filter, str, data);
     }
-    data = orderInfoUc(order, data);
+    // data = orderInfoUc(order, data);
   }
   printUcs(data);
 }

@@ -7,6 +7,14 @@
 
 #include "uc.h"
 
+struct alter {
+  std::string studentCode;
+  std::string studentName;
+  std::string type;
+  std::string ucCode;
+  std::string classCode;
+};
+
 class myStudent {
 private:
   std::string studentCode;
@@ -15,7 +23,7 @@ private:
 
 public:
   // Constructor functions
-  myStudent(std::string &sCode, std::string &sName);
+  myStudent(const std::string &sCode, const std::string &sName);
   myStudent();
 
   // Setter functions
@@ -26,13 +34,15 @@ public:
   // Getters functions
   std::string getStudentCode() const;
   std::string getStudentName() const;
-  // get student classes;
+  std::vector<std::string> getUcCode() const;
+  std::vector<std::string> getClassCode() const;
+  std::vector<myUc> &getClasses();
 
+  // Others functions
   void addClass(const myUc &myClass);
   void changeClass(const myUc &myClass);
   void addUc(const myUc &myClass);
   void removeUc(const myUc &myClass);
-
   bool valideQtClasses();
 };
 

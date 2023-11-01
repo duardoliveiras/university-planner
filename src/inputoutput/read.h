@@ -18,6 +18,7 @@ std::map<std::string, myStudent>
 readStudents(std::map<std::string, std::vector<classQtd>> &count);
 std::map<std::string, myUc>
 readUcs(std::map<std::string, std::vector<classQtd>> &count);
+
 std::map<std::string, myUc> readSchedules();
 
 #endif
