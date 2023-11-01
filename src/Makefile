@@ -19,7 +19,7 @@ CXXFLAGS+=-fsanitize=address -fsanitize=undefined
 
 # C++ source files to consider in compilation
 CPP_FILES=main.cpp menu.cpp errorMsgs.cpp
-CPP_FILES+=functions/dbStudents.cpp functions/dbUcs.cpp functions/requests.cpp
+CPP_FILES+=functions/dbStudents.cpp functions/dbUcs.cpp 
 CPP_FILES+=inputoutput/read.cpp inputoutput/print.cpp inputoutput/keepAllChanges.cpp
 CPP_FILES+=classes/student.cpp classes/uc.cpp 
 

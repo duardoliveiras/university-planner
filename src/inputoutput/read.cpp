@@ -128,15 +128,6 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
     }
   }
   file.close();
-  //   for (const auto &myUc : ucs) {
-  //   std::cout << myUc.second.getUcCode() << std::endl;
-  //   std::cout << " --- Classes: " << std::endl;
-
-  //   for (const auto &classCode : myUc.second.getClassCode()) {
-  //     std::string a = classCode;
-  //     std::cout << a << std::endl;
-  //   }
-  // }
 
   return ucClasses;
 }

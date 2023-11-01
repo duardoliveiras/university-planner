@@ -13,18 +13,18 @@
 #include <vector>
 
 #include "../classes/student.h"
-#include "../inputoutput/read.h"
 
 void workingMessage();
 void errorMessage();
 
-std::vector<myStudent> filterInfoStudent(int n, std::string str,
-                                         std::vector<myStudent> &students);
-std::vector<myStudent> orderInfoStudent(int n,
-                                        std::vector<myStudent> &students);
 std::map<std::string, myStudent>
 selectStudent(const std::string &str,
               const std::map<std::string, myStudent> &students);
+std::map<std::string, myStudent>
+filterInfoStudent(int n, std::string str,
+                  std::map<std::string, myStudent> &students);
+std::map<std::string, myStudent>
+orderInfoStudent(int n, std::map<std::string, myStudent> &students);
 
 bool removeUcStudent(std::string ucCod,
                      std::map<std::string, myStudent>::iterator &it);
@@ -38,8 +38,7 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
 bool valideNewClass(std::string ucCode, std::string classCode,
                     std::map<std::string, myStudent>::iterator &it,
                     std::map<std::string, myUc> &classes);
-std::list<std::string> valideFreeClass(
-    std::map<std::string, std::vector<classQtd>>::iterator it_count);
+
 
 void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
                         std::map<std::string, myUc> &classes);

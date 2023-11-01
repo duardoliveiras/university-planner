@@ -4,6 +4,7 @@
 #include <iostream>
 #include <list>
 #include <map>
+#include <stack>
 
 #include "classes/student.h"
 #include "classes/uc.h"
@@ -39,20 +40,6 @@ int selectType();
 int selectFilter();
 std::string selectCode();
 std::string selectValue();
-
-std::map<int, std::set<classInfo>>
-orderStudentClass(std::map<std::string, myStudent>::iterator &it,
-                  std::map<std::string, myUc> &classes);
-bool valideNewClass(std::string ucCode, std::string classCode,
-                    std::map<std::string, myStudent>::iterator &it,
-                    std::map<std::string, myUc> &classes);
-std::list<std::string> valideFreeClass(
-    std::map<std::string, std::vector<classQtd>>::iterator it_count);
-void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
-                        std::map<std::string, myUc> &classes);
-
-bool verifyUcCode(std::string ucCode,
-                  std::map<std::string, myStudent>::iterator &it);
 
 void saveOrReturn();
 void save();

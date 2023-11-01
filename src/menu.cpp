@@ -490,9 +490,9 @@ void menuStudents(std::string str, int type, int filter, int order) {
     data = selectStudent(str, data);
   } else {
     if (type == 2) {
-      // data = filterInfoStudent(filter, str, data);
+      data = filterInfoStudent(filter, str, data);
     }
-    // data = orderInfoStudent(order, data);
+    data = orderInfoStudent(order, data);
   }
   printStudents(data);
 }
@@ -505,9 +505,9 @@ void menuUcs(std::string str, int type, int filter, int order) {
     data = selectUc(str, data);
   } else {
     if (type == 2) {
-      // data = filterInfoUc(filter, str, data);
+      data = filterInfoUc(filter, str, data);
     }
-    // data = orderInfoUc(order, data);
+    data = orderInfoUc(order, data);
   }
   printUcs(data);
 }

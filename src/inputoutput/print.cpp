@@ -1,5 +1,8 @@
 #include "print.h"
 
+int equilibre = 3;
+int max_students = 6;
+
 void printStudents(const std::map<std::string, myStudent> &students) {
   std::cout << "Student Code | Student Name | Uc Code | Class Code"
             << std::endl;
@@ -56,31 +59,52 @@ void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
               << std::endl;
   }
 }
-// // Receives the classCount by reference and verify if the new uc is already
-// in
-// // the tree then print  the classes that are able to accept new students
+
+// receives classCount Tree pointer and verify if the class is able to accept
+// new students
+std::list<std::string> valideFreeClass(
+    std::map<std::string, std::vector<classQtd>>::iterator it_count) {
+  int min = INT_MAX;
+  std::list<std::string> free_classes;
+
+  // first verify the class with the minimum number of students
+  for (auto &classe : it_count->second) {
+    if (classe.qtd < min) {
+      min = classe.qtd;
+    }
+  }
+  // then verify if the class is able to accept new students and add to the list
+  for (auto &classe : it_count->second) {
+    if (!(classe.qtd + 1 - min > equilibre) && classe.qtd + 1 <= max_students) {
+      free_classes.push_back(classe.classCode);
+    }
+  }
+
+  // return list
+  return free_classes;
+}
+// Receives the classCount by reference and verify if the new uc is already in
+// the tree then print  the classes that are able to accept new students
 void printFreeClasses(std::string ucCode,
                       std::map<std::string, std::vector<classQtd>> &count) {
-  workingMessage();
-  //   auto it_count = count.find(ucCode);
 
-  //   // searches for Code in the classCont tree and returns a list of all
-  //   classes
-  //   // that are able to accept new students
-  //   if (it_count != count.end()) {
-  //     std::list<std::string> free_classes = valideFreeClass(it_count);
-  //     std::cout << "   Classes: " << std::endl;
+  auto it_count = count.find(ucCode);
 
-  //     if (!free_classes.empty()) {
-  //       for (auto it_list = free_classes.begin(); it_list !=
-  //       free_classes.end();
-  //            it_list++) {
-  //         std::cout << "      " << *it_list << std::endl;
-  //       }
-  //     } else {
-  //       std::cout << "      No classes available" << std::endl;
-  //     }
-  //   } else {
-  //     std::cout << " Uc not found" << std::endl;
-  //   }
+  // searches for Code in the classCont tree and returns a list of all classes
+  // that are able to accept new students
+  if (it_count != count.end()) {
+    std::list<std::string> free_classes = valideFreeClass(it_count);
+    std::cout << "   Classes: " << std::endl;
+
+    if (!free_classes.empty()) {
+      for (auto it_list = free_classes.begin(); it_list != free_classes.end();
+           it_list++) {
+        std::cout << "      " << *it_list << std::endl;
+      }
+    } else {
+      std::cout << "      No classes available" << std::endl;
+    }
+  } else {
+    std::cout << " Uc not found" << std::endl;
+  }
 }

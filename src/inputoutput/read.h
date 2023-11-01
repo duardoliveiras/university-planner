@@ -9,7 +9,6 @@
 #include <vector>
 
 #include "../classes/student.h"
-#include "../classes/uc.h"
 
 void errorMessageFile();
 void errorMessageLine(std::string);

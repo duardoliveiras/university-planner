@@ -21,6 +21,8 @@ std::string myUc::getUcCode() const { return ucCode; }
 std::string myUc::getClassCode() const { return classCode; }
 std::vector<classInfo> myUc::getClassInfoVec() const { return classInfoVec; }
 
+void myUc::addClass(const std::string &code) { classCode = code; }
+
 void myUc::addClassInfo(std::string type, std::string day, int dayInt,
                         double startTime, double duration) {
   classInfo newClassInfo;
