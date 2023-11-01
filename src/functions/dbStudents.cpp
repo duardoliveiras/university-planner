@@ -193,8 +193,6 @@ void organizerUcStudent(std::map<std::string, myStudent>::iterator &it) {
             myUc::compareUcCode);
 }
 
-
-
 // Receives the classCount by reference and verify if the new uc is already in
 // the tree then print  the classes that are able to accept new students
 void printFreeClasses(std::string ucCode,
