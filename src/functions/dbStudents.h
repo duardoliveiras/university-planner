@@ -26,8 +26,12 @@ filterInfoStudent(int n, std::string str,
                   const std::vector<myStudent> &students);
 std::vector<myStudent> orderInfoStudent(int n,
                                         std::vector<myStudent> &students);
-bool removeUcStudent(std::string ucCod,
-                     std::map<std::string, myStudent>::iterator &it);
+
+bool removeUcStudent(std::string ucCode, std::map<std::string, myStudent>::iterator& it,
+                     std::stack<alter>& stackAlter, 
+                     std::map<std::string, 
+                     std::vector<classQtd>>& count);
+                     
 void addClassStudent(std::string ucCode, std::string classCode,
                      std::map<std::string, myStudent>::iterator &it,
                      std::stack<alter> &stackAlter);
@@ -38,6 +42,12 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
 bool valideNewClass(std::string ucCode, std::string classCode,
                     std::map<std::string, myStudent>::iterator &it,
                     std::map<std::string, myUc> &classes);
+
+void updateCountClasses(std::string ucCode, 
+                        std::string classCode, 
+                        std::map<std::string, 
+                        std::vector<classQtd>>& count, 
+                        int type);
 
 void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
                         std::map<std::string, myUc> &classes);

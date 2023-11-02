@@ -69,8 +69,7 @@ void printUc(const std::map<std::string, myUc> &ucs) {
 }
 
 void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
-  system("clear");
-  // organizerUcStudent(it); // addd later
+  //system("clear");
   std::cout << "\nCode: " << it->first << " - ";
   std::cout << "Name: " << it->second.getStudentName() << std::endl;
   std::cout << "Classes: " << std::endl;

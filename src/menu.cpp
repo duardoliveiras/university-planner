@@ -8,7 +8,8 @@ std::map<std::string, myUc> classes = readSchedules();
 std::stack<alter> stackAlter;
 
 void menu() {
-  // system("clear");
+  
+  system("clear");
 
   int flag = 0;
 
@@ -171,11 +172,23 @@ void menuStudentCode(int flag) {
 
 void menuRemove(std::map<std::string, myStudent>::iterator &it) {
 
-  std::string ucCode;
-  // std::string classCode;
+    std::string ucCode;
 
-  std::cout << "-----------------------------------------------" << std::endl;
-  std::cout << "Error in remove class" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "Enter UC code to remove " << std::endl;
+    std::cin >> ucCode;
+    std::cout << "-----------------------------------------------" << std::endl;
+
+    bool remove = removeUcStudent(ucCode, it, stackAlter, count); 
+
+    if(remove){
+      printStudentClasses(it);
+      std::cout<< "\nRemovido com sucesso" << std::endl;
+      saveOrReturn();
+    }else{
+      std::cout << "-----------------------------------------------" << std::endl;
+      std::cout << "Error in remove class" << std::endl;
+    }
 }
 
 void menuAdd(std::map<std::string, myStudent>::iterator &it) {
@@ -272,7 +285,7 @@ void menuSwitch(std::map<std::string, myStudent>::iterator &it) {
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter UC code to remove: " << std::endl;
     std::cin >> ucCode;
-    removeUcStudent(ucCode, it);
+    removeUcStudent(ucCode, it, stackAlter, count);
     std::cout << "-----------------------------------------------" << std::endl;
     std::cout << "Enter UC code to add: " << std::endl;
     std::cin >> ucCode;
@@ -305,7 +318,7 @@ void menuSwitch(std::map<std::string, myStudent>::iterator &it) {
     std::cout << "Enter class code to add: " << std::endl;
     std::cin >> classCode;
 
-    removeUcStudent(ucCode, it);
+    removeUcStudent(ucCode, it, stackAlter, count);
 
     validate = valideNewClass(ucCode, classCode, it, classes);
 

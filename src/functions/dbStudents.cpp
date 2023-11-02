@@ -98,16 +98,22 @@ selectStudent(const std::string &str,
 // ------------------------------------------------ //
 
 // receives the student pointer by reference and removes the UC
-bool removeUcStudent(std::string ucCod,
-                     std::map<std::string, myStudent>::iterator &it) {
+bool removeUcStudent(std::string ucCode, std::map<std::string, myStudent>::iterator& it,
+                     std::stack<alter>& stackAlter, 
+                     std::map<std::string, 
+                     std::vector<classQtd>>& count){
+
   bool remove = false;
-  for (unsigned i = 0; i < it->second.getClasses().size(); i++) {
-    if (it->second.getClasses()[i].getUcCode() == ucCod) {
-      it->second.getClasses().erase(it->second.getClasses().begin() + i);
-      remove = true;
+    for(unsigned i = 0; i < it->second.getClasses().size(); i++){
+        if(it->second.getClasses()[i].getUcCode() == ucCode){
+            stackAlter.push({it->second.getStudentCode(), it->second.getStudentName(), 
+                            "remove", ucCode,  it->second.getClasses()[i].getUcCode()});
+            it->second.getClasses().erase(it->second.getClasses().begin() + i);      
+            remove = true;
+            updateCountClasses(ucCode, it->second.getClasses()[i].getClassCode() , count, 0);    
+        }
     }
-  }
-  return remove;
+    return remove;
 }
 
 // receives the stuede pointer by reference and add the new Class
@@ -120,6 +126,28 @@ void addClassStudent(std::string ucCode, std::string classCode,
 
   stackAlter.push({it->second.getStudentCode(), it->second.getStudentName(),
                    "add", ucCode, classCode});
+}
+
+// update the class count tree
+// 1 for add and 0 for remove
+void updateCountClasses(std::string ucCode, 
+                        std::string classCode, 
+                        std::map<std::string, 
+                        std::vector<classQtd>>& count, 
+                        int type){
+
+  auto it_count = count.find(ucCode);
+  if(it_count != count.end()){
+    for(auto& classe : it_count->second){
+      if(classe.classCode == classCode){
+        if(type == 1){
+          classe.qtd++;
+        }else{
+          classe.qtd--;
+        }
+      }
+    }
+  }
 }
 
 // receives the student pointer by reference and class Tree (classes) and th
