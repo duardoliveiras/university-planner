@@ -31,7 +31,7 @@ bool removeUcStudent(std::string ucCode, std::map<std::string, myStudent>::itera
                      std::stack<alter>& stackAlter, 
                      std::map<std::string, 
                      std::vector<classQtd>>& count);
-                     
+
 void addClassStudent(std::string ucCode, std::string classCode,
                      std::map<std::string, myStudent>::iterator &it,
                      std::stack<alter> &stackAlter);
@@ -49,8 +49,6 @@ void updateCountClasses(std::string ucCode,
                         std::vector<classQtd>>& count, 
                         int type);
 
-void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
-                        std::map<std::string, myUc> &classes);
 std::string weekDayString(int day);
 bool verifyUcCode(std::string ucCode,
                   std::map<std::string, myStudent>::iterator &it);

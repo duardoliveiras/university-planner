@@ -69,7 +69,7 @@ void printUc(const std::map<std::string, myUc> &ucs) {
 }
 
 void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
-  //system("clear");
+  system("clear");
   std::cout << "\nCode: " << it->first << " - ";
   std::cout << "Name: " << it->second.getStudentName() << std::endl;
   std::cout << "Classes: " << std::endl;
@@ -143,5 +143,22 @@ void printFreeClasses(std::string ucCode,
     }
   } else {
     std::cout << " Uc not found" << std::endl;
+  }
+}
+
+void printStudentSchedules(std::map<std::string, myStudent>::iterator &it,
+                        std::map<std::string, myUc> &classes) {
+  auto orderClasses = orderStudentClass(it, classes);
+  std::cout << "\nSchedules: " << std::endl;
+  for (const auto &pair : orderClasses) {
+    std::string day = weekDayString(pair.first);
+    std::cout << "Day: " << day << std::endl;
+    for (const auto &info : pair.second) {
+      std::cout << info.code << " - ";
+      std::cout << info.startTime << " to ";
+      std::cout << info.startTime + info.duration << " - ";
+      std::cout << info.type << std::endl;
+    }
+    std::cout << std::endl;
   }
 }

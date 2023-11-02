@@ -284,22 +284,6 @@ std::string weekDayString(int day) {
   }
 }
 
-void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
-                        std::map<std::string, myUc> &classes) {
-  auto orderClasses = orderStudentClass(it, classes);
-  std::cout << "\nSchedules: " << std::endl;
-  for (const auto &pair : orderClasses) {
-    std::string day = weekDayString(pair.first);
-    std::cout << "Day: " << day << std::endl;
-    for (const auto &info : pair.second) {
-      std::cout << info.code << " - ";
-      std::cout << info.startTime << " to ";
-      std::cout << info.startTime + info.duration << " - ";
-      std::cout << info.type << std::endl;
-    }
-    std::cout << std::endl;
-  }
-}
 
 // Checks whether the student is already enrolled in a UC class. If it
 // returns true it means a problem was found

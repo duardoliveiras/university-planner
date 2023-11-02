@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "../classes/student.h"
+#include "../functions/dbStudents.h"
 
 void workingMessage();
 void errorMessage();
@@ -21,6 +22,8 @@ void printStudent(const std::map<std::string, myStudent> &students);
 void printUc(const std::map<std::string, myUc> &ucs);
 void printUcs(const std::vector<myUc> &ucs);
 
+void printStudentSchedules(std::map<std::string, myStudent>::iterator &it,
+                        std::map<std::string, myUc> &classes);
 void printStudentClasses(std::map<std::string, myStudent>::iterator &it);
 void printFreeClasses(std::string ucCode,
                       std::map<std::string, std::vector<classQtd>> &count);

@@ -44,17 +44,21 @@ void menu() {
 
 void menuSeeDatabase() {
   int flag = 0;
+  int type;
 
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "| 1) See Students                             |" << std::endl;
   std::cout << "| 2) See Classes and UC's                     |" << std::endl;
+  std::cout << "| 3) See My Schedules                         |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Choose an option: ";
   std::cin >> flag;
 
   errorCheck(flag);
 
-  int type = selectType();
+  if(flag != 3){
+    type = selectType();
+  }
   // std::cout << type;
 
   if (type == 1) {
@@ -87,6 +91,9 @@ void menuSeeDatabase() {
       order = selectOrderUcs();
       menuUcs(value, type, filter, order);
       break;
+    case 3:
+      menuStudentCode(4);
+      break;
     default:
       errorMessage();
       break;
@@ -103,7 +110,6 @@ void menuRequests() {
   std::cout << "| 1) Add                                      |" << std::endl;
   std::cout << "| 2) Remove                                   |" << std::endl;
   std::cout << "| 3) Switch                                   |" << std::endl;
-  std::cout << "| 4) View schedules                           |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cin >> flag;
 
@@ -115,7 +121,7 @@ void menuRequests() {
 }
 
 void menuStudentCode(int flag) {
-  system("clear");
+  //system("clear");
   std::string registrationNumber;
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "Enter your registration number: " << std::endl;
@@ -163,7 +169,7 @@ void menuStudentCode(int flag) {
     menuSwitch(it);
     break;
   case (4):
-    showStudentClasses(it, classes);
+    printStudentSchedules(it, classes);
     break;
   default:
     errorMessage();
@@ -271,8 +277,6 @@ void menuSwitch(std::map<std::string, myStudent>::iterator &it) {
   std::string ucCode, classCode;
   int flag;
   bool validate = false;
-
-  printStudentClasses(it);
 
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "| 1) Switch UC                                |" << std::endl;
