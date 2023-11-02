@@ -159,7 +159,10 @@ std::map<std::string, myUc> readSchedules() {
     std::getline(ss, classCode, ',');
     std::getline(ss, ucCode, ',');
     std::getline(ss, day, ',');
-    ss >> startTime >> duration;
+    ss >> startTime;
+    ss.ignore();
+    ss >> duration;
+    ss.ignore();
     std::getline(ss, type);
 
 

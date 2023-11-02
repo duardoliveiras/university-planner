@@ -4,7 +4,7 @@ void menu();
 
 int main() {
 
-  system("clear");
+  //system("clear");
   menu();
 
   return 0;
