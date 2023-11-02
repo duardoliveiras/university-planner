@@ -503,7 +503,7 @@ ClassCode,UcCode,Weekday,StartHour,Duration,Type
 1LEIC12,UP001,Wednesday,15,1.5,TP
 TURMA1,AED,Tuesday,8,1.5,TP
 TURMA2,AED,Monday,10,1.5,TP
-TURMA3,AED,Monday,12.5,1.5,TP
+TURMA3,AED,Tuesday,12.5,1.5,TP
 TURMA4,AED,Monday,14.5,1.5,TP
 TURMA5,AED,Monday,16.5,1.5,TP
 TURMA1,AED,Wednesday,8,1.5,T

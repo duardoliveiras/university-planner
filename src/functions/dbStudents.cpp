@@ -164,15 +164,6 @@ bool valideNewClass(std::string ucCode, std::string classCode,
 
   std::string value = ucCode + classCode;
 
-  // Remove blank spaces
-  value.erase(value.begin(),
-              std::find_if(value.begin(), value.end(),
-                           [](unsigned char ch) { return !std::isspace(ch); }));
-  value.erase(std::find_if(value.rbegin(), value.rend(),
-                           [](unsigned char ch) { return !std::isspace(ch); })
-                  .base(),
-              value.end());
-
   auto it_class = classes.find(value);
 
   if (it_class == classes.end()) {
@@ -190,12 +181,11 @@ bool valideNewClass(std::string ucCode, std::string classCode,
 
       // and verify if the
       // student has a class in
-      // the same time aula ->
-      // student classes
-      // class_info -> class to
-      // add
+      // the same time aula -> student classes
+      // class_info -> class to add
       for (const auto &aula : classesOfDay) {
-        if (class_info.startTime >= aula.startTime &&
+      
+        if (aula.type != "T"  && class_info.type != "T" && class_info.startTime >= aula.startTime &&
             class_info.startTime < aula.startTime + aula.duration) {
           std::cout << "Error: "
                        "Incompatible"
