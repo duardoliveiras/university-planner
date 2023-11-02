@@ -12,6 +12,20 @@ void menu() {
 
   int flag = 0;
 
+  // for(const auto& classe : count ){
+  //   std::cout<< classe.first << std::endl;
+  //   for(const auto& classQtd : classe.second){
+  //     std::cout<< "  " << classQtd.classCode << " " << classQtd.qtd << std::endl;
+  //   }
+  // }
+
+  for(const auto& classe : classes ){
+    std::cout<< classe.first << std::endl;
+    for(const auto& classeDetail : classe.second.getClassInfoVec()){
+      std::cout<< "   " << classeDetail.day << " " << classeDetail.startTime << " " << classeDetail.duration << " " << classeDetail.type << std::endl;
+    }
+  }
+
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
   std::cout << "| 1) See database                             |" << std::endl;
   std::cout << "| 2) Change database                          |" << std::endl;

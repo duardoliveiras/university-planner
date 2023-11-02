@@ -23,7 +23,13 @@ readStudents(std::map<std::string, std::vector<classQtd>> &count) {
     std::getline(ss, studentCode, ',');
     std::getline(ss, studentName, ',');
     std::getline(ss, ucCode, ',');
-    std::getline(ss, classCode, ',');
+    std::getline(ss, classCode);
+
+    classCode.erase(
+        std::find_if(classCode.rbegin(), classCode.rend(),
+                     [](unsigned char ch) { return !std::isspace(ch); })
+            .base(),
+        classCode.end());
 
     auto it = students.find(studentCode);
     if (it != students.end()) {
@@ -88,11 +94,11 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
 
     auto it = ucClasses.find(ucCode);
 
-    // classCode.erase(
-    //     std::find_if(classCode.rbegin(), classCode.rend(),
-    //                  [](unsigned char ch) { return !std::isspace(ch); })
-    //         .base(),
-    //     classCode.end());
+    classCode.erase(
+        std::find_if(classCode.rbegin(), classCode.rend(),
+                     [](unsigned char ch) { return !std::isspace(ch); })
+            .base(),
+        classCode.end());
 
     if (it != ucClasses.end()) {
       it->second.addClass(classCode);
@@ -154,7 +160,14 @@ std::map<std::string, myUc> readSchedules() {
     std::getline(ss, ucCode, ',');
     std::getline(ss, day, ',');
     ss >> startTime >> duration;
-    std::getline(ss, type, ',');
+    std::getline(ss, type);
+
+
+    type.erase(
+        std::find_if(type.rbegin(), type.rend(),
+                     [](unsigned char ch) { return !std::isspace(ch); })
+            .base(),
+        type.end());
 
     auto it1 = dayToInt.find(day);
     if (it1 != dayToInt.end()) {
@@ -164,14 +177,14 @@ std::map<std::string, myUc> readSchedules() {
     }
 
     // Check if the class code already exists in the map
-    auto it2 = classes.find(classCode);
+    auto it2 = classes.find(ucCode + classCode);
     if (it2 != classes.end()) {
       it2->second.addClassInfo(type, day, dayInt, startTime, duration);
     } else {
       myUc newUcClass;
       newUcClass.addClass(classCode);
       newUcClass.addClassInfo(type, day, dayInt, startTime, duration);
-      classes[classCode] = newUcClass;
+      classes[ucCode + classCode] = newUcClass;
     }
   }
   return classes;
