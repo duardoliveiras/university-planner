@@ -46,7 +46,7 @@ The application is structured around key components and classes. Understanding t
 
   > [✔] Read database files;
 
-  > [✘] Keep requests and changes made in database files;
+  > [✔] Keep requests and changes made in database files;
 
   > [✔] Print data;
 
@@ -54,13 +54,13 @@ The application is structured around key components and classes. Understanding t
 
 - Schedule Managents:
 
-  > [✘] Schedule consultation by student/class;
+  > [✔] Schedule consultation by student/class;
 
   > [✔] List of students withing a class/uc/year;
 
-  > [✘] Number of class/students withing a class/uc/year;
+  > [✔] Number of class/students withing a class/uc/year;
 
-  > [✔] Sort class/student/Uc (asc, desc, by code, by year, etc);
+  > [✘] Sort class/student/Uc (asc, desc, by code, by year, etc);
 
 - Requests Handling:
 

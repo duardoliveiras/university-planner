@@ -1,75 +1,83 @@
 #include "dbStudents.h"
 
-bool compareStudentsCode(const myStudent &student1, const myStudent &student2) {
+bool compareStudentsCodeAsc(const myStudent &student1,
+                            const myStudent &student2) {
   return student1.getStudentCode() < student2.getStudentCode();
 }
-bool compareClassesCode(const myStudent &student1, const myStudent &student2) {
-  return student1.getClassCode() < student2.getClassCode();
+bool compareStudentsCodeDesc(const myStudent &student1,
+                             const myStudent &student2) {
+  return student1.getStudentCode() > student2.getStudentCode();
 }
-bool compareUcsCode(const myStudent &student1, const myStudent &student2) {
-  return student1.getUcCode() < student2.getUcCode();
+bool compareStudentNameAsc(const myStudent &student1,
+                           const myStudent &student2) {
+  return student1.getStudentName() < student2.getStudentName();
+}
+bool compareStudentNameDesc(const myStudent &student1,
+                            const myStudent &student2) {
+  return student1.getStudentName() > student2.getStudentName();
 }
 
-std::map<std::string, myStudent>
+std::vector<myStudent>
 filterInfoStudent(int n, std::string str,
-                  std::map<std::string, myStudent> &students) {
-  std::map<std::string, myStudent> filterStudent;
+                  const std::vector<myStudent> &students) {
+  std::vector<myStudent> filterStudents;
   switch (n) {
   case 1:
-    // 1) Uc Code
+    // Filter by Uc Code
+    for (const auto &student : students) {
+      for (const auto &uc : student.getClasses()) {
+        if (uc.getUcCode() == str) {
+          filterStudents.push_back(student);
+          break;
+        }
+      }
+    }
     break;
   case 2:
-    // 2) Class Code
-    break;
-  case 3:
-    // 3) Year
+    // Filter by Class Code
+    for (const auto &student : students) {
+      for (const auto &uc : student.getClasses()) {
+        for (const auto &classInfo : uc.getClassInfoVec()) {
+          if (classInfo.code == str) {
+            filterStudents.push_back(student);
+            break; // No need to check other class codes for this student
+          }
+        }
+      }
+    }
     break;
   default:
     errorMessage();
     break;
   }
-  return filterStudent;
+  return filterStudents;
 }
 
-std::map<std::string, myStudent>
-orderInfoStudent(int n, std::map<std::string, myStudent> &students) {
-  std::map<std::string, myStudent> orderStudent = students;
-
+std::vector<myStudent> orderInfoStudent(int n,
+                                        std::vector<myStudent> &students) {
   switch (n) {
   case 1:
-    // 2) Sort by uc code asc
-    // std::sort(orderStudent.begin(), orderStudent.end(), compareUcsCode);
+    // Order by Student Code Asc
+    std::sort(students.begin(), students.end(), compareStudentsCodeAsc);
     break;
   case 2:
-    // 2) Sort by uc code desc
-    // std::sort(orderStudent.begin(), orderStudent.end(), compareUcsCode);
-    // std::reverse(orderStudent.begin(), orderStudent.end());
+    // Order by Student Code Desc
+    std::sort(students.begin(), students.end(), compareStudentsCodeDesc);
     break;
   case 3:
-    // 3) Sort by class code asc
-    // std::sort(orderStudent.begin(), orderStudent.end(), compareClassesCode);
-
+    // Order by Student Name Asc
+    std::sort(students.begin(), students.end(), compareStudentNameAsc);
     break;
   case 4:
-    // 4) Sort by class code desc
-    // std::sort(orderStudent.begin(), orderStudent.end(), compareClassesCode);
-    // std::reverse(orderStudent.begin(), orderStudent.end());
-    break;
-  case 5:
-    // 5) Sort by student code asc
-    // std::sort(orderStudent.begin(), orderStudent.end(), compareStudentsCode);
-    break;
-  case 6:
-    // 6) Sort by student code desc
-    // std::sort(orderStudent.begin(), orderStudent.end(), compareStudentsCode);
-    // std::reverse(orderStudent.begin(), orderStudent.end());
+    // Order by Student Name Desc
+    std::sort(students.begin(), students.end(), compareStudentNameDesc);
     break;
   default:
     errorMessage();
     break;
   }
 
-  return orderStudent;
+  return students;
 }
 
 std::map<std::string, myStudent>
@@ -114,13 +122,15 @@ void addClassStudent(std::string ucCode, std::string classCode,
                    "add", ucCode, classCode});
 }
 
-// receives the student pointer by reference and class Tree (classes) and th UC
-// code and class code
+// receives the student pointer by reference and class Tree (classes) and th
+// UC code and class code
 bool valideNewClass(std::string ucCode, std::string classCode,
                     std::map<std::string, myStudent>::iterator &it,
                     std::map<std::string, myUc> &classes) {
 
-  // call function to order the classes of the student by int day
+  // call function to order the
+  // classes of the student by
+  // int day
   std::map<int, std::set<classInfo>> orderClasses =
       orderStudentClass(it, classes);
 
@@ -138,21 +148,31 @@ bool valideNewClass(std::string ucCode, std::string classCode,
   auto it_class = classes.find(value);
 
   if (it_class == classes.end()) {
-    std::cout << "Error in find class" << std::endl;
+    std::cout << "Error in "
+                 "find class"
+              << std::endl;
     return true;
   } else {
-    // verify if has a class in the same day and time
+    // verify if has a class in
+    // the same day and time
     for (const auto &class_info : it_class->second.getClassInfoVec()) {
-      // get all classes of the day of class
+      // get all classes of the
+      // day of class
       const std::set<classInfo> &classesOfDay = orderClasses[class_info.dayInt];
 
-      // and verify if the student has a class in the same time
-      // aula -> student classes
-      // class_info -> class to add
+      // and verify if the
+      // student has a class in
+      // the same time aula ->
+      // student classes
+      // class_info -> class to
+      // add
       for (const auto &aula : classesOfDay) {
         if (class_info.startTime >= aula.startTime &&
             class_info.startTime < aula.startTime + aula.duration) {
-          std::cout << "Error: Incompatible schedules" << std::endl;
+          std::cout << "Error: "
+                       "Incompatible"
+                       " schedules"
+                    << std::endl;
           return true;
         }
       }
@@ -172,11 +192,15 @@ std::map<int, std::set<classInfo>>
 orderStudentClass(std::map<std::string, myStudent>::iterator &it,
                   std::map<std::string, myUc> &classes) {
 
-  // map to order the classes by day
+  // map to order the classes
+  // by day
   std::map<int, std::set<classInfo>> orderClasses;
 
-  // for each class of the student, search in the class tree and add the
-  // classInfo in the orderClasses map
+  // for each class of the
+  // student, search in the
+  // class tree and add the
+  // classInfo in the
+  // orderClasses map
   for (const auto &classe : it->second.getClasses()) {
     std::string value = classe.getUcCode() + classe.getClassCode();
 
@@ -190,14 +214,22 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
                     .base(),
                 value.end());
 
-    // student one class pointer, verify if the class exists in the class tree
+    // student one class
+    // pointer, verify if the
+    // class exists in the
+    // class tree
     auto it_class = classes.find(value);
 
-    // if the class does not exist, print error
+    // if the class does not
+    // exist, print error
     if (it_class == classes.end()) {
-      std::cerr << "Error in find class" << std::endl;
+      std::cerr << "Error in "
+                   "find class"
+                << std::endl;
     } else {
-      // if exists, add the classInfo in the orderClasses map
+      // if exists, add the
+      // classInfo in the
+      // orderClasses map
       for (auto &classInfo : it_class->second.getClassInfoVec()) {
         classInfo.code = classe.getUcCode();
         orderClasses[classInfo.dayInt].insert(classInfo);
@@ -207,6 +239,7 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
 
   return orderClasses;
 }
+
 std::string weekDayString(int day) {
   switch (day) {
   case 2:
@@ -232,6 +265,7 @@ std::string weekDayString(int day) {
     break;
   }
 }
+
 void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
                         std::map<std::string, myUc> &classes) {
   auto orderClasses = orderStudentClass(it, classes);
@@ -249,8 +283,8 @@ void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
   }
 }
 
-// Checks whether the student is already enrolled in a UC class. If it returns
-// true it means a problem was found
+// Checks whether the student is already enrolled in a UC class. If it
+// returns true it means a problem was found
 bool verifyUcCode(std::string ucCode,
                   std::map<std::string, myStudent>::iterator &it) {
 

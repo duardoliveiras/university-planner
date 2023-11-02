@@ -71,17 +71,19 @@ void menuSeeDatabase() {
     }
   } else {
     int filter;
+    int order;
     std::string value;
     if (type == 2) {
       filter = selectFilter();
       value = selectValue();
     }
-    int order = selectOrder();
     switch (flag) {
     case 1:
+      order = selectOrderStudents();
       menuStudents(value, type, filter, order);
       break;
     case 2:
+      order = selectOrderUcs();
       menuUcs(value, type, filter, order);
       break;
     default:
@@ -408,7 +410,25 @@ void menuChanges() {
   }
 }
 
-int selectOrder() {
+int selectOrderStudents() {
+  int flag = 0;
+
+  std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "| 1) Sort by student code asc                 |" << std::endl;
+  std::cout << "| 2) Sort by student code desc                |" << std::endl;
+  std::cout << "| 3) Sort by student name asc                 |" << std::endl;
+  std::cout << "| 4) Sort by student name desc                |" << std::endl;
+  std::cout << "-----------------------------------------------" << std::endl;
+  // add more order like - nº ucs,
+  std::cout << "Choose an option: ";
+  std::cin >> flag;
+
+  errorCheck(flag);
+
+  return flag;
+}
+
+int selectOrderUcs() {
   int flag = 0;
 
   std::cout << "-----------------------------------------------" << std::endl;
@@ -416,8 +436,6 @@ int selectOrder() {
   std::cout << "| 2) Sort by uc code desc                     |" << std::endl;
   std::cout << "| 3) Sort by class code asc                   |" << std::endl;
   std::cout << "| 4) Sort by class code desc                  |" << std::endl;
-  std::cout << "| 5) Sort by year asc                         |" << std::endl;
-  std::cout << "| 6) Sort by year desc                        |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
   // add more order like - nº ucs,
   std::cout << "Choose an option: ";
@@ -463,7 +481,7 @@ int selectFilter() {
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "| 1) Uc Code                                  |" << std::endl;
   std::cout << "| 2) Class Code                               |" << std::endl;
-  std::cout << "| 3) Year                                     |" << std::endl;
+  // 3) Year
   std::cout << "-----------------------------------------------" << std::endl;
 
   std::cout << "Choose an option: ";
@@ -484,30 +502,43 @@ std::string selectValue() {
 }
 
 void menuStudents(std::string str, int type, int filter, int order) {
-  std::map<std::string, myStudent> data = students;
+  std::map<std::string, myStudent> oneStudent = students;
+  std::vector<myStudent> data;
+
+  for (const auto &studentPair : students) {
+    data.push_back(studentPair.second);
+  }
 
   if (type == 1) {
-    data = selectStudent(str, data);
+    oneStudent = selectStudent(str, oneStudent);
+    printStudent(oneStudent);
   } else {
     if (type == 2) {
+      str = selectValue();
       data = filterInfoStudent(filter, str, data);
     }
     data = orderInfoStudent(order, data);
+    printStudents(data);
   }
-  printStudents(data);
 }
 
 void menuUcs(std::string str, int type, int filter, int order) {
-  // read Database
-  std::map<std::string, myUc> data = ucs;
+  std::map<std::string, myUc> oneUc = ucs;
+  std::vector<myUc> data;
+
+  for (const auto &ucPair : ucs) {
+    data.push_back(ucPair.second);
+  }
 
   if (type == 1) {
-    data = selectUc(str, data);
+    oneUc = selectUc(str, oneUc);
+    printUc(oneUc);
   } else {
     if (type == 2) {
+      str = selectValue();
       data = filterInfoUc(filter, str, data);
     }
     data = orderInfoUc(order, data);
+    printUcs(data);
   }
-  printUcs(data);
 }

@@ -3,7 +3,7 @@
 int equilibre = 3;
 int max_students = 6;
 
-void printStudents(const std::map<std::string, myStudent> &students) {
+void printStudent(const std::map<std::string, myStudent> &students) {
   std::cout << "Student Code | Student Name | Uc Code | Class Code"
             << std::endl;
 
@@ -23,7 +23,28 @@ void printStudents(const std::map<std::string, myStudent> &students) {
     std::cout << std::endl;
   }
 }
-void printUcs(const std::map<std::string, myUc> &ucs) {
+
+void printStudents(const std::vector<myStudent> &students) {
+  std::cout << "Student Code | Student Name | Uc Code | Class Code"
+            << std::endl;
+
+  for (const auto &student : students) {
+    std::cout << student.getStudentCode() << " | " << student.getStudentName();
+
+    const auto &ucCodes = student.getUcCode();
+    for (const auto &ucCode : ucCodes) {
+      std::cout << " | " << ucCode;
+    }
+
+    const auto &classCodes = student.getClassCode();
+    for (const auto &classCode : classCodes) {
+      std::cout << " | " << classCode;
+    }
+    std::cout << std::endl;
+  }
+}
+
+void printUc(const std::map<std::string, myUc> &ucs) {
   std::cout << "UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration"
             << std::endl;
 
@@ -47,7 +68,6 @@ void printUcs(const std::map<std::string, myUc> &ucs) {
   }
 }
 
-// Receives the student pointer and print your classes
 void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
   system("clear");
   // organizerUcStudent(it); // addd later
@@ -60,8 +80,29 @@ void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
   }
 }
 
-// receives classCount Tree pointer and verify if the class is able to accept
-// new students
+void printUcs(const std::vector<myUc> &ucs) {
+  std::cout << "UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration"
+            << std::endl;
+
+  for (const auto &uc : ucs) {
+    std::string ucCode = uc.getUcCode();
+    const auto &classInfoVec = uc.getClassInfoVec();
+
+    for (const auto &classInfo : classInfoVec) {
+      std::string classCode = uc.getClassCode();
+      std::string type = classInfo.type;
+      std::string day = classInfo.day;
+      int dayInt = classInfo.dayInt;
+      double startTime = classInfo.startTime;
+      double duration = classInfo.duration;
+
+      std::cout << ucCode << " | " << classCode << " | " << type << " | " << day
+                << " | " << dayInt << " | " << startTime << " | " << duration
+                << std::endl;
+    }
+  }
+}
+
 std::list<std::string> valideFreeClass(
     std::map<std::string, std::vector<classQtd>>::iterator it_count) {
   int min = INT_MAX;
@@ -83,15 +124,12 @@ std::list<std::string> valideFreeClass(
   // return list
   return free_classes;
 }
-// Receives the classCount by reference and verify if the new uc is already in
-// the tree then print  the classes that are able to accept new students
+
 void printFreeClasses(std::string ucCode,
                       std::map<std::string, std::vector<classQtd>> &count) {
 
   auto it_count = count.find(ucCode);
 
-  // searches for Code in the classCont tree and returns a list of all classes
-  // that are able to accept new students
   if (it_count != count.end()) {
     std::list<std::string> free_classes = valideFreeClass(it_count);
     std::cout << "   Classes: " << std::endl;

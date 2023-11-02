@@ -1,81 +1,71 @@
 #include "dbUcs.h"
 
-bool compareClassesCode(const myUc &uc1, const myUc &uc2) {
+bool compareClassesCodeAsc(const myUc &uc1, const myUc &uc2) {
   return uc1.getClassCode() < uc2.getClassCode();
 }
-bool compareUcsCode(const myUc &uc1, const myUc &uc2) {
+bool compareUcsCodeASC(const myUc &uc1, const myUc &uc2) {
   return uc1.getUcCode() < uc2.getUcCode();
 }
-
-std::map<std::string, myUc> filterInfoUc(int n, std::string str,
-                                         std::map<std::string, myUc> &ucs) {
-  std::map<std::string, myUc> filterUc;
-  //   switch (n) {
-  //   case 1:
-  //     // 1) Uc Code
-  //     for (const auto &myuc : ucs) {
-  //       if (str == myuc.getUcCode()) {
-  //         filterUc.push_back(myuc);
-  //       }
-  //     }
-  //     break;
-  //   case 2:
-  //     // 2) Class Code
-  //     // for (const auto &myuc : ucs) {
-  //     //   auto myuc.getClassCode();
-  //     //   // if (str == myuc.getClassCode()) {
-  //     //   //   filterUc.push_back(myuc);
-  //     //   // }(str ==
-  //     // }
-  //     break;
-  //   case 3:
-  //     // 3) Year
-  //     break;
-  //   default:
-  //     errorMessage();
-  //     break;
-  //   }
-  return filterUc;
+bool compareClassesCodeDesc(const myUc &uc1, const myUc &uc2) {
+  return uc1.getClassCode() > uc2.getClassCode();
+}
+bool compareUcsCodeDesc(const myUc &uc1, const myUc &uc2) {
+  return uc1.getUcCode() > uc2.getUcCode();
 }
 
-std::map<std::string, myUc> orderInfoUc(int n,
-                                        std::map<std::string, myUc> &ucs) {
-  std::map<std::string, myUc> orderUc = ucs;
+std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs) {
+  std::vector<myUc> filterUc;
+  switch (n) {
+  case 1:
+    // Filter by Uc Code
+    for (const auto &uc : ucs) {
+      if (uc.getUcCode() == str) {
+        filterUc.push_back(uc);
+      }
+    }
+    break;
+  case 2:
+    // Filter by Class Code
+    for (const auto &uc : ucs) {
+      for (const auto &classInfo : uc.getClassInfoVec()) {
+        if (classInfo.code == str) {
+          filterUc.push_back(uc);
+          break;
+        }
+      }
+    }
+    break;
+  default:
+    errorMessage();
+    break;
+  }
+  return filterUc;
+}
+std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
 
-  //   switch (n) {
-  //   case 1:
-  //     // 2) Sort by uc code asc
-  //     std::sort(orderUc.begin(), orderUc.end(), compareUcsCode);
-  //     break;
-  //   case 2:
-  //     // 2) Sort by uc code desc
-  //     std::sort(orderUc.begin(), orderUc.end(), compareUcsCode);
-  //     std::reverse(orderUc.begin(), orderUc.end());
-  //     break;
-  //   case 3:
-  //     // 3) Sort by class code asc
-  //     std::sort(orderUc.begin(), orderUc.end(), compareClassesCode);
-  //     break;
-  //   case 4:
-  //     // 4) Sort by class code desc
-  //     std::sort(orderUc.begin(), orderUc.end(), compareClassesCode);
-  //     std::reverse(orderUc.begin(), orderUc.end());
-  //     break;
-  //   case 5:
-  //     // 5) Sort by year asc
-  //     std::sort(orderUc.begin(), orderUc.end(), compareUcsCode);
-  //     break;
-  //   case 6:
-  //     // 6) Sort by year desc
-  //     std::sort(orderUc.begin(), orderUc.end(), compareUcsCode);
-  //     std::reverse(orderUc.begin(), orderUc.end());
-  //     break;
-  //   default:
-  //     errorMessage();
-  //     break;
-  //   }
+  switch (n) {
+  case 1:
+    // Order by Uc Code Asc
+    std::sort(ucs.begin(), ucs.end(), compareUcsCodeASC);
+    break;
+  case 2:
+    // Order by Uc Code Desc
+    std::sort(ucs.begin(), ucs.end(), compareUcsCodeDesc);
+    break;
+  case 3:
+    // Order by Class Code Asc
+    std::sort(ucs.begin(), ucs.end(), compareClassesCodeAsc);
+    break;
+  case 4:
+    // Order by Class Code Desc
+    std::sort(ucs.begin(), ucs.end(), compareClassesCodeDesc);
+    break;
+  default:
+    errorMessage();
+    break;
+  }
 
-  return orderUc;
+  return ucs;
 }
 
 std::map<std::string, myUc> selectUc(const std::string &str,

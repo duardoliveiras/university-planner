@@ -19,7 +19,7 @@ class myStudent {
 private:
   std::string studentCode;
   std::string studentName;
-  std::vector<myUc> classes;
+  mutable std::vector<myUc> classes;
 
 public:
   // Constructor functions
@@ -36,7 +36,7 @@ public:
   std::string getStudentName() const;
   std::vector<std::string> getUcCode() const;
   std::vector<std::string> getClassCode() const;
-  std::vector<myUc> &getClasses();
+  std::vector<myUc> &getClasses() const;
 
   // Others functions
   void addClass(const myUc &myClass);

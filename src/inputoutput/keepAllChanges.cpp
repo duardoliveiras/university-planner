@@ -3,7 +3,6 @@
 
 std::vector<std::string> backups;
 
-// Get the system date
 std::string getSysdate() {
 
   std::time_t date = std::time(0);

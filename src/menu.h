@@ -35,7 +35,8 @@ void menuChanges();
 void restoreBackup();
 int selectBackupCode();
 
-int selectOrder();
+int selectOrderStudents();
+int selectOrderUcs();
 int selectType();
 int selectFilter();
 std::string selectCode();

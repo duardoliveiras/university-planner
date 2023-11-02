@@ -36,7 +36,7 @@ std::vector<std::string> myStudent::getClassCode() const {
   }
   return classCodes;
 }
-std::vector<myUc> &myStudent::getClasses() { return classes; }
+std::vector<myUc> &myStudent::getClasses() const { return classes; }
 
 void myStudent::addClass(const myUc &myClass) { classes.push_back(myClass); }
 
