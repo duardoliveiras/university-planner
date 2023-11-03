@@ -222,16 +222,6 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
   for (const auto &classe : it->second.getClasses()) {
     std::string value = classe.getUcCode() + classe.getClassCode();
 
-    // remove blank spaces
-    value.erase(value.begin(),
-                std::find_if(value.begin(), value.end(), [](unsigned char ch) {
-                  return !std::isspace(ch);
-                }));
-    value.erase(std::find_if(value.rbegin(), value.rend(),
-                             [](unsigned char ch) { return !std::isspace(ch); })
-                    .base(),
-                value.end());
-
     // student one class
     // pointer, verify if the
     // class exists in the
@@ -254,7 +244,6 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
       }
     }
   }
-
   return orderClasses;
 }
 

@@ -111,6 +111,7 @@ void menuRequests() {
   std::cout << "| 2) Remove                                   |" << std::endl;
   std::cout << "| 3) Switch                                   |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
+  std::cout << "Choose an option: ";
   std::cin >> flag;
 
   if (flag > 4 || flag == 0) {

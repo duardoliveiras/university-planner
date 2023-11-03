@@ -181,7 +181,6 @@ std::map<std::string, myUc> readSchedules() {
       dayInt = it1->second;
     } else {
       std::cout << "Invalid day: " << day << std::endl;
-      std::cout<< classCode << " - " << ucCode << " - " << day << " - " << startTime << " - " << duration << " - " << type << std::endl;
     }
 
     // Check if the class code already exists in the map
@@ -197,3 +196,6 @@ std::map<std::string, myUc> readSchedules() {
   }
   return classes;
 }
+
+
+
