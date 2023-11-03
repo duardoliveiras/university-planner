@@ -9,10 +9,12 @@
 #include <stack>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "../classes/student.h"
 
 void makeBackup();
+bool orderVector(const std::string &str1, const std::string &str2);
 void keepAllChanges(std::map<std::string, myStudent> &students,
                     std::stack<alter> &stackAlter);
 std::string getSysdate();
