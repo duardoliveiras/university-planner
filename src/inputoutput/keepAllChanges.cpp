@@ -170,10 +170,8 @@ void backupFile(int cdBkp) {
   for (unsigned i = 0; i <= size; i++) {
     if (std::filesystem::exists("schedule/alter/" + backups[cdBkp])) {
       try {      
-          std::cout<< "Removendo " << i << " " << backups[i] << std::endl;
           std::filesystem::remove("schedule/alter/" + backups[i]);
           std::filesystem::remove("schedule/backup/" + backups[i]);
-        
       } catch (const std::filesystem::filesystem_error &e) {
         std::cerr << "Error to remove the file" << e.what() << std::endl;
       }
