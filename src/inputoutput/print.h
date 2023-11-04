@@ -28,3 +28,4 @@ std::list<std::string> valideFreeClass(
     std::map<std::string, std::vector<classQtd>>::iterator it_count);
 
 #endif
+

@@ -1,6 +1,7 @@
 #ifndef READ_H
 #define READ_H
 
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <map>

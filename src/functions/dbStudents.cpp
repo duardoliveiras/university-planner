@@ -53,6 +53,7 @@ filterInfoStudent(int n, std::string str,
   return filterStudents;
 }
 
+
 std::vector<myStudent> orderInfoStudent(int n,
                                         std::vector<myStudent> &students) {
   switch (n) {
@@ -121,6 +122,7 @@ void addClassStudent(std::string ucCode, std::string classCode,
   stackAlter.push({it->second.getStudentCode(), it->second.getStudentName(),
                    "add", ucCode, classCode});
 }
+
 
 // receives the student pointer by reference and class Tree (classes) and th
 // UC code and class code

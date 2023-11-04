@@ -88,11 +88,11 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
 
     auto it = ucClasses.find(ucCode);
 
-    // classCode.erase(
-    //     std::find_if(classCode.rbegin(), classCode.rend(),
-    //                  [](unsigned char ch) { return !std::isspace(ch); })
-    //         .base(),
-    //     classCode.end());
+    classCode.erase(
+        std::find_if(classCode.rbegin(), classCode.rend(),
+                     [](unsigned char ch) { return !std::isspace(ch); })
+            .base(),
+        classCode.end());
 
     if (it != ucClasses.end()) {
       it->second.addClass(classCode);

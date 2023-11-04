@@ -41,6 +41,7 @@ std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs) {
   }
   return filterUc;
 }
+
 std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
 
   switch (n) {
@@ -64,7 +65,6 @@ std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
     errorMessage();
     break;
   }
-
   return ucs;
 }
 

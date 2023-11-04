@@ -24,6 +24,5 @@ void backupFile(int cdBkp);
 void makeBackup();
 void keepAllChanges(std::map<std::string, myStudent> &students);
 
-void workingMessage();
 
 #endif

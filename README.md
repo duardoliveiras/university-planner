@@ -26,7 +26,7 @@ The application is structured around key components and classes. Understanding t
 
 ![uml](docs/uml.drawio.png)
 
-## Colaboration
+## Collaboration
 
 - Bernardo Jose Ponce Figueirado de Brito, up202301442
 - Clarisse Maria Teixeira de Carvalho, up202008444
@@ -75,6 +75,7 @@ The application is structured around key components and classes. Understanding t
 - [✘] Doxeg...
 
 **Schedule Class**: press: `1` -> `2` -> `2` -> `2` -> <classcode> -> <ordem>
+**
 
 ## Restrictions
 
