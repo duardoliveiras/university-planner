@@ -70,9 +70,9 @@ The application is structured around key components and classes. Understanding t
 
 - [✔] PDF;
 
-- [✘] Complexidade;
+- [✔] Complexidade;
 
-- [✘] Doxeg...
+- [✔] Doxygen
 
 **Schedule Class**: press: `1` -> `2` -> `1` -> <UcCode>
 **Schedule Student**: press: `1` -> `3` -> <StudentCode>
