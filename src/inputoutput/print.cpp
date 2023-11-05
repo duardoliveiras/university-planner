@@ -28,6 +28,10 @@ void printStudents(const std::vector<myStudent> &students) {
   std::cout << "Student Code | Student Name | Uc Code | Class Code"
             << std::endl;
 
+  if (students.empty()) {
+    std::cout << "Empty vector ucs" << std::endl;
+  }
+
   for (const auto &student : students) {
     std::cout << student.getStudentCode() << " | " << student.getStudentName();
 
@@ -41,6 +45,17 @@ void printStudents(const std::vector<myStudent> &students) {
       std::cout << " | " << classCode;
     }
     std::cout << std::endl;
+  }
+}
+
+void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
+  system("clear");
+  std::cout << "\nCode: " << it->first << " - ";
+  std::cout << "Name: " << it->second.getStudentName() << std::endl;
+  std::cout << "Classes: " << std::endl;
+  for (const auto &classe : it->second.getClasses()) {
+    std::cout << "  " << classe.getUcCode() << " - " << classe.getClassCode()
+              << std::endl;
   }
 }
 
@@ -68,37 +83,22 @@ void printUc(const std::map<std::string, myUc> &ucs) {
   }
 }
 
-void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
-  system("clear");
-  // organizerUcStudent(it); // addd later
-  std::cout << "\nCode: " << it->first << " - ";
-  std::cout << "Name: " << it->second.getStudentName() << std::endl;
-  std::cout << "Classes: " << std::endl;
-  for (const auto &classe : it->second.getClasses()) {
-    std::cout << "  " << classe.getUcCode() << " - " << classe.getClassCode()
-              << std::endl;
-  }
-}
-
 void printUcs(const std::vector<myUc> &ucs) {
   std::cout << "UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration"
             << std::endl;
 
+  if (ucs.empty()) {
+    std::cout << "Empty vector ucs" << std::endl;
+  }
+
   for (const auto &uc : ucs) {
-    std::string ucCode = uc.getUcCode();
+    std::cout << uc.getUcCode() << " | " << uc.getClassCode();
+
     const auto &classInfoVec = uc.getClassInfoVec();
-
     for (const auto &classInfo : classInfoVec) {
-      std::string classCode = uc.getClassCode();
-      std::string type = classInfo.type;
-      std::string day = classInfo.day;
-      int dayInt = classInfo.dayInt;
-      double startTime = classInfo.startTime;
-      double duration = classInfo.duration;
-
-      std::cout << ucCode << " | " << classCode << " | " << type << " | " << day
-                << " | " << dayInt << " | " << startTime << " | " << duration
-                << std::endl;
+      std::cout << " | " << classInfo.type << " | " << classInfo.day << " | "
+                << classInfo.dayInt << " | " << classInfo.startTime << " | "
+                << classInfo.duration << std::endl;
     }
   }
 }
@@ -114,7 +114,8 @@ std::list<std::string> valideFreeClass(
       min = classe.qtd;
     }
   }
-  // then verify if the class is able to accept new students and add to the list
+  // then verify if the class is able to accept new students and add to the
+  // list
   for (auto &classe : it_count->second) {
     if (!(classe.qtd + 1 - min > equilibre) && classe.qtd + 1 <= max_students) {
       free_classes.push_back(classe.classCode);
@@ -147,3 +148,19 @@ void printFreeClasses(std::string ucCode,
   }
 }
 
+void printStudentSchedules(std::map<std::string, myStudent>::iterator &it,
+                           std::map<std::string, myUc> &classes) {
+  auto orderClasses = orderStudentClass(it, classes);
+  std::cout << "\nSchedules: " << std::endl;
+  for (const auto &pair : orderClasses) {
+    std::string day = weekDayString(pair.first);
+    std::cout << "Day: " << day << std::endl;
+    for (const auto &info : pair.second) {
+      std::cout << info.code << " - ";
+      std::cout << info.startTime << " to ";
+      std::cout << info.startTime + info.duration << " - ";
+      std::cout << info.type << std::endl;
+    }
+    std::cout << std::endl;
+  }
+}

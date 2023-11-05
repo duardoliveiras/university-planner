@@ -23,7 +23,13 @@ readStudents(std::map<std::string, std::vector<classQtd>> &count) {
     std::getline(ss, studentCode, ',');
     std::getline(ss, studentName, ',');
     std::getline(ss, ucCode, ',');
-    std::getline(ss, classCode, ',');
+    std::getline(ss, classCode);
+
+    classCode.erase(
+        std::find_if(classCode.rbegin(), classCode.rend(),
+                     [](unsigned char ch) { return !std::isspace(ch); })
+            .base(),
+        classCode.end());
 
     auto it = students.find(studentCode);
     if (it != students.end()) {
@@ -76,6 +82,9 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
   }
 
   while (std::getline(file, line)) {
+    // testing
+    // std::cout << "line" << std::endl;
+
     if (header) {
       header = false;
       continue;
@@ -129,6 +138,15 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
   }
   file.close();
 
+  // testing this function
+  for (const auto &pair : ucClasses) {
+    std::cout << "UC Code: " << pair.first << std::endl;
+    const myUc &uc = pair.second;
+    for (const auto &classCode : uc.getClassCode()) {
+      std::cout << "Class Code: " << classCode << std::endl;
+    }
+  }
+
   return ucClasses;
 }
 
@@ -136,15 +154,20 @@ std::map<std::string, myUc> readSchedules() {
   std::string line;
   std::map<std::string, myUc> classes;
   std::map<std::string, int> dayToInt = {
-      {"Monday", 1}, {"Tuesday", 2},  {"Wednesday", 3}, {"Thursday", 4},
-      {"Friday", 5}, {"Saturday", 6}, {"Sunday", 7}};
+      {"Sunday", 1},   {"Monday", 2}, {"Tuesday", 3}, {"Wednesday", 4},
+      {"Thursday", 5}, {"Friday", 6}, {"Saturday", 7}};
 
   std::ifstream file("schedule/classes.csv");
   if (!file.is_open()) {
     errorMessageFile();
   }
 
+  bool header = true;
   while (std::getline(file, line)) {
+    if (header) {
+      header = false;
+      continue;
+    }
     std::istringstream ss(line);
     std::string classCode, ucCode, day, type;
     double startTime, duration;
@@ -153,8 +176,16 @@ std::map<std::string, myUc> readSchedules() {
     std::getline(ss, classCode, ',');
     std::getline(ss, ucCode, ',');
     std::getline(ss, day, ',');
-    ss >> startTime >> duration;
-    std::getline(ss, type, ',');
+    ss >> startTime;
+    ss.ignore();
+    ss >> duration;
+    ss.ignore();
+    std::getline(ss, type);
+
+    type.erase(std::find_if(type.rbegin(), type.rend(),
+                            [](unsigned char ch) { return !std::isspace(ch); })
+                   .base(),
+               type.end());
 
     auto it1 = dayToInt.find(day);
     if (it1 != dayToInt.end()) {
@@ -164,14 +195,14 @@ std::map<std::string, myUc> readSchedules() {
     }
 
     // Check if the class code already exists in the map
-    auto it2 = classes.find(classCode);
+    auto it2 = classes.find(ucCode + classCode);
     if (it2 != classes.end()) {
       it2->second.addClassInfo(type, day, dayInt, startTime, duration);
     } else {
       myUc newUcClass;
       newUcClass.addClass(classCode);
       newUcClass.addClassInfo(type, day, dayInt, startTime, duration);
-      classes[classCode] = newUcClass;
+      classes[ucCode + classCode] = newUcClass;
     }
   }
   return classes;

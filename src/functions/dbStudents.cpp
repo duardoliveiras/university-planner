@@ -53,7 +53,6 @@ filterInfoStudent(int n, std::string str,
   return filterStudents;
 }
 
-
 std::vector<myStudent> orderInfoStudent(int n,
                                         std::vector<myStudent> &students) {
   switch (n) {
@@ -99,13 +98,21 @@ selectStudent(const std::string &str,
 // ------------------------------------------------ //
 
 // receives the student pointer by reference and removes the UC
-bool removeUcStudent(std::string ucCod,
-                     std::map<std::string, myStudent>::iterator &it) {
+bool removeUcStudent(std::string ucCode,
+                     std::map<std::string, myStudent>::iterator &it,
+                     std::stack<alter> &stackAlter,
+                     std::map<std::string, std::vector<classQtd>> &count) {
+
   bool remove = false;
   for (unsigned i = 0; i < it->second.getClasses().size(); i++) {
-    if (it->second.getClasses()[i].getUcCode() == ucCod) {
+    if (it->second.getClasses()[i].getUcCode() == ucCode) {
+      stackAlter.push({it->second.getStudentCode(), it->second.getStudentName(),
+                       "remove", ucCode,
+                       it->second.getClasses()[i].getUcCode()});
       it->second.getClasses().erase(it->second.getClasses().begin() + i);
       remove = true;
+      updateCountClasses(ucCode, it->second.getClasses()[i].getClassCode(),
+                         count, 0);
     }
   }
   return remove;
@@ -123,6 +130,25 @@ void addClassStudent(std::string ucCode, std::string classCode,
                    "add", ucCode, classCode});
 }
 
+// update the class count tree
+// 1 for add and 0 for remove
+void updateCountClasses(std::string ucCode, std::string classCode,
+                        std::map<std::string, std::vector<classQtd>> &count,
+                        int type) {
+
+  auto it_count = count.find(ucCode);
+  if (it_count != count.end()) {
+    for (auto &classe : it_count->second) {
+      if (classe.classCode == classCode) {
+        if (type == 1) {
+          classe.qtd++;
+        } else {
+          classe.qtd--;
+        }
+      }
+    }
+  }
+}
 
 // receives the student pointer by reference and class Tree (classes) and th
 // UC code and class code
@@ -137,15 +163,6 @@ bool valideNewClass(std::string ucCode, std::string classCode,
       orderStudentClass(it, classes);
 
   std::string value = ucCode + classCode;
-
-  // Remove blank spaces
-  value.erase(value.begin(),
-              std::find_if(value.begin(), value.end(),
-                           [](unsigned char ch) { return !std::isspace(ch); }));
-  value.erase(std::find_if(value.rbegin(), value.rend(),
-                           [](unsigned char ch) { return !std::isspace(ch); })
-                  .base(),
-              value.end());
 
   auto it_class = classes.find(value);
 
@@ -164,12 +181,12 @@ bool valideNewClass(std::string ucCode, std::string classCode,
 
       // and verify if the
       // student has a class in
-      // the same time aula ->
-      // student classes
-      // class_info -> class to
-      // add
+      // the same time aula -> student classes
+      // class_info -> class to add
       for (const auto &aula : classesOfDay) {
-        if (class_info.startTime >= aula.startTime &&
+
+        if (aula.type != "T" && class_info.type != "T" &&
+            class_info.startTime >= aula.startTime &&
             class_info.startTime < aula.startTime + aula.duration) {
           std::cout << "Error: "
                        "Incompatible"
@@ -206,16 +223,6 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
   for (const auto &classe : it->second.getClasses()) {
     std::string value = classe.getUcCode() + classe.getClassCode();
 
-    // remove blank spaces
-    value.erase(value.begin(),
-                std::find_if(value.begin(), value.end(), [](unsigned char ch) {
-                  return !std::isspace(ch);
-                }));
-    value.erase(std::find_if(value.rbegin(), value.rend(),
-                             [](unsigned char ch) { return !std::isspace(ch); })
-                    .base(),
-                value.end());
-
     // student one class
     // pointer, verify if the
     // class exists in the
@@ -238,7 +245,6 @@ orderStudentClass(std::map<std::string, myStudent>::iterator &it,
       }
     }
   }
-
   return orderClasses;
 }
 
@@ -265,23 +271,6 @@ std::string weekDayString(int day) {
   default:
     return "Error Day";
     break;
-  }
-}
-
-void showStudentClasses(std::map<std::string, myStudent>::iterator &it,
-                        std::map<std::string, myUc> &classes) {
-  auto orderClasses = orderStudentClass(it, classes);
-  std::cout << "\nSchedules: " << std::endl;
-  for (const auto &pair : orderClasses) {
-    std::string day = weekDayString(pair.first);
-    std::cout << "Day: " << day << std::endl;
-    for (const auto &info : pair.second) {
-      std::cout << info.code << " - ";
-      std::cout << info.startTime << " to ";
-      std::cout << info.startTime + info.duration << " - ";
-      std::cout << info.type << std::endl;
-    }
-    std::cout << std::endl;
   }
 }
 

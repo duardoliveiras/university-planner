@@ -1,4 +1,155 @@
-Invalid day: Weekday
+UC Code: AED
+Class Code: T
+Class Code: U
+Class Code: R
+Class Code: M
+Class Code: A
+Class Code: 5
+UC Code: L.EIC001
+Class Code: 1
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 5
+UC Code: L.EIC002
+Class Code: 1
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 5
+UC Code: L.EIC003
+Class Code: 1
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 6
+UC Code: L.EIC004
+Class Code: 1
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 6
+UC Code: L.EIC005
+Class Code: 1
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 5
+UC Code: L.EIC011
+Class Code: 2
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 5
+UC Code: L.EIC012
+Class Code: 2
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 5
+UC Code: L.EIC013
+Class Code: 2
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 6
+UC Code: L.EIC014
+Class Code: 2
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 6
+UC Code: L.EIC015
+Class Code: 2
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 5
+UC Code: L.EIC021
+Class Code: 3
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 4
+UC Code: L.EIC022
+Class Code: 3
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 4
+UC Code: L.EIC023
+Class Code: 3
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 4
+UC Code: L.EIC024
+Class Code: 3
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 2
+UC Code: L.EIC025
+Class Code: 3
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 5
+UC Code: LBAW
+Class Code: T
+Class Code: U
+Class Code: R
+Class Code: M
+Class Code: A
+Class Code: 2
+UC Code: NO
+Class Code: N
+Class Code: O
+UC Code: SO
+Class Code: T
+Class Code: U
+Class Code: R
+Class Code: M
+Class Code: A
+Class Code: 5
+UC Code: UP001
+Class Code: 1
+Class Code: L
+Class Code: E
+Class Code: I
+Class Code: C
+Class Code: 1
+Class Code: 2
 [H[2J[3J------------ Welcome to our app :) ------------
 | 1) See database                             |
 | 2) Change database                          |
@@ -8,6 +159,7 @@ Invalid day: Weekday
 Choose an option: -----------------------------------------------
 | 1) See Students                             |
 | 2) See Classes and UC's                     |
+| 3) See My Schedules                         |
 -----------------------------------------------
 Choose an option: -----------------------------------------------
 | 1) See one                                  |
@@ -15,6 +167,10 @@ Choose an option: -----------------------------------------------
 | 3) See all                                  |
 -----------------------------------------------
 Choose an option: -----------------------------------------------
-| 1) Search by code                           |
+| 1) Sort by uc code asc                      |
+| 2) Sort by uc code desc                     |
+| 3) Sort by class code asc                   |
+| 4) Sort by class code desc                  |
 -----------------------------------------------
-Enter the code: 
+Choose an option: UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration
+AED | TURMA5L.EIC001 | 1LEIC15L.EIC002 | 1LEIC15L.EIC003 | 1LEIC16L.EIC004 | 1LEIC16L.EIC005 | 1LEIC15L.EIC011 | 2LEIC15L.EIC012 | 2LEIC15L.EIC013 | 2LEIC16L.EIC014 | 2LEIC16L.EIC015 | 2LEIC15L.EIC021 | 3LEIC14L.EIC022 | 3LEIC14L.EIC023 | 3LEIC14L.EIC024 | 3LEIC12L.EIC025 | 3LEIC15LBAW | TURMA2NO | NOSO | TURMA5UP001 | 1LEIC12

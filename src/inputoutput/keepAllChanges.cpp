@@ -3,6 +3,10 @@
 
 std::vector<std::string> backups;
 
+bool orderVector(const std::string &str1, const std::string &str2) {
+  return str1 > str2;
+}
+
 std::string getSysdate() {
 
   std::time_t date = std::time(0);
@@ -16,6 +20,7 @@ std::string getSysdate() {
 
 // Make a backup with the lastest archive modified
 // add the date on the name of the backup
+
 void makeBackup() {
   std::ifstream file("schedule/students_classes.csv", std::ios::binary);
 
@@ -43,13 +48,10 @@ void makeBackup() {
 // in the file students_classes.csv
 void keepAllChanges(std::map<std::string, myStudent> &students,
                     std::stack<alter> &stackAlter) {
-
   makeBackup();
-
   std::ofstream alter("schedule/alter/students_classes-" + getSysdate() +
                           ".csv",
                       std::ios::app);
-
   if (!alter.is_open()) {
     std::cerr << "Error opening file" << std::endl;
   }
@@ -82,6 +84,7 @@ void keepAllChanges(std::map<std::string, myStudent> &students,
 }
 
 // List all backups in the folder schedule/backup
+
 void listAllBackups() {
   if (backups.size() == 0) {
     std::string way = "schedule/backup";
@@ -90,6 +93,7 @@ void listAllBackups() {
         backups.push_back(in.path().filename().string());
       }
     }
+    std::sort(backups.begin(), backups.end(), orderVector);
   }
 }
 
@@ -104,6 +108,7 @@ void printAllBackups() {
 // Go through the /schedule/alter folder to the indicated position
 // Print the changes made in the file
 // from 0 (most recent) to cdBkp
+
 void listChanges(int cdBkp) {
   unsigned size = cdBkp;
   for (unsigned i = 0; i <= size; i++) {
@@ -139,6 +144,7 @@ void listChanges(int cdBkp) {
 
 // Update te file students_classes.csv with the file backup
 // delete the backup and alter files
+
 void backupFile(int cdBkp) {
 
   std::string path = "schedule/backup/" + backups[cdBkp];
@@ -159,14 +165,17 @@ void backupFile(int cdBkp) {
   file.close();
   backup.close();
 
-  if (std::filesystem::exists("schedule/alter/" + backups[cdBkp])) {
-    try {
-      std::filesystem::remove("schedule/alter/" + backups[cdBkp]);
-      std::filesystem::remove("schedule/backup/" + backups[cdBkp]);
-    } catch (const std::filesystem::filesystem_error &e) {
-      std::cerr << "Error to remove the file" << e.what() << std::endl;
+  unsigned size = cdBkp;
+  for (unsigned i = 0; i <= size; i++) {
+    if (std::filesystem::exists("schedule/alter/" + backups[cdBkp])) {
+      try {
+        std::filesystem::remove("schedule/alter/" + backups[i]);
+        std::filesystem::remove("schedule/backup/" + backups[i]);
+      } catch (const std::filesystem::filesystem_error &e) {
+        std::cerr << "Error to remove the file" << e.what() << std::endl;
+      }
+    } else {
+      std::cout << "The file of changes not exist" << std::endl;
     }
-  } else {
-    std::cout << "The file of changes not exist" << std::endl;
   }
 }
