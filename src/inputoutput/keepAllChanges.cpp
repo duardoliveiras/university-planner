@@ -3,10 +3,20 @@
 
 std::vector<std::string> backups;
 
+/**
+ * @brief Compare two strings in descending order.
+ * @param str1 The first string to compare.
+ * @param str2 The second string to compare.
+ * @return True if 'str1' is greater than 'str2', otherwise false.
+*/
 bool orderVector(const std::string &str1, const std::string &str2) {
   return str1 > str2;
 }
 
+/**
+ * @brief Get the system date.
+ * @return A string with the system date.
+*/
 std::string getSysdate() {
 
   std::time_t date = std::time(0);
@@ -18,9 +28,10 @@ std::string getSysdate() {
          std::to_string(now->tm_min) + ":" + std::to_string(now->tm_sec);
 }
 
-// Make a backup with the lastest archive modified
-// add the date on the name of the backup
-
+/**
+ * @brief Creates a backup of the "students_classes.csv" file with the lastest archive modified.
+ *        The backup file is named with the current system date.
+ */
 void makeBackup() {
   std::ifstream file("schedule/students_classes.csv", std::ios::binary);
 
@@ -44,8 +55,11 @@ void makeBackup() {
   backup.close();
 }
 
-// Save all changes made in the tree of students
-// in the file students_classes.csv
+/**
+ * @brief Saves all changes made to the student tree in the "students_classes.csv" file.
+ * @param students Reference to the map containing student data.
+ * @param stackAlter Reference to a stack containing alteration records.
+ */
 void keepAllChanges(std::map<std::string, myStudent> &students,
                     std::stack<alter> &stackAlter) {
   makeBackup();
@@ -83,8 +97,12 @@ void keepAllChanges(std::map<std::string, myStudent> &students,
   }
 }
 
-// List all backups in the folder schedule/backup
-
+/**
+ * @brief List all backup files.
+ *
+ * If no backup files exist, this function searches for and populates
+ * the 'backups' vector with filenames from the "schedule/backup" directory.
+ */
 void listAllBackups() {
   if (backups.size() == 0) {
     std::string way = "schedule/backup";
@@ -97,7 +115,9 @@ void listAllBackups() {
   }
 }
 
-// Print all backups save in public vector backups
+/**
+ * @brief Prints all backup file names stored in the public vector backups.
+ */
 bool printAllBackups() {
   if(backups.size() != 0){
       std::cout << "Backups: " << std::endl;
@@ -111,11 +131,15 @@ bool printAllBackups() {
   }
 }
 
-// Go through the /schedule/alter folder to the indicated position
-// Print the changes made in the file
-// from 0 (most recent) to cdBkp
-
-void listChanges(int cdBkp) {
+/**
+ * @brief Print the changes from backup files.
+ *
+ * This function prints the content of backup files located in the "schedule/alter" directory,
+ * up to the specified 'cdBkp' index, to the standard output.
+ *
+ * @param cdBkp The index of the backup files to print.
+ */
+void printChanges(int cdBkp) {
   unsigned size = cdBkp;
   for (unsigned i = 0; i <= size; i++) {
     std::ifstream file("schedule/alter/" + backups[i], std::ios::binary);
@@ -148,9 +172,14 @@ void listChanges(int cdBkp) {
   // }
 }
 
-// Update te file students_classes.csv with the file backup
-// delete the backup and alter files
-
+/**
+ * @brief Backup a specific file and remove related changes.
+ *
+ * This function backs up a specified file from "schedule/backup" to "schedule/students_classes.csv"
+ * and removes related change files in the "schedule/alter" and "schedule/backup" directories.
+ *
+ * @param cdBkp The index of the backup file to restore.
+ */
 void backupFile(int cdBkp) {
 
   std::string path = "schedule/backup/" + backups[cdBkp];

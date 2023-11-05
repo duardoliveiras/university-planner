@@ -457,7 +457,7 @@ void menuBackup() {
 
   bool valide = printAllBackups();
   if(valide == true){
-    listChanges(selectBackupCode(0));
+    printChanges(selectBackupCode(0));
     menuChanges();
   }else{
     std::cout << "-----------------------------------------------" << std::endl;
