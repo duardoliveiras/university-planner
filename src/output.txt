@@ -15,9 +15,16 @@ Choose an option: -----------------------------------------------
 | 3) See all                                  |
 -----------------------------------------------
 Choose an option: -----------------------------------------------
-| 1) Search by code                           |
+| 1) Uc Code                                  |
+| 2) Class Code                               |
 -----------------------------------------------
-Enter the code: UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration
+Choose an option: Enter the value: -----------------------------------------------
+| 1) Sort by uc code asc                      |
+| 2) Sort by uc code desc                     |
+| 3) Sort by class code asc                   |
+| 4) Sort by class code desc                  |
+-----------------------------------------------
+Choose an option: UcCode | ClassCode
 L.EIC001 | 1LEIC01
 L.EIC001 | 1LEIC02
 L.EIC001 | 1LEIC03

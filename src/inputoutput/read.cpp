@@ -198,6 +198,7 @@ std::map<std::string, myUc> readSchedules() {
       it2->second.addClassInfo(type, day, dayInt, startTime, duration);
     } else {
       myUc newUcClass;
+      newUcClass.setUcCode(ucCode);
       newUcClass.addClass(classCode);
       newUcClass.addClassInfo(type, day, dayInt, startTime, duration);
       classes[ucCode + classCode] = newUcClass;

@@ -74,7 +74,8 @@ The application is structured around key components and classes. Understanding t
 
 - [✘] Doxeg...
 
-**Schedule Class**: press: `1` -> `2` -> `2` -> `2` -> <classcode> -> <ordem>
+**Schedule Class**: press: `1` -> `2` -> `1` -> <UcCode>
+**Schedule Student**: press: `1` -> `3` -> <StudentCode>
 **
 
 ## Restrictions

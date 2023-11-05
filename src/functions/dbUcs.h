@@ -15,7 +15,7 @@ bool compareClassesCode(const myUc &uc1, const myUc &uc2);
 bool compareUcsCode(const myUc &uc1, const myUc &uc2);
 
 std::vector<myUc> selectUc(const std::string &str,
-                           const std::map<std::string, std::vector<myUc>> &ucs);
+                           const std::map<std::string, myUc> &classes);
 std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs);
 std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs);
 

@@ -125,18 +125,18 @@ void menuStudentCode(int flag) {
   // system("clear");
   std::string registrationNumber;
   std::cout << "-----------------------------------------------" << std::endl;
-  std::cout << "Enter your registration number: " << std::endl;
+  std::cout << "Enter your registration number: ";
   std::cin >> registrationNumber;
 
   auto it = students.find(registrationNumber);
 
   if (it == students.end()) {
     std::cout << "-----------------------------------------------" << std::endl;
-    std::cout << "Registration number not found" << std::endl;
+    std::cout << "| Registration number not found               |" << std::endl;
     std::cout << "-----------------------------------------------" << std::endl;
 
-    std::cout << "1 - Try again" << std::endl;
-    std::cout << "2 - Exit" << std::endl;
+    std::cout << "| 1) Try again                                |" << std::endl;
+    std::cout << "| 2) Exit                                     |" << std::endl;
 
     int flag2;
 
@@ -405,9 +405,9 @@ void menuChanges() {
   int flag;
 
   std::cout << "-----------------------------------------------" << std::endl;
-  std::cout << "|1 - Return                                   |" << std::endl;
-  std::cout << "|2 - Main menu                                |" << std::endl;
-  std::cout << "|3 - Restore                                  |" << std::endl;
+  std::cout << "| 1) Return                                   |" << std::endl;
+  std::cout << "| 2) Main menu                                |" << std::endl;
+  std::cout << "| 3) Restore                                  |" << std::endl;
   std::cout << "-----------------------------------------------" << std::endl;
 
   std::cin >> flag;
@@ -495,11 +495,9 @@ std::string selectCode() {
 int selectFilter() {
   int flag = 0;
 
-  // add more filter
   std::cout << "-----------------------------------------------" << std::endl;
   std::cout << "| 1) Uc Code                                  |" << std::endl;
   std::cout << "| 2) Class Code                               |" << std::endl;
-  // 3) Year
   std::cout << "-----------------------------------------------" << std::endl;
 
   std::cout << "Choose an option: ";
@@ -541,6 +539,7 @@ void menuStudents(std::string str, int type, int filter, int order) {
 
 void menuUcs(std::string str, int type, int filter, int order) {
   std::vector<myUc> data;
+  std::vector<myUc> oneUc;
 
   for (const auto &ucVectorPair : ucs) {
     for (const myUc &ucObj : ucVectorPair.second) {
@@ -549,15 +548,13 @@ void menuUcs(std::string str, int type, int filter, int order) {
   }
 
   if (type == 1) {
-    data = selectUc(str, ucs);
-    printUcClasses(data);
+    oneUc = selectUc(str, classes);
+    printUcClasses(oneUc);
   } else {
     if (type == 2) {
       data = filterInfoUc(filter, str, data);
     }
-    // data = orderInfoUc(order, data);
+    data = orderInfoUc(order, data);
     printUcs(data);
   }
-
-  // printUcs(data);
 }

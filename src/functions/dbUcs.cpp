@@ -68,13 +68,17 @@ std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
   return ucs;
 }
 
-std::vector<myUc>
-selectUc(const std::string &str,
-         const std::map<std::string, std::vector<myUc>> &ucs) {
+std::vector<myUc> selectUc(const std::string &str,
+                           const std::map<std::string, myUc> &classes) {
+  std::vector<myUc> selectedUcs;
 
-  auto it = ucs.find(str);
-  if (it != ucs.end()) {
-    return it->second;
+  for (const auto &pair : classes) {
+    auto ucObj = pair.second;
+
+    if (ucObj.getUcCode() == str) {
+      selectedUcs.push_back(ucObj);
+    }
   }
-  return std::vector<myUc>();
+
+  return selectedUcs;
 }
