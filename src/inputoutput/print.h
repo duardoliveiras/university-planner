@@ -29,5 +29,7 @@ void printFreeClasses(std::string ucCode,
                       std::map<std::string, std::vector<classQtd>> &count);
 std::list<std::string> valideFreeClass(
     std::map<std::string, std::vector<classQtd>>::iterator it_count);
+bool verifyClassCode(std::string classCode, std::string ucCode, 
+                     std::map<std::string, std::vector<classQtd>> &count);
 
 #endif

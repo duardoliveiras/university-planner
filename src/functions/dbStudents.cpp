@@ -103,7 +103,6 @@ void organizerUcStudent(std::map<std::string, myStudent>::iterator &it) {
             myUc::compareUcCode);
 }
 
-
 // receives the student pointer by reference and removes the UC
 bool removeUcStudent(std::string ucCode,
                      std::map<std::string, myStudent>::iterator &it,

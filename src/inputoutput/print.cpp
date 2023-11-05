@@ -126,13 +126,30 @@ std::list<std::string> valideFreeClass(
   return free_classes;
 }
 
+bool verifyClassCode(std::string classCode, std::string ucCode, std::map<std::string, std::vector<classQtd>> &count){
+    auto it_count = count.find(ucCode);
+
+    if(it_count != count.end()){
+       std::list<std::string> free_classes = valideFreeClass(it_count);
+        for(auto it_list = free_classes.begin(); it_list != free_classes.end(); it_list++){
+            if(*it_list == classCode){
+                return true;
+            }
+        }
+    }else{
+        std::cout << "Error in find uc" << std::endl;
+    }
+    return false;
+}
+
 void printFreeClasses(std::string ucCode,
                       std::map<std::string, std::vector<classQtd>> &count) {
 
   auto it_count = count.find(ucCode);
+  std::list<std::string> free_classes;
 
   if (it_count != count.end()) {
-    std::list<std::string> free_classes = valideFreeClass(it_count);
+    free_classes = valideFreeClass(it_count);
     std::cout << "   Classes: " << std::endl;
 
     if (!free_classes.empty()) {
