@@ -95,7 +95,8 @@ void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
  * @param classes A map of class information.
  */
 void printUcClasses(const std::vector<myUc> &ucVector) {
-  std::cout << "UcCode | ClassCode" << std::endl;
+  std::cout << "UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration"
+            << std::endl;
 
   for (const auto &classes : ucVector) {
 
