@@ -2,15 +2,20 @@
 #include "inputoutput/read.h"
 
 std::map<std::string, std::vector<classQtd>> count;
-std::map<std::string, myStudent> students = readStudents(count);
+std::map<std::string, myStudent> students;
 std::map<std::string, std::vector<myUc>> ucs = readUcs(count);
 std::map<std::string, myUc> classes = readSchedules();
+
 std::stack<alter> stackAlter;
+
+void menuUpdate(){
+  students = readStudents(count);
+}
 
 void menu() {
 
+  menuUpdate();
   system("clear");
-
 
   int flag = 0;
 
