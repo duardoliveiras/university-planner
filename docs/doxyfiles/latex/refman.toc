@@ -1,0 +1,271 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}alter Struct Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Member Data Documentation}{5}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}classCode}{5}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}studentCode}{5}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.3}studentName}{6}{subsubsection.3.1.2.3}%
+\contentsline {subsubsection}{\numberline {3.1.2.4}type}{6}{subsubsection.3.1.2.4}%
+\contentsline {subsubsection}{\numberline {3.1.2.5}ucCode}{6}{subsubsection.3.1.2.5}%
+\contentsline {section}{\numberline {3.2}class\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info Struct Reference}{6}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{6}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Member Function Documentation}{7}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}operator$<$()}{7}{subsubsection.3.2.2.1}%
+\contentsline {subsection}{\numberline {3.2.3}Member Data Documentation}{7}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}code}{7}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}day}{7}{subsubsection.3.2.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}dayInt}{7}{subsubsection.3.2.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.4}duration}{7}{subsubsection.3.2.3.4}%
+\contentsline {subsubsection}{\numberline {3.2.3.5}startTime}{7}{subsubsection.3.2.3.5}%
+\contentsline {subsubsection}{\numberline {3.2.3.6}type}{8}{subsubsection.3.2.3.6}%
+\contentsline {section}{\numberline {3.3}class\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Qtd Struct Reference}{8}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{8}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Member Function Documentation}{8}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}operator$<$()}{8}{subsubsection.3.3.2.1}%
+\contentsline {subsection}{\numberline {3.3.3}Member Data Documentation}{8}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}classCode}{8}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}qtd}{9}{subsubsection.3.3.3.2}%
+\contentsline {section}{\numberline {3.4}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Student Class Reference}{9}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{9}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Constructor \& Destructor Documentation}{10}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}myStudent()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{10}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}myStudent()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{11}{subsubsection.3.4.2.2}%
+\contentsline {subsection}{\numberline {3.4.3}Member Function Documentation}{11}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.1}addClass()}{11}{subsubsection.3.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.4.3.2}addUc()}{11}{subsubsection.3.4.3.2}%
+\contentsline {subsubsection}{\numberline {3.4.3.3}changeClass()}{11}{subsubsection.3.4.3.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.4}getClassCode()}{12}{subsubsection.3.4.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.3.5}getClasses()}{12}{subsubsection.3.4.3.5}%
+\contentsline {subsubsection}{\numberline {3.4.3.6}getStudentCode()}{12}{subsubsection.3.4.3.6}%
+\contentsline {subsubsection}{\numberline {3.4.3.7}getStudentName()}{13}{subsubsection.3.4.3.7}%
+\contentsline {subsubsection}{\numberline {3.4.3.8}getUcCode()}{13}{subsubsection.3.4.3.8}%
+\contentsline {subsubsection}{\numberline {3.4.3.9}removeUc()}{13}{subsubsection.3.4.3.9}%
+\contentsline {subsubsection}{\numberline {3.4.3.10}setStudent()}{13}{subsubsection.3.4.3.10}%
+\contentsline {subsubsection}{\numberline {3.4.3.11}setStudentCode()}{13}{subsubsection.3.4.3.11}%
+\contentsline {subsubsection}{\numberline {3.4.3.12}setStudentName()}{14}{subsubsection.3.4.3.12}%
+\contentsline {subsubsection}{\numberline {3.4.3.13}valideQtClasses()}{14}{subsubsection.3.4.3.13}%
+\contentsline {section}{\numberline {3.5}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Uc Class Reference}{14}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{15}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Constructor \& Destructor Documentation}{15}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}myUc()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.3.5.2.1}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}myUc()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.3.5.2.2}%
+\contentsline {subsection}{\numberline {3.5.3}Member Function Documentation}{16}{subsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.3.1}addClass()}{16}{subsubsection.3.5.3.1}%
+\contentsline {subsubsection}{\numberline {3.5.3.2}addClassInfo()}{16}{subsubsection.3.5.3.2}%
+\contentsline {subsubsection}{\numberline {3.5.3.3}compareUcCode()}{17}{subsubsection.3.5.3.3}%
+\contentsline {subsubsection}{\numberline {3.5.3.4}getClassCode()}{17}{subsubsection.3.5.3.4}%
+\contentsline {subsubsection}{\numberline {3.5.3.5}getClassInfoVec()}{17}{subsubsection.3.5.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.3.6}getUcCode()}{18}{subsubsection.3.5.3.6}%
+\contentsline {subsubsection}{\numberline {3.5.3.7}operator$<$()}{18}{subsubsection.3.5.3.7}%
+\contentsline {subsubsection}{\numberline {3.5.3.8}setClassCode()}{18}{subsubsection.3.5.3.8}%
+\contentsline {subsubsection}{\numberline {3.5.3.9}SetUc()}{18}{subsubsection.3.5.3.9}%
+\contentsline {subsubsection}{\numberline {3.5.3.10}setUcCode()}{19}{subsubsection.3.5.3.10}%
+\contentsline {chapter}{\numberline {4}File Documentation}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}src/classes/student.cpp File Reference}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}student.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}src/classes/student.h File Reference}{22}{section.4.3}%
+\contentsline {section}{\numberline {4.4}student.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{22}{section.4.4}%
+\contentsline {section}{\numberline {4.5}src/classes/uc.cpp File Reference}{23}{section.4.5}%
+\contentsline {section}{\numberline {4.6}uc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{23}{section.4.6}%
+\contentsline {section}{\numberline {4.7}src/classes/uc.h File Reference}{23}{section.4.7}%
+\contentsline {section}{\numberline {4.8}uc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{24}{section.4.8}%
+\contentsline {section}{\numberline {4.9}src/error\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Msgs.cpp File Reference}{24}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Function Documentation}{25}{subsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.1}errorCheck()}{25}{subsubsection.4.9.1.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.2}errorMessage()}{25}{subsubsection.4.9.1.2}%
+\contentsline {subsubsection}{\numberline {4.9.1.3}errorMessageFile()}{25}{subsubsection.4.9.1.3}%
+\contentsline {subsubsection}{\numberline {4.9.1.4}errorMessageLine()}{25}{subsubsection.4.9.1.4}%
+\contentsline {subsubsection}{\numberline {4.9.1.5}workingMessage()}{26}{subsubsection.4.9.1.5}%
+\contentsline {section}{\numberline {4.10}error\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Msgs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{26}{section.4.10}%
+\contentsline {section}{\numberline {4.11}src/functions/db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Students.cpp File Reference}{26}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Function Documentation}{27}{subsection.4.11.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.1}addClassStudent()}{27}{subsubsection.4.11.1.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.2}compareStudentNameAsc()}{28}{subsubsection.4.11.1.2}%
+\contentsline {subsubsection}{\numberline {4.11.1.3}compareStudentNameDesc()}{28}{subsubsection.4.11.1.3}%
+\contentsline {subsubsection}{\numberline {4.11.1.4}compareStudentsCodeAsc()}{28}{subsubsection.4.11.1.4}%
+\contentsline {subsubsection}{\numberline {4.11.1.5}compareStudentsCodeDesc()}{29}{subsubsection.4.11.1.5}%
+\contentsline {subsubsection}{\numberline {4.11.1.6}filterInfoStudent()}{29}{subsubsection.4.11.1.6}%
+\contentsline {subsubsection}{\numberline {4.11.1.7}orderInfoStudent()}{30}{subsubsection.4.11.1.7}%
+\contentsline {subsubsection}{\numberline {4.11.1.8}orderStudentClass()}{31}{subsubsection.4.11.1.8}%
+\contentsline {subsubsection}{\numberline {4.11.1.9}organizerUcStudent()}{32}{subsubsection.4.11.1.9}%
+\contentsline {subsubsection}{\numberline {4.11.1.10}removeUcStudent()}{32}{subsubsection.4.11.1.10}%
+\contentsline {subsubsection}{\numberline {4.11.1.11}selectStudent()}{33}{subsubsection.4.11.1.11}%
+\contentsline {subsubsection}{\numberline {4.11.1.12}updateCountClasses()}{33}{subsubsection.4.11.1.12}%
+\contentsline {subsubsection}{\numberline {4.11.1.13}valideNewClass()}{34}{subsubsection.4.11.1.13}%
+\contentsline {subsubsection}{\numberline {4.11.1.14}verifyUcCode()}{35}{subsubsection.4.11.1.14}%
+\contentsline {subsubsection}{\numberline {4.11.1.15}weekDayString()}{35}{subsubsection.4.11.1.15}%
+\contentsline {section}{\numberline {4.12}db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Students.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{36}{section.4.12}%
+\contentsline {section}{\numberline {4.13}src/functions/db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Students.h File Reference}{40}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Function Documentation}{41}{subsection.4.13.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.1}addClassStudent()}{41}{subsubsection.4.13.1.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.2}compareStudentNameAsc()}{41}{subsubsection.4.13.1.2}%
+\contentsline {subsubsection}{\numberline {4.13.1.3}compareStudentNameDesc()}{42}{subsubsection.4.13.1.3}%
+\contentsline {subsubsection}{\numberline {4.13.1.4}compareStudentsCodeAsc()}{42}{subsubsection.4.13.1.4}%
+\contentsline {subsubsection}{\numberline {4.13.1.5}compareStudentsCodeDesc()}{43}{subsubsection.4.13.1.5}%
+\contentsline {subsubsection}{\numberline {4.13.1.6}errorMessage()}{43}{subsubsection.4.13.1.6}%
+\contentsline {subsubsection}{\numberline {4.13.1.7}filterInfoStudent()}{43}{subsubsection.4.13.1.7}%
+\contentsline {subsubsection}{\numberline {4.13.1.8}orderInfoStudent()}{44}{subsubsection.4.13.1.8}%
+\contentsline {subsubsection}{\numberline {4.13.1.9}orderStudentClass()}{45}{subsubsection.4.13.1.9}%
+\contentsline {subsubsection}{\numberline {4.13.1.10}removeUcStudent()}{46}{subsubsection.4.13.1.10}%
+\contentsline {subsubsection}{\numberline {4.13.1.11}selectStudent()}{46}{subsubsection.4.13.1.11}%
+\contentsline {subsubsection}{\numberline {4.13.1.12}updateCountClasses()}{47}{subsubsection.4.13.1.12}%
+\contentsline {subsubsection}{\numberline {4.13.1.13}valideNewClass()}{47}{subsubsection.4.13.1.13}%
+\contentsline {subsubsection}{\numberline {4.13.1.14}verifyUcCode()}{48}{subsubsection.4.13.1.14}%
+\contentsline {subsubsection}{\numberline {4.13.1.15}weekDayString()}{49}{subsubsection.4.13.1.15}%
+\contentsline {section}{\numberline {4.14}db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Students.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{50}{section.4.14}%
+\contentsline {section}{\numberline {4.15}src/functions/db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ucs.cpp File Reference}{51}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Function Documentation}{51}{subsection.4.15.1}%
+\contentsline {subsubsection}{\numberline {4.15.1.1}compareClassesCodeAsc()}{51}{subsubsection.4.15.1.1}%
+\contentsline {subsubsection}{\numberline {4.15.1.2}compareClassesCodeDesc()}{51}{subsubsection.4.15.1.2}%
+\contentsline {subsubsection}{\numberline {4.15.1.3}compareUcsCodeASC()}{52}{subsubsection.4.15.1.3}%
+\contentsline {subsubsection}{\numberline {4.15.1.4}compareUcsCodeDesc()}{52}{subsubsection.4.15.1.4}%
+\contentsline {subsubsection}{\numberline {4.15.1.5}filterInfoUc()}{53}{subsubsection.4.15.1.5}%
+\contentsline {subsubsection}{\numberline {4.15.1.6}orderInfoUc()}{53}{subsubsection.4.15.1.6}%
+\contentsline {subsubsection}{\numberline {4.15.1.7}selectUc()}{54}{subsubsection.4.15.1.7}%
+\contentsline {section}{\numberline {4.16}db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ucs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{55}{section.4.16}%
+\contentsline {section}{\numberline {4.17}src/functions/db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ucs.h File Reference}{56}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Function Documentation}{56}{subsection.4.17.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.1}compareClassesCode()}{56}{subsubsection.4.17.1.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.2}compareUcsCode()}{56}{subsubsection.4.17.1.2}%
+\contentsline {subsubsection}{\numberline {4.17.1.3}errorMessage()}{57}{subsubsection.4.17.1.3}%
+\contentsline {subsubsection}{\numberline {4.17.1.4}filterInfoUc()}{57}{subsubsection.4.17.1.4}%
+\contentsline {subsubsection}{\numberline {4.17.1.5}orderInfoUc()}{57}{subsubsection.4.17.1.5}%
+\contentsline {subsubsection}{\numberline {4.17.1.6}selectUc()}{58}{subsubsection.4.17.1.6}%
+\contentsline {section}{\numberline {4.18}db\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ucs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{59}{section.4.18}%
+\contentsline {section}{\numberline {4.19}src/inputoutput/keep\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}All\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Changes.cpp File Reference}{59}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Function Documentation}{60}{subsection.4.19.1}%
+\contentsline {subsubsection}{\numberline {4.19.1.1}backupFile()}{60}{subsubsection.4.19.1.1}%
+\contentsline {subsubsection}{\numberline {4.19.1.2}getSysdate()}{60}{subsubsection.4.19.1.2}%
+\contentsline {subsubsection}{\numberline {4.19.1.3}keepAllChanges()}{61}{subsubsection.4.19.1.3}%
+\contentsline {subsubsection}{\numberline {4.19.1.4}listAllBackups()}{61}{subsubsection.4.19.1.4}%
+\contentsline {subsubsection}{\numberline {4.19.1.5}makeBackup()}{62}{subsubsection.4.19.1.5}%
+\contentsline {subsubsection}{\numberline {4.19.1.6}orderVector()}{62}{subsubsection.4.19.1.6}%
+\contentsline {subsubsection}{\numberline {4.19.1.7}printAllBackups()}{63}{subsubsection.4.19.1.7}%
+\contentsline {subsubsection}{\numberline {4.19.1.8}printChanges()}{63}{subsubsection.4.19.1.8}%
+\contentsline {subsection}{\numberline {4.19.2}Variable Documentation}{64}{subsection.4.19.2}%
+\contentsline {subsubsection}{\numberline {4.19.2.1}backups}{64}{subsubsection.4.19.2.1}%
+\contentsline {section}{\numberline {4.20}keep\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}All\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Changes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{64}{section.4.20}%
+\contentsline {section}{\numberline {4.21}src/inputoutput/keep\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}All\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Changes.h File Reference}{66}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Function Documentation}{67}{subsection.4.21.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.1}backupFile()}{67}{subsubsection.4.21.1.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.2}getSysdate()}{67}{subsubsection.4.21.1.2}%
+\contentsline {subsubsection}{\numberline {4.21.1.3}keepAllChanges()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.4.21.1.3}%
+\contentsline {subsubsection}{\numberline {4.21.1.4}keepAllChanges()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{subsubsection.4.21.1.4}%
+\contentsline {subsubsection}{\numberline {4.21.1.5}listAllBackups()}{69}{subsubsection.4.21.1.5}%
+\contentsline {subsubsection}{\numberline {4.21.1.6}makeBackup()}{69}{subsubsection.4.21.1.6}%
+\contentsline {subsubsection}{\numberline {4.21.1.7}orderVector()}{69}{subsubsection.4.21.1.7}%
+\contentsline {subsubsection}{\numberline {4.21.1.8}printAllBackups()}{70}{subsubsection.4.21.1.8}%
+\contentsline {subsubsection}{\numberline {4.21.1.9}printChanges()}{70}{subsubsection.4.21.1.9}%
+\contentsline {section}{\numberline {4.22}keep\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}All\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Changes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{71}{section.4.22}%
+\contentsline {section}{\numberline {4.23}src/inputoutput/print.cpp File Reference}{71}{section.4.23}%
+\contentsline {subsection}{\numberline {4.23.1}Function Documentation}{72}{subsection.4.23.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.1}printFreeClasses()}{72}{subsubsection.4.23.1.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.2}printStudent()}{72}{subsubsection.4.23.1.2}%
+\contentsline {subsubsection}{\numberline {4.23.1.3}printStudentClasses()}{73}{subsubsection.4.23.1.3}%
+\contentsline {subsubsection}{\numberline {4.23.1.4}printStudents()}{73}{subsubsection.4.23.1.4}%
+\contentsline {subsubsection}{\numberline {4.23.1.5}printStudentSchedules()}{74}{subsubsection.4.23.1.5}%
+\contentsline {subsubsection}{\numberline {4.23.1.6}printUcClasses()}{74}{subsubsection.4.23.1.6}%
+\contentsline {subsubsection}{\numberline {4.23.1.7}printUcs()}{75}{subsubsection.4.23.1.7}%
+\contentsline {subsubsection}{\numberline {4.23.1.8}valideFreeClass()}{75}{subsubsection.4.23.1.8}%
+\contentsline {subsubsection}{\numberline {4.23.1.9}verifyClassCode()}{76}{subsubsection.4.23.1.9}%
+\contentsline {subsection}{\numberline {4.23.2}Variable Documentation}{76}{subsection.4.23.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.1}equilibre}{76}{subsubsection.4.23.2.1}%
+\contentsline {subsubsection}{\numberline {4.23.2.2}max\_students}{77}{subsubsection.4.23.2.2}%
+\contentsline {section}{\numberline {4.24}print.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{77}{section.4.24}%
+\contentsline {section}{\numberline {4.25}src/inputoutput/print.h File Reference}{79}{section.4.25}%
+\contentsline {subsection}{\numberline {4.25.1}Function Documentation}{80}{subsection.4.25.1}%
+\contentsline {subsubsection}{\numberline {4.25.1.1}errorMessage()}{80}{subsubsection.4.25.1.1}%
+\contentsline {subsubsection}{\numberline {4.25.1.2}printFreeClasses()}{80}{subsubsection.4.25.1.2}%
+\contentsline {subsubsection}{\numberline {4.25.1.3}printStudent()}{80}{subsubsection.4.25.1.3}%
+\contentsline {subsubsection}{\numberline {4.25.1.4}printStudentClasses()}{81}{subsubsection.4.25.1.4}%
+\contentsline {subsubsection}{\numberline {4.25.1.5}printStudents()}{81}{subsubsection.4.25.1.5}%
+\contentsline {subsubsection}{\numberline {4.25.1.6}printStudentSchedules()}{82}{subsubsection.4.25.1.6}%
+\contentsline {subsubsection}{\numberline {4.25.1.7}printUcClasses()}{82}{subsubsection.4.25.1.7}%
+\contentsline {subsubsection}{\numberline {4.25.1.8}printUcs()}{83}{subsubsection.4.25.1.8}%
+\contentsline {subsubsection}{\numberline {4.25.1.9}valideFreeClass()}{83}{subsubsection.4.25.1.9}%
+\contentsline {subsubsection}{\numberline {4.25.1.10}verifyClassCode()}{84}{subsubsection.4.25.1.10}%
+\contentsline {subsubsection}{\numberline {4.25.1.11}workingMessage()}{84}{subsubsection.4.25.1.11}%
+\contentsline {section}{\numberline {4.26}print.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{85}{section.4.26}%
+\contentsline {section}{\numberline {4.27}src/inputoutput/read.cpp File Reference}{85}{section.4.27}%
+\contentsline {subsection}{\numberline {4.27.1}Function Documentation}{86}{subsection.4.27.1}%
+\contentsline {subsubsection}{\numberline {4.27.1.1}readSchedules()}{86}{subsubsection.4.27.1.1}%
+\contentsline {subsubsection}{\numberline {4.27.1.2}readStudents()}{87}{subsubsection.4.27.1.2}%
+\contentsline {subsubsection}{\numberline {4.27.1.3}readUcs()}{88}{subsubsection.4.27.1.3}%
+\contentsline {section}{\numberline {4.28}read.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{89}{section.4.28}%
+\contentsline {section}{\numberline {4.29}src/inputoutput/read.h File Reference}{92}{section.4.29}%
+\contentsline {subsection}{\numberline {4.29.1}Function Documentation}{92}{subsection.4.29.1}%
+\contentsline {subsubsection}{\numberline {4.29.1.1}errorMessageFile()}{92}{subsubsection.4.29.1.1}%
+\contentsline {subsubsection}{\numberline {4.29.1.2}errorMessageLine()}{92}{subsubsection.4.29.1.2}%
+\contentsline {subsubsection}{\numberline {4.29.1.3}readSchedules()}{93}{subsubsection.4.29.1.3}%
+\contentsline {subsubsection}{\numberline {4.29.1.4}readStudents()}{94}{subsubsection.4.29.1.4}%
+\contentsline {subsubsection}{\numberline {4.29.1.5}readUcs()}{95}{subsubsection.4.29.1.5}%
+\contentsline {section}{\numberline {4.30}read.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{96}{section.4.30}%
+\contentsline {section}{\numberline {4.31}src/main.cpp File Reference}{96}{section.4.31}%
+\contentsline {subsection}{\numberline {4.31.1}Function Documentation}{97}{subsection.4.31.1}%
+\contentsline {subsubsection}{\numberline {4.31.1.1}main()}{97}{subsubsection.4.31.1.1}%
+\contentsline {subsubsection}{\numberline {4.31.1.2}menu()}{97}{subsubsection.4.31.1.2}%
+\contentsline {section}{\numberline {4.32}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{98}{section.4.32}%
+\contentsline {section}{\numberline {4.33}src/menu.cpp File Reference}{98}{section.4.33}%
+\contentsline {subsection}{\numberline {4.33.1}Function Documentation}{99}{subsection.4.33.1}%
+\contentsline {subsubsection}{\numberline {4.33.1.1}menu()}{99}{subsubsection.4.33.1.1}%
+\contentsline {subsubsection}{\numberline {4.33.1.2}menuAdd()}{100}{subsubsection.4.33.1.2}%
+\contentsline {subsubsection}{\numberline {4.33.1.3}menuBackup()}{101}{subsubsection.4.33.1.3}%
+\contentsline {subsubsection}{\numberline {4.33.1.4}menuChanges()}{101}{subsubsection.4.33.1.4}%
+\contentsline {subsubsection}{\numberline {4.33.1.5}menuRemove()}{102}{subsubsection.4.33.1.5}%
+\contentsline {subsubsection}{\numberline {4.33.1.6}menuRequests()}{102}{subsubsection.4.33.1.6}%
+\contentsline {subsubsection}{\numberline {4.33.1.7}menuSeeDatabase()}{103}{subsubsection.4.33.1.7}%
+\contentsline {subsubsection}{\numberline {4.33.1.8}menuStudentCode()}{104}{subsubsection.4.33.1.8}%
+\contentsline {subsubsection}{\numberline {4.33.1.9}menuStudents()}{105}{subsubsection.4.33.1.9}%
+\contentsline {subsubsection}{\numberline {4.33.1.10}menuSwitch()}{105}{subsubsection.4.33.1.10}%
+\contentsline {subsubsection}{\numberline {4.33.1.11}menuTryAgain()}{107}{subsubsection.4.33.1.11}%
+\contentsline {subsubsection}{\numberline {4.33.1.12}menuUcs()}{108}{subsubsection.4.33.1.12}%
+\contentsline {subsubsection}{\numberline {4.33.1.13}menuUpdate()}{108}{subsubsection.4.33.1.13}%
+\contentsline {subsubsection}{\numberline {4.33.1.14}restoreBackup()}{108}{subsubsection.4.33.1.14}%
+\contentsline {subsubsection}{\numberline {4.33.1.15}save()}{109}{subsubsection.4.33.1.15}%
+\contentsline {subsubsection}{\numberline {4.33.1.16}saveOrReturn()}{109}{subsubsection.4.33.1.16}%
+\contentsline {subsubsection}{\numberline {4.33.1.17}selectBackupCode()}{109}{subsubsection.4.33.1.17}%
+\contentsline {subsubsection}{\numberline {4.33.1.18}selectCode()}{110}{subsubsection.4.33.1.18}%
+\contentsline {subsubsection}{\numberline {4.33.1.19}selectFilter()}{110}{subsubsection.4.33.1.19}%
+\contentsline {subsubsection}{\numberline {4.33.1.20}selectOrderStudents()}{111}{subsubsection.4.33.1.20}%
+\contentsline {subsubsection}{\numberline {4.33.1.21}selectOrderUcs()}{111}{subsubsection.4.33.1.21}%
+\contentsline {subsubsection}{\numberline {4.33.1.22}selectType()}{112}{subsubsection.4.33.1.22}%
+\contentsline {subsubsection}{\numberline {4.33.1.23}selectValue()}{112}{subsubsection.4.33.1.23}%
+\contentsline {subsection}{\numberline {4.33.2}Variable Documentation}{112}{subsection.4.33.2}%
+\contentsline {subsubsection}{\numberline {4.33.2.1}classes}{112}{subsubsection.4.33.2.1}%
+\contentsline {subsubsection}{\numberline {4.33.2.2}count}{113}{subsubsection.4.33.2.2}%
+\contentsline {subsubsection}{\numberline {4.33.2.3}stackAlter}{113}{subsubsection.4.33.2.3}%
+\contentsline {subsubsection}{\numberline {4.33.2.4}students}{113}{subsubsection.4.33.2.4}%
+\contentsline {subsubsection}{\numberline {4.33.2.5}ucs}{113}{subsubsection.4.33.2.5}%
+\contentsline {section}{\numberline {4.34}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{113}{section.4.34}%
+\contentsline {section}{\numberline {4.35}src/menu.h File Reference}{121}{section.4.35}%
+\contentsline {subsection}{\numberline {4.35.1}Function Documentation}{122}{subsection.4.35.1}%
+\contentsline {subsubsection}{\numberline {4.35.1.1}errorCheck()}{122}{subsubsection.4.35.1.1}%
+\contentsline {subsubsection}{\numberline {4.35.1.2}errorMessage()}{122}{subsubsection.4.35.1.2}%
+\contentsline {subsubsection}{\numberline {4.35.1.3}menu()}{122}{subsubsection.4.35.1.3}%
+\contentsline {subsubsection}{\numberline {4.35.1.4}menuAdd()}{123}{subsubsection.4.35.1.4}%
+\contentsline {subsubsection}{\numberline {4.35.1.5}menuBackup()}{124}{subsubsection.4.35.1.5}%
+\contentsline {subsubsection}{\numberline {4.35.1.6}menuChanges()}{124}{subsubsection.4.35.1.6}%
+\contentsline {subsubsection}{\numberline {4.35.1.7}menuRemove()}{125}{subsubsection.4.35.1.7}%
+\contentsline {subsubsection}{\numberline {4.35.1.8}menuRequests()}{125}{subsubsection.4.35.1.8}%
+\contentsline {subsubsection}{\numberline {4.35.1.9}menuSeeDatabase()}{126}{subsubsection.4.35.1.9}%
+\contentsline {subsubsection}{\numberline {4.35.1.10}menuStudentCode()}{127}{subsubsection.4.35.1.10}%
+\contentsline {subsubsection}{\numberline {4.35.1.11}menuStudents()}{128}{subsubsection.4.35.1.11}%
+\contentsline {subsubsection}{\numberline {4.35.1.12}menuSwitch()}{128}{subsubsection.4.35.1.12}%
+\contentsline {subsubsection}{\numberline {4.35.1.13}menuTryAgain()}{130}{subsubsection.4.35.1.13}%
+\contentsline {subsubsection}{\numberline {4.35.1.14}menuUcs()}{131}{subsubsection.4.35.1.14}%
+\contentsline {subsubsection}{\numberline {4.35.1.15}restoreBackup()}{131}{subsubsection.4.35.1.15}%
+\contentsline {subsubsection}{\numberline {4.35.1.16}save()}{132}{subsubsection.4.35.1.16}%
+\contentsline {subsubsection}{\numberline {4.35.1.17}saveOrReturn()}{132}{subsubsection.4.35.1.17}%
+\contentsline {subsubsection}{\numberline {4.35.1.18}selectBackupCode()}{132}{subsubsection.4.35.1.18}%
+\contentsline {subsubsection}{\numberline {4.35.1.19}selectCode()}{133}{subsubsection.4.35.1.19}%
+\contentsline {subsubsection}{\numberline {4.35.1.20}selectFilter()}{133}{subsubsection.4.35.1.20}%
+\contentsline {subsubsection}{\numberline {4.35.1.21}selectOrderStudents()}{134}{subsubsection.4.35.1.21}%
+\contentsline {subsubsection}{\numberline {4.35.1.22}selectOrderUcs()}{134}{subsubsection.4.35.1.22}%
+\contentsline {subsubsection}{\numberline {4.35.1.23}selectType()}{135}{subsubsection.4.35.1.23}%
+\contentsline {subsubsection}{\numberline {4.35.1.24}selectValue()}{135}{subsubsection.4.35.1.24}%
+\contentsline {section}{\numberline {4.36}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{136}{section.4.36}%
