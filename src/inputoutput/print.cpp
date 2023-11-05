@@ -59,27 +59,27 @@ void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
   }
 }
 
-void printUc(const std::map<std::string, myUc> &ucs) {
+void printUcClasses(const std::vector<myUc> &ucVector) {
   std::cout << "UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration"
             << std::endl;
 
-  for (const auto &ucPair : ucs) {
-    const myUc &uc = ucPair.second;
-    std::string ucCode = uc.getUcCode();
-    const auto &classInfoVec = uc.getClassInfoVec();
+  for (const auto &ucObj : ucVector) {
+    std::cout << ucObj.getUcCode() << " | " << ucObj.getClassCode()
+              << std::endl;
+    auto infoVec = ucObj.getClassInfoVec();
+    // for (const auto &classInfo : infoVec) {
+    //   std::string type = classInfo.type;
+    //   std::string day = classInfo.day;
+    //   int dayInt = classInfo.dayInt;
+    //   double startTime = classInfo.startTime;
+    //   double duration = classInfo.duration;
 
-    for (const auto &classInfo : classInfoVec) {
-      std::string classCode = uc.getClassCode();
-      std::string type = classInfo.type;
-      std::string day = classInfo.day;
-      int dayInt = classInfo.dayInt;
-      double startTime = classInfo.startTime;
-      double duration = classInfo.duration;
-
-      std::cout << ucCode << " | " << classCode << " | " << type << " | " << day
-                << " | " << dayInt << " | " << startTime << " | " << duration
-                << std::endl;
-    }
+    //   std::cout << ucObj.getUcCode() << " | " << ucObj.getClassCode() << " |
+    //   "
+    //             << type << " | " << day << " | " << dayInt << " | " <<
+    //             startTime
+    //             << " | " << duration << std::endl;
+    // }
   }
 }
 
@@ -87,19 +87,8 @@ void printUcs(const std::vector<myUc> &ucs) {
   std::cout << "UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration"
             << std::endl;
 
-  if (ucs.empty()) {
-    std::cout << "Empty vector ucs" << std::endl;
-  }
-
   for (const auto &uc : ucs) {
-    std::cout << uc.getUcCode() << " | " << uc.getClassCode();
-
-    const auto &classInfoVec = uc.getClassInfoVec();
-    for (const auto &classInfo : classInfoVec) {
-      std::cout << " | " << classInfo.type << " | " << classInfo.day << " | "
-                << classInfo.dayInt << " | " << classInfo.startTime << " | "
-                << classInfo.duration << std::endl;
-    }
+    std::cout << uc.getUcCode() << " | " << uc.getClassCode() << std::endl;
   }
 }
 

@@ -70,17 +70,17 @@ readStudents(std::map<std::string, std::vector<classQtd>> &count) {
   return students;
 }
 
-std::map<std::string, myUc>
+std::map<std::string, std::vector<myUc>>
 readUcs(std::map<std::string, std::vector<classQtd>> &count) {
   std::string line;
-  std::map<std::string, myUc> ucClasses;
-  bool header = true;
+  std::map<std::string, std::vector<myUc>> ucClasses;
 
   std::ifstream file("schedule/classes_per_uc.csv");
   if (!file.is_open()) {
     errorMessageFile();
   }
 
+  bool header = true;
   while (std::getline(file, line)) {
     // testing
     // std::cout << "line" << std::endl;
@@ -104,12 +104,19 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
         classCode.end());
 
     if (it != ucClasses.end()) {
-      it->second.addClass(classCode);
+      // exist
+      myUc newUc;
+      newUc.setUcCode(ucCode);
+      newUc.setClassCode(classCode);
+      it->second.push_back(newUc);
     } else {
-      myUc newUcClass;
-      newUcClass.setUcCode(ucCode);
-      newUcClass.addClass(classCode);
-      ucClasses[ucCode] = newUcClass;
+      // doesnt exist
+      std::vector<myUc> ucVector;
+      myUc newUc;
+      newUc.setUcCode(ucCode);
+      newUc.setClassCode(classCode);
+      ucVector.push_back(newUc);
+      ucClasses[ucCode] = ucVector;
     }
 
     bool exist = false;
@@ -137,15 +144,6 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
     }
   }
   file.close();
-
-  // testing this function
-  for (const auto &pair : ucClasses) {
-    std::cout << "UC Code: " << pair.first << std::endl;
-    const myUc &uc = pair.second;
-    for (const auto &classCode : uc.getClassCode()) {
-      std::cout << "Class Code: " << classCode << std::endl;
-    }
-  }
 
   return ucClasses;
 }

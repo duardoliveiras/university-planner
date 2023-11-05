@@ -3,7 +3,7 @@
 
 std::map<std::string, std::vector<classQtd>> count;
 std::map<std::string, myStudent> students = readStudents(count);
-std::map<std::string, myUc> ucs = readUcs(count);
+std::map<std::string, std::vector<myUc>> ucs = readUcs(count);
 std::map<std::string, myUc> classes = readSchedules();
 std::stack<alter> stackAlter;
 
@@ -224,7 +224,7 @@ void menuAdd(std::map<std::string, myStudent>::iterator &it) {
       } else {
         std::cout << "-----------------------------------------------"
                   << std::endl;
-        std::cout << "Uc. Code: " << it_uc->second.getUcCode() << std::endl;
+        std::cout << "Uc. Code: " << it_uc->first << std::endl;
 
         printFreeClasses(ucCode, count);
 
@@ -532,7 +532,6 @@ void menuStudents(std::string str, int type, int filter, int order) {
     printStudent(oneStudent);
   } else {
     if (type == 2) {
-      str = selectValue();
       data = filterInfoStudent(filter, str, data);
     }
     data = orderInfoStudent(order, data);
@@ -541,22 +540,24 @@ void menuStudents(std::string str, int type, int filter, int order) {
 }
 
 void menuUcs(std::string str, int type, int filter, int order) {
-  std::map<std::string, myUc> oneUc = classes;
   std::vector<myUc> data;
 
-  for (const auto &ucPair : ucs) {
-    data.push_back(ucPair.second);
+  for (const auto &ucVectorPair : ucs) {
+    for (const myUc &ucObj : ucVectorPair.second) {
+      data.push_back(ucObj);
+    }
   }
 
   if (type == 1) {
-    oneUc = selectUc(str, oneUc);
-    printUc(oneUc);
+    data = selectUc(str, ucs);
+    printUcClasses(data);
   } else {
     if (type == 2) {
-      str = selectValue();
       data = filterInfoUc(filter, str, data);
     }
-    data = orderInfoUc(order, data);
+    // data = orderInfoUc(order, data);
     printUcs(data);
   }
+
+  // printUcs(data);
 }
