@@ -26,6 +26,8 @@ void printStudent(const std::map<std::string, myStudent> &students) {
   }
 }
 
+//O(n) 
+// n = number of lines in the file
 /**
  * @brief Print students information from a vector.
  *
@@ -52,6 +54,10 @@ void printStudents(const std::vector<myStudent> &students) {
   }
 }
 
+// O(m)
+// Find the student in the map
+// m = number of students
+// m >= 7
 /**
  * @brief Print student's classes.
  *
@@ -71,6 +77,8 @@ void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
   }
 }
 
+//O(n) 
+// n = number of lines in the file
 /**
  * @brief Print UC classes information.
  *
@@ -101,6 +109,7 @@ void printUcClasses(const std::vector<myUc> &ucVector) {
   }
 }
 
+// O(n)
 /**
  * @brief Print UC information.
  *
@@ -117,6 +126,9 @@ void printUcs(const std::vector<myUc> &ucs) {
   }
 }
 
+// O(m)
+// Iterator to UC
+// m = number of classes in the UC
 /**
  * @brief Find and return valid free classes.
  *
@@ -150,6 +162,10 @@ std::list<std::string> valideFreeClass(
   return free_classes;
 }
 
+// O(log(n) + m)
+// n = number of UCs
+// m = number of free classes
+
 /**
  * @brief Verify class code for availability.
  *
@@ -180,6 +196,9 @@ bool verifyClassCode(std::string classCode, std::string ucCode,
   return false;
 }
 
+// O(log(n) + m)
+// n = number of UCs
+// m = number of free classes
 void printFreeClasses(std::string ucCode,
                       std::map<std::string, std::vector<classQtd>> &count) {
 
@@ -202,6 +221,16 @@ void printFreeClasses(std::string ucCode,
     std::cout << " Uc not found" << std::endl;
   }
 }
+
+// orderStudentClass:
+// O(m*log(n)*k)
+// n = number of UCs
+// m = number of classes
+// k = number of type of classes (T,TP)
+
+// O(m*k) 
+// m = number of classes
+// k = number of type of classes (T,TP)
 
 /**
  * @brief Print available free classes for a specific UC.

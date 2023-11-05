@@ -1,5 +1,6 @@
 #include "dbUcs.h"
 
+// O(1)
 /**
  * @brief Compare two myUc objects by their class codes in ascending order.
  * @param uc1 The first myUc object to compare.
@@ -11,6 +12,7 @@ bool compareClassesCodeAsc(const myUc &uc1, const myUc &uc2) {
   return uc1.getClassCode() < uc2.getClassCode();
 }
 
+// O(1)
 /**
  * @brief Compare two myUc objects by their UC codes in ascending order.
  * @param uc1 The first myUc object to compare.
@@ -21,6 +23,7 @@ bool compareUcsCodeASC(const myUc &uc1, const myUc &uc2) {
   return uc1.getUcCode() < uc2.getUcCode();
 }
 
+// O(1)
 /**
  * @brief Compare two myUc objects by their UC codes in descending order.
  * @param uc1 The first myUc object to compare.
@@ -31,6 +34,7 @@ bool compareClassesCodeDesc(const myUc &uc1, const myUc &uc2) {
   return uc1.getClassCode() > uc2.getClassCode();
 }
 
+// O(1)
 /**
  * @brief Compare two myUc objects by their UC codes in descending order.
  * @param uc1 The first myUc object to compare.
@@ -41,6 +45,9 @@ bool compareUcsCodeDesc(const myUc &uc1, const myUc &uc2) {
   return uc1.getUcCode() > uc2.getUcCode();
 }
 
+// Average: O(n)
+// Best: O(1)
+// n = number of lines in the file
 /**
  * @brief Filters UC information.
  * @param n Number representing the filter.
@@ -77,6 +84,8 @@ std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs) {
   return filterUc;
 }
 
+// O(n*log(n))
+// n = number of lines in the file
 /**
  * @brief Sorts UC information.
  * @param n Number representing the sorting criterion.
@@ -109,6 +118,8 @@ std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
   return ucs;
 }
 
+// O(n)
+// n = number of lines in the file
 /**
  * @brief Selects UCs on the provided code.
  * @param str Code of the UC to be selected.

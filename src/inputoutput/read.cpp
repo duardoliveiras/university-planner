@@ -1,6 +1,9 @@
 #include "read.h"
 
 
+// O(n*log(m))
+// n = number of lines in the file
+// m = number of differents students
 /**
  * @brief Read and process student and class information from a CSV file.
  *
@@ -10,7 +13,7 @@
  * @param count A map of class quantity information.
  * @return A map of students with associated classes.
  */
-std::map<std::string, myStudent>
+std::map<std::string, myStudent> 
 readStudents(std::map<std::string, std::vector<classQtd>> &count) {
   std::string line;
   std::map<std::string, myStudent> students;
@@ -80,6 +83,9 @@ readStudents(std::map<std::string, std::vector<classQtd>> &count) {
   return students;
 }
 
+//O(n*log(m))
+// n = number of lines in the file
+// m = number of differents UCs
 /**
  * @brief Read and process UC and class information from a CSV file.
  *
@@ -90,7 +96,7 @@ readStudents(std::map<std::string, std::vector<classQtd>> &count) {
  * @param count A map of class quantity information.
  * @return A map of UCs and their associated classes.
  */
-std::map<std::string, std::vector<myUc>>
+std::map<std::string, std::vector<myUc>> // O(n*log(n))
 readUcs(std::map<std::string, std::vector<classQtd>> &count) {
   std::string line;
   std::map<std::string, std::vector<myUc>> ucClasses;
@@ -168,6 +174,9 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
   return ucClasses;
 }
 
+//O(n*log(m))
+// n = number of lines in the file
+// m = number of differents classes
 /**
  * @brief Read and process class schedule information from a CSV file.
  *
@@ -176,7 +185,7 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
  *
  * @return A map of classes with their associated information.
  */
-std::map<std::string, myUc> readSchedules() {
+std::map<std::string, myUc> readSchedules() { // O(n*log(n))
   std::string line;
   std::map<std::string, myUc> classes;
   std::map<std::string, int> dayToInt = {

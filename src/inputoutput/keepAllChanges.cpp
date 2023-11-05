@@ -3,6 +3,7 @@
 
 std::vector<std::string> backups;
 
+//O(1)
 /**
  * @brief Compare two strings in descending order.
  * @param str1 The first string to compare.
@@ -13,6 +14,7 @@ bool orderVector(const std::string &str1, const std::string &str2) {
   return str1 > str2;
 }
 
+//O(1)
 /**
  * @brief Get the system date.
  * @return A string with the system date.
@@ -28,6 +30,7 @@ std::string getSysdate() {
          std::to_string(now->tm_min) + ":" + std::to_string(now->tm_sec);
 }
 
+//O(1)
 /**
  * @brief Creates a backup of the "students_classes.csv" file with the lastest
  * archive modified. The backup file is named with the current system date.
@@ -55,6 +58,8 @@ void makeBackup() {
   backup.close();
 }
 
+// O(m)
+// m = number of changes
 /**
  * @brief Saves all changes made to the student tree in the
  * "students_classes.csv" file.
@@ -98,6 +103,9 @@ void keepAllChanges(std::map<std::string, myStudent> &students,
   }
 }
 
+// O(m)
+// m = number of backups files
+// Ideally, use a script to maintain a maximum of 10
 /**
  * @brief List all backup files.
  *
@@ -116,6 +124,8 @@ void listAllBackups() {
   }
 }
 
+// O(m)
+// m = number of backups files
 /**
  * @brief Prints all backup file names stored in the public vector backups.
  */
@@ -132,6 +142,10 @@ bool printAllBackups() {
   }
 }
 
+// O(m)
+// m = number of backups files
+// Best case: O(1) when the user select the newer backup
+// Worst case: O(m) when the user select the older backup
 /**
  * @brief Print the changes from backup files.
  *
@@ -174,6 +188,10 @@ void printChanges(int cdBkp) {
   // }
 }
 
+// O(m)
+// m = number of backups files
+// Best case: O(1) when the user select the newer backup
+// Worst case: O(m) when the user select the older backup
 /**
  * @brief Backup a specific file and remove related changes.
  *
