@@ -115,6 +115,7 @@ std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
  * @param ucs Vector of UCs to be filtered.
  * @return std::vector<myUc> Vector of selected UCs.
  */
+
 std::vector<myUc> selectUc(const std::string &str,
                            const std::map<std::string, myUc> &classes) {
   std::vector<myUc> selectedUcs;
@@ -125,7 +126,6 @@ std::vector<myUc> selectUc(const std::string &str,
     if (ucObj.getUcCode() == str) {
       selectedUcs.push_back(ucObj);
     }
-
-    return selectedUcs;
   }
+  return selectedUcs;
 }
