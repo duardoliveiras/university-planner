@@ -20,7 +20,7 @@ void keepAllChanges(std::map<std::string, myStudent> &students,
 std::string getSysdate();
 void listAllBackups();
 void listChanges(int cdBkp);
-void printAllBackups();
+bool printAllBackups();
 void backupFile(int cdBkp);
 
 void makeBackup();

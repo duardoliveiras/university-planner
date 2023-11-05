@@ -150,6 +150,7 @@ void menuStudentCode(int flag) {
 
     switch (flag2) {
     case 1:
+      system("clear");
       menuStudentCode(flag);
       break;
     case 2:
@@ -161,8 +162,7 @@ void menuStudentCode(int flag) {
 
     menuRequests();
   } else {
-    std::cout << "-----------------------------------------------" << std::endl;
-    printStudentClasses(it);
+    // printStudentClasses(it);
   }
 
   switch (flag) {
@@ -205,7 +205,7 @@ void menuRemove(std::map<std::string, myStudent>::iterator &it) {
 }
 
 void menuAdd(std::map<std::string, myStudent>::iterator &it) {
-
+  printStudentClasses(it);
   std::string ucCode;
   std::string classCode;
   // validates if the student is enrolled in more than 7 classes
@@ -222,11 +222,25 @@ void menuAdd(std::map<std::string, myStudent>::iterator &it) {
       auto it_uc = ucs.find(ucCode);
 
       if (it_uc == ucs.end()) {
-        std::cout << "-----------------------------------------------"
-                  << std::endl;
+        int flag;
+        std::cout << "-----------------------------------------------" << std::endl;
         std::cout << "UC code not found" << std::endl;
-
-        menuRequests();
+        std::cout << "-----------------------------------------------" << std::endl;
+        std::cout << " 1) Try again" << std::endl;
+        std::cout << " 2) Exit" << std::endl;
+        std::cin >> flag;
+        switch (flag)
+          {
+          case 1:
+            menuAdd(it);
+            break;
+          case 2:
+            exit(0);
+          default:
+            errorMessage();
+            break;
+        }
+        
       } else {
         std::cout << "-----------------------------------------------"
                   << std::endl;
@@ -393,12 +407,27 @@ int selectBackupCode(int type) {
 }
 
 void menuBackup() {
+  int flag;
   system("clear");
   listAllBackups();
-  printAllBackups();
 
-  listChanges(selectBackupCode(0));
-  menuChanges();
+  bool valide = printAllBackups();
+  if(valide == true){
+    listChanges(selectBackupCode(0));
+    menuChanges();
+  }else{
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cout << "| 1) - Main menu                              |" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    std::cin >> flag;
+
+    if(flag == 1){
+      menu();
+    }else{
+      errorMessage();
+    }
+  }
+
 }
 
 void restoreBackup() {

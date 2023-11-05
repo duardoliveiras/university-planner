@@ -25,7 +25,7 @@ void printStudent(const std::map<std::string, myStudent> &students) {
 }
 
 void printStudents(const std::vector<myStudent> &students) {
-  std::cout << "Student Code | Student Name | Uc Code | Class Code"
+  std::cout << "Student Code | Student Name | Uc Code | Class Code oii"
             << std::endl;
 
   if (students.empty()) {

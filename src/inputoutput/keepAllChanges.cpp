@@ -98,10 +98,16 @@ void listAllBackups() {
 }
 
 // Print all backups save in public vector backups
-void printAllBackups() {
-  std::cout << "Backups: " << std::endl;
-  for (unsigned i = 0; i < backups.size(); i++) {
-    std::cout << i << " - " << backups.at(i) << std::endl;
+bool printAllBackups() {
+  if(backups.size() != 0){
+      std::cout << "Backups: " << std::endl;
+      for (unsigned i = 0; i < backups.size(); i++) {
+        std::cout << i << " - " << backups.at(i) << std::endl;
+      }
+      return true;
+  }else{
+    std::cout << "No backups" << std::endl;
+    return false;
   }
 }
 
