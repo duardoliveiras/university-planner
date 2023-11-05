@@ -22,6 +22,7 @@ void menuStudents(std::string str = "", int type = 0, int filter = 0,
 void menuUcs(std::string str = "", int type = 0, int filter = 0, int order = 0);
 
 void menuStudentCode(int flag);
+void menuTryAgain(int menuType, std::map<std::string, myStudent>::iterator &it);
 
 void menu();
 void menuSeeDatabase();

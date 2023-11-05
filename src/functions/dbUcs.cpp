@@ -1,18 +1,53 @@
 #include "dbUcs.h"
 
+/**
+ * @brief Compare two myUc objects by their class codes in ascending order.
+ * @param uc1 The first myUc object to compare.
+ * @param uc2 The second myUc object to compare.
+ * @return True if 'uc1' class code is less than 'uc2' class code, otherwise
+ * false.
+ */
 bool compareClassesCodeAsc(const myUc &uc1, const myUc &uc2) {
   return uc1.getClassCode() < uc2.getClassCode();
 }
+
+/**
+ * @brief Compare two myUc objects by their UC codes in ascending order.
+ * @param uc1 The first myUc object to compare.
+ * @param uc2 The second myUc object to compare.
+ * @return True if 'uc1' UC code is less than 'uc2' UC code, otherwise false.
+ */
 bool compareUcsCodeASC(const myUc &uc1, const myUc &uc2) {
   return uc1.getUcCode() < uc2.getUcCode();
 }
+
+/**
+ * @brief Compare two myUc objects by their UC codes in descending order.
+ * @param uc1 The first myUc object to compare.
+ * @param uc2 The second myUc object to compare.
+ * @return True if 'uc1' UC code is greater than 'uc2' UC code, otherwise false.
+ */
 bool compareClassesCodeDesc(const myUc &uc1, const myUc &uc2) {
   return uc1.getClassCode() > uc2.getClassCode();
 }
+
+/**
+ * @brief Compare two myUc objects by their UC codes in descending order.
+ * @param uc1 The first myUc object to compare.
+ * @param uc2 The second myUc object to compare.
+ * @return True if 'uc1' UC code is greater than 'uc2' UC code, otherwise false.
+ */
 bool compareUcsCodeDesc(const myUc &uc1, const myUc &uc2) {
   return uc1.getUcCode() > uc2.getUcCode();
 }
 
+/**
+ * @brief Filters UC information.
+ * @param n Number representing the filter.
+ * @param str Search string.
+ * @param ucs Vector of UCs to be filtered.
+ * @return std::vector<myUc> Vector of filtered UCs.
+ */
 std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs) {
   std::vector<myUc> filterUc;
   switch (n) {
@@ -42,6 +77,12 @@ std::vector<myUc> filterInfoUc(int n, std::string str, std::vector<myUc> &ucs) {
   return filterUc;
 }
 
+/**
+ * @brief Sorts UC information.
+ * @param n Number representing the sorting criterion.
+ * @param ucs Vector of UCs to be sorted.
+ * @return std::vector<myUc> Vector of sorted UCs.
+ */
 std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
 
   switch (n) {
@@ -68,6 +109,12 @@ std::vector<myUc> orderInfoUc(int n, std::vector<myUc> &ucs) {
   return ucs;
 }
 
+/**
+ * @brief Selects UCs on the provided code.
+ * @param str Code of the UC to be selected.
+ * @param ucs Vector of UCs to be filtered.
+ * @return std::vector<myUc> Vector of selected UCs.
+ */
 std::vector<myUc> selectUc(const std::string &str,
                            const std::map<std::string, myUc> &classes) {
   std::vector<myUc> selectedUcs;
@@ -78,7 +125,7 @@ std::vector<myUc> selectUc(const std::string &str,
     if (ucObj.getUcCode() == str) {
       selectedUcs.push_back(ucObj);
     }
-  }
 
-  return selectedUcs;
+    return selectedUcs;
+  }
 }

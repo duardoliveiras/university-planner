@@ -19,8 +19,8 @@ void keepAllChanges(std::map<std::string, myStudent> &students,
                     std::stack<alter> &stackAlter);
 std::string getSysdate();
 void listAllBackups();
-void listChanges(int cdBkp);
-void printAllBackups();
+void printChanges(int cdBkp);
+bool printAllBackups();
 void backupFile(int cdBkp);
 
 void makeBackup();

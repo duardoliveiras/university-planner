@@ -102,3 +102,19 @@ The application is structured around key components and classes. Understanding t
 ## Deadline
 
 Project Deadline: November 3, 2023
+
+
+std::vector<myUc> selectUc(const std::string &str,
+                           const std::map<std::string, myUc> &classes) {
+  std::vector<myUc> selectedUcs;
+
+  for (const auto &pair : classes) {
+    auto ucObj = pair.second;
+
+    if (ucObj.getUcCode() == str) {
+      selectedUcs.push_back(ucObj);
+    }
+  
+
+  return selectedUcs;
+}
