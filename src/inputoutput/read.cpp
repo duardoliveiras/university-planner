@@ -146,10 +146,8 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
     }
 
     bool exist = false;
-
     // try to find the uc in the count tree
     auto it_count = count.find(ucCode);
-
     // if found, verify if the class exists in the vector
     if (it_count != count.end()) {
       for (auto &class_it : it_count->second) {
@@ -170,7 +168,6 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
     }
   }
   file.close();
-
   return ucClasses;
 }
 

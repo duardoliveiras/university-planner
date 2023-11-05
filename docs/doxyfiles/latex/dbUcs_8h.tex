@@ -78,38 +78,38 @@ std\+::vector$<$my\+Uc$>$ Vector of filtered UCs.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ std::vector<myUc>\ filterUc;}
-\DoxyCodeLine{00053\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
-\DoxyCodeLine{00054\ \ \ \textcolor{keywordflow}{case}\ 1:}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Uc\ Code}}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uc.getUcCode()\ ==\ str)\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ filterUc.push\_back(uc);}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00060\ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00062\ \ \ \textcolor{keywordflow}{case}\ 2:}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Class\ Code}}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structclassInfo}{classInfo}}\ :\ uc.getClassInfoVec())\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_abeca34e8193178d2592e7682b8a713cf}{code}}\ ==\ str)\ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ filterUc.push\_back(uc);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00071\ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00073\ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00076\ \ \ \}}
-\DoxyCodeLine{00077\ \ \ \textcolor{keywordflow}{return}\ filterUc;}
-\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ std::vector<myUc>\ filterUc;}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Uc\ Code}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uc.getUcCode()\ ==\ str)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ filterUc.push\_back(uc);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Class\ Code}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structclassInfo}{classInfo}}\ :\ uc.getClassInfoVec())\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_abeca34e8193178d2592e7682b8a713cf}{code}}\ ==\ str)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ filterUc.push\_back(uc);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00083\ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordflow}{return}\ filterUc;}
+\DoxyCodeLine{00085\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbUcs_8h_a9ec2fc8067edc0eab7cb9413ec0425ec}\label{dbUcs_8h_a9ec2fc8067edc0eab7cb9413ec0425ec} 
@@ -134,35 +134,35 @@ std\+::vector$<$my\+Uc$>$ Vector of sorted UCs.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
-\DoxyCodeLine{00089\ \ \ \textcolor{keywordflow}{case}\ 1:}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Uc\ Code\ Asc}}
-\DoxyCodeLine{00091\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_ad6546656fdb48b47b22ca9d0b65d1e88}{compareUcsCodeASC}});}
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00093\ \ \ \textcolor{keywordflow}{case}\ 2:}
-\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Uc\ Code\ Desc}}
-\DoxyCodeLine{00095\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a5864577688f2317ba274f3faeda67e91}{compareUcsCodeDesc}});}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00097\ \ \ \textcolor{keywordflow}{case}\ 3:}
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Class\ Code\ Asc}}
-\DoxyCodeLine{00099\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a5db5d6517bbf49c69c07f29e947f0649}{compareClassesCodeAsc}});}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{case}\ 4:}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Class\ Code\ Desc}}
-\DoxyCodeLine{00103\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a457eb7fe9ab5c62ebb07f858415bdad1}{compareClassesCodeDesc}});}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00105\ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00108\ \ \ \}}
-\DoxyCodeLine{00109\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}};}
-\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Uc\ Code\ Asc}}
+\DoxyCodeLine{00100\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_ad6546656fdb48b47b22ca9d0b65d1e88}{compareUcsCodeASC}});}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00102\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Uc\ Code\ Desc}}
+\DoxyCodeLine{00104\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a5864577688f2317ba274f3faeda67e91}{compareUcsCodeDesc}});}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Class\ Code\ Asc}}
+\DoxyCodeLine{00108\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a5db5d6517bbf49c69c07f29e947f0649}{compareClassesCodeAsc}});}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Class\ Code\ Desc}}
+\DoxyCodeLine{00112\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a457eb7fe9ab5c62ebb07f858415bdad1}{compareClassesCodeDesc}});}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00117\ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}};}
+\DoxyCodeLine{00119\ \}}
 
 \end{DoxyCode}
 \Hypertarget{dbUcs_8h_ad6e8c3a80f5f296d3b5047ec49645027}\label{dbUcs_8h_ad6e8c3a80f5f296d3b5047ec49645027} 
@@ -187,21 +187,21 @@ std\+::vector$<$my\+Uc$>$ Vector of selected UCs.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00121\ \ \ std::vector<myUc>\ selectedUcs;}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&pair\ :\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}})\ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{auto}\ ucObj\ =\ pair.second;}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{if}\ (ucObj.getUcCode()\ ==\ str)\ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ selectedUcs.push\_back(ucObj);}
-\DoxyCodeLine{00128\ \ \ \ \ \}}
-\DoxyCodeLine{00129\ \ \ \}}
-\DoxyCodeLine{00130\ \ \ \textcolor{keywordflow}{return}\ selectedUcs;}
-\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ std::vector<myUc>\ selectedUcs;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&pair\ :\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}})\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{auto}\ ucObj\ =\ pair.second;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (ucObj.getUcCode()\ ==\ str)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ selectedUcs.push\_back(ucObj);}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \textcolor{keywordflow}{return}\ selectedUcs;}
+\DoxyCodeLine{00142\ \}}
 
 \end{DoxyCode}

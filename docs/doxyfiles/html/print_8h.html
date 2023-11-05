@@ -175,30 +175,30 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00183">183</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>                                                                     {</div>
-<div class="line"><span class="lineno">  185</span> </div>
-<div class="line"><span class="lineno">  186</span>  <span class="keyword">auto</span> it_count = <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.find(ucCode);</div>
-<div class="line"><span class="lineno">  187</span>  std::list&lt;std::string&gt; free_classes;</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>  <span class="keywordflow">if</span> (it_count != <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.end()) {</div>
-<div class="line"><span class="lineno">  190</span>    free_classes = <a class="code hl_function" href="print_8cpp.html#ac5e5b7576477e6a5cfa6c503515ff9ba">valideFreeClass</a>(it_count);</div>
-<div class="line"><span class="lineno">  191</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;   Classes: &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  192</span> </div>
-<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (!free_classes.empty()) {</div>
-<div class="line"><span class="lineno">  194</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> it_list = free_classes.begin(); it_list != free_classes.end();</div>
-<div class="line"><span class="lineno">  195</span>           it_list++) {</div>
-<div class="line"><span class="lineno">  196</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;      &quot;</span> &lt;&lt; *it_list &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  197</span>      }</div>
-<div class="line"><span class="lineno">  198</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  199</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;      No classes available&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  200</span>    }</div>
-<div class="line"><span class="lineno">  201</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  202</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; Uc not found&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  203</span>  }</div>
-<div class="line"><span class="lineno">  204</span>}</div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00202">202</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>                                                                     {</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>  <span class="keyword">auto</span> it_count = <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.find(ucCode);</div>
+<div class="line"><span class="lineno">  206</span>  std::list&lt;std::string&gt; free_classes;</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>  <span class="keywordflow">if</span> (it_count != <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.end()) {</div>
+<div class="line"><span class="lineno">  209</span>    free_classes = <a class="code hl_function" href="print_8cpp.html#ac5e5b7576477e6a5cfa6c503515ff9ba">valideFreeClass</a>(it_count);</div>
+<div class="line"><span class="lineno">  210</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;   Classes: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">if</span> (!free_classes.empty()) {</div>
+<div class="line"><span class="lineno">  213</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> it_list = free_classes.begin(); it_list != free_classes.end();</div>
+<div class="line"><span class="lineno">  214</span>           it_list++) {</div>
+<div class="line"><span class="lineno">  215</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;      &quot;</span> &lt;&lt; *it_list &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  216</span>      }</div>
+<div class="line"><span class="lineno">  217</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  218</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;      No classes available&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  221</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; Uc not found&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  222</span>  }</div>
+<div class="line"><span class="lineno">  223</span>}</div>
 <div class="ttc" id="amenu_8cpp_html_a4671b2d72a3f2be2c898820dc28bc11f"><div class="ttname"><a href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a></div><div class="ttdeci">std::map&lt; std::string, std::vector&lt; classQtd &gt; &gt; count</div><div class="ttdef"><b>Definition</b> <a href="menu_8cpp_source.html#l00004">menu.cpp:4</a></div></div>
-<div class="ttc" id="aprint_8cpp_html_ac5e5b7576477e6a5cfa6c503515ff9ba"><div class="ttname"><a href="print_8cpp.html#ac5e5b7576477e6a5cfa6c503515ff9ba">valideFreeClass</a></div><div class="ttdeci">std::list&lt; std::string &gt; valideFreeClass(std::map&lt; std::string, std::vector&lt; classQtd &gt; &gt;::iterator it_count)</div><div class="ttdoc">Find and return valid free classes.</div><div class="ttdef"><b>Definition</b> <a href="print_8cpp_source.html#l00130">print.cpp:130</a></div></div>
+<div class="ttc" id="aprint_8cpp_html_ac5e5b7576477e6a5cfa6c503515ff9ba"><div class="ttname"><a href="print_8cpp.html#ac5e5b7576477e6a5cfa6c503515ff9ba">valideFreeClass</a></div><div class="ttdeci">std::list&lt; std::string &gt; valideFreeClass(std::map&lt; std::string, std::vector&lt; classQtd &gt; &gt;::iterator it_count)</div><div class="ttdoc">Find and return valid free classes.</div><div class="ttdef"><b>Definition</b> <a href="print_8cpp_source.html#l00142">print.cpp:142</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -274,17 +274,17 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00063">63</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                                                                   {</div>
-<div class="line"><span class="lineno">   64</span>  system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">   65</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;\nCode: &quot;</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;</div>
-<div class="line"><span class="lineno">   66</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Name: &quot;</span> &lt;&lt; it-&gt;second.getStudentName() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   67</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Classes: &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   68</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;classe : it-&gt;second.getClasses()) {</div>
-<div class="line"><span class="lineno">   69</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; classe.getUcCode() &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; classe.getClassCode()</div>
-<div class="line"><span class="lineno">   70</span>              &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   71</span>  }</div>
-<div class="line"><span class="lineno">   72</span>}</div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00069">69</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                                   {</div>
+<div class="line"><span class="lineno">   70</span>  system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;\nCode: &quot;</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;</div>
+<div class="line"><span class="lineno">   72</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Name: &quot;</span> &lt;&lt; it-&gt;second.getStudentName() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   73</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Classes: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;classe : it-&gt;second.getClasses()) {</div>
+<div class="line"><span class="lineno">   75</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; classe.getUcCode() &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; classe.getClassCode()</div>
+<div class="line"><span class="lineno">   76</span>              &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -313,23 +313,23 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00038">38</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                         {</div>
-<div class="line"><span class="lineno">   39</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Student Code | Student Name&quot;</span></div>
-<div class="line"><span class="lineno">   40</span>            &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="menu_8cpp.html#aebf917ceeecc043cb38f38cde0cab8f4">students</a>.empty()) {</div>
-<div class="line"><span class="lineno">   43</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Empty vector ucs&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   44</span>  }</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;student : <a class="code hl_variable" href="menu_8cpp.html#aebf917ceeecc043cb38f38cde0cab8f4">students</a>) {</div>
-<div class="line"><span class="lineno">   47</span>    std::cout &lt;&lt; student.getStudentCode() &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; student.getStudentName() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   48</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;   &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Classes: &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;classe : student.getClasses()) {</div>
-<div class="line"><span class="lineno">   50</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;   &quot;</span> &lt;&lt; classe.getUcCode() &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; classe.getClassCode() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="line"><span class="lineno">   52</span>  }</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00040">40</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                         {</div>
+<div class="line"><span class="lineno">   41</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Student Code | Student Name&quot;</span></div>
+<div class="line"><span class="lineno">   42</span>            &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="menu_8cpp.html#aebf917ceeecc043cb38f38cde0cab8f4">students</a>.empty()) {</div>
+<div class="line"><span class="lineno">   45</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Empty vector ucs&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;student : <a class="code hl_variable" href="menu_8cpp.html#aebf917ceeecc043cb38f38cde0cab8f4">students</a>) {</div>
+<div class="line"><span class="lineno">   49</span>    std::cout &lt;&lt; student.getStudentCode() &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; student.getStudentName() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   50</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;   &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Classes: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;classe : student.getClasses()) {</div>
+<div class="line"><span class="lineno">   52</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;   &quot;</span> &lt;&lt; classe.getUcCode() &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; classe.getClassCode() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -369,24 +369,24 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00215">215</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  216</span>                                                             {</div>
-<div class="line"><span class="lineno">  217</span>  <span class="keyword">auto</span> orderClasses = <a class="code hl_function" href="dbStudents_8cpp.html#a52b4fcf58d97edb1d3316f66d6ad77b2">orderStudentClass</a>(it, <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>);</div>
-<div class="line"><span class="lineno">  218</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;\nSchedules: &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  219</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair : orderClasses) {</div>
-<div class="line"><span class="lineno">  220</span>    std::string day = <a class="code hl_function" href="dbStudents_8cpp.html#ad47610c535787dd2a5ab88e5e5323328">weekDayString</a>(pair.first);</div>
-<div class="line"><span class="lineno">  221</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Day: &quot;</span> &lt;&lt; day &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;info : pair.second) {</div>
-<div class="line"><span class="lineno">  223</span>      std::cout &lt;&lt; info.code &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;</div>
-<div class="line"><span class="lineno">  224</span>      std::cout &lt;&lt; info.startTime &lt;&lt; <span class="stringliteral">&quot; to &quot;</span>;</div>
-<div class="line"><span class="lineno">  225</span>      std::cout &lt;&lt; info.startTime + info.duration &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;</div>
-<div class="line"><span class="lineno">  226</span>      std::cout &lt;&lt; info.type &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  227</span>    }</div>
-<div class="line"><span class="lineno">  228</span>    std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  229</span>  }</div>
-<div class="line"><span class="lineno">  230</span>}</div>
-<div class="ttc" id="adbStudents_8cpp_html_a52b4fcf58d97edb1d3316f66d6ad77b2"><div class="ttname"><a href="dbStudents_8cpp.html#a52b4fcf58d97edb1d3316f66d6ad77b2">orderStudentClass</a></div><div class="ttdeci">std::map&lt; int, std::set&lt; classInfo &gt; &gt; orderStudentClass(std::map&lt; std::string, myStudent &gt;::iterator &amp;it, std::map&lt; std::string, myUc &gt; &amp;classes)</div><div class="ttdef"><b>Definition</b> <a href="dbStudents_8cpp_source.html#l00211">dbStudents.cpp:211</a></div></div>
-<div class="ttc" id="adbStudents_8cpp_html_ad47610c535787dd2a5ab88e5e5323328"><div class="ttname"><a href="dbStudents_8cpp.html#ad47610c535787dd2a5ab88e5e5323328">weekDayString</a></div><div class="ttdeci">std::string weekDayString(int day)</div><div class="ttdef"><b>Definition</b> <a href="dbStudents_8cpp_source.html#l00251">dbStudents.cpp:251</a></div></div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00244">244</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>                                                             {</div>
+<div class="line"><span class="lineno">  246</span>  <span class="keyword">auto</span> orderClasses = <a class="code hl_function" href="dbStudents_8cpp.html#a52b4fcf58d97edb1d3316f66d6ad77b2">orderStudentClass</a>(it, <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>);</div>
+<div class="line"><span class="lineno">  247</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;\nSchedules: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  248</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair : orderClasses) {</div>
+<div class="line"><span class="lineno">  249</span>    std::string day = <a class="code hl_function" href="dbStudents_8cpp.html#ad47610c535787dd2a5ab88e5e5323328">weekDayString</a>(pair.first);</div>
+<div class="line"><span class="lineno">  250</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Day: &quot;</span> &lt;&lt; day &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;info : pair.second) {</div>
+<div class="line"><span class="lineno">  252</span>      std::cout &lt;&lt; info.code &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;</div>
+<div class="line"><span class="lineno">  253</span>      std::cout &lt;&lt; info.startTime &lt;&lt; <span class="stringliteral">&quot; to &quot;</span>;</div>
+<div class="line"><span class="lineno">  254</span>      std::cout &lt;&lt; info.startTime + info.duration &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;</div>
+<div class="line"><span class="lineno">  255</span>      std::cout &lt;&lt; info.type &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  256</span>    }</div>
+<div class="line"><span class="lineno">  257</span>    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  258</span>  }</div>
+<div class="line"><span class="lineno">  259</span>}</div>
+<div class="ttc" id="adbStudents_8cpp_html_a52b4fcf58d97edb1d3316f66d6ad77b2"><div class="ttname"><a href="dbStudents_8cpp.html#a52b4fcf58d97edb1d3316f66d6ad77b2">orderStudentClass</a></div><div class="ttdeci">std::map&lt; int, std::set&lt; classInfo &gt; &gt; orderStudentClass(std::map&lt; std::string, myStudent &gt;::iterator &amp;it, std::map&lt; std::string, myUc &gt; &amp;classes)</div><div class="ttdoc">Organize a student's classes by day.</div><div class="ttdef"><b>Definition</b> <a href="dbStudents_8cpp_source.html#l00345">dbStudents.cpp:345</a></div></div>
+<div class="ttc" id="adbStudents_8cpp_html_ad47610c535787dd2a5ab88e5e5323328"><div class="ttname"><a href="dbStudents_8cpp.html#ad47610c535787dd2a5ab88e5e5323328">weekDayString</a></div><div class="ttdeci">std::string weekDayString(int day)</div><div class="ttdoc">Convert a numeric day value to a corresponding day of the week string.</div><div class="ttdef"><b>Definition</b> <a href="dbStudents_8cpp_source.html#l00393">dbStudents.cpp:393</a></div></div>
 <div class="ttc" id="amenu_8cpp_html_a27f9eee2ad8489315e5a724800d709a6"><div class="ttname"><a href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a></div><div class="ttdeci">std::map&lt; std::string, myUc &gt; classes</div><div class="ttdef"><b>Definition</b> <a href="menu_8cpp_source.html#l00007">menu.cpp:7</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -417,26 +417,26 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00084">84</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                     {</div>
-<div class="line"><span class="lineno">   85</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration&quot;</span></div>
-<div class="line"><span class="lineno">   86</span>            &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a> : ucVector) {</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    <span class="keyword">auto</span> infoVec = <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>.getClassInfoVec();</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_struct" href="structclassInfo.html">classInfo</a> : infoVec) {</div>
-<div class="line"><span class="lineno">   92</span>      std::string type = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#aafc287d9d1a2ae09a302584ee61c418a">type</a>;</div>
-<div class="line"><span class="lineno">   93</span>      std::string day = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#a4a0813c7ce696bee1b32c8538dff4103">day</a>;</div>
-<div class="line"><span class="lineno">   94</span>      <span class="keywordtype">int</span> dayInt = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#ac7712653b7a6ab38d657c802cbbb3065">dayInt</a>;</div>
-<div class="line"><span class="lineno">   95</span>      <span class="keywordtype">double</span> startTime = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#a43011a418afd3aec23c4fa5734d00120">startTime</a>;</div>
-<div class="line"><span class="lineno">   96</span>      <span class="keywordtype">double</span> duration = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#aa6c2a52275e1aca8aa4652b0dc2601a5">duration</a>;</div>
-<div class="line"><span class="lineno">   97</span>      std::cout &lt;&lt; <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>.getUcCode() &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>.getClassCode()</div>
-<div class="line"><span class="lineno">   98</span>                &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; day &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; dayInt &lt;&lt; <span class="stringliteral">&quot; | &quot;</span></div>
-<div class="line"><span class="lineno">   99</span>                &lt;&lt; startTime &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; duration &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
-<div class="line"><span class="lineno">  101</span>  }</div>
-<div class="line"><span class="lineno">  102</span>}</div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00092">92</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                                                     {</div>
+<div class="line"><span class="lineno">   93</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration&quot;</span></div>
+<div class="line"><span class="lineno">   94</span>            &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a> : ucVector) {</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keyword">auto</span> infoVec = <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>.getClassInfoVec();</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_struct" href="structclassInfo.html">classInfo</a> : infoVec) {</div>
+<div class="line"><span class="lineno">  100</span>      std::string type = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#aafc287d9d1a2ae09a302584ee61c418a">type</a>;</div>
+<div class="line"><span class="lineno">  101</span>      std::string day = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#a4a0813c7ce696bee1b32c8538dff4103">day</a>;</div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordtype">int</span> dayInt = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#ac7712653b7a6ab38d657c802cbbb3065">dayInt</a>;</div>
+<div class="line"><span class="lineno">  103</span>      <span class="keywordtype">double</span> startTime = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#a43011a418afd3aec23c4fa5734d00120">startTime</a>;</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordtype">double</span> duration = <a class="code hl_struct" href="structclassInfo.html">classInfo</a>.<a class="code hl_variable" href="structclassInfo.html#aa6c2a52275e1aca8aa4652b0dc2601a5">duration</a>;</div>
+<div class="line"><span class="lineno">  105</span>      std::cout &lt;&lt; <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>.getUcCode() &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; <a class="code hl_variable" href="menu_8cpp.html#a27f9eee2ad8489315e5a724800d709a6">classes</a>.getClassCode()</div>
+<div class="line"><span class="lineno">  106</span>                &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; day &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; dayInt &lt;&lt; <span class="stringliteral">&quot; | &quot;</span></div>
+<div class="line"><span class="lineno">  107</span>                &lt;&lt; startTime &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; duration &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+<div class="line"><span class="lineno">  110</span>}</div>
 <div class="ttc" id="astructclassInfo_html"><div class="ttname"><a href="structclassInfo.html">classInfo</a></div><div class="ttdef"><b>Definition</b> <a href="uc_8h_source.html#l00008">uc.h:8</a></div></div>
 <div class="ttc" id="astructclassInfo_html_a43011a418afd3aec23c4fa5734d00120"><div class="ttname"><a href="structclassInfo.html#a43011a418afd3aec23c4fa5734d00120">classInfo::startTime</a></div><div class="ttdeci">double startTime</div><div class="ttdef"><b>Definition</b> <a href="uc_8h_source.html#l00013">uc.h:13</a></div></div>
 <div class="ttc" id="astructclassInfo_html_a4a0813c7ce696bee1b32c8538dff4103"><div class="ttname"><a href="structclassInfo.html#a4a0813c7ce696bee1b32c8538dff4103">classInfo::day</a></div><div class="ttdeci">std::string day</div><div class="ttdef"><b>Definition</b> <a href="uc_8h_source.html#l00011">uc.h:11</a></div></div>
@@ -471,14 +471,14 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00112">112</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>                                          {</div>
-<div class="line"><span class="lineno">  113</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;UcCode | ClassCode&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;uc : <a class="code hl_variable" href="menu_8cpp.html#abd3260a7a801fa38565162171dc12417">ucs</a>) {</div>
-<div class="line"><span class="lineno">  116</span>    std::cout &lt;&lt; uc.getUcCode() &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; uc.getClassCode() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  117</span>  }</div>
-<div class="line"><span class="lineno">  118</span>}</div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00121">121</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>                                          {</div>
+<div class="line"><span class="lineno">  122</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;UcCode | ClassCode&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;uc : <a class="code hl_variable" href="menu_8cpp.html#abd3260a7a801fa38565162171dc12417">ucs</a>) {</div>
+<div class="line"><span class="lineno">  125</span>    std::cout &lt;&lt; uc.getUcCode() &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; uc.getClassCode() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  126</span>  }</div>
+<div class="line"><span class="lineno">  127</span>}</div>
 <div class="ttc" id="amenu_8cpp_html_abd3260a7a801fa38565162171dc12417"><div class="ttname"><a href="menu_8cpp.html#abd3260a7a801fa38565162171dc12417">ucs</a></div><div class="ttdeci">std::map&lt; std::string, std::vector&lt; myUc &gt; &gt; ucs</div><div class="ttdef"><b>Definition</b> <a href="menu_8cpp_source.html#l00006">menu.cpp:6</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -509,28 +509,28 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A list of valid free class codes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00130">130</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>                                                             {</div>
-<div class="line"><span class="lineno">  132</span>  <span class="keywordtype">int</span> min = INT_MAX;</div>
-<div class="line"><span class="lineno">  133</span>  std::list&lt;std::string&gt; free_classes;</div>
-<div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>  <span class="comment">// first verify the class with the minimum number of students</span></div>
-<div class="line"><span class="lineno">  136</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;classe : it_count-&gt;second) {</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (classe.qtd &lt; min) {</div>
-<div class="line"><span class="lineno">  138</span>      min = classe.qtd;</div>
-<div class="line"><span class="lineno">  139</span>    }</div>
-<div class="line"><span class="lineno">  140</span>  }</div>
-<div class="line"><span class="lineno">  141</span>  <span class="comment">// then verify if the class is able to accept new students and add to the</span></div>
-<div class="line"><span class="lineno">  142</span>  <span class="comment">// list</span></div>
-<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;classe : it_count-&gt;second) {</div>
-<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span> (!(classe.qtd + 1 - min &gt; <a class="code hl_variable" href="print_8cpp.html#a937b432a194ecffcc9737c9efb811c09">equilibre</a>) &amp;&amp; classe.qtd + 1 &lt;= <a class="code hl_variable" href="print_8cpp.html#a1af07dd08355e73b698bb2b8ad0165f6">max_students</a>) {</div>
-<div class="line"><span class="lineno">  145</span>      free_classes.push_back(classe.classCode);</div>
-<div class="line"><span class="lineno">  146</span>    }</div>
-<div class="line"><span class="lineno">  147</span>  }</div>
-<div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>  <span class="comment">// return list</span></div>
-<div class="line"><span class="lineno">  150</span>  <span class="keywordflow">return</span> free_classes;</div>
-<div class="line"><span class="lineno">  151</span>}</div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00142">142</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>                                                             {</div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">int</span> min = INT_MAX;</div>
+<div class="line"><span class="lineno">  145</span>  std::list&lt;std::string&gt; free_classes;</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>  <span class="comment">// first verify the class with the minimum number of students</span></div>
+<div class="line"><span class="lineno">  148</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;classe : it_count-&gt;second) {</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">if</span> (classe.qtd &lt; min) {</div>
+<div class="line"><span class="lineno">  150</span>      min = classe.qtd;</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+<div class="line"><span class="lineno">  153</span>  <span class="comment">// then verify if the class is able to accept new students and add to the</span></div>
+<div class="line"><span class="lineno">  154</span>  <span class="comment">// list</span></div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;classe : it_count-&gt;second) {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (!(classe.qtd + 1 - min &gt; <a class="code hl_variable" href="print_8cpp.html#a937b432a194ecffcc9737c9efb811c09">equilibre</a>) &amp;&amp; classe.qtd + 1 &lt;= <a class="code hl_variable" href="print_8cpp.html#a1af07dd08355e73b698bb2b8ad0165f6">max_students</a>) {</div>
+<div class="line"><span class="lineno">  157</span>      free_classes.push_back(classe.classCode);</div>
+<div class="line"><span class="lineno">  158</span>    }</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="comment">// return list</span></div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordflow">return</span> free_classes;</div>
+<div class="line"><span class="lineno">  163</span>}</div>
 <div class="ttc" id="aprint_8cpp_html_a1af07dd08355e73b698bb2b8ad0165f6"><div class="ttname"><a href="print_8cpp.html#a1af07dd08355e73b698bb2b8ad0165f6">max_students</a></div><div class="ttdeci">int max_students</div><div class="ttdef"><b>Definition</b> <a href="print_8cpp_source.html#l00004">print.cpp:4</a></div></div>
 <div class="ttc" id="aprint_8cpp_html_a937b432a194ecffcc9737c9efb811c09"><div class="ttname"><a href="print_8cpp.html#a937b432a194ecffcc9737c9efb811c09">equilibre</a></div><div class="ttdeci">int equilibre</div><div class="ttdef"><b>Definition</b> <a href="print_8cpp_source.html#l00003">print.cpp:3</a></div></div>
 </div><!-- fragment -->
@@ -580,23 +580,23 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the class code is available, else false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00165">165</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>                                                                    {</div>
-<div class="line"><span class="lineno">  167</span>  <span class="keyword">auto</span> it_count = <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.find(ucCode);</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>  <span class="keywordflow">if</span> (it_count != <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.end()) {</div>
-<div class="line"><span class="lineno">  170</span>    std::list&lt;std::string&gt; free_classes = <a class="code hl_function" href="print_8cpp.html#ac5e5b7576477e6a5cfa6c503515ff9ba">valideFreeClass</a>(it_count);</div>
-<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it_list = free_classes.begin(); it_list != free_classes.end();</div>
-<div class="line"><span class="lineno">  172</span>         it_list++) {</div>
-<div class="line"><span class="lineno">  173</span>      <span class="keywordflow">if</span> (*it_list == classCode) {</div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  175</span>      }</div>
-<div class="line"><span class="lineno">  176</span>    }</div>
-<div class="line"><span class="lineno">  177</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  178</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Error in find uc&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  179</span>  }</div>
-<div class="line"><span class="lineno">  180</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  181</span>}</div>
+<p class="definition">Definition at line <a class="el" href="print_8cpp_source.html#l00181">181</a> of file <a class="el" href="print_8cpp_source.html">print.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>                                                                    {</div>
+<div class="line"><span class="lineno">  183</span>  <span class="keyword">auto</span> it_count = <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.find(ucCode);</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordflow">if</span> (it_count != <a class="code hl_variable" href="menu_8cpp.html#a4671b2d72a3f2be2c898820dc28bc11f">count</a>.end()) {</div>
+<div class="line"><span class="lineno">  186</span>    std::list&lt;std::string&gt; free_classes = <a class="code hl_function" href="print_8cpp.html#ac5e5b7576477e6a5cfa6c503515ff9ba">valideFreeClass</a>(it_count);</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it_list = free_classes.begin(); it_list != free_classes.end();</div>
+<div class="line"><span class="lineno">  188</span>         it_list++) {</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordflow">if</span> (*it_list == classCode) {</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  191</span>      }</div>
+<div class="line"><span class="lineno">  192</span>    }</div>
+<div class="line"><span class="lineno">  193</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  194</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Error in find uc&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  195</span>  }</div>
+<div class="line"><span class="lineno">  196</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  197</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
