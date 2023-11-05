@@ -12,23 +12,17 @@ int max_students = 6;
  * @param students A map containing student information.
  */
 void printStudent(const std::map<std::string, myStudent> &students) {
-  std::cout << "Student Code | Student Name | Uc Code | Class Code"
+  std::cout << "Student Code | Student Name"
             << std::endl;
-
+  
   for (const auto &studentPair : students) {
     const myStudent &student = studentPair.second;
-    std::cout << student.getStudentCode() << " | " << student.getStudentName();
-
-    const auto &ucCodes = student.getUcCode();
-    for (const auto &ucCode : ucCodes) {
-      std::cout << " | " << ucCode;
+    std::cout << student.getStudentCode() << " | " << student.getStudentName() << std::endl;
+    std::cout << "   " << "Classes: " << std::endl;
+    for(const auto &classe : student.getClasses()) {
+      std::cout << "   " << classe.getUcCode() << " - " << classe.getClassCode() << std::endl;
     }
 
-    const auto &classCodes = student.getClassCode();
-    for (const auto &classCode : classCodes) {
-      std::cout << " | " << classCode;
-    }
-    std::cout << std::endl;
   }
 }
 
@@ -42,7 +36,7 @@ void printStudent(const std::map<std::string, myStudent> &students) {
  * @param students A vector containing myStudent objects.
  */
 void printStudents(const std::vector<myStudent> &students) {
-  std::cout << "Student Code | Student Name | Uc Code | Class Code oii"
+  std::cout << "Student Code | Student Name"
             << std::endl;
 
   if (students.empty()) {
@@ -50,18 +44,11 @@ void printStudents(const std::vector<myStudent> &students) {
   }
 
   for (const auto &student : students) {
-    std::cout << student.getStudentCode() << " | " << student.getStudentName();
-
-    const auto &ucCodes = student.getUcCode();
-    for (const auto &ucCode : ucCodes) {
-      std::cout << " | " << ucCode;
+    std::cout << student.getStudentCode() << " | " << student.getStudentName() << std::endl;
+    std::cout << "   " << "Classes: " << std::endl;
+    for(const auto &classe : student.getClasses()) {
+      std::cout << "   " << classe.getUcCode() << " - " << classe.getClassCode() << std::endl;
     }
-
-    const auto &classCodes = student.getClassCode();
-    for (const auto &classCode : classCodes) {
-      std::cout << " | " << classCode;
-    }
-    std::cout << std::endl;
   }
 }
 
