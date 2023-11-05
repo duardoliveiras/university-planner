@@ -97,6 +97,13 @@ selectStudent(const std::string &str,
 
 // ------------------------------------------------ //
 
+void organizerUcStudent(std::map<std::string, myStudent>::iterator &it) {
+
+  std::sort(it->second.getClasses().begin(), it->second.getClasses().end(),
+            myUc::compareUcCode);
+}
+
+
 // receives the student pointer by reference and removes the UC
 bool removeUcStudent(std::string ucCode,
                      std::map<std::string, myStudent>::iterator &it,
@@ -125,7 +132,7 @@ void addClassStudent(std::string ucCode, std::string classCode,
 
   myUc classe(ucCode, classCode);
   it->second.getClasses().push_back(classe);
-
+  organizerUcStudent(it);
   stackAlter.push({it->second.getStudentCode(), it->second.getStudentName(),
                    "add", ucCode, classCode});
 }
@@ -200,11 +207,6 @@ bool valideNewClass(std::string ucCode, std::string classCode,
   }
 }
 
-void organizerUcStudent(std::map<std::string, myStudent>::iterator &it) {
-
-  std::sort(it->second.getClasses().begin(), it->second.getClasses().end(),
-            myUc::compareUcCode);
-}
 
 // This function receives the student pointer and the class tree (classes)
 std::map<int, std::set<classInfo>>

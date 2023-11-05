@@ -59,14 +59,25 @@ void printStudentClasses(std::map<std::string, myStudent>::iterator &it) {
   }
 }
 
-void printUcClasses(const std::vector<myUc> &ucVector) {
+void printUcClasses(const std::vector<myUc> &ucVector, std::map<std::string, myUc> &classes) {
   std::cout << "UcCode | ClassCode | Type | Day | DayInt | StartTime | Duration"
             << std::endl;
 
   for (const auto &ucObj : ucVector) {
-    std::cout << ucObj.getUcCode() << " | " << ucObj.getClassCode()
-              << std::endl;
-    auto infoVec = ucObj.getClassInfoVec();
+    std::cout << ucObj.getUcCode() << " | " << ucObj.getClassCode() << std::endl; 
+    //auto it_class = classes.find(ucObj.getUcCode() + ucObj.getClassCode());
+
+    // if(it_class != classes.end()){
+    //   for(auto class_info : it_class->second.getClassInfoVec()){
+     
+    //     std::cout << " | " << class_info.type << " | " << class_info.day << " | " 
+    //               << class_info.dayInt << " | " << class_info.startTime << " | " << class_info.duration << std::endl;
+    //   }
+    // }else{
+    //   std::cout << "Error in find class" << std::endl;
+    // }
+
+    // auto infoVec = ucObj.getClassInfoVec();
     // for (const auto &classInfo : infoVec) {
     //   std::string type = classInfo.type;
     //   std::string day = classInfo.day;

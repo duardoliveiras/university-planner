@@ -19,7 +19,7 @@ void errorMessage();
 void printStudents(const std::vector<myStudent> &students);
 void printStudent(const std::map<std::string, myStudent> &students);
 
-void printUcClasses(const std::vector<myUc> &ucVector);
+void printUcClasses(const std::vector<myUc> &ucVector, std::map<std::string, myUc> &classes);
 void printUcs(const std::vector<myUc> &ucs);
 
 void printStudentSchedules(std::map<std::string, myStudent>::iterator &it,

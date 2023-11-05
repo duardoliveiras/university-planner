@@ -11,6 +11,7 @@ void menu() {
 
   system("clear");
 
+
   int flag = 0;
 
   std::cout << "------------ Welcome to our app :) ------------" << std::endl;
@@ -550,7 +551,7 @@ void menuUcs(std::string str, int type, int filter, int order) {
 
   if (type == 1) {
     data = selectUc(str, ucs);
-    printUcClasses(data);
+    printUcClasses(data, classes);
   } else {
     if (type == 2) {
       data = filterInfoUc(filter, str, data);
