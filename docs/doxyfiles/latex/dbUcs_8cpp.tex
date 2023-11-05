@@ -1,0 +1,298 @@
+\doxysection{src/functions/db\+Ucs.cpp File Reference}
+\hypertarget{dbUcs_8cpp}{}\label{dbUcs_8cpp}\index{src/functions/dbUcs.cpp@{src/functions/dbUcs.cpp}}
+{\ttfamily \#include "{}db\+Ucs.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{dbUcs_8cpp_a5db5d6517bbf49c69c07f29e947f0649}{compare\+Classes\+Code\+Asc}} (const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc1, const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc2)
+\begin{DoxyCompactList}\small\item\em Compare two \doxylink{classmyUc}{my\+Uc} objects by their class codes in ascending order. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{dbUcs_8cpp_ad6546656fdb48b47b22ca9d0b65d1e88}{compare\+Ucs\+Code\+ASC}} (const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc1, const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc2)
+\begin{DoxyCompactList}\small\item\em Compare two \doxylink{classmyUc}{my\+Uc} objects by their UC codes in ascending order. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{dbUcs_8cpp_a457eb7fe9ab5c62ebb07f858415bdad1}{compare\+Classes\+Code\+Desc}} (const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc1, const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc2)
+\begin{DoxyCompactList}\small\item\em Compare two \doxylink{classmyUc}{my\+Uc} objects by their UC codes in descending order. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{dbUcs_8cpp_a5864577688f2317ba274f3faeda67e91}{compare\+Ucs\+Code\+Desc}} (const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc1, const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&uc2)
+\begin{DoxyCompactList}\small\item\em Compare two \doxylink{classmyUc}{my\+Uc} objects by their UC codes in descending order. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \mbox{\hyperlink{dbUcs_8cpp_abb89a1fd656c1776571fe5196358e02d}{filter\+Info\+Uc}} (int n, std\+::string str, std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})
+\begin{DoxyCompactList}\small\item\em Filters UC information. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \mbox{\hyperlink{dbUcs_8cpp_a9ec2fc8067edc0eab7cb9413ec0425ec}{order\+Info\+Uc}} (int n, std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})
+\begin{DoxyCompactList}\small\item\em Sorts UC information. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \mbox{\hyperlink{dbUcs_8cpp_ad6e8c3a80f5f296d3b5047ec49645027}{select\+Uc}} (const std\+::string \&str, const std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}})
+\begin{DoxyCompactList}\small\item\em Selects UCs on the provided code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dbUcs_8cpp_a5db5d6517bbf49c69c07f29e947f0649}\label{dbUcs_8cpp_a5db5d6517bbf49c69c07f29e947f0649} 
+\index{dbUcs.cpp@{dbUcs.cpp}!compareClassesCodeAsc@{compareClassesCodeAsc}}
+\index{compareClassesCodeAsc@{compareClassesCodeAsc}!dbUcs.cpp@{dbUcs.cpp}}
+\doxysubsubsection{\texorpdfstring{compareClassesCodeAsc()}{compareClassesCodeAsc()}}
+{\footnotesize\ttfamily bool compare\+Classes\+Code\+Asc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc1,  }\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc2 }\end{DoxyParamCaption})}
+
+
+
+Compare two \doxylink{classmyUc}{my\+Uc} objects by their class codes in ascending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc1} & The first \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+{\em uc2} & The second \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if \textquotesingle{}uc1\textquotesingle{} class code is less than \textquotesingle{}uc2\textquotesingle{} class code, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordflow}{return}\ uc1.\mbox{\hyperlink{classmyUc_a06148a4364220f02340b9ff1d7cf2712}{getClassCode}}()\ <\ uc2.\mbox{\hyperlink{classmyUc_a06148a4364220f02340b9ff1d7cf2712}{getClassCode}}();}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbUcs_8cpp_a457eb7fe9ab5c62ebb07f858415bdad1}\label{dbUcs_8cpp_a457eb7fe9ab5c62ebb07f858415bdad1} 
+\index{dbUcs.cpp@{dbUcs.cpp}!compareClassesCodeDesc@{compareClassesCodeDesc}}
+\index{compareClassesCodeDesc@{compareClassesCodeDesc}!dbUcs.cpp@{dbUcs.cpp}}
+\doxysubsubsection{\texorpdfstring{compareClassesCodeDesc()}{compareClassesCodeDesc()}}
+{\footnotesize\ttfamily bool compare\+Classes\+Code\+Desc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc1,  }\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc2 }\end{DoxyParamCaption})}
+
+
+
+Compare two \doxylink{classmyUc}{my\+Uc} objects by their UC codes in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc1} & The first \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+{\em uc2} & The second \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if \textquotesingle{}uc1\textquotesingle{} UC code is greater than \textquotesingle{}uc2\textquotesingle{} UC code, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordflow}{return}\ uc1.\mbox{\hyperlink{classmyUc_a06148a4364220f02340b9ff1d7cf2712}{getClassCode}}()\ >\ uc2.\mbox{\hyperlink{classmyUc_a06148a4364220f02340b9ff1d7cf2712}{getClassCode}}();}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbUcs_8cpp_ad6546656fdb48b47b22ca9d0b65d1e88}\label{dbUcs_8cpp_ad6546656fdb48b47b22ca9d0b65d1e88} 
+\index{dbUcs.cpp@{dbUcs.cpp}!compareUcsCodeASC@{compareUcsCodeASC}}
+\index{compareUcsCodeASC@{compareUcsCodeASC}!dbUcs.cpp@{dbUcs.cpp}}
+\doxysubsubsection{\texorpdfstring{compareUcsCodeASC()}{compareUcsCodeASC()}}
+{\footnotesize\ttfamily bool compare\+Ucs\+Code\+ASC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc1,  }\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc2 }\end{DoxyParamCaption})}
+
+
+
+Compare two \doxylink{classmyUc}{my\+Uc} objects by their UC codes in ascending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc1} & The first \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+{\em uc2} & The second \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if \textquotesingle{}uc1\textquotesingle{} UC code is less than \textquotesingle{}uc2\textquotesingle{} UC code, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordflow}{return}\ uc1.\mbox{\hyperlink{classmyUc_ac690947120feb5384767e278dd7a795a}{getUcCode}}()\ <\ uc2.\mbox{\hyperlink{classmyUc_ac690947120feb5384767e278dd7a795a}{getUcCode}}();}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbUcs_8cpp_a5864577688f2317ba274f3faeda67e91}\label{dbUcs_8cpp_a5864577688f2317ba274f3faeda67e91} 
+\index{dbUcs.cpp@{dbUcs.cpp}!compareUcsCodeDesc@{compareUcsCodeDesc}}
+\index{compareUcsCodeDesc@{compareUcsCodeDesc}!dbUcs.cpp@{dbUcs.cpp}}
+\doxysubsubsection{\texorpdfstring{compareUcsCodeDesc()}{compareUcsCodeDesc()}}
+{\footnotesize\ttfamily bool compare\+Ucs\+Code\+Desc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc1,  }\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{uc2 }\end{DoxyParamCaption})}
+
+
+
+Compare two \doxylink{classmyUc}{my\+Uc} objects by their UC codes in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc1} & The first \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+{\em uc2} & The second \doxylink{classmyUc}{my\+Uc} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if \textquotesingle{}uc1\textquotesingle{} UC code is greater than \textquotesingle{}uc2\textquotesingle{} UC code, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordflow}{return}\ uc1.\mbox{\hyperlink{classmyUc_ac690947120feb5384767e278dd7a795a}{getUcCode}}()\ >\ uc2.\mbox{\hyperlink{classmyUc_ac690947120feb5384767e278dd7a795a}{getUcCode}}();}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbUcs_8cpp_abb89a1fd656c1776571fe5196358e02d}\label{dbUcs_8cpp_abb89a1fd656c1776571fe5196358e02d} 
+\index{dbUcs.cpp@{dbUcs.cpp}!filterInfoUc@{filterInfoUc}}
+\index{filterInfoUc@{filterInfoUc}!dbUcs.cpp@{dbUcs.cpp}}
+\doxysubsubsection{\texorpdfstring{filterInfoUc()}{filterInfoUc()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ filter\+Info\+Uc (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{std\+::string}]{str,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{ucs }\end{DoxyParamCaption})}
+
+
+
+Filters UC information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number representing the filter. \\
+\hline
+{\em str} & Search string. \\
+\hline
+{\em ucs} & Vector of UCs to be filtered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$my\+Uc$>$ Vector of filtered UCs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ std::vector<myUc>\ filterUc;}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Uc\ Code}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uc.getUcCode()\ ==\ str)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ filterUc.push\_back(uc);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Class\ Code}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structclassInfo}{classInfo}}\ :\ uc.getClassInfoVec())\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_abeca34e8193178d2592e7682b8a713cf}{code}}\ ==\ str)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ filterUc.push\_back(uc);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordflow}{return}\ filterUc;}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbUcs_8cpp_a9ec2fc8067edc0eab7cb9413ec0425ec}\label{dbUcs_8cpp_a9ec2fc8067edc0eab7cb9413ec0425ec} 
+\index{dbUcs.cpp@{dbUcs.cpp}!orderInfoUc@{orderInfoUc}}
+\index{orderInfoUc@{orderInfoUc}!dbUcs.cpp@{dbUcs.cpp}}
+\doxysubsubsection{\texorpdfstring{orderInfoUc()}{orderInfoUc()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ order\+Info\+Uc (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{ucs }\end{DoxyParamCaption})}
+
+
+
+Sorts UC information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number representing the sorting criterion. \\
+\hline
+{\em ucs} & Vector of UCs to be sorted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$my\+Uc$>$ Vector of sorted UCs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Uc\ Code\ Asc}}
+\DoxyCodeLine{00091\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_ad6546656fdb48b47b22ca9d0b65d1e88}{compareUcsCodeASC}});}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Uc\ Code\ Desc}}
+\DoxyCodeLine{00095\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a5864577688f2317ba274f3faeda67e91}{compareUcsCodeDesc}});}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Class\ Code\ Asc}}
+\DoxyCodeLine{00099\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a5db5d6517bbf49c69c07f29e947f0649}{compareClassesCodeAsc}});}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Class\ Code\ Desc}}
+\DoxyCodeLine{00103\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin(),\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end(),\ \mbox{\hyperlink{dbUcs_8cpp_a457eb7fe9ab5c62ebb07f858415bdad1}{compareClassesCodeDesc}});}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00108\ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}};}
+\DoxyCodeLine{00110\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbUcs_8cpp_ad6e8c3a80f5f296d3b5047ec49645027}\label{dbUcs_8cpp_ad6e8c3a80f5f296d3b5047ec49645027} 
+\index{dbUcs.cpp@{dbUcs.cpp}!selectUc@{selectUc}}
+\index{selectUc@{selectUc}!dbUcs.cpp@{dbUcs.cpp}}
+\doxysubsubsection{\texorpdfstring{selectUc()}{selectUc()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ select\+Uc (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{classes }\end{DoxyParamCaption})}
+
+
+
+Selects UCs on the provided code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Code of the UC to be selected. \\
+\hline
+{\em ucs} & Vector of UCs to be filtered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$my\+Uc$>$ Vector of selected UCs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dbUcs_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{dbUcs_8cpp_source}{db\+Ucs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ std::vector<myUc>\ selectedUcs;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&pair\ :\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}})\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{auto}\ ucObj\ =\ pair.second;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{if}\ (ucObj.getUcCode()\ ==\ str)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ selectedUcs.push\_back(ucObj);}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordflow}{return}\ selectedUcs;}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}

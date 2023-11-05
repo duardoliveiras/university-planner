@@ -1,0 +1,379 @@
+\doxysection{src/inputoutput/keep\+All\+Changes.h File Reference}
+\hypertarget{keepAllChanges_8h}{}\label{keepAllChanges_8h}\index{src/inputoutput/keepAllChanges.h@{src/inputoutput/keepAllChanges.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}../classes/student.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{keepAllChanges_8h_a0d7be745a79352f09a646647b7324c10}{make\+Backup}} ()
+\begin{DoxyCompactList}\small\item\em Creates a backup of the "{}students\+\_\+classes.\+csv"{} file with the lastest archive modified. The backup file is named with the current system date. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{keepAllChanges_8h_abab6424383f51b14362476ac5d103f80}{order\+Vector}} (const std\+::string \&str1, const std\+::string \&str2)
+\begin{DoxyCompactList}\small\item\em Compare two strings in descending order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keepAllChanges_8h_a7e4e7a4e456388acb38f53150b8f3263}{keep\+All\+Changes}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}, std\+::stack$<$ \mbox{\hyperlink{structalter}{alter}} $>$ \&\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stack\+Alter}})
+\begin{DoxyCompactList}\small\item\em Saves all changes made to the student tree in the "{}students\+\_\+classes.\+csv"{} file. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{keepAllChanges_8h_ac86cfff9eeef3da6791d250e6bf7220e}{get\+Sysdate}} ()
+\begin{DoxyCompactList}\small\item\em Get the system date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keepAllChanges_8h_a4c6b7c97de3fb5556fe31c92261e77b7}{list\+All\+Backups}} ()
+\begin{DoxyCompactList}\small\item\em List all backup files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keepAllChanges_8h_a4b79c42795dce5ebc842c882715c30a8}{print\+Changes}} (int cd\+Bkp)
+\begin{DoxyCompactList}\small\item\em Print the changes from backup files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{keepAllChanges_8h_a107f44c0b7fc6d12c287dfcc850ad6ac}{print\+All\+Backups}} ()
+\begin{DoxyCompactList}\small\item\em Prints all backup file names stored in the public vector backups. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keepAllChanges_8h_a249b75801b03223ccb8b0726b949e582}{backup\+File}} (int cd\+Bkp)
+\begin{DoxyCompactList}\small\item\em Backup a specific file and remove related changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keepAllChanges_8h_a9477815d2fc22e5dff6d48710dc3e85b}{keep\+All\+Changes}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{keepAllChanges_8h_a249b75801b03223ccb8b0726b949e582}\label{keepAllChanges_8h_a249b75801b03223ccb8b0726b949e582} 
+\index{keepAllChanges.h@{keepAllChanges.h}!backupFile@{backupFile}}
+\index{backupFile@{backupFile}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{backupFile()}{backupFile()}}
+{\footnotesize\ttfamily void backup\+File (\begin{DoxyParamCaption}\item[{int}]{cd\+Bkp }\end{DoxyParamCaption})}
+
+
+
+Backup a specific file and remove related changes. 
+
+This function backs up a specified file from "{}schedule/backup"{} to "{}schedule/students\+\_\+classes.\+csv"{} and removes related change files in the "{}schedule/alter"{} and "{}schedule/backup"{} directories.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cd\+Bkp} & The index of the backup file to restore. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ std::string\ path\ =\ \textcolor{stringliteral}{"{}schedule/backup/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[cdBkp];}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ std::ifstream\ backup(path,\ std::ios::binary);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \textcolor{keywordflow}{if}\ (!backup)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00194\ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ std::ofstream\ file(\textcolor{stringliteral}{"{}schedule/students\_classes.csv"{}},\ std::ios::binary);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00200\ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ file\ <<\ backup.rdbuf();}
+\DoxyCodeLine{00203\ \ \ file.close();}
+\DoxyCodeLine{00204\ \ \ backup.close();}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \textcolor{keywordtype}{unsigned}\ size\ =\ cdBkp;}
+\DoxyCodeLine{00207\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <=\ size;\ i++)\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::exists(\textcolor{stringliteral}{"{}schedule/alter/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[cdBkp]))\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ std::filesystem::remove(\textcolor{stringliteral}{"{}schedule/alter/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[i]);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ std::filesystem::remove(\textcolor{stringliteral}{"{}schedule/backup/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[i]);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::filesystem::filesystem\_error\ \&e)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ to\ remove\ the\ file"{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}The\ file\ of\ changes\ not\ exist"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \}}
+\DoxyCodeLine{00219\ \}}
+
+\end{DoxyCode}
+\Hypertarget{keepAllChanges_8h_ac86cfff9eeef3da6791d250e6bf7220e}\label{keepAllChanges_8h_ac86cfff9eeef3da6791d250e6bf7220e} 
+\index{keepAllChanges.h@{keepAllChanges.h}!getSysdate@{getSysdate}}
+\index{getSysdate@{getSysdate}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{getSysdate()}{getSysdate()}}
+{\footnotesize\ttfamily std\+::string get\+Sysdate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the system date. 
+
+\begin{DoxyReturn}{Returns}
+A string with the system date. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ std::time\_t\ date\ =\ std::time(0);}
+\DoxyCodeLine{00023\ \ \ std::tm\ *now\ =\ std::localtime(\&date);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{return}\ std::to\_string(now-\/>tm\_year\ +\ 1900)\ +\ \textcolor{stringliteral}{"{}-\/"{}}\ +}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ std::to\_string(now-\/>tm\_mon\ +\ 1)\ +\ \textcolor{stringliteral}{"{}-\/"{}}\ +\ std::to\_string(now-\/>tm\_mday)\ +}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/"{}}\ +\ std::to\_string(now-\/>tm\_hour)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ std::to\_string(now-\/>tm\_min)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(now-\/>tm\_sec);}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\Hypertarget{keepAllChanges_8h_a9477815d2fc22e5dff6d48710dc3e85b}\label{keepAllChanges_8h_a9477815d2fc22e5dff6d48710dc3e85b} 
+\index{keepAllChanges.h@{keepAllChanges.h}!keepAllChanges@{keepAllChanges}}
+\index{keepAllChanges@{keepAllChanges}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{keepAllChanges()}{keepAllChanges()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void keep\+All\+Changes (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&}]{students }\end{DoxyParamCaption})}
+
+\Hypertarget{keepAllChanges_8h_a7e4e7a4e456388acb38f53150b8f3263}\label{keepAllChanges_8h_a7e4e7a4e456388acb38f53150b8f3263} 
+\index{keepAllChanges.h@{keepAllChanges.h}!keepAllChanges@{keepAllChanges}}
+\index{keepAllChanges@{keepAllChanges}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{keepAllChanges()}{keepAllChanges()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void keep\+All\+Changes (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&}]{students,  }\item[{std\+::stack$<$ \mbox{\hyperlink{structalter}{alter}} $>$ \&}]{stack\+Alter }\end{DoxyParamCaption})}
+
+
+
+Saves all changes made to the student tree in the "{}students\+\_\+classes.\+csv"{} file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Reference to the map containing student data. \\
+\hline
+{\em stack\+Alter} & Reference to a stack containing alteration records. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a0d7be745a79352f09a646647b7324c10}{makeBackup}}();}
+\DoxyCodeLine{00067\ \ \ std::ofstream\ \mbox{\hyperlink{structalter}{alter}}(\textcolor{stringliteral}{"{}schedule/alter/students\_classes-\/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_ac86cfff9eeef3da6791d250e6bf7220e}{getSysdate}}()\ +}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}.csv"{}},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ios::app);}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{structalter}{alter}}.is\_open())\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.empty())\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{structalter}{alter}}\ <<\ \textcolor{stringliteral}{"{}The\ student:\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().\mbox{\hyperlink{structalter_ad17141f8e6730368007cb8dc67147cb6}{studentCode}}\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().studentName\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().type}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ UC:\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().ucCode}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ Class:\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().classCode\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.pop();}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ std::ofstream\ file(\textcolor{stringliteral}{"{}schedule/students\_classes.csv"{}});}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00086\ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ Header}}
+\DoxyCodeLine{00089\ \ \ file\ <<\ \textcolor{stringliteral}{"{}StudentCode,StudentName,UcCode,ClassCode"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//\ Write\ the\ tree\ in\ the\ file}}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.begin();\ it\ !=\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.end();\ it++)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ classe\ :\ it-\/>second.getClasses())\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ file\ <<\ it-\/>second.getStudentCode()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ it-\/>second.getStudentName()}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ classe.getUcCode()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ classe.getClassCode()}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \}}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+\Hypertarget{keepAllChanges_8h_a4c6b7c97de3fb5556fe31c92261e77b7}\label{keepAllChanges_8h_a4c6b7c97de3fb5556fe31c92261e77b7} 
+\index{keepAllChanges.h@{keepAllChanges.h}!listAllBackups@{listAllBackups}}
+\index{listAllBackups@{listAllBackups}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{listAllBackups()}{listAllBackups()}}
+{\footnotesize\ttfamily void list\+All\+Backups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+List all backup files. 
+
+If no backup files exist, this function searches for and populates the \textquotesingle{}backups\textquotesingle{} vector with filenames from the "{}schedule/backup"{} directory. 
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.size()\ ==\ 0)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ std::string\ way\ =\ \textcolor{stringliteral}{"{}schedule/backup"{}};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&in\ :\ std::filesystem::directory\_iterator(way))\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::is\_regular\_file(in))\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.push\_back(in.path().filename().string());}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ std::sort(\mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.begin(),\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.end(),\ \mbox{\hyperlink{keepAllChanges_8cpp_abab6424383f51b14362476ac5d103f80}{orderVector}});}
+\DoxyCodeLine{00116\ \ \ \}}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+\Hypertarget{keepAllChanges_8h_a0d7be745a79352f09a646647b7324c10}\label{keepAllChanges_8h_a0d7be745a79352f09a646647b7324c10} 
+\index{keepAllChanges.h@{keepAllChanges.h}!makeBackup@{makeBackup}}
+\index{makeBackup@{makeBackup}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{makeBackup()}{makeBackup()}}
+{\footnotesize\ttfamily void make\+Backup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a backup of the "{}students\+\_\+classes.\+csv"{} file with the lastest archive modified. The backup file is named with the current system date. 
+
+
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}schedule/students\_classes.csv"{}},\ std::ios::binary);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ std::string\ dateString\ =\ \mbox{\hyperlink{keepAllChanges_8cpp_ac86cfff9eeef3da6791d250e6bf7220e}{getSysdate}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ std::string\ backupName\ =}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}schedule/backup/students\_classes-\/"{}}\ +\ dateString\ +\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{00046\ \ \ std::ofstream\ backup(backupName,\ std::ios::binary);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordflow}{if}\ (!backup)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ to\ create\ a\ backup\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ backup\ <<\ file.rdbuf();}
+\DoxyCodeLine{00054\ \ \ file.close();}
+\DoxyCodeLine{00055\ \ \ backup.close();}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+\Hypertarget{keepAllChanges_8h_abab6424383f51b14362476ac5d103f80}\label{keepAllChanges_8h_abab6424383f51b14362476ac5d103f80} 
+\index{keepAllChanges.h@{keepAllChanges.h}!orderVector@{orderVector}}
+\index{orderVector@{orderVector}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{orderVector()}{orderVector()}}
+{\footnotesize\ttfamily bool order\+Vector (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str1,  }\item[{const std\+::string \&}]{str2 }\end{DoxyParamCaption})}
+
+
+
+Compare two strings in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & The first string to compare. \\
+\hline
+{\em str2} & The second string to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if \textquotesingle{}str1\textquotesingle{} is greater than \textquotesingle{}str2\textquotesingle{}, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordflow}{return}\ str1\ >\ str2;}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+\Hypertarget{keepAllChanges_8h_a107f44c0b7fc6d12c287dfcc850ad6ac}\label{keepAllChanges_8h_a107f44c0b7fc6d12c287dfcc850ad6ac} 
+\index{keepAllChanges.h@{keepAllChanges.h}!printAllBackups@{printAllBackups}}
+\index{printAllBackups@{printAllBackups}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{printAllBackups()}{printAllBackups()}}
+{\footnotesize\ttfamily bool print\+All\+Backups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints all backup file names stored in the public vector backups. 
+
+
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.size()\ !=\ 0)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Backups:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.size();\ i++)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ std::cout\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.at(i)\ <<\ std::endl;}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00129\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ backups"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+\Hypertarget{keepAllChanges_8h_a4b79c42795dce5ebc842c882715c30a8}\label{keepAllChanges_8h_a4b79c42795dce5ebc842c882715c30a8} 
+\index{keepAllChanges.h@{keepAllChanges.h}!printChanges@{printChanges}}
+\index{printChanges@{printChanges}!keepAllChanges.h@{keepAllChanges.h}}
+\doxysubsubsection{\texorpdfstring{printChanges()}{printChanges()}}
+{\footnotesize\ttfamily void print\+Changes (\begin{DoxyParamCaption}\item[{int}]{cd\+Bkp }\end{DoxyParamCaption})}
+
+
+
+Print the changes from backup files. 
+
+This function prints the content of backup files located in the "{}schedule/alter"{} directory, up to the specified \textquotesingle{}cd\+Bkp\textquotesingle{} index, to the standard output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cd\+Bkp} & The index of the backup files to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{keepAllChanges_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{keepAllChanges_8cpp_source}{keep\+All\+Changes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{unsigned}\ size\ =\ cdBkp;}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <=\ size;\ i++)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}schedule/alter/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[i],\ std::ios::binary);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}}\ <<\ line\ <<\ std::endl;}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ file.close();}
+\DoxyCodeLine{00159\ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{comment}{//\ //\ Write\ the\ tree\ in\ the\ file}}
+\DoxyCodeLine{00162\ \ \ \textcolor{comment}{//\ for\ (auto\ it\ =\ students.begin();\ it\ !=\ students.end();\ it++)\ \{}}
+\DoxyCodeLine{00163\ \ \ \textcolor{comment}{//\ \ \ //\ for\ (auto\ classe\ :\ it-\/>second.getClasses())\ \{}}
+\DoxyCodeLine{00164\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ //\ std::cout<<\ it-\/>second.getCode()\ <<\ "{},"{}\ <<\ it-\/>second.getName()}}
+\DoxyCodeLine{00165\ \ \ \textcolor{comment}{//\ \ \ <<}}
+\DoxyCodeLine{00166\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ "{},"{}}}
+\DoxyCodeLine{00167\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ //\ <<\ classe.getUcCode()\ <<\ "{},"{}\ <<\ classe.getClassCode()\ <<}}
+\DoxyCodeLine{00168\ \ \ \textcolor{comment}{//\ \ \ std::endl;}}
+\DoxyCodeLine{00169\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ file\ <<\ it-\/>second.getStudentCode()\ <<\ "{},"{}\ <<}}
+\DoxyCodeLine{00170\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ it-\/>second.getStudentName()\ <<\ "{},"{}}}
+\DoxyCodeLine{00171\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ \ \ \ \ \ <<\ classe.getUcCode()\ <<\ "{},"{}\ <<\ classe.getClassCode()\ <<}}
+\DoxyCodeLine{00172\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ \ \ \ \ \ std::endl;}}
+\DoxyCodeLine{00173\ \ \ \textcolor{comment}{//\ \ \ //\ \}}}
+\DoxyCodeLine{00174\ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00175\ \}}
+
+\end{DoxyCode}

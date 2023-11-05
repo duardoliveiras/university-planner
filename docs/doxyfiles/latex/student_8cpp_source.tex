@@ -1,0 +1,59 @@
+\doxysection{student.\+cpp}
+\hypertarget{student_8cpp_source}{}\label{student_8cpp_source}\index{src/classes/student.cpp@{src/classes/student.cpp}}
+\mbox{\hyperlink{student_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{student_8h}{student.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00008}\mbox{\hyperlink{classmyStudent_a2ef5df1cd0c443dd5caaf9b2945131df}{00008}}\ \mbox{\hyperlink{classmyStudent_a77a3b9bab5170cccf8014b18884543f0}{myStudent::myStudent}}(\textcolor{keyword}{const}\ std::string\ \&sCode,\ \textcolor{keyword}{const}\ std::string\ \&sName)\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00009}00009\ \ \ studentCode\ =\ sCode;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00010}00010\ \ \ studentName\ =\ sName;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00018}\mbox{\hyperlink{classmyStudent_a77a3b9bab5170cccf8014b18884543f0}{00018}}\ \mbox{\hyperlink{classmyStudent_a77a3b9bab5170cccf8014b18884543f0}{myStudent::myStudent}}()\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00019}00019\ \ \ studentCode\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00020}00020\ \ \ studentName\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00023}\mbox{\hyperlink{classmyStudent_a5f6af36da27b712365185785e2b0df81}{00023}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmyStudent_a5f6af36da27b712365185785e2b0df81}{myStudent::setStudent}}(std::string\ \&sCode,\ std::string\ \&sName)\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00024}00024\ \ \ studentCode\ =\ sCode;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00025}00025\ \ \ studentName\ =\ sName;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00032}\mbox{\hyperlink{classmyStudent_a40dad44f84a0e9583eed647759d0e3d8}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmyStudent_a40dad44f84a0e9583eed647759d0e3d8}{myStudent::setStudentCode}}(std::string\ \&n)\ \{\ studentCode\ =\ n;\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00038}\mbox{\hyperlink{classmyStudent_a567b3df3bda0b380718ebd4d7075d25c}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmyStudent_a567b3df3bda0b380718ebd4d7075d25c}{myStudent::setStudentName}}(std::string\ \&n)\ \{\ studentName\ =\ n;\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00044}\mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{00044}}\ std::string\ \mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{myStudent::getStudentCode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ studentCode;\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00050}\mbox{\hyperlink{classmyStudent_a9abce63c1936f80b77971197dba05a5b}{00050}}\ std::string\ \mbox{\hyperlink{classmyStudent_a9abce63c1936f80b77971197dba05a5b}{myStudent::getStudentName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ studentName;\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00061}\mbox{\hyperlink{classmyStudent_adb34f841693541823465241c0e2a9b4f}{00061}}\ std::vector<std::string>\ \mbox{\hyperlink{classmyStudent_adb34f841693541823465241c0e2a9b4f}{myStudent::getUcCode}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00062}00062\ \ \ std::vector<std::string>\ ucCodes;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00063}00063\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ classes)\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00064}00064\ \ \ \ \ ucCodes.push\_back(uc.getUcCode());}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00066}00066\ \ \ \textcolor{keywordflow}{return}\ ucCodes;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00078}\mbox{\hyperlink{classmyStudent_aea76184e0181ccd018f1481384931fd8}{00078}}\ std::vector<std::string>\ \mbox{\hyperlink{classmyStudent_aea76184e0181ccd018f1481384931fd8}{myStudent::getClassCode}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00079}00079\ \ \ std::vector<std::string>\ classCodes;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00080}00080\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ classes)\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00081}00081\ \ \ \ \ std::vector<classInfo>\ classInfoVec\ =\ uc.getClassInfoVec();}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structclassInfo}{classInfo}}\ :\ classInfoVec)\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00083}00083\ \ \ \ \ \ \ classCodes.push\_back(\mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_abeca34e8193178d2592e7682b8a713cf}{code}});}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00085}00085\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00086}00086\ \ \ \textcolor{keywordflow}{return}\ classCodes;}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00093}\mbox{\hyperlink{classmyStudent_acc9b7e22b79423fac49f983e21c2a1ec}{00093}}\ std::vector<myUc>\ \&\mbox{\hyperlink{classmyStudent_acc9b7e22b79423fac49f983e21c2a1ec}{myStudent::getClasses}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ classes;\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00099}\mbox{\hyperlink{classmyStudent_aef7fbcc17c774be5772f1e944bb6eeef}{00099}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmyStudent_aef7fbcc17c774be5772f1e944bb6eeef}{myStudent::addClass}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmyUc}{myUc}}\ \&myClass)\ \{\ classes.push\_back(myClass);\ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00105}\mbox{\hyperlink{classmyStudent_a50498a9970a46f88473a4945b5e3e590}{00105}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classmyStudent_a50498a9970a46f88473a4945b5e3e590}{myStudent::valideQtClasses}}()\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00106}00106\ \ \ \textcolor{keywordflow}{if}\ (classes.size()\ >\ 7)\ \{}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00108}00108\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00109}00109\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{student_8cpp_source_l00110}00110\ \}}
+
+\end{DoxyCode}

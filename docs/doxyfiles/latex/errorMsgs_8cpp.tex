@@ -1,0 +1,111 @@
+\doxysection{src/error\+Msgs.cpp File Reference}
+\hypertarget{errorMsgs_8cpp}{}\label{errorMsgs_8cpp}\index{src/errorMsgs.cpp@{src/errorMsgs.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{error\+Message}} ()
+\item 
+void \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{error\+Check}} (int n)
+\item 
+void \mbox{\hyperlink{errorMsgs_8cpp_a8f2b6409e84cac8c34a39259bc431c66}{error\+Message\+File}} ()
+\item 
+void \mbox{\hyperlink{errorMsgs_8cpp_a60aa1bc7218c63b2085b1fbdd600d07a}{error\+Message\+Line}} (std\+::string line)
+\item 
+void \mbox{\hyperlink{errorMsgs_8cpp_a6c6e25cf62ae8519c97e3005ba8ac4df}{working\+Message}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}\label{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce} 
+\index{errorMsgs.cpp@{errorMsgs.cpp}!errorCheck@{errorCheck}}
+\index{errorCheck@{errorCheck}!errorMsgs.cpp@{errorMsgs.cpp}}
+\doxysubsubsection{\texorpdfstring{errorCheck()}{errorCheck()}}
+{\footnotesize\ttfamily void error\+Check (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errorMsgs_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{errorMsgs_8cpp_source}{error\+Msgs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ Invalid\ number"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00012\ \ \ \ \ exit(0);}
+\DoxyCodeLine{00013\ \ \ \}}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+\Hypertarget{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}\label{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273} 
+\index{errorMsgs.cpp@{errorMsgs.cpp}!errorMessage@{errorMessage}}
+\index{errorMessage@{errorMessage}!errorMsgs.cpp@{errorMsgs.cpp}}
+\doxysubsubsection{\texorpdfstring{errorMessage()}{errorMessage()}}
+{\footnotesize\ttfamily void error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errorMsgs_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{errorMsgs_8cpp_source}{error\+Msgs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ Invalid\ choice."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00006\ \ \ exit(0);}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+\Hypertarget{errorMsgs_8cpp_a8f2b6409e84cac8c34a39259bc431c66}\label{errorMsgs_8cpp_a8f2b6409e84cac8c34a39259bc431c66} 
+\index{errorMsgs.cpp@{errorMsgs.cpp}!errorMessageFile@{errorMessageFile}}
+\index{errorMessageFile@{errorMessageFile}!errorMsgs.cpp@{errorMsgs.cpp}}
+\doxysubsubsection{\texorpdfstring{errorMessageFile()}{errorMessageFile()}}
+{\footnotesize\ttfamily void error\+Message\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errorMsgs_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{errorMsgs_8cpp_source}{error\+Msgs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Could\ not\ open\ the\ file."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00018\ \ \ exit(0);}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
+\Hypertarget{errorMsgs_8cpp_a60aa1bc7218c63b2085b1fbdd600d07a}\label{errorMsgs_8cpp_a60aa1bc7218c63b2085b1fbdd600d07a} 
+\index{errorMsgs.cpp@{errorMsgs.cpp}!errorMessageLine@{errorMessageLine}}
+\index{errorMessageLine@{errorMessageLine}!errorMsgs.cpp@{errorMsgs.cpp}}
+\doxysubsubsection{\texorpdfstring{errorMessageLine()}{errorMessageLine()}}
+{\footnotesize\ttfamily void error\+Message\+Line (\begin{DoxyParamCaption}\item[{std\+::string}]{line }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errorMsgs_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{errorMsgs_8cpp_source}{error\+Msgs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Invalid\ data\ format\ in\ line:\ "{}}\ <<\ line\ <<\ std::endl;}
+\DoxyCodeLine{00023\ \ \ exit(0);}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+\Hypertarget{errorMsgs_8cpp_a6c6e25cf62ae8519c97e3005ba8ac4df}\label{errorMsgs_8cpp_a6c6e25cf62ae8519c97e3005ba8ac4df} 
+\index{errorMsgs.cpp@{errorMsgs.cpp}!workingMessage@{workingMessage}}
+\index{workingMessage@{workingMessage}!errorMsgs.cpp@{errorMsgs.cpp}}
+\doxysubsubsection{\texorpdfstring{workingMessage()}{workingMessage()}}
+{\footnotesize\ttfamily void working\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errorMsgs_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{errorMsgs_8cpp_source}{error\+Msgs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}WARNING:\ Function\ not\ done\ yet."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}

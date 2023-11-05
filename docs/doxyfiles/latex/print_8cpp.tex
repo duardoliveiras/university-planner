@@ -1,0 +1,437 @@
+\doxysection{src/inputoutput/print.cpp File Reference}
+\hypertarget{print_8cpp}{}\label{print_8cpp}\index{src/inputoutput/print.cpp@{src/inputoutput/print.cpp}}
+{\ttfamily \#include "{}print.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{print_8cpp_ad50dc285a7621700e0f8cdd5020573a1}{print\+Student}} (const std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})
+\begin{DoxyCompactList}\small\item\em Print student information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{print_8cpp_a2cee223d85dfb0ba0b70f55e4bfa4e65}{print\+Students}} (const std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})
+\begin{DoxyCompactList}\small\item\em Print students information from a vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{print\+Student\+Classes}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it)
+\begin{DoxyCompactList}\small\item\em Print student\textquotesingle{}s classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{print_8cpp_ae601f3a2870ae7d0269063b483554cc4}{print\+Uc\+Classes}} (const std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&uc\+Vector)
+\begin{DoxyCompactList}\small\item\em Print UC classes information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{print_8cpp_a9a8c8626d4ba5841b46c3d7b12cba09a}{print\+Ucs}} (const std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})
+\begin{DoxyCompactList}\small\item\em Print UC information. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{print_8cpp_ac5e5b7576477e6a5cfa6c503515ff9ba}{valide\+Free\+Class}} (std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$\+::iterator it\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Find and return valid free classes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{print_8cpp_aab3d680933f74999770cb2b92a7df47b}{verify\+Class\+Code}} (std\+::string class\+Code, std\+::string uc\+Code, std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}})
+\begin{DoxyCompactList}\small\item\em Verify class code for availability. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{print_8cpp_adf07536631c1d909463a81084fea8965}{print\+Free\+Classes}} (std\+::string uc\+Code, std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}})
+\item 
+void \mbox{\hyperlink{print_8cpp_a30ec1b76b195a3280f8544148b00ad93}{print\+Student\+Schedules}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}})
+\begin{DoxyCompactList}\small\item\em Print available free classes for a specific UC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{print_8cpp_a937b432a194ecffcc9737c9efb811c09}{equilibre}} = 3
+\item 
+int \mbox{\hyperlink{print_8cpp_a1af07dd08355e73b698bb2b8ad0165f6}{max\+\_\+students}} = 6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{print_8cpp_adf07536631c1d909463a81084fea8965}\label{print_8cpp_adf07536631c1d909463a81084fea8965} 
+\index{print.cpp@{print.cpp}!printFreeClasses@{printFreeClasses}}
+\index{printFreeClasses@{printFreeClasses}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{printFreeClasses()}{printFreeClasses()}}
+{\footnotesize\ttfamily void print\+Free\+Classes (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&}]{count }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \textcolor{keyword}{auto}\ it\_count\ =\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}}.find(ucCode);}
+\DoxyCodeLine{00200\ \ \ std::list<std::string>\ free\_classes;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \textcolor{keywordflow}{if}\ (it\_count\ !=\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}}.end())\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ free\_classes\ =\ \mbox{\hyperlink{print_8cpp_ac5e5b7576477e6a5cfa6c503515ff9ba}{valideFreeClass}}(it\_count);}
+\DoxyCodeLine{00204\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ Classes:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{if}\ (!free\_classes.empty())\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\_list\ =\ free\_classes.begin();\ it\_list\ !=\ free\_classes.end();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ it\_list++)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ "{}}\ <<\ *it\_list\ <<\ std::endl;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ No\ classes\ available"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ Uc\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00216\ \ \ \}}
+\DoxyCodeLine{00217\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_ad50dc285a7621700e0f8cdd5020573a1}\label{print_8cpp_ad50dc285a7621700e0f8cdd5020573a1} 
+\index{print.cpp@{print.cpp}!printStudent@{printStudent}}
+\index{printStudent@{printStudent}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{printStudent()}{printStudent()}}
+{\footnotesize\ttfamily void print\+Student (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&}]{students }\end{DoxyParamCaption})}
+
+
+
+Print student information. 
+
+This function prints a tabular representation of student information, including student code, student name, associated UC codes, and class codes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & A map containing student information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Student\ Code\ |\ Student\ Name\ |\ Uc\ Code\ |\ Class\ Code"{}}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&studentPair\ :\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student\ =\ studentPair.second;}
+\DoxyCodeLine{00020\ \ \ \ \ std::cout\ <<\ student.\mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{getStudentCode}}()\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ student.\mbox{\hyperlink{classmyStudent_a9abce63c1936f80b77971197dba05a5b}{getStudentName}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&ucCodes\ =\ student.\mbox{\hyperlink{classmyStudent_adb34f841693541823465241c0e2a9b4f}{getUcCode}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&ucCode\ :\ ucCodes)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ ucCode;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&classCodes\ =\ student.\mbox{\hyperlink{classmyStudent_aea76184e0181ccd018f1481384931fd8}{getClassCode}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&classCode\ :\ classCodes)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ classCode;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00032\ \ \ \}}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_ab1306f5f2cd68466185b37f47535887a}\label{print_8cpp_ab1306f5f2cd68466185b37f47535887a} 
+\index{print.cpp@{print.cpp}!printStudentClasses@{printStudentClasses}}
+\index{printStudentClasses@{printStudentClasses}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{printStudentClasses()}{printStudentClasses()}}
+{\footnotesize\ttfamily void print\+Student\+Classes (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it }\end{DoxyParamCaption})}
+
+
+
+Print student\textquotesingle{}s classes. 
+
+This function clears the screen and displays information about a student\textquotesingle{}s classes, including the student\textquotesingle{}s code, name, and associated class codes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & An iterator pointing to a student in a map. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00078\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nCode:\ "{}}\ <<\ it-\/>first\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}};}
+\DoxyCodeLine{00079\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ it-\/>second.getStudentName()\ <<\ std::endl;}
+\DoxyCodeLine{00080\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Classes:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&classe\ :\ it-\/>second.getClasses())\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ "{}}\ <<\ classe.getUcCode()\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ classe.getClassCode()}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_a2cee223d85dfb0ba0b70f55e4bfa4e65}\label{print_8cpp_a2cee223d85dfb0ba0b70f55e4bfa4e65} 
+\index{print.cpp@{print.cpp}!printStudents@{printStudents}}
+\index{printStudents@{printStudents}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{printStudents()}{printStudents()}}
+{\footnotesize\ttfamily void print\+Students (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&}]{students }\end{DoxyParamCaption})}
+
+
+
+Print students information from a vector. 
+
+This function prints a tabular representation of student information, including student code, student name, associated UC codes, and class codes, from a vector of \doxylink{classmyStudent}{my\+Student} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & A vector containing \doxylink{classmyStudent}{my\+Student} objects. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Student\ Code\ |\ Student\ Name\ |\ Uc\ Code\ |\ Class\ Code\ oii"{}}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.empty())\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Empty\ vector\ ucs"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00050\ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&student\ :\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ std::cout\ <<\ student.getStudentCode()\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ student.getStudentName();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&ucCodes\ =\ student.getUcCode();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&ucCode\ :\ ucCodes)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ ucCode;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&classCodes\ =\ student.getClassCode();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&classCode\ :\ classCodes)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ classCode;}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00065\ \ \ \}}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_a30ec1b76b195a3280f8544148b00ad93}\label{print_8cpp_a30ec1b76b195a3280f8544148b00ad93} 
+\index{print.cpp@{print.cpp}!printStudentSchedules@{printStudentSchedules}}
+\index{printStudentSchedules@{printStudentSchedules}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{printStudentSchedules()}{printStudentSchedules()}}
+{\footnotesize\ttfamily void print\+Student\+Schedules (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{classes }\end{DoxyParamCaption})}
+
+
+
+Print available free classes for a specific UC. 
+
+This function identifies and prints the class codes that are available for enrollment within a given UC, based on class quantity information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The UC code for which to find available classes. \\
+\hline
+{\em count} & A map of class quantity information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00228}{228}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \textcolor{keyword}{auto}\ orderClasses\ =\ \mbox{\hyperlink{dbStudents_8cpp_a52b4fcf58d97edb1d3316f66d6ad77b2}{orderStudentClass}}(it,\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{00231\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nSchedules:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00232\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&pair\ :\ orderClasses)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ std::string\ day\ =\ \mbox{\hyperlink{dbStudents_8cpp_ad47610c535787dd2a5ab88e5e5323328}{weekDayString}}(pair.first);}
+\DoxyCodeLine{00234\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Day:\ "{}}\ <<\ day\ <<\ std::endl;}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&info\ :\ pair.second)\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ std::cout\ <<\ info.code\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ std::cout\ <<\ info.startTime\ <<\ \textcolor{stringliteral}{"{}\ to\ "{}};}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ std::cout\ <<\ info.startTime\ +\ info.duration\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}};}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ std::cout\ <<\ info.type\ <<\ std::endl;}
+\DoxyCodeLine{00240\ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00242\ \ \ \}}
+\DoxyCodeLine{00243\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_ae601f3a2870ae7d0269063b483554cc4}\label{print_8cpp_ae601f3a2870ae7d0269063b483554cc4} 
+\index{print.cpp@{print.cpp}!printUcClasses@{printUcClasses}}
+\index{printUcClasses@{printUcClasses}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{printUcClasses()}{printUcClasses()}}
+{\footnotesize\ttfamily void print\+Uc\+Classes (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{uc\+Vector }\end{DoxyParamCaption})}
+
+
+
+Print UC classes information. 
+
+This function displays information about UC classes, including UC code, class code, type, day, day\+Int, start time, and duration, from a vector of \doxylink{classmyUc}{my\+Uc} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Vector} & A vector of \doxylink{classmyUc}{my\+Uc} objects. \\
+\hline
+{\em classes} & A map of class information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}UcCode\ |\ ClassCode\ |\ Type\ |\ Day\ |\ DayInt\ |\ StartTime\ |\ Duration"{}}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}\ :\ ucVector)\ \{}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{auto}\ infoVec\ =\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}.getClassInfoVec();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structclassInfo}{classInfo}}\ :\ infoVec)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ std::string\ type\ =\ \mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_aafc287d9d1a2ae09a302584ee61c418a}{type}};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ std::string\ day\ =\ \mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_a4a0813c7ce696bee1b32c8538dff4103}{day}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dayInt\ =\ \mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_ac7712653b7a6ab38d657c802cbbb3065}{dayInt}};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ startTime\ =\ \mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_a43011a418afd3aec23c4fa5734d00120}{startTime}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ duration\ =\ \mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_aa6c2a52275e1aca8aa4652b0dc2601a5}{duration}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}.getUcCode()\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}.getClassCode()}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ type\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ day\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ dayInt\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ startTime\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ duration\ <<\ std::endl;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \}}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_a9a8c8626d4ba5841b46c3d7b12cba09a}\label{print_8cpp_a9a8c8626d4ba5841b46c3d7b12cba09a} 
+\index{print.cpp@{print.cpp}!printUcs@{printUcs}}
+\index{printUcs@{printUcs}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{printUcs()}{printUcs()}}
+{\footnotesize\ttfamily void print\+Ucs (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{ucs }\end{DoxyParamCaption})}
+
+
+
+Print UC information. 
+
+This function displays information about UCs, including UC code and class code, from a vector of \doxylink{classmyUc}{my\+Uc} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs} & A vector of \doxylink{classmyUc}{my\+Uc} objects. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00125}{125}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}UcCode\ |\ ClassCode"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ std::cout\ <<\ uc.getUcCode()\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ uc.getClassCode()\ <<\ std::endl;}
+\DoxyCodeLine{00130\ \ \ \}}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_ac5e5b7576477e6a5cfa6c503515ff9ba}\label{print_8cpp_ac5e5b7576477e6a5cfa6c503515ff9ba} 
+\index{print.cpp@{print.cpp}!valideFreeClass@{valideFreeClass}}
+\index{valideFreeClass@{valideFreeClass}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{valideFreeClass()}{valideFreeClass()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::string $>$ valide\+Free\+Class (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$\+::iterator}]{it\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Find and return valid free classes. 
+
+This function calculates and returns a list of valid free classes based on the input class information. Valid free classes have a minimum number of students and can accept new students within certain limits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em it\+\_\+count} & An iterator pointing to class quantity information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of valid free class codes. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{int}\ min\ =\ INT\_MAX;}
+\DoxyCodeLine{00146\ \ \ std::list<std::string>\ free\_classes;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ first\ verify\ the\ class\ with\ the\ minimum\ number\ of\ students}}
+\DoxyCodeLine{00149\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&classe\ :\ it\_count-\/>second)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{if}\ (classe.qtd\ <\ min)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ min\ =\ classe.qtd;}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ then\ verify\ if\ the\ class\ is\ able\ to\ accept\ new\ students\ and\ add\ to\ the}}
+\DoxyCodeLine{00155\ \ \ \textcolor{comment}{//\ list}}
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&classe\ :\ it\_count-\/>second)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(classe.qtd\ +\ 1\ -\/\ min\ >\ \mbox{\hyperlink{print_8cpp_a937b432a194ecffcc9737c9efb811c09}{equilibre}})\ \&\&\ classe.qtd\ +\ 1\ <=\ \mbox{\hyperlink{print_8cpp_a1af07dd08355e73b698bb2b8ad0165f6}{max\_students}})\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ free\_classes.push\_back(classe.classCode);}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \textcolor{comment}{//\ return\ list}}
+\DoxyCodeLine{00163\ \ \ \textcolor{keywordflow}{return}\ free\_classes;}
+\DoxyCodeLine{00164\ \}}
+
+\end{DoxyCode}
+\Hypertarget{print_8cpp_aab3d680933f74999770cb2b92a7df47b}\label{print_8cpp_aab3d680933f74999770cb2b92a7df47b} 
+\index{print.cpp@{print.cpp}!verifyClassCode@{verifyClassCode}}
+\index{verifyClassCode@{verifyClassCode}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{verifyClassCode()}{verifyClassCode()}}
+{\footnotesize\ttfamily bool verify\+Class\+Code (\begin{DoxyParamCaption}\item[{std\+::string}]{class\+Code,  }\item[{std\+::string}]{uc\+Code,  }\item[{std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&}]{count }\end{DoxyParamCaption})}
+
+
+
+Verify class code for availability. 
+
+This function checks whether a given class code in the context of a specific UC code is available and can accept new students. It uses the class quantity information to determine availability.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & The class code to verify. \\
+\hline
+{\em uc\+Code} & The UC code associated with the class. \\
+\hline
+{\em count} & A map of class quantity information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the class code is available, else false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \textcolor{keyword}{auto}\ it\_count\ =\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}}.find(ucCode);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \textcolor{keywordflow}{if}\ (it\_count\ !=\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}}.end())\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ std::list<std::string>\ free\_classes\ =\ \mbox{\hyperlink{print_8cpp_ac5e5b7576477e6a5cfa6c503515ff9ba}{valideFreeClass}}(it\_count);}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\_list\ =\ free\_classes.begin();\ it\_list\ !=\ free\_classes.end();}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ it\_list++)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it\_list\ ==\ classCode)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ in\ find\ uc"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00192\ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00194\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{print_8cpp_a937b432a194ecffcc9737c9efb811c09}\label{print_8cpp_a937b432a194ecffcc9737c9efb811c09} 
+\index{print.cpp@{print.cpp}!equilibre@{equilibre}}
+\index{equilibre@{equilibre}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{equilibre}{equilibre}}
+{\footnotesize\ttfamily int equilibre = 3}
+
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+
+\Hypertarget{print_8cpp_a1af07dd08355e73b698bb2b8ad0165f6}\label{print_8cpp_a1af07dd08355e73b698bb2b8ad0165f6} 
+\index{print.cpp@{print.cpp}!max\_students@{max\_students}}
+\index{max\_students@{max\_students}!print.cpp@{print.cpp}}
+\doxysubsubsection{\texorpdfstring{max\_students}{max\_students}}
+{\footnotesize\ttfamily int max\+\_\+students = 6}
+
+
+
+Definition at line \mbox{\hyperlink{print_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{print_8cpp_source}{print.\+cpp}}.
+

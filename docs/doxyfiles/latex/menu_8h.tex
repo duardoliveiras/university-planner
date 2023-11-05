@@ -1,0 +1,1180 @@
+\doxysection{src/menu.h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{src/menu.h@{src/menu.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include "{}classes/student.\+h"{}}\newline
+{\ttfamily \#include "{}classes/uc.\+h"{}}\newline
+{\ttfamily \#include "{}functions/db\+Students.\+h"{}}\newline
+{\ttfamily \#include "{}functions/db\+Ucs.\+h"{}}\newline
+{\ttfamily \#include "{}inputoutput/keep\+All\+Changes.\+h"{}}\newline
+{\ttfamily \#include "{}inputoutput/print.\+h"{}}\newline
+{\ttfamily \#include "{}inputoutput/read.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a13f57efc209137f0001153b085c9f273}{error\+Message}} ()
+\item 
+void \mbox{\hyperlink{menu_8h_ac70e760ebca98664a6bb61a1f31fa8ce}{error\+Check}} (int n)
+\item 
+void \mbox{\hyperlink{menu_8h_a29054f97793f1bef84cdd857b1fcf4c0}{menu\+Students}} (std\+::string str="{}"{}, int type=0, int filter=0, int order=0)
+\begin{DoxyCompactList}\small\item\em Display student data based on specified criteria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a115fcb3ebee249cdcafc0f8cd2d7e7df}{menu\+Ucs}} (std\+::string str="{}"{}, int type=0, int filter=0, int order=0)
+\begin{DoxyCompactList}\small\item\em Display UC and class data based on specified criteria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_aeb4264cbb7eed4f227579b3871a7d8b2}{menu\+Student\+Code}} (int flag)
+\begin{DoxyCompactList}\small\item\em Enter a registration number and access student-\/related actions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a79cf2ef7a0458e45c864eeb33947a7f9}{menu\+Try\+Again}} (int menu\+Type, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it)
+\begin{DoxyCompactList}\small\item\em Display options to try the current operation again or exit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Display the main menu and handle user options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a816f86af8cd3a87c4506037f75dbb431}{menu\+See\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Display options to view database information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ad3515ad04a7972e28a517fbc66857be4}{menu\+Requests}} ()
+\begin{DoxyCompactList}\small\item\em Display options to change the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a76710f56e738331f5f84b92652316b35}{menu\+Remove}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it)
+\begin{DoxyCompactList}\small\item\em Remove a UC from a student\textquotesingle{}s classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_afae2fe5005156a9c96f4e94b2f9b6de2}{menu\+Add}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it)
+\begin{DoxyCompactList}\small\item\em Add a new class to a student\textquotesingle{}s schedule. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a95f1a20bf321426d445c32583aab52c3}{menu\+Switch}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it)
+\begin{DoxyCompactList}\small\item\em Perform a switch operation for a student\textquotesingle{}s schedule. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a54c622d10d2256f3c398d1b8d088bd86}{menu\+Backup}} ()
+\begin{DoxyCompactList}\small\item\em Display the backup menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ab674aca47c92953ddb25b5e0712cc2d2}{menu\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em Display menu options for handling backup changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ab3a365148e0d5bf3ad5ba9a968fe9bc6}{restore\+Backup}} ()
+\begin{DoxyCompactList}\small\item\em Restore data from a selected backup. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_a28f50efd739551aab5bca1c0c2f76709}{select\+Backup\+Code}} ()
+\item 
+int \mbox{\hyperlink{menu_8h_a47e382d50fb50140058e2c0e01d7810a}{select\+Order\+Students}} ()
+\begin{DoxyCompactList}\small\item\em Prompt the user to select the sorting order for students. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_a6c5bdf49501fa2c9fac46e59f7a8250f}{select\+Order\+Ucs}} ()
+\begin{DoxyCompactList}\small\item\em Prompt the user to select the sorting order for UCs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_abae61189d98043ccf5e6a3ae18219ea3}{select\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Prompt the user to select the viewing type. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_a167b0211002e4bd77e15e8ba681ffaf2}{select\+Filter}} ()
+\begin{DoxyCompactList}\small\item\em Prompt the user to select a filter for data search. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{menu_8h_a899953de7b2e2a33163c7652dff08227}{select\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Prompt the user to enter a code for searching. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{menu_8h_a80d3a948c0479e7b21c55976bb4747e0}{select\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Prompt the user to enter a value for filtering data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a9d5e85d6146dedd0a3e8c4ae717316c7}{save\+Or\+Return}} ()
+\begin{DoxyCompactList}\small\item\em Prompt the user to save changes or return to the previous menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_aae2c382151ef7c9aa913361172b30db6}{save}} ()
+\begin{DoxyCompactList}\small\item\em Save all changes to the student data and exit the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_ac70e760ebca98664a6bb61a1f31fa8ce}\label{menu_8h_ac70e760ebca98664a6bb61a1f31fa8ce} 
+\index{menu.h@{menu.h}!errorCheck@{errorCheck}}
+\index{errorCheck@{errorCheck}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{errorCheck()}{errorCheck()}}
+{\footnotesize\ttfamily void error\+Check (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errorMsgs_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{errorMsgs_8cpp_source}{error\+Msgs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ Invalid\ number"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00012\ \ \ \ \ exit(0);}
+\DoxyCodeLine{00013\ \ \ \}}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a13f57efc209137f0001153b085c9f273}\label{menu_8h_a13f57efc209137f0001153b085c9f273} 
+\index{menu.h@{menu.h}!errorMessage@{errorMessage}}
+\index{errorMessage@{errorMessage}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{errorMessage()}{errorMessage()}}
+{\footnotesize\ttfamily void error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errorMsgs_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{errorMsgs_8cpp_source}{error\+Msgs.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ Invalid\ choice."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00006\ \ \ exit(0);}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}\label{menu_8h_a2a0e843767aeea4f433a28b9c54f573a} 
+\index{menu.h@{menu.h}!menu@{menu}}
+\index{menu@{menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily void menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display the main menu and handle user options. 
+
+This function displays the main menu of the application and handles user input to perform various actions. Users can choose to view the database, change the database, perform a backup, or exit the application. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{menu_8cpp_a268a74b97dc2cb42306fbf179661f3a3}{menuUpdate}}();}
+\DoxyCodeLine{00029\ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Welcome\ to\ our\ app\ :)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00034\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ See\ database\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00035\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Change\ database\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00036\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 3)\ Backup\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00037\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 4)\ Exit\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00038\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00039\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00040\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(flag);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a816f86af8cd3a87c4506037f75dbb431}{menuSeeDatabase}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_ad3515ad04a7972e28a517fbc66857be4}{menuRequests}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a54c622d10d2256f3c398d1b8d088bd86}{menuBackup}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00055\ \ \ \ \ exit(0);}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_afae2fe5005156a9c96f4e94b2f9b6de2}\label{menu_8h_afae2fe5005156a9c96f4e94b2f9b6de2} 
+\index{menu.h@{menu.h}!menuAdd@{menuAdd}}
+\index{menuAdd@{menuAdd}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuAdd()}{menuAdd()}}
+{\footnotesize\ttfamily void menu\+Add (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it }\end{DoxyParamCaption})}
+
+
+
+Add a new class to a student\textquotesingle{}s schedule. 
+
+This function allows the user to add a new class to a student\textquotesingle{}s schedule by providing the UC code and the class code. It validates the student\textquotesingle{}s schedule and class availability.
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & An iterator referring to a specific student. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00292}{292}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(it);}
+\DoxyCodeLine{00294\ \ \ std::string\ ucCode;}
+\DoxyCodeLine{00295\ \ \ std::string\ classCode;}
+\DoxyCodeLine{00296\ \ \ \textcolor{keywordtype}{bool}\ check\_class\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \textcolor{comment}{//\ validates\ if\ the\ student\ is\ enrolled\ in\ more\ than\ 7\ classes}}
+\DoxyCodeLine{00299\ \ \ \textcolor{keywordflow}{if}\ (it-\/>second.valideQtClasses())\ \{}
+\DoxyCodeLine{00300\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00301\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ You\ have\ already\ 7\ classes"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00302\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00303\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00304\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ UC\ code\ to\ see\ all\ classes:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00305\ \ \ \ \ std::cin\ >>\ ucCode;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{dbStudents_8cpp_aa6c5772b52f37383ed87cd66770ad184}{verifyUcCode}}(ucCode,\ it))\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \textcolor{comment}{//\ checks\ if\ ucCode\ exists}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\_uc\ =\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.find(ucCode);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\_uc\ ==\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end())\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}UC\ code\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(1,\ it);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Uc.\ Code:\ "{}}\ <<\ it\_uc-\/>first\ <<\ std::endl;}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{print_8cpp_adf07536631c1d909463a81084fea8965}{printFreeClasses}}(ucCode,\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ class\ code\ to\ add:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ std::cin\ >>\ classCode;}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ check\_class\ =\ \mbox{\hyperlink{print_8cpp_aab3d680933f74999770cb2b92a7df47b}{verifyClassCode}}(classCode,\ ucCode,\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (check\_class)\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ validates\ that\ the\ class\ chosen\ by\ the\ student\ does\ not\ conflict}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ with\ the\ schedule\ of\ other\ classes}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ validate\ =\ \mbox{\hyperlink{dbStudents_8cpp_a189c9d9a133a212b7f097c16534cdae7}{valideNewClass}}(ucCode,\ classCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!validate)\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbStudents_8cpp_a137f60fb23737db183d314aff825a7d9}{addClassStudent}}(ucCode,\ classCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}});}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(it);}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nSucessfully\ added"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a9d5e85d6146dedd0a3e8c4ae717316c7}{saveOrReturn}}();}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Class\ code\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(1,\ it);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ are\ already\ enrolled\ in\ this\ UC"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(1,\ it);}
+\DoxyCodeLine{00354\ \ \ \ \ \}}
+\DoxyCodeLine{00355\ \ \ \}}
+\DoxyCodeLine{00356\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a54c622d10d2256f3c398d1b8d088bd86}\label{menu_8h_a54c622d10d2256f3c398d1b8d088bd86} 
+\index{menu.h@{menu.h}!menuBackup@{menuBackup}}
+\index{menuBackup@{menuBackup}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuBackup()}{menuBackup()}}
+{\footnotesize\ttfamily void menu\+Backup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display the backup menu. 
+
+This function lists all available backups, allows the user to select a backup to view changes, and provides options to navigate between viewing changes and returning to the main menu. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00550}{550}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00551\ \ \ \textcolor{keywordtype}{int}\ flag;}
+\DoxyCodeLine{00552\ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00553\ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a4c6b7c97de3fb5556fe31c92261e77b7}{listAllBackups}}();}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ \ \ \textcolor{keywordtype}{bool}\ valide\ =\ \mbox{\hyperlink{keepAllChanges_8cpp_a107f44c0b7fc6d12c287dfcc850ad6ac}{printAllBackups}}();}
+\DoxyCodeLine{00556\ \ \ \textcolor{keywordflow}{if}\ (valide\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a4b79c42795dce5ebc842c882715c30a8}{printChanges}}(\mbox{\hyperlink{menu_8h_a28f50efd739551aab5bca1c0c2f76709}{selectBackupCode}}(0));}
+\DoxyCodeLine{00558\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_ab674aca47c92953ddb25b5e0712cc2d2}{menuChanges}}();}
+\DoxyCodeLine{00559\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00560\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00561\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ -\/\ Main\ menu\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00562\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00563\ \ \ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keywordflow}{if}\ (flag\ ==\ 1)\ \{}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a2a0e843767aeea4f433a28b9c54f573a}{menu}}();}
+\DoxyCodeLine{00567\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00569\ \ \ \ \ \}}
+\DoxyCodeLine{00570\ \ \ \}}
+\DoxyCodeLine{00571\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_ab674aca47c92953ddb25b5e0712cc2d2}\label{menu_8h_ab674aca47c92953ddb25b5e0712cc2d2} 
+\index{menu.h@{menu.h}!menuChanges@{menuChanges}}
+\index{menuChanges@{menuChanges}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuChanges()}{menuChanges()}}
+{\footnotesize\ttfamily void menu\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display menu options for handling backup changes. 
+
+This function presents menu options for the user to manage backup changes, including returning to the previous menu, going back to the main menu, or restoring data from a selected backup. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00590}{590}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \textcolor{keywordtype}{int}\ flag;}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00595\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00596\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Main\ menu\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00597\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 3)\ Restore\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00598\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00602\ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00603\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00604\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a54c622d10d2256f3c398d1b8d088bd86}{menuBackup}}();}
+\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00606\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00607\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a2a0e843767aeea4f433a28b9c54f573a}{menu}}();}
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00609\ \ \ \textcolor{keywordflow}{case}\ (3):}
+\DoxyCodeLine{00610\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_ab3a365148e0d5bf3ad5ba9a968fe9bc6}{restoreBackup}}();}
+\DoxyCodeLine{00611\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00612\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00613\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00615\ \ \ \}}
+\DoxyCodeLine{00616\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a76710f56e738331f5f84b92652316b35}\label{menu_8h_a76710f56e738331f5f84b92652316b35} 
+\index{menu.h@{menu.h}!menuRemove@{menuRemove}}
+\index{menuRemove@{menuRemove}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuRemove()}{menuRemove()}}
+{\footnotesize\ttfamily void menu\+Remove (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it }\end{DoxyParamCaption})}
+
+
+
+Remove a UC from a student\textquotesingle{}s classes. 
+
+This function allows the user to remove a specific UC from a student\textquotesingle{}s class list. It prompts the user to enter the UC code, removes it from the student\textquotesingle{}s classes, and provides success or error feedback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & An iterator referring to a specific student. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00262}{262}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(it);}
+\DoxyCodeLine{00264\ \ \ std::string\ ucCode;}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00267\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ UC\ code\ to\ remove\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00268\ \ \ std::cin\ >>\ ucCode;}
+\DoxyCodeLine{00269\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \textcolor{keywordtype}{bool}\ remove\ =\ \mbox{\hyperlink{dbStudents_8cpp_a7d80bc02fb68f00c6e19d5b53671a46d}{removeUcStudent}}(ucCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}},\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \textcolor{keywordflow}{if}\ (remove)\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(it);}
+\DoxyCodeLine{00275\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nRemovido\ com\ sucesso"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a9d5e85d6146dedd0a3e8c4ae717316c7}{saveOrReturn}}();}
+\DoxyCodeLine{00277\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00279\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}UC\ code\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00280\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(2,\ it);}
+\DoxyCodeLine{00281\ \ \ \}}
+\DoxyCodeLine{00282\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_ad3515ad04a7972e28a517fbc66857be4}\label{menu_8h_ad3515ad04a7972e28a517fbc66857be4} 
+\index{menu.h@{menu.h}!menuRequests@{menuRequests}}
+\index{menuRequests@{menuRequests}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuRequests()}{menuRequests()}}
+{\footnotesize\ttfamily void menu\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display options to change the database. 
+
+This function presents a menu allowing the user to choose between adding, removing, or switching database entries. It further provides options for selecting specific actions and database entries. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00133}{133}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00137\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Change\ database"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00138\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00139\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Add\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00140\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Remove\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00141\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 3)\ Switch\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00142\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00143\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00144\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordflow}{if}\ (flag\ >\ 4\ ||\ flag\ ==\ 0)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00148\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_aeb4264cbb7eed4f227579b3871a7d8b2}{menuStudentCode}}(flag);}
+\DoxyCodeLine{00150\ \ \ \}}
+\DoxyCodeLine{00151\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a816f86af8cd3a87c4506037f75dbb431}\label{menu_8h_a816f86af8cd3a87c4506037f75dbb431} 
+\index{menu.h@{menu.h}!menuSeeDatabase@{menuSeeDatabase}}
+\index{menuSeeDatabase@{menuSeeDatabase}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuSeeDatabase()}{menuSeeDatabase()}}
+{\footnotesize\ttfamily void menu\+See\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display options to view database information. 
+
+This function presents a menu allowing the user to choose between viewing students, classes and UCs, or their own schedules. It further provides options for selecting display filters, orders, and specific details. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{int}\ type;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00073\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ See\ Students\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00074\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ See\ Classes\ and\ UC's\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00075\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 3)\ See\ My\ Schedules\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00076\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00077\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00078\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(flag);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordflow}{if}\ (flag\ !=\ 3)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ type\ =\ \mbox{\hyperlink{menu_8cpp_abae61189d98043ccf5e6a3ae18219ea3}{selectType}}();}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ std::cout\ <<\ type;}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 1)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ std::string\ code\ =\ \mbox{\hyperlink{menu_8cpp_a899953de7b2e2a33163c7652dff08227}{selectCode}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a7c642dc29d8a2ae27da5487c7636c573}{menuStudents}}(code,\ type);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_ad23e56c9acf7769f701084ebdd70c943}{menuUcs}}(code,\ type);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ filter;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ order;}
+\DoxyCodeLine{00103\ \ \ \ \ std::string\ value;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 2)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ filter\ =\ \mbox{\hyperlink{menu_8cpp_a167b0211002e4bd77e15e8ba681ffaf2}{selectFilter}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ value\ =\ \mbox{\hyperlink{menu_8cpp_a80d3a948c0479e7b21c55976bb4747e0}{selectValue}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ order\ =\ \mbox{\hyperlink{menu_8cpp_a47e382d50fb50140058e2c0e01d7810a}{selectOrderStudents}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a7c642dc29d8a2ae27da5487c7636c573}{menuStudents}}(value,\ type,\ filter,\ order);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ order\ =\ \mbox{\hyperlink{menu_8cpp_a6c5bdf49501fa2c9fac46e59f7a8250f}{selectOrderUcs}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_ad23e56c9acf7769f701084ebdd70c943}{menuUcs}}(value,\ type,\ filter,\ order);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_aeb4264cbb7eed4f227579b3871a7d8b2}{menuStudentCode}}(4);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \}}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_aeb4264cbb7eed4f227579b3871a7d8b2}\label{menu_8h_aeb4264cbb7eed4f227579b3871a7d8b2} 
+\index{menu.h@{menu.h}!menuStudentCode@{menuStudentCode}}
+\index{menuStudentCode@{menuStudentCode}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuStudentCode()}{menuStudentCode()}}
+{\footnotesize\ttfamily void menu\+Student\+Code (\begin{DoxyParamCaption}\item[{int}]{flag }\end{DoxyParamCaption})}
+
+
+
+Enter a registration number and access student-\/related actions. 
+
+This function prompts the user to enter their registration number and provides access to various student-\/related actions, such as adding, removing, switching, or viewing schedules.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & An integer representing the selected action. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ std::string\ registrationNumber;}
+\DoxyCodeLine{00163\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00164\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ your\ registration\ number:\ "{}};}
+\DoxyCodeLine{00165\ \ \ std::cin\ >>\ registrationNumber;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.find(registrationNumber);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.end())\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00171\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ Registration\ number\ not\ found\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00172\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Try\ again\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00175\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Exit\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{int}\ flag2;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ std::cin\ >>\ flag2;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{switch}\ (flag2)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_aeb4264cbb7eed4f227579b3871a7d8b2}{menuStudentCode}}(flag);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_ad3515ad04a7972e28a517fbc66857be4}{menuRequests}}();}
+\DoxyCodeLine{00194\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//\ printStudentClasses(it);}}
+\DoxyCodeLine{00196\ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00199\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_afae2fe5005156a9c96f4e94b2f9b6de2}{menuAdd}}(it);}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00202\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a76710f56e738331f5f84b92652316b35}{menuRemove}}(it);}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00205\ \ \ \textcolor{keywordflow}{case}\ (3):}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a95f1a20bf321426d445c32583aab52c3}{menuSwitch}}(it);}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00208\ \ \ \textcolor{keywordflow}{case}\ (4):}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{print_8cpp_a30ec1b76b195a3280f8544148b00ad93}{printStudentSchedules}}(it,\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00211\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00213\ \ \ \}}
+\DoxyCodeLine{00214\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a29054f97793f1bef84cdd857b1fcf4c0}\label{menu_8h_a29054f97793f1bef84cdd857b1fcf4c0} 
+\index{menu.h@{menu.h}!menuStudents@{menuStudents}}
+\index{menuStudents@{menuStudents}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuStudents()}{menuStudents()}}
+{\footnotesize\ttfamily void menu\+Students (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{int}]{type,  }\item[{int}]{filter,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+
+
+Display student data based on specified criteria. 
+
+This function displays student data based on specified search criteria, filtering, and ordering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & A string containing the search term or code. \\
+\hline
+{\em type} & An integer indicating the search type\+: 1 for one student, 2 for a group, 3 for all students. \\
+\hline
+{\em filter} & An integer specifying the filter type\+: 1 for UC code, 2 for class code (optional). \\
+\hline
+{\em order} & An integer indicating the order type (optional). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00764}{764}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00765\ \ \ std::map<std::string,\ myStudent>\ oneStudent\ =\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}};}
+\DoxyCodeLine{00766\ \ \ std::vector<myStudent>\ data;}
+\DoxyCodeLine{00767\ }
+\DoxyCodeLine{00768\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&studentPair\ :\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})\ \{}
+\DoxyCodeLine{00769\ \ \ \ \ data.push\_back(studentPair.second);}
+\DoxyCodeLine{00770\ \ \ \}}
+\DoxyCodeLine{00771\ }
+\DoxyCodeLine{00772\ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 1)\ \{}
+\DoxyCodeLine{00773\ \ \ \ \ oneStudent\ =\ \mbox{\hyperlink{dbStudents_8cpp_a3c2bd40da9dbc2ddf5d4c4bfe4702009}{selectStudent}}(str,\ oneStudent);}
+\DoxyCodeLine{00774\ \ \ \ \ \mbox{\hyperlink{print_8cpp_ad50dc285a7621700e0f8cdd5020573a1}{printStudent}}(oneStudent);}
+\DoxyCodeLine{00775\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00776\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 2)\ \{}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ data\ =\ \mbox{\hyperlink{dbStudents_8cpp_a0bbca0ea3b4c5b418d82dbe0af19c224}{filterInfoStudent}}(filter,\ str,\ data);}
+\DoxyCodeLine{00778\ \ \ \ \ \}}
+\DoxyCodeLine{00779\ \ \ \ \ data\ =\ \mbox{\hyperlink{dbStudents_8cpp_aa89e90c98a39c95366e685c8a3e4d86b}{orderInfoStudent}}(order,\ data);}
+\DoxyCodeLine{00780\ \ \ \ \ \mbox{\hyperlink{print_8cpp_a2cee223d85dfb0ba0b70f55e4bfa4e65}{printStudents}}(data);}
+\DoxyCodeLine{00781\ \ \ \}}
+\DoxyCodeLine{00782\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a95f1a20bf321426d445c32583aab52c3}\label{menu_8h_a95f1a20bf321426d445c32583aab52c3} 
+\index{menu.h@{menu.h}!menuSwitch@{menuSwitch}}
+\index{menuSwitch@{menuSwitch}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuSwitch()}{menuSwitch()}}
+{\footnotesize\ttfamily void menu\+Switch (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it }\end{DoxyParamCaption})}
+
+
+
+Perform a switch operation for a student\textquotesingle{}s schedule. 
+
+This function allows the user to perform switching operations for a student\textquotesingle{}s schedule, such as switching UCs or classes within a specific UC. It validates the student\textquotesingle{}s current schedule and class availability for the switch.
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & An iterator referring to a specific student. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00367}{367}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00368\ \ \ \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(it);}
+\DoxyCodeLine{00369\ \ \ std::string\ ucCode,\ classCode;}
+\DoxyCodeLine{00370\ \ \ \textcolor{keywordtype}{int}\ flag;}
+\DoxyCodeLine{00371\ \ \ \textcolor{keyword}{auto}\ it\_uc\ =\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.begin();}
+\DoxyCodeLine{00372\ \ \ std::list<std::string>\ free\_classes;}
+\DoxyCodeLine{00373\ \ \ \textcolor{keywordtype}{bool}\ validate\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00374\ \ \ \textcolor{keywordtype}{bool}\ check\_class\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00377\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Switch\ UC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00378\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Switch\ Class\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00379\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00380\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00383\ \ \ \textcolor{keywordflow}{case}\ (1):}
+\DoxyCodeLine{00384\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00385\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ UC\ code\ to\ remove:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00386\ \ \ \ \ std::cin\ >>\ ucCode;}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dbStudents_8cpp_aa6c5772b52f37383ed87cd66770ad184}{verifyUcCode}}(ucCode,\ it))\ \{}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ UC\ code\ to\ add:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ std::cin\ >>\ ucCode;}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ it\_uc\ =\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.find(ucCode);}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\_uc\ !=\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}}.end())\ \{}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{print_8cpp_adf07536631c1d909463a81084fea8965}{printFreeClasses}}(ucCode,\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ class\ code\ to\ add:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ std::cin\ >>\ classCode;}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ check\_class\ =\ \mbox{\hyperlink{print_8cpp_aab3d680933f74999770cb2b92a7df47b}{verifyClassCode}}(classCode,\ ucCode,\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (check\_class)\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ validate\ =\ \mbox{\hyperlink{dbStudents_8cpp_a189c9d9a133a212b7f097c16534cdae7}{valideNewClass}}(ucCode,\ classCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!validate)\ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbStudents_8cpp_a7d80bc02fb68f00c6e19d5b53671a46d}{removeUcStudent}}(ucCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}},\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbStudents_8cpp_a137f60fb23737db183d314aff825a7d9}{addClassStudent}}(ucCode,\ classCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}});}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(it);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nSuccessfully\ switched"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a9d5e85d6146dedd0a3e8c4ae717316c7}{saveOrReturn}}();}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Class\ code\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(3,\ it);}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}UC\ code\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(3,\ it);}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00429\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ are\ not\ enrolled\ in\ this\ UC"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(3,\ it);}
+\DoxyCodeLine{00434\ \ \ \ \ \}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00437\ \ \ \textcolor{keywordflow}{case}\ (2):}
+\DoxyCodeLine{00438\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00439\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ UC\ to\ change\ class:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00440\ \ \ \ \ std::cin\ >>\ ucCode;}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dbStudents_8cpp_aa6c5772b52f37383ed87cd66770ad184}{verifyUcCode}}(ucCode,\ it))\ \{}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \mbox{\hyperlink{print_8cpp_adf07536631c1d909463a81084fea8965}{printFreeClasses}}(ucCode,\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ class\ code\ to\ add:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ std::cin\ >>\ classCode;}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ check\_class\ =\ \mbox{\hyperlink{print_8cpp_aab3d680933f74999770cb2b92a7df47b}{verifyClassCode}}(classCode,\ ucCode,\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (check\_class)\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbStudents_8cpp_a7d80bc02fb68f00c6e19d5b53671a46d}{removeUcStudent}}(ucCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}},\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ validate\ =\ \mbox{\hyperlink{dbStudents_8cpp_a189c9d9a133a212b7f097c16534cdae7}{valideNewClass}}(ucCode,\ classCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!validate)\ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dbStudents_8cpp_a137f60fb23737db183d314aff825a7d9}{addClassStudent}}(ucCode,\ classCode,\ it,\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}});}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{print_8cpp_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(it);}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nSuccessfully\ switched"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a9d5e85d6146dedd0a3e8c4ae717316c7}{saveOrReturn}}();}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Class\ code\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(3,\ it);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00467\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ are\ not\ enrolled\ in\ this\ UC"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(3,\ it);}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00474\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00475\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00477\ \ \ \}}
+\DoxyCodeLine{00478\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a79cf2ef7a0458e45c864eeb33947a7f9}\label{menu_8h_a79cf2ef7a0458e45c864eeb33947a7f9} 
+\index{menu.h@{menu.h}!menuTryAgain@{menuTryAgain}}
+\index{menuTryAgain@{menuTryAgain}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuTryAgain()}{menuTryAgain()}}
+{\footnotesize\ttfamily void menu\+Try\+Again (\begin{DoxyParamCaption}\item[{int}]{menu\+Type,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it }\end{DoxyParamCaption})}
+
+
+
+Display options to try the current operation again or exit. 
+
+This function presents a menu allowing the user to choose between trying the current operation again or exiting the menu for adding, removing, or switching database entries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+Type} & An integer representing the type of operation (1 for add, 2 for remove, 3 for switch). \\
+\hline
+{\em it} & An iterator referring to a specific database entry. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00225}{225}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \textcolor{keywordtype}{int}\ flag;}
+\DoxyCodeLine{00228\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00229\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Try\ again\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00230\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Exit\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00231\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00232\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00235\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00236\ \ \ \ \ system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{if}\ (menuType\ ==\ 1)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_afae2fe5005156a9c96f4e94b2f9b6de2}{menuAdd}}(it);}
+\DoxyCodeLine{00239\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (menuType\ ==\ 2)\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a76710f56e738331f5f84b92652316b35}{menuRemove}}(it);}
+\DoxyCodeLine{00241\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (menuType\ ==\ 3)\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a95f1a20bf321426d445c32583aab52c3}{menuSwitch}}(it);}
+\DoxyCodeLine{00243\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00245\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00246\ \ \ \ \ exit(0);}
+\DoxyCodeLine{00247\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00250\ \ \ \}}
+\DoxyCodeLine{00251\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a115fcb3ebee249cdcafc0f8cd2d7e7df}\label{menu_8h_a115fcb3ebee249cdcafc0f8cd2d7e7df} 
+\index{menu.h@{menu.h}!menuUcs@{menuUcs}}
+\index{menuUcs@{menuUcs}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menuUcs()}{menuUcs()}}
+{\footnotesize\ttfamily void menu\+Ucs (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{int}]{type,  }\item[{int}]{filter,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+
+
+Display UC and class data based on specified criteria. 
+
+This function displays UC and class data based on specified search criteria, filtering, and ordering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & A string containing the search term or code. \\
+\hline
+{\em type} & An integer indicating the search type\+: 1 for one UC and its classes, 2 for a group, 3 for all UCs. \\
+\hline
+{\em filter} & An integer specifying the filter type\+: 1 for UC code, 2 for class code (optional). \\
+\hline
+{\em order} & An integer indicating the order type (optional). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00796}{796}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00797\ \ \ std::vector<myUc>\ data;}
+\DoxyCodeLine{00798\ \ \ std::vector<myUc>\ oneUc;}
+\DoxyCodeLine{00799\ }
+\DoxyCodeLine{00800\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&ucVectorPair\ :\ \mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}})\ \{}
+\DoxyCodeLine{00801\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classmyUc}{myUc}}\ \&ucObj\ :\ ucVectorPair.second)\ \{}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ data.push\_back(ucObj);}
+\DoxyCodeLine{00803\ \ \ \ \ \}}
+\DoxyCodeLine{00804\ \ \ \}}
+\DoxyCodeLine{00805\ }
+\DoxyCodeLine{00806\ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 1)\ \{}
+\DoxyCodeLine{00807\ \ \ \ \ oneUc\ =\ \mbox{\hyperlink{dbUcs_8cpp_ad6e8c3a80f5f296d3b5047ec49645027}{selectUc}}(str,\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{00808\ \ \ \ \ \mbox{\hyperlink{print_8cpp_ae601f3a2870ae7d0269063b483554cc4}{printUcClasses}}(oneUc);}
+\DoxyCodeLine{00809\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00810\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 2)\ \{}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ data\ =\ \mbox{\hyperlink{dbUcs_8cpp_abb89a1fd656c1776571fe5196358e02d}{filterInfoUc}}(filter,\ str,\ data);}
+\DoxyCodeLine{00812\ \ \ \ \ \}}
+\DoxyCodeLine{00813\ \ \ \ \ data\ =\ \mbox{\hyperlink{dbUcs_8cpp_a9ec2fc8067edc0eab7cb9413ec0425ec}{orderInfoUc}}(order,\ data);}
+\DoxyCodeLine{00814\ \ \ \ \ \mbox{\hyperlink{print_8cpp_a9a8c8626d4ba5841b46c3d7b12cba09a}{printUcs}}(data);}
+\DoxyCodeLine{00815\ \ \ \}}
+\DoxyCodeLine{00816\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_ab3a365148e0d5bf3ad5ba9a968fe9bc6}\label{menu_8h_ab3a365148e0d5bf3ad5ba9a968fe9bc6} 
+\index{menu.h@{menu.h}!restoreBackup@{restoreBackup}}
+\index{restoreBackup@{restoreBackup}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{restoreBackup()}{restoreBackup()}}
+{\footnotesize\ttfamily void restore\+Backup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restore data from a selected backup. 
+
+This function allows the user to choose a backup to restore data from and initiates the restoration process. After restoring the data, the user is returned to the main menu. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00579}{579}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00580\ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a249b75801b03223ccb8b0726b949e582}{backupFile}}(\mbox{\hyperlink{menu_8h_a28f50efd739551aab5bca1c0c2f76709}{selectBackupCode}}(1));}
+\DoxyCodeLine{00581\ \ \ \mbox{\hyperlink{menu_8cpp_a2a0e843767aeea4f433a28b9c54f573a}{menu}}();}
+\DoxyCodeLine{00582\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_aae2c382151ef7c9aa913361172b30db6}\label{menu_8h_aae2c382151ef7c9aa913361172b30db6} 
+\index{menu.h@{menu.h}!save@{save}}
+\index{save@{save}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Save all changes to the student data and exit the program. 
+
+This function saves all the changes made to the student data and exits the program. It uses the "{}keep\+All\+Changes"{} function to preserve any modifications, such as adding or switching classes, before exiting. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00518}{518}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00519\ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a7e4e7a4e456388acb38f53150b8f3263}{keepAllChanges}}(\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}},\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}});}
+\DoxyCodeLine{00520\ \ \ exit(0);}
+\DoxyCodeLine{00521\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a9d5e85d6146dedd0a3e8c4ae717316c7}\label{menu_8h_a9d5e85d6146dedd0a3e8c4ae717316c7} 
+\index{menu.h@{menu.h}!saveOrReturn@{saveOrReturn}}
+\index{saveOrReturn@{saveOrReturn}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{saveOrReturn()}{saveOrReturn()}}
+{\footnotesize\ttfamily void save\+Or\+Return (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompt the user to save changes or return to the previous menu. 
+
+This function displays options for the user to either save their changes or return to the previous menu. Users can select to save their actions, which may include adding or switching classes, or choose to return without saving. 
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00487}{487}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00488\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00491\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Save\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00492\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00493\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00494\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00495\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(flag);}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \textcolor{keywordflow}{switch}\ (flag)\ \{}
+\DoxyCodeLine{00500\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00501\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_aae2c382151ef7c9aa913361172b30db6}{save}}();}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00503\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00504\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_ad3515ad04a7972e28a517fbc66857be4}{menuRequests}}();}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00506\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00507\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00509\ \ \ \}}
+\DoxyCodeLine{00510\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a28f50efd739551aab5bca1c0c2f76709}\label{menu_8h_a28f50efd739551aab5bca1c0c2f76709} 
+\index{menu.h@{menu.h}!selectBackupCode@{selectBackupCode}}
+\index{selectBackupCode@{selectBackupCode}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selectBackupCode()}{selectBackupCode()}}
+{\footnotesize\ttfamily int select\+Backup\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{menu_8h_a899953de7b2e2a33163c7652dff08227}\label{menu_8h_a899953de7b2e2a33163c7652dff08227} 
+\index{menu.h@{menu.h}!selectCode@{selectCode}}
+\index{selectCode@{selectCode}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selectCode()}{selectCode()}}
+{\footnotesize\ttfamily std\+::string select\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompt the user to enter a code for searching. 
+
+This function displays a prompt to the user and collects a code to use for searching data.
+
+\begin{DoxyReturn}{Returns}
+A string containing the entered code for searching. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00700}{700}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00701\ \ \ std::string\ str;}
+\DoxyCodeLine{00702\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00703\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Search\ by\ code\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00704\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00705\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ code:\ "{}};}
+\DoxyCodeLine{00706\ \ \ std::cin\ >>\ str;}
+\DoxyCodeLine{00707\ \ \ \textcolor{comment}{//\ errorcheck\ (str)}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00710\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a167b0211002e4bd77e15e8ba681ffaf2}\label{menu_8h_a167b0211002e4bd77e15e8ba681ffaf2} 
+\index{menu.h@{menu.h}!selectFilter@{selectFilter}}
+\index{selectFilter@{selectFilter}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selectFilter()}{selectFilter()}}
+{\footnotesize\ttfamily int select\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompt the user to select a filter for data search. 
+
+This function displays a menu to the user for selecting a filter to apply during data search.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the selected filter\+:
+\begin{DoxyItemize}
+\item 1\+: Filter by UC Code
+\item 2\+: Filter by Class Code 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00721}{721}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00722\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00724\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00725\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Uc\ Code\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00726\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Class\ Code\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00727\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00730\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00731\ \ \ \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(flag);}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00733\ \ \ \textcolor{keywordflow}{return}\ flag;}
+\DoxyCodeLine{00734\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a47e382d50fb50140058e2c0e01d7810a}\label{menu_8h_a47e382d50fb50140058e2c0e01d7810a} 
+\index{menu.h@{menu.h}!selectOrderStudents@{selectOrderStudents}}
+\index{selectOrderStudents@{selectOrderStudents}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selectOrderStudents()}{selectOrderStudents()}}
+{\footnotesize\ttfamily int select\+Order\+Students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompt the user to select the sorting order for students. 
+
+This function displays a menu to allow the user to choose the sorting order for the list of students.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the selected sorting order (1\+: ascending by student code, 2\+: descending by student code, 3\+: ascending by student name, 4\+: descending by student name). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00626}{626}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00627\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00629\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00630\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Sort\ by\ student\ code\ asc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00631\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Sort\ by\ student\ code\ desc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00632\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 3)\ Sort\ by\ student\ name\ asc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00633\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 4)\ Sort\ by\ student\ name\ desc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00634\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00635\ \ \ \textcolor{comment}{//\ add\ more\ order\ like\ -\/\ nº\ ucs,}}
+\DoxyCodeLine{00636\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00637\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \ \ \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(flag);}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \ \ \textcolor{keywordflow}{return}\ flag;}
+\DoxyCodeLine{00642\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a6c5bdf49501fa2c9fac46e59f7a8250f}\label{menu_8h_a6c5bdf49501fa2c9fac46e59f7a8250f} 
+\index{menu.h@{menu.h}!selectOrderUcs@{selectOrderUcs}}
+\index{selectOrderUcs@{selectOrderUcs}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selectOrderUcs()}{selectOrderUcs()}}
+{\footnotesize\ttfamily int select\+Order\+Ucs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompt the user to select the sorting order for UCs. 
+
+This function displays a menu to allow the user to choose the sorting order for the list of UCs.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the selected sorting order (1\+: ascending by UC code, 2\+: descending by UC code, 3\+: ascending by class code, 4\+: descending by class code). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00652}{652}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00653\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00655\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00656\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ Sort\ by\ uc\ code\ asc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00657\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ Sort\ by\ uc\ code\ desc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00658\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 3)\ Sort\ by\ class\ code\ asc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00659\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 4)\ Sort\ by\ class\ code\ desc\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00660\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00661\ \ \ \textcolor{comment}{//\ add\ more\ order\ like\ -\/\ nº\ ucs,}}
+\DoxyCodeLine{00662\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00663\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00664\ }
+\DoxyCodeLine{00665\ \ \ \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(flag);}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00667\ \ \ \textcolor{keywordflow}{return}\ flag;}
+\DoxyCodeLine{00668\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_abae61189d98043ccf5e6a3ae18219ea3}\label{menu_8h_abae61189d98043ccf5e6a3ae18219ea3} 
+\index{menu.h@{menu.h}!selectType@{selectType}}
+\index{selectType@{selectType}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selectType()}{selectType()}}
+{\footnotesize\ttfamily int select\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompt the user to select the viewing type. 
+
+This function displays a menu to allow the user to choose the type of data viewing.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the selected viewing type (1\+: See one, 2\+: See a particular group, 3\+: See all). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00677}{677}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00678\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00681\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 1)\ See\ one\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00682\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 2)\ See\ a\ particular\ group\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00683\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}|\ 3)\ See\ all\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00684\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00686\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Choose\ an\ option:\ "{}};}
+\DoxyCodeLine{00687\ \ \ std::cin\ >>\ flag;}
+\DoxyCodeLine{00688\ \ \ \mbox{\hyperlink{errorMsgs_8cpp_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(flag);}
+\DoxyCodeLine{00689\ }
+\DoxyCodeLine{00690\ \ \ \textcolor{keywordflow}{return}\ flag;}
+\DoxyCodeLine{00691\ \}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8h_a80d3a948c0479e7b21c55976bb4747e0}\label{menu_8h_a80d3a948c0479e7b21c55976bb4747e0} 
+\index{menu.h@{menu.h}!selectValue@{selectValue}}
+\index{selectValue@{selectValue}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selectValue()}{selectValue()}}
+{\footnotesize\ttfamily std\+::string select\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prompt the user to enter a value for filtering data. 
+
+This function prompts the user to enter a value to be used as a filter during data search.
+
+\begin{DoxyReturn}{Returns}
+A string representing the user-\/entered value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8cpp_source_l00743}{743}} of file \mbox{\hyperlink{menu_8cpp_source}{menu.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00744\ \ \ std::string\ str;}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ value:\ "{}};}
+\DoxyCodeLine{00747\ \ \ std::cin\ >>\ str;}
+\DoxyCodeLine{00748\ \ \ \textcolor{comment}{//\ errorcheck\ (str)}}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00751\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{menu.\+h}
+\hypertarget{menu_8h_source}{}\label{menu_8h_source}\index{src/menu.h@{src/menu.h}}
+\mbox{\hyperlink{menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MENU\_H}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MENU\_H}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{student_8h}{classes/student.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uc_8h}{classes/uc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dbStudents_8h}{functions/dbStudents.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dbUcs_8h}{functions/dbUcs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{keepAllChanges_8h}{inputoutput/keepAllChanges.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{print_8h}{inputoutput/print.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{read_8h}{inputoutput/read.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00017}00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00018}00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_ac70e760ebca98664a6bb61a1f31fa8ce}{errorCheck}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00020}00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a29054f97793f1bef84cdd857b1fcf4c0}{menuStudents}}(std::string\ str\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{int}\ type\ =\ 0,\ \textcolor{keywordtype}{int}\ filter\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ order\ =\ 0);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00022}00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a115fcb3ebee249cdcafc0f8cd2d7e7df}{menuUcs}}(std::string\ str\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{int}\ type\ =\ 0,\ \textcolor{keywordtype}{int}\ filter\ =\ 0,\ \textcolor{keywordtype}{int}\ order\ =\ 0);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00024}00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_aeb4264cbb7eed4f227579b3871a7d8b2}{menuStudentCode}}(\textcolor{keywordtype}{int}\ flag);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00025}00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a79cf2ef7a0458e45c864eeb33947a7f9}{menuTryAgain}}(\textcolor{keywordtype}{int}\ menuType,\ std::map<std::string,\ myStudent>::iterator\ \&it);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00027}00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}{menu}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00028}00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a816f86af8cd3a87c4506037f75dbb431}{menuSeeDatabase}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00029}00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_ad3515ad04a7972e28a517fbc66857be4}{menuRequests}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00030}00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a76710f56e738331f5f84b92652316b35}{menuRemove}}(std::map<std::string,\ myStudent>::iterator\ \&it);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00031}00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_afae2fe5005156a9c96f4e94b2f9b6de2}{menuAdd}}(std::map<std::string,\ myStudent>::iterator\ \&it);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00032}00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a95f1a20bf321426d445c32583aab52c3}{menuSwitch}}(std::map<std::string,\ myStudent>::iterator\ \&it);}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00034}00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a54c622d10d2256f3c398d1b8d088bd86}{menuBackup}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00035}00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_ab674aca47c92953ddb25b5e0712cc2d2}{menuChanges}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00036}00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_ab3a365148e0d5bf3ad5ba9a968fe9bc6}{restoreBackup}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00037}\mbox{\hyperlink{menu_8h_a28f50efd739551aab5bca1c0c2f76709}{00037}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{menu_8h_a28f50efd739551aab5bca1c0c2f76709}{selectBackupCode}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00039}00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{menu_8h_a47e382d50fb50140058e2c0e01d7810a}{selectOrderStudents}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00040}00040\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{menu_8h_a6c5bdf49501fa2c9fac46e59f7a8250f}{selectOrderUcs}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00041}00041\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{menu_8h_abae61189d98043ccf5e6a3ae18219ea3}{selectType}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00042}00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{menu_8h_a167b0211002e4bd77e15e8ba681ffaf2}{selectFilter}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00043}00043\ std::string\ \mbox{\hyperlink{menu_8h_a899953de7b2e2a33163c7652dff08227}{selectCode}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00044}00044\ std::string\ \mbox{\hyperlink{menu_8h_a80d3a948c0479e7b21c55976bb4747e0}{selectValue}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00046}00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a9d5e85d6146dedd0a3e8c4ae717316c7}{saveOrReturn}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00047}00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_aae2c382151ef7c9aa913361172b30db6}{save}}();}
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{menu_8h_source_l00049}00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

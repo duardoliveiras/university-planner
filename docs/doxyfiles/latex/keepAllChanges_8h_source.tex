@@ -1,0 +1,35 @@
+\doxysection{keep\+All\+Changes.\+h}
+\hypertarget{keepAllChanges_8h_source}{}\label{keepAllChanges_8h_source}\index{src/inputoutput/keepAllChanges.h@{src/inputoutput/keepAllChanges.h}}
+\mbox{\hyperlink{keepAllChanges_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ KEEPALLCHANGES\_H}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ KEEPALLCHANGES\_H}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{student_8h}{../classes/student.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00016}00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8h_a0d7be745a79352f09a646647b7324c10}{makeBackup}}();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00017}00017\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keepAllChanges_8h_abab6424383f51b14362476ac5d103f80}{orderVector}}(\textcolor{keyword}{const}\ std::string\ \&str1,\ \textcolor{keyword}{const}\ std::string\ \&str2);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00018}00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8h_a7e4e7a4e456388acb38f53150b8f3263}{keepAllChanges}}(std::map<std::string,\ myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}},}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<alter>\ \&\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}});}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00020}00020\ std::string\ \mbox{\hyperlink{keepAllChanges_8h_ac86cfff9eeef3da6791d250e6bf7220e}{getSysdate}}();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00021}00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8h_a4c6b7c97de3fb5556fe31c92261e77b7}{listAllBackups}}();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00022}00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8h_a4b79c42795dce5ebc842c882715c30a8}{printChanges}}(\textcolor{keywordtype}{int}\ cdBkp);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00023}00023\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keepAllChanges_8h_a107f44c0b7fc6d12c287dfcc850ad6ac}{printAllBackups}}();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00024}00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8h_a249b75801b03223ccb8b0726b949e582}{backupFile}}(\textcolor{keywordtype}{int}\ cdBkp);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00026}00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8h_a0d7be745a79352f09a646647b7324c10}{makeBackup}}();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00027}\mbox{\hyperlink{keepAllChanges_8h_a9477815d2fc22e5dff6d48710dc3e85b}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8h_a7e4e7a4e456388acb38f53150b8f3263}{keepAllChanges}}(std::map<std::string,\ myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8h_source_l00029}00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

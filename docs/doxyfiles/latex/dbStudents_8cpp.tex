@@ -1,0 +1,493 @@
+\doxysection{src/functions/db\+Students.cpp File Reference}
+\hypertarget{dbStudents_8cpp}{}\label{dbStudents_8cpp}\index{src/functions/dbStudents.cpp@{src/functions/dbStudents.cpp}}
+{\ttfamily \#include "{}db\+Students.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{dbStudents_8cpp_a0113a10a938f31023bd0fe4cf6a1227a}{compare\+Students\+Code\+Asc}} (const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student1, const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student2)
+\item 
+bool \mbox{\hyperlink{dbStudents_8cpp_a9b89f4810c349f918b6e7de2a60701b4}{compare\+Students\+Code\+Desc}} (const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student1, const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student2)
+\item 
+bool \mbox{\hyperlink{dbStudents_8cpp_a77e4d0aac5c765e3d970313cfd3249db}{compare\+Student\+Name\+Asc}} (const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student1, const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student2)
+\item 
+bool \mbox{\hyperlink{dbStudents_8cpp_ad7cfb06b3f73cecefd220f1a4e4d47fe}{compare\+Student\+Name\+Desc}} (const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student1, const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&student2)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \mbox{\hyperlink{dbStudents_8cpp_a0bbca0ea3b4c5b418d82dbe0af19c224}{filter\+Info\+Student}} (int n, std\+::string str, const std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \mbox{\hyperlink{dbStudents_8cpp_aa89e90c98a39c95366e685c8a3e4d86b}{order\+Info\+Student}} (int n, std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \mbox{\hyperlink{dbStudents_8cpp_a3c2bd40da9dbc2ddf5d4c4bfe4702009}{select\+Student}} (const std\+::string \&str, const std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})
+\item 
+void \mbox{\hyperlink{dbStudents_8cpp_a04280b4a5f98bd778fd31b53e03d34de}{organizer\+Uc\+Student}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it)
+\item 
+bool \mbox{\hyperlink{dbStudents_8cpp_a7d80bc02fb68f00c6e19d5b53671a46d}{remove\+Uc\+Student}} (std\+::string uc\+Code, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it, std\+::stack$<$ \mbox{\hyperlink{structalter}{alter}} $>$ \&\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stack\+Alter}}, std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}})
+\item 
+void \mbox{\hyperlink{dbStudents_8cpp_a137f60fb23737db183d314aff825a7d9}{add\+Class\+Student}} (std\+::string uc\+Code, std\+::string class\+Code, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it, std\+::stack$<$ \mbox{\hyperlink{structalter}{alter}} $>$ \&\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stack\+Alter}})
+\item 
+void \mbox{\hyperlink{dbStudents_8cpp_a9e47809fc7b62e99c0f4906420bb695b}{update\+Count\+Classes}} (std\+::string uc\+Code, std\+::string class\+Code, std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}}, int type)
+\item 
+bool \mbox{\hyperlink{dbStudents_8cpp_a189c9d9a133a212b7f097c16534cdae7}{valide\+New\+Class}} (std\+::string uc\+Code, std\+::string class\+Code, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}})
+\item 
+std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{structclassInfo}{class\+Info}} $>$ $>$ \mbox{\hyperlink{dbStudents_8cpp_a52b4fcf58d97edb1d3316f66d6ad77b2}{order\+Student\+Class}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}})
+\item 
+std\+::string \mbox{\hyperlink{dbStudents_8cpp_ad47610c535787dd2a5ab88e5e5323328}{week\+Day\+String}} (int day)
+\item 
+bool \mbox{\hyperlink{dbStudents_8cpp_aa6c5772b52f37383ed87cd66770ad184}{verify\+Uc\+Code}} (std\+::string uc\+Code, std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&it)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dbStudents_8cpp_a137f60fb23737db183d314aff825a7d9}\label{dbStudents_8cpp_a137f60fb23737db183d314aff825a7d9} 
+\index{dbStudents.cpp@{dbStudents.cpp}!addClassStudent@{addClassStudent}}
+\index{addClassStudent@{addClassStudent}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{addClassStudent()}{addClassStudent()}}
+{\footnotesize\ttfamily void add\+Class\+Student (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{class\+Code,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it,  }\item[{std\+::stack$<$ \mbox{\hyperlink{structalter}{alter}} $>$ \&}]{stack\+Alter }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{classmyUc}{myUc}}\ classe(ucCode,\ classCode);}
+\DoxyCodeLine{00133\ \ \ it-\/>second.getClasses().push\_back(classe);}
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{dbStudents_8cpp_a04280b4a5f98bd778fd31b53e03d34de}{organizerUcStudent}}(it);}
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.push(\{it-\/>second.getStudentCode(),\ it-\/>second.getStudentName(),}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}add"{}},\ ucCode,\ classCode\});}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a77e4d0aac5c765e3d970313cfd3249db}\label{dbStudents_8cpp_a77e4d0aac5c765e3d970313cfd3249db} 
+\index{dbStudents.cpp@{dbStudents.cpp}!compareStudentNameAsc@{compareStudentNameAsc}}
+\index{compareStudentNameAsc@{compareStudentNameAsc}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{compareStudentNameAsc()}{compareStudentNameAsc()}}
+{\footnotesize\ttfamily bool compare\+Student\+Name\+Asc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student1,  }\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordflow}{return}\ student1.\mbox{\hyperlink{classmyStudent_a9abce63c1936f80b77971197dba05a5b}{getStudentName}}()\ <\ student2.\mbox{\hyperlink{classmyStudent_a9abce63c1936f80b77971197dba05a5b}{getStudentName}}();}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_ad7cfb06b3f73cecefd220f1a4e4d47fe}\label{dbStudents_8cpp_ad7cfb06b3f73cecefd220f1a4e4d47fe} 
+\index{dbStudents.cpp@{dbStudents.cpp}!compareStudentNameDesc@{compareStudentNameDesc}}
+\index{compareStudentNameDesc@{compareStudentNameDesc}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{compareStudentNameDesc()}{compareStudentNameDesc()}}
+{\footnotesize\ttfamily bool compare\+Student\+Name\+Desc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student1,  }\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordflow}{return}\ student1.\mbox{\hyperlink{classmyStudent_a9abce63c1936f80b77971197dba05a5b}{getStudentName}}()\ >\ student2.\mbox{\hyperlink{classmyStudent_a9abce63c1936f80b77971197dba05a5b}{getStudentName}}();}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a0113a10a938f31023bd0fe4cf6a1227a}\label{dbStudents_8cpp_a0113a10a938f31023bd0fe4cf6a1227a} 
+\index{dbStudents.cpp@{dbStudents.cpp}!compareStudentsCodeAsc@{compareStudentsCodeAsc}}
+\index{compareStudentsCodeAsc@{compareStudentsCodeAsc}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{compareStudentsCodeAsc()}{compareStudentsCodeAsc()}}
+{\footnotesize\ttfamily bool compare\+Students\+Code\+Asc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student1,  }\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \textcolor{keywordflow}{return}\ student1.\mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{getStudentCode}}()\ <\ student2.\mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{getStudentCode}}();}
+\DoxyCodeLine{00006\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a9b89f4810c349f918b6e7de2a60701b4}\label{dbStudents_8cpp_a9b89f4810c349f918b6e7de2a60701b4} 
+\index{dbStudents.cpp@{dbStudents.cpp}!compareStudentsCodeDesc@{compareStudentsCodeDesc}}
+\index{compareStudentsCodeDesc@{compareStudentsCodeDesc}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{compareStudentsCodeDesc()}{compareStudentsCodeDesc()}}
+{\footnotesize\ttfamily bool compare\+Students\+Code\+Desc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student1,  }\item[{const \mbox{\hyperlink{classmyStudent}{my\+Student}} \&}]{student2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keywordflow}{return}\ student1.\mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{getStudentCode}}()\ >\ student2.\mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{getStudentCode}}();}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a0bbca0ea3b4c5b418d82dbe0af19c224}\label{dbStudents_8cpp_a0bbca0ea3b4c5b418d82dbe0af19c224} 
+\index{dbStudents.cpp@{dbStudents.cpp}!filterInfoStudent@{filterInfoStudent}}
+\index{filterInfoStudent@{filterInfoStudent}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{filterInfoStudent()}{filterInfoStudent()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ filter\+Info\+Student (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{std\+::string}]{str,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&}]{students }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ std::vector<myStudent>\ filterStudents;}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Uc\ Code}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&student\ :\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ student.getClasses())\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uc.getUcCode()\ ==\ str)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ filterStudents.push\_back(student);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Filter\ by\ Class\ Code}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&student\ :\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&uc\ :\ student.getClasses())\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structclassInfo}{classInfo}}\ :\ uc.getClassInfoVec())\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_abeca34e8193178d2592e7682b8a713cf}{code}}\ ==\ str)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ filterStudents.push\_back(student);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ No\ need\ to\ check\ other\ class\ codes\ for\ this\ student}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00052\ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordflow}{return}\ filterStudents;}
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_aa89e90c98a39c95366e685c8a3e4d86b}\label{dbStudents_8cpp_aa89e90c98a39c95366e685c8a3e4d86b} 
+\index{dbStudents.cpp@{dbStudents.cpp}!orderInfoStudent@{orderInfoStudent}}
+\index{orderInfoStudent@{orderInfoStudent}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{orderInfoStudent()}{orderInfoStudent()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ order\+Info\+Student (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&}]{students }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordflow}{switch}\ (n)\ \{}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Student\ Code\ Asc}}
+\DoxyCodeLine{00061\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.begin(),\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.end(),\ \mbox{\hyperlink{dbStudents_8cpp_a0113a10a938f31023bd0fe4cf6a1227a}{compareStudentsCodeAsc}});}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Student\ Code\ Desc}}
+\DoxyCodeLine{00065\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.begin(),\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.end(),\ \mbox{\hyperlink{dbStudents_8cpp_a9b89f4810c349f918b6e7de2a60701b4}{compareStudentsCodeDesc}});}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Student\ Name\ Asc}}
+\DoxyCodeLine{00069\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.begin(),\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.end(),\ \mbox{\hyperlink{dbStudents_8cpp_a77e4d0aac5c765e3d970313cfd3249db}{compareStudentNameAsc}});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ Order\ by\ Student\ Name\ Desc}}
+\DoxyCodeLine{00073\ \ \ \ \ std::sort(\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.begin(),\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.end(),\ \mbox{\hyperlink{dbStudents_8cpp_ad7cfb06b3f73cecefd220f1a4e4d47fe}{compareStudentNameDesc}});}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{errorMsgs_8cpp_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00078\ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}};}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a52b4fcf58d97edb1d3316f66d6ad77b2}\label{dbStudents_8cpp_a52b4fcf58d97edb1d3316f66d6ad77b2} 
+\index{dbStudents.cpp@{dbStudents.cpp}!orderStudentClass@{orderStudentClass}}
+\index{orderStudentClass@{orderStudentClass}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{orderStudentClass()}{orderStudentClass()}}
+{\footnotesize\ttfamily std\+::map$<$ int, std\+::set$<$ \mbox{\hyperlink{structclassInfo}{class\+Info}} $>$ $>$ order\+Student\+Class (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{classes }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00211}{211}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \textcolor{comment}{//\ map\ to\ order\ the\ classes}}
+\DoxyCodeLine{00215\ \ \ \textcolor{comment}{//\ by\ day}}
+\DoxyCodeLine{00216\ \ \ std::map<int,\ std::set<classInfo>>\ orderClasses;}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{comment}{//\ for\ each\ class\ of\ the}}
+\DoxyCodeLine{00219\ \ \ \textcolor{comment}{//\ student,\ search\ in\ the}}
+\DoxyCodeLine{00220\ \ \ \textcolor{comment}{//\ class\ tree\ and\ add\ the}}
+\DoxyCodeLine{00221\ \ \ \textcolor{comment}{//\ classInfo\ in\ the}}
+\DoxyCodeLine{00222\ \ \ \textcolor{comment}{//\ orderClasses\ map}}
+\DoxyCodeLine{00223\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&classe\ :\ it-\/>second.getClasses())\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ std::string\ value\ =\ classe.getUcCode()\ +\ classe.getClassCode();}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//\ student\ one\ class}}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{comment}{//\ pointer,\ verify\ if\ the}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{comment}{//\ class\ exists\ in\ the}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{//\ class\ tree}}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{auto}\ it\_class\ =\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}.find(value);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//\ if\ the\ class\ does\ not}}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//\ exist,\ print\ error}}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\_class\ ==\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}.end())\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ in\ "{}}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}find\ class"{}}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00238\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \textcolor{comment}{//\ if\ exists,\ add\ the}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \textcolor{comment}{//\ classInfo\ in\ the}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \textcolor{comment}{//\ orderClasses\ map}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structclassInfo}{classInfo}}\ :\ it\_class-\/>second.getClassInfoVec())\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_abeca34e8193178d2592e7682b8a713cf}{code}}\ =\ classe.getUcCode();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ orderClasses[\mbox{\hyperlink{structclassInfo}{classInfo}}.\mbox{\hyperlink{structclassInfo_ac7712653b7a6ab38d657c802cbbb3065}{dayInt}}].insert(\mbox{\hyperlink{structclassInfo}{classInfo}});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \}}
+\DoxyCodeLine{00248\ \ \ \textcolor{keywordflow}{return}\ orderClasses;}
+\DoxyCodeLine{00249\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a04280b4a5f98bd778fd31b53e03d34de}\label{dbStudents_8cpp_a04280b4a5f98bd778fd31b53e03d34de} 
+\index{dbStudents.cpp@{dbStudents.cpp}!organizerUcStudent@{organizerUcStudent}}
+\index{organizerUcStudent@{organizerUcStudent}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{organizerUcStudent()}{organizerUcStudent()}}
+{\footnotesize\ttfamily void organizer\+Uc\+Student (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ std::sort(it-\/>second.getClasses().begin(),\ it-\/>second.getClasses().end(),}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmyUc_ad42d391a9ab68c94cb274835027973f2}{myUc::compareUcCode}});}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a7d80bc02fb68f00c6e19d5b53671a46d}\label{dbStudents_8cpp_a7d80bc02fb68f00c6e19d5b53671a46d} 
+\index{dbStudents.cpp@{dbStudents.cpp}!removeUcStudent@{removeUcStudent}}
+\index{removeUcStudent@{removeUcStudent}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{removeUcStudent()}{removeUcStudent()}}
+{\footnotesize\ttfamily bool remove\+Uc\+Student (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it,  }\item[{std\+::stack$<$ \mbox{\hyperlink{structalter}{alter}} $>$ \&}]{stack\+Alter,  }\item[{std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&}]{count }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{bool}\ remove\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ it-\/>second.getClasses().size();\ i++)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>second.getClasses()[i].getUcCode()\ ==\ ucCode)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.push(\{it-\/>second.getStudentCode(),\ it-\/>second.getStudentName(),}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}remove"{}},\ ucCode,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>second.getClasses()[i].getUcCode()\});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ it-\/>second.getClasses().erase(it-\/>second.getClasses().begin()\ +\ i);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ remove\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \mbox{\hyperlink{dbStudents_8cpp_a9e47809fc7b62e99c0f4906420bb695b}{updateCountClasses}}(ucCode,\ it-\/>second.getClasses()[i].getClassCode(),}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}},\ 0);}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordflow}{return}\ remove;}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a3c2bd40da9dbc2ddf5d4c4bfe4702009}\label{dbStudents_8cpp_a3c2bd40da9dbc2ddf5d4c4bfe4702009} 
+\index{dbStudents.cpp@{dbStudents.cpp}!selectStudent@{selectStudent}}
+\index{selectStudent@{selectStudent}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{selectStudent()}{selectStudent()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ select\+Student (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$ \&}]{students }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ std::map<std::string,\ myStudent>\ selectedStudents;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&studentPair\ :\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}})\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&mystudent\ =\ studentPair.second;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ mystudent.\mbox{\hyperlink{classmyStudent_a910f9e8b60f5d5f838368d85fc4e7b4c}{getStudentCode}}())\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ selectedStudents[studentPair.first]\ =\ mystudent;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordflow}{return}\ selectedStudents;}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a9e47809fc7b62e99c0f4906420bb695b}\label{dbStudents_8cpp_a9e47809fc7b62e99c0f4906420bb695b} 
+\index{dbStudents.cpp@{dbStudents.cpp}!updateCountClasses@{updateCountClasses}}
+\index{updateCountClasses@{updateCountClasses}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{updateCountClasses()}{updateCountClasses()}}
+{\footnotesize\ttfamily void update\+Count\+Classes (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{class\+Code,  }\item[{std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{structclassQtd}{class\+Qtd}} $>$ $>$ \&}]{count,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{auto}\ it\_count\ =\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}}.find(ucCode);}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordflow}{if}\ (it\_count\ !=\ \mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}}.end())\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&classe\ :\ it\_count-\/>second)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (classe.classCode\ ==\ classCode)\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 1)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ classe.qtd++;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ classe.qtd-\/-\/;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \}}
+\DoxyCodeLine{00157\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_a189c9d9a133a212b7f097c16534cdae7}\label{dbStudents_8cpp_a189c9d9a133a212b7f097c16534cdae7} 
+\index{dbStudents.cpp@{dbStudents.cpp}!valideNewClass@{valideNewClass}}
+\index{valideNewClass@{valideNewClass}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{valideNewClass()}{valideNewClass()}}
+{\footnotesize\ttfamily bool valide\+New\+Class (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::string}]{class\+Code,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyUc}{my\+Uc}} $>$ \&}]{classes }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{comment}{//\ call\ function\ to\ order\ the}}
+\DoxyCodeLine{00166\ \ \ \textcolor{comment}{//\ classes\ of\ the\ student\ by}}
+\DoxyCodeLine{00167\ \ \ \textcolor{comment}{//\ int\ day}}
+\DoxyCodeLine{00168\ \ \ std::map<int,\ std::set<classInfo>>\ orderClasses\ =}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \mbox{\hyperlink{dbStudents_8cpp_a52b4fcf58d97edb1d3316f66d6ad77b2}{orderStudentClass}}(it,\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ std::string\ value\ =\ ucCode\ +\ classCode;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \textcolor{keyword}{auto}\ it\_class\ =\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}.find(value);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordflow}{if}\ (it\_class\ ==\ \mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}}.end())\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ in\ "{}}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}find\ class"{}}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00180\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ verify\ if\ has\ a\ class\ in}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ the\ same\ day\ and\ time}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&class\_info\ :\ it\_class-\/>second.getClassInfoVec())\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \textcolor{comment}{//\ get\ all\ classes\ of\ the}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{comment}{//\ day\ of\ class}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::set<classInfo>\ \&classesOfDay\ =\ orderClasses[class\_info.dayInt];}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \textcolor{comment}{//\ and\ verify\ if\ the}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{comment}{//\ student\ has\ a\ class\ in}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ same\ time\ aula\ -\/>\ student\ classes}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \textcolor{comment}{//\ class\_info\ -\/>\ class\ to\ add}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&aula\ :\ classesOfDay)\ \{}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aula.type\ !=\ \textcolor{stringliteral}{"{}T"{}}\ \&\&\ class\_info.type\ !=\ \textcolor{stringliteral}{"{}T"{}}\ \&\&}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ class\_info.startTime\ >=\ aula.startTime\ \&\&}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ class\_info.startTime\ <\ aula.startTime\ +\ aula.duration)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Incompatible"{}}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ schedules"{}}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00206\ \ \ \}}
+\DoxyCodeLine{00207\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_aa6c5772b52f37383ed87cd66770ad184}\label{dbStudents_8cpp_aa6c5772b52f37383ed87cd66770ad184} 
+\index{dbStudents.cpp@{dbStudents.cpp}!verifyUcCode@{verifyUcCode}}
+\index{verifyUcCode@{verifyUcCode}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{verifyUcCode()}{verifyUcCode()}}
+{\footnotesize\ttfamily bool verify\+Uc\+Code (\begin{DoxyParamCaption}\item[{std\+::string}]{uc\+Code,  }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{classmyStudent}{my\+Student}} $>$\+::iterator \&}]{it }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00279}{279}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&classe\ :\ it-\/>second.getClasses())\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{if}\ (classe.getUcCode()\ ==\ ucCode)\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00285\ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00289\ \}}
+
+\end{DoxyCode}
+\Hypertarget{dbStudents_8cpp_ad47610c535787dd2a5ab88e5e5323328}\label{dbStudents_8cpp_ad47610c535787dd2a5ab88e5e5323328} 
+\index{dbStudents.cpp@{dbStudents.cpp}!weekDayString@{weekDayString}}
+\index{weekDayString@{weekDayString}!dbStudents.cpp@{dbStudents.cpp}}
+\doxysubsubsection{\texorpdfstring{weekDayString()}{weekDayString()}}
+{\footnotesize\ttfamily std\+::string week\+Day\+String (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dbStudents_8cpp_source_l00251}{251}} of file \mbox{\hyperlink{dbStudents_8cpp_source}{db\+Students.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \textcolor{keywordflow}{switch}\ (day)\ \{}
+\DoxyCodeLine{00253\ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Monday"{}};}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00256\ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Tuesday"{}};}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00259\ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Wednesday"{}};}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00262\ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Thursday"{}};}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00265\ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Friday"{}};}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00268\ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Saturday"{}};}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00271\ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Error\ Day"{}};}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00274\ \ \ \}}
+\DoxyCodeLine{00275\ \}}
+
+\end{DoxyCode}

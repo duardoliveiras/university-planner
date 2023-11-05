@@ -1,0 +1,73 @@
+\doxysection{db\+Students.\+h}
+\hypertarget{dbStudents_8h_source}{}\label{dbStudents_8h_source}\index{src/functions/dbStudents.h@{src/functions/dbStudents.h}}
+\mbox{\hyperlink{dbStudents_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ DBSTUDENTS\_H}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ DBSTUDENTS\_H}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{student_8h}{../classes/student.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00017}00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dbStudents_8h_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00019}00019\ std::map<std::string,\ myStudent>}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00020}00020\ \mbox{\hyperlink{dbStudents_8h_a3c2bd40da9dbc2ddf5d4c4bfe4702009}{selectStudent}}(\textcolor{keyword}{const}\ std::string\ \&str,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<std::string,\ myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00022}00022\ std::vector<myStudent>}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00023}00023\ \mbox{\hyperlink{dbStudents_8h_a0bbca0ea3b4c5b418d82dbe0af19c224}{filterInfoStudent}}(\textcolor{keywordtype}{int}\ n,\ std::string\ str,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00025}00025\ std::vector<myStudent>\ \mbox{\hyperlink{dbStudents_8h_aa89e90c98a39c95366e685c8a3e4d86b}{orderInfoStudent}}(\textcolor{keywordtype}{int}\ n,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00028}00028\ std::vector<myStudent>}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00029}00029\ \mbox{\hyperlink{dbStudents_8h_a0bbca0ea3b4c5b418d82dbe0af19c224}{filterInfoStudent}}(\textcolor{keywordtype}{int}\ n,\ std::string\ str,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00031}00031\ std::vector<myStudent>\ \mbox{\hyperlink{dbStudents_8h_aa89e90c98a39c95366e685c8a3e4d86b}{orderInfoStudent}}(\textcolor{keywordtype}{int}\ n,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00034}00034\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dbStudents_8h_a7d80bc02fb68f00c6e19d5b53671a46d}{removeUcStudent}}(std::string\ ucCode,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ myStudent>::iterator\ \&it,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<alter>\ \&\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}},}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::vector<classQtd>>\ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00039}00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dbStudents_8h_a137f60fb23737db183d314aff825a7d9}{addClassStudent}}(std::string\ ucCode,\ std::string\ classCode,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ myStudent>::iterator\ \&it,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<alter>\ \&\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00043}00043\ std::map<int,\ std::set<classInfo>>}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00044}00044\ \mbox{\hyperlink{dbStudents_8h_a52b4fcf58d97edb1d3316f66d6ad77b2}{orderStudentClass}}(std::map<std::string,\ myStudent>::iterator\ \&it,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ myUc>\ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00046}00046\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dbStudents_8h_a189c9d9a133a212b7f097c16534cdae7}{valideNewClass}}(std::string\ ucCode,\ std::string\ classCode,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ myStudent>::iterator\ \&it,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ myUc>\ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00050}00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dbStudents_8h_a9e47809fc7b62e99c0f4906420bb695b}{updateCountClasses}}(std::string\ ucCode,\ std::string\ classCode,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::vector<classQtd>>\ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}},}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00054}00054\ std::string\ \mbox{\hyperlink{dbStudents_8h_ad47610c535787dd2a5ab88e5e5323328}{weekDayString}}(\textcolor{keywordtype}{int}\ day);}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00055}00055\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dbStudents_8h_aa6c5772b52f37383ed87cd66770ad184}{verifyUcCode}}(std::string\ ucCode,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ myStudent>::iterator\ \&it);}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00058}00058\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dbStudents_8h_a0113a10a938f31023bd0fe4cf6a1227a}{compareStudentsCodeAsc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student1,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student2);}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00060}00060\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dbStudents_8h_a9b89f4810c349f918b6e7de2a60701b4}{compareStudentsCodeDesc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student1,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student2);}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00062}00062\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dbStudents_8h_a77e4d0aac5c765e3d970313cfd3249db}{compareStudentNameAsc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student1,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student2);}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00064}00064\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dbStudents_8h_ad7cfb06b3f73cecefd220f1a4e4d47fe}{compareStudentNameDesc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student1,}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmyStudent}{myStudent}}\ \&student2);}
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{dbStudents_8h_source_l00067}00067\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,344 @@
+\doxysection{my\+Uc Class Reference}
+\hypertarget{classmyUc}{}\label{classmyUc}\index{myUc@{myUc}}
+
+
+{\ttfamily \#include $<$uc.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmyUc_a757e4872e4b11395a47b0b37ad510791}{my\+Uc}} (const std\+::string \&ucC, std\+::string \&classC)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classmyUc}{my\+Uc} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmyUc_a568f342192020afa8d09d74c7c914338}{my\+Uc}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classmyUc}{my\+Uc} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmyUc_ad642ebb11c3e8f53b995a4d3f08aec27}{Set\+Uc}} (std\+::string \&ucC, std\+::string \&classC)
+\begin{DoxyCompactList}\small\item\em Set the UC code for the \doxylink{classmyUc}{my\+Uc} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmyUc_a5160568fdca0bb8cfd3323dadb3569d9}{set\+Uc\+Code}} (std\+::string \&n)
+\begin{DoxyCompactList}\small\item\em Set the UC code for the \doxylink{classmyUc}{my\+Uc} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmyUc_ac94f390705574a06d23f9d79799b597d}{set\+Class\+Code}} (std\+::string \&n)
+\begin{DoxyCompactList}\small\item\em Set the class code for the \doxylink{classmyUc}{my\+Uc} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classmyUc_ac690947120feb5384767e278dd7a795a}{get\+Uc\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Get the UC code for the \doxylink{classmyUc}{my\+Uc} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classmyUc_a06148a4364220f02340b9ff1d7cf2712}{get\+Class\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Get the class code for the \doxylink{classmyUc}{my\+Uc} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structclassInfo}{class\+Info}} $>$ \mbox{\hyperlink{classmyUc_ada86318396024ae0dd1f0987f1863221}{get\+Class\+Info\+Vec}} () const
+\begin{DoxyCompactList}\small\item\em Returns a vector of \doxylink{structclassInfo}{class\+Info} associated with this UC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmyUc_a103135747fc900174a2b836b1fded569}{add\+Class}} (const std\+::string \&code)
+\begin{DoxyCompactList}\small\item\em Adds a class to the \doxylink{structclassInfo}{class\+Info} vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmyUc_ac7fd1334d5efe917e4090acad80503a4}{add\+Class\+Info}} (std\+::string type, std\+::string day, int day\+Int, double start\+Time, double duration)
+\begin{DoxyCompactList}\small\item\em Adds a class to the \doxylink{structclassInfo}{class\+Info} vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmyUc_a206210b4ca860eb48356669ff39d9b6e}{operator$<$}} (const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classmyUc_ad42d391a9ab68c94cb274835027973f2}{compare\+Uc\+Code}} (const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&a, const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&b)
+\begin{DoxyCompactList}\small\item\em Adds a class to the \doxylink{structclassInfo}{class\+Info} vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{uc_8h_source_l00030}{30}} of file \mbox{\hyperlink{uc_8h_source}{uc.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmyUc_a757e4872e4b11395a47b0b37ad510791}\label{classmyUc_a757e4872e4b11395a47b0b37ad510791} 
+\index{myUc@{myUc}!myUc@{myUc}}
+\index{myUc@{myUc}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{myUc()}{myUc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily my\+Uc\+::my\+Uc (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ucC,  }\item[{std\+::string \&}]{classC }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classmyUc}{my\+Uc} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & UC\textquotesingle{}s code. \\
+\hline
+{\em name} & UC\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ ucCode\ =\ ucC;}
+\DoxyCodeLine{00010\ \ \ classCode\ =\ classC;}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_a568f342192020afa8d09d74c7c914338}\label{classmyUc_a568f342192020afa8d09d74c7c914338} 
+\index{myUc@{myUc}!myUc@{myUc}}
+\index{myUc@{myUc}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{myUc()}{myUc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily my\+Uc\+::my\+Uc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{classmyUc}{my\+Uc} class. 
+
+This constructor initializes a \doxylink{classmyUc}{my\+Uc} object with default values for the UC code and class code. 
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ ucCode\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00021\ \ \ classCode\ =\ \{\};}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmyUc_a103135747fc900174a2b836b1fded569}\label{classmyUc_a103135747fc900174a2b836b1fded569} 
+\index{myUc@{myUc}!addClass@{addClass}}
+\index{addClass@{addClass}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{addClass()}{addClass()}}
+{\footnotesize\ttfamily void my\+Uc\+::add\+Class (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{code }\end{DoxyParamCaption})}
+
+
+
+Adds a class to the \doxylink{structclassInfo}{class\+Info} vector. 
+
+This function adds a class to the \doxylink{structclassInfo}{class\+Info} vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The class code to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \{\ classCode\ =\ code;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_ac7fd1334d5efe917e4090acad80503a4}\label{classmyUc_ac7fd1334d5efe917e4090acad80503a4} 
+\index{myUc@{myUc}!addClassInfo@{addClassInfo}}
+\index{addClassInfo@{addClassInfo}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{addClassInfo()}{addClassInfo()}}
+{\footnotesize\ttfamily void my\+Uc\+::add\+Class\+Info (\begin{DoxyParamCaption}\item[{std\+::string}]{type,  }\item[{std\+::string}]{day,  }\item[{int}]{day\+Int,  }\item[{double}]{start\+Time,  }\item[{double}]{duration }\end{DoxyParamCaption})}
+
+
+
+Adds a class to the \doxylink{structclassInfo}{class\+Info} vector. 
+
+This function adds a class to the \doxylink{structclassInfo}{class\+Info} vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The class code to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{structclassInfo}{classInfo}}\ newClassInfo;}
+\DoxyCodeLine{00087\ \ \ newClassInfo.\mbox{\hyperlink{structclassInfo_aafc287d9d1a2ae09a302584ee61c418a}{type}}\ =\ type;}
+\DoxyCodeLine{00088\ \ \ newClassInfo.\mbox{\hyperlink{structclassInfo_a4a0813c7ce696bee1b32c8538dff4103}{day}}\ =\ day;}
+\DoxyCodeLine{00089\ \ \ newClassInfo.\mbox{\hyperlink{structclassInfo_ac7712653b7a6ab38d657c802cbbb3065}{dayInt}}\ =\ dayInt;}
+\DoxyCodeLine{00090\ \ \ newClassInfo.\mbox{\hyperlink{structclassInfo_a43011a418afd3aec23c4fa5734d00120}{startTime}}\ =\ startTime;}
+\DoxyCodeLine{00091\ \ \ newClassInfo.\mbox{\hyperlink{structclassInfo_aa6c2a52275e1aca8aa4652b0dc2601a5}{duration}}\ =\ duration;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ classInfoVec.push\_back(newClassInfo);}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_ad42d391a9ab68c94cb274835027973f2}\label{classmyUc_ad42d391a9ab68c94cb274835027973f2} 
+\index{myUc@{myUc}!compareUcCode@{compareUcCode}}
+\index{compareUcCode@{compareUcCode}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{compareUcCode()}{compareUcCode()}}
+{\footnotesize\ttfamily bool my\+Uc\+::compare\+Uc\+Code (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{a,  }\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds a class to the \doxylink{structclassInfo}{class\+Info} vector. 
+
+This function adds a class to the \doxylink{structclassInfo}{class\+Info} vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The class code to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordflow}{return}\ a.ucCode\ <\ b.ucCode;}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_a06148a4364220f02340b9ff1d7cf2712}\label{classmyUc_a06148a4364220f02340b9ff1d7cf2712} 
+\index{myUc@{myUc}!getClassCode@{getClassCode}}
+\index{getClassCode@{getClassCode}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{getClassCode()}{getClassCode()}}
+{\footnotesize\ttfamily std\+::string my\+Uc\+::get\+Class\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the class code for the \doxylink{classmyUc}{my\+Uc} object. 
+
+\begin{DoxyReturn}{Returns}
+The class code. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{\ \textcolor{keywordflow}{return}\ classCode;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_ada86318396024ae0dd1f0987f1863221}\label{classmyUc_ada86318396024ae0dd1f0987f1863221} 
+\index{myUc@{myUc}!getClassInfoVec@{getClassInfoVec}}
+\index{getClassInfoVec@{getClassInfoVec}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{getClassInfoVec()}{getClassInfoVec()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structclassInfo}{class\+Info}} $>$ my\+Uc\+::get\+Class\+Info\+Vec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of \doxylink{structclassInfo}{class\+Info} associated with this UC. 
+
+This function iterates through the \doxylink{structclassInfo}{class\+Info} (classes) associated with this UC and collects the \doxylink{structclassInfo}{class\+Info} of each class in the \doxylink{structclassInfo}{class\+Info} vector.
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{structclassInfo}{class\+Info} containing the \doxylink{structclassInfo}{class\+Info} associated with the UC. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \{\ \textcolor{keywordflow}{return}\ classInfoVec;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_ac690947120feb5384767e278dd7a795a}\label{classmyUc_ac690947120feb5384767e278dd7a795a} 
+\index{myUc@{myUc}!getUcCode@{getUcCode}}
+\index{getUcCode@{getUcCode}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{getUcCode()}{getUcCode()}}
+{\footnotesize\ttfamily std\+::string my\+Uc\+::get\+Uc\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the UC code for the \doxylink{classmyUc}{my\+Uc} object. 
+
+\begin{DoxyReturn}{Returns}
+The UC code. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \{\ \textcolor{keywordflow}{return}\ ucCode;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_a206210b4ca860eb48356669ff39d9b6e}\label{classmyUc_a206210b4ca860eb48356669ff39d9b6e} 
+\index{myUc@{myUc}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool my\+Uc\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmyUc}{my\+Uc}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classmyUc_ac94f390705574a06d23f9d79799b597d}\label{classmyUc_ac94f390705574a06d23f9d79799b597d} 
+\index{myUc@{myUc}!setClassCode@{setClassCode}}
+\index{setClassCode@{setClassCode}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{setClassCode()}{setClassCode()}}
+{\footnotesize\ttfamily void my\+Uc\+::set\+Class\+Code (\begin{DoxyParamCaption}\item[{std\+::string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Set the class code for the \doxylink{classmyUc}{my\+Uc} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The new class code to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{\ classCode\ =\ n;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_ad642ebb11c3e8f53b995a4d3f08aec27}\label{classmyUc_ad642ebb11c3e8f53b995a4d3f08aec27} 
+\index{myUc@{myUc}!SetUc@{SetUc}}
+\index{SetUc@{SetUc}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{SetUc()}{SetUc()}}
+{\footnotesize\ttfamily void my\+Uc\+::\+Set\+Uc (\begin{DoxyParamCaption}\item[{std\+::string \&}]{ucC,  }\item[{std\+::string \&}]{classC }\end{DoxyParamCaption})}
+
+
+
+Set the UC code for the \doxylink{classmyUc}{my\+Uc} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The new UC code to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ ucCode\ =\ ucC;}
+\DoxyCodeLine{00030\ \ \ classCode\ =\ classC;}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmyUc_a5160568fdca0bb8cfd3323dadb3569d9}\label{classmyUc_a5160568fdca0bb8cfd3323dadb3569d9} 
+\index{myUc@{myUc}!setUcCode@{setUcCode}}
+\index{setUcCode@{setUcCode}!myUc@{myUc}}
+\doxysubsubsection{\texorpdfstring{setUcCode()}{setUcCode()}}
+{\footnotesize\ttfamily void my\+Uc\+::set\+Uc\+Code (\begin{DoxyParamCaption}\item[{std\+::string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Set the UC code for the \doxylink{classmyUc}{my\+Uc} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The new UC code to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{uc_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{uc_8cpp_source}{uc.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{\ ucCode\ =\ n;\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/classes/\mbox{\hyperlink{uc_8h}{uc.\+h}}\item 
+src/classes/\mbox{\hyperlink{uc_8cpp}{uc.\+cpp}}\end{DoxyCompactItemize}

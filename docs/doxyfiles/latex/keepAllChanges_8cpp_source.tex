@@ -1,0 +1,178 @@
+\doxysection{keep\+All\+Changes.\+cpp}
+\hypertarget{keepAllChanges_8cpp_source}{}\label{keepAllChanges_8cpp_source}\index{src/inputoutput/keepAllChanges.cpp@{src/inputoutput/keepAllChanges.cpp}}
+\mbox{\hyperlink{keepAllChanges_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{keepAllChanges_8h}{keepAllChanges.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00004}\mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{00004}}\ std::vector<std::string>\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}};}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00012}\mbox{\hyperlink{keepAllChanges_8cpp_abab6424383f51b14362476ac5d103f80}{00012}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keepAllChanges_8cpp_abab6424383f51b14362476ac5d103f80}{orderVector}}(\textcolor{keyword}{const}\ std::string\ \&str1,\ \textcolor{keyword}{const}\ std::string\ \&str2)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00013}00013\ \ \ \textcolor{keywordflow}{return}\ str1\ >\ str2;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00020}\mbox{\hyperlink{keepAllChanges_8cpp_ac86cfff9eeef3da6791d250e6bf7220e}{00020}}\ std::string\ \mbox{\hyperlink{keepAllChanges_8cpp_ac86cfff9eeef3da6791d250e6bf7220e}{getSysdate}}()\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00022}00022\ \ \ std::time\_t\ date\ =\ std::time(0);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00023}00023\ \ \ std::tm\ *now\ =\ std::localtime(\&date);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00025}00025\ \ \ \textcolor{keywordflow}{return}\ std::to\_string(now-\/>tm\_year\ +\ 1900)\ +\ \textcolor{stringliteral}{"{}-\/"{}}\ +}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ std::to\_string(now-\/>tm\_mon\ +\ 1)\ +\ \textcolor{stringliteral}{"{}-\/"{}}\ +\ std::to\_string(now-\/>tm\_mday)\ +}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/"{}}\ +\ std::to\_string(now-\/>tm\_hour)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ std::to\_string(now-\/>tm\_min)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(now-\/>tm\_sec);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00035}\mbox{\hyperlink{keepAllChanges_8cpp_a0d7be745a79352f09a646647b7324c10}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8cpp_a0d7be745a79352f09a646647b7324c10}{makeBackup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00036}00036\ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}schedule/students\_classes.csv"{}},\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00038}00038\ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00039}00039\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00040}00040\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00042}00042\ \ \ std::string\ dateString\ =\ \mbox{\hyperlink{keepAllChanges_8cpp_ac86cfff9eeef3da6791d250e6bf7220e}{getSysdate}}();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00044}00044\ \ \ std::string\ backupName\ =}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00045}00045\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}schedule/backup/students\_classes-\/"{}}\ +\ dateString\ +\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00046}00046\ \ \ std::ofstream\ backup(backupName,\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00048}00048\ \ \ \textcolor{keywordflow}{if}\ (!backup)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00049}00049\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ to\ create\ a\ backup\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00051}00051\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00053}00053\ \ \ backup\ <<\ file.rdbuf();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00054}00054\ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00055}00055\ \ \ backup.close();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00064}\mbox{\hyperlink{keepAllChanges_8cpp_a7e4e7a4e456388acb38f53150b8f3263}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8cpp_a7e4e7a4e456388acb38f53150b8f3263}{keepAllChanges}}(std::map<std::string,\ myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}},}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<alter>\ \&\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}})\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00066}00066\ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a0d7be745a79352f09a646647b7324c10}{makeBackup}}();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00067}00067\ \ \ std::ofstream\ \mbox{\hyperlink{structalter}{alter}}(\textcolor{stringliteral}{"{}schedule/alter/students\_classes-\/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_ac86cfff9eeef3da6791d250e6bf7220e}{getSysdate}}()\ +}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}.csv"{}},}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ios::app);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00070}00070\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{structalter}{alter}}.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00071}00071\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00072}00072\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00074}00074\ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{structalter}{alter}}\ <<\ \textcolor{stringliteral}{"{}The\ student:\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().\mbox{\hyperlink{structalter_ad17141f8e6730368007cb8dc67147cb6}{studentCode}}\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().studentName\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().type}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ UC:\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().ucCode}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ Class:\ "{}}\ <<\ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.top().classCode\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{menu_8cpp_a5f5e2d953fb6588ae0bace0b175aac0a}{stackAlter}}.pop();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00080}00080\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00082}00082\ \ \ std::ofstream\ file(\textcolor{stringliteral}{"{}schedule/students\_classes.csv"{}});}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00084}00084\ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00085}00085\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00086}00086\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00088}00088\ \ \ \textcolor{comment}{//\ Header}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00089}00089\ \ \ file\ <<\ \textcolor{stringliteral}{"{}StudentCode,StudentName,UcCode,ClassCode"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00091}00091\ \ \ \textcolor{comment}{//\ Write\ the\ tree\ in\ the\ file}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00092}00092\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.begin();\ it\ !=\ \mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}}.end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ classe\ :\ it-\/>second.getClasses())\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00094}00094\ \ \ \ \ \ \ file\ <<\ it-\/>second.getStudentCode()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ it-\/>second.getStudentName()}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ classe.getUcCode()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ classe.getClassCode()}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00098}00098\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00107}\mbox{\hyperlink{keepAllChanges_8cpp_a4c6b7c97de3fb5556fe31c92261e77b7}{00107}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8cpp_a4c6b7c97de3fb5556fe31c92261e77b7}{listAllBackups}}()\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.size()\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00109}00109\ \ \ \ \ std::string\ way\ =\ \textcolor{stringliteral}{"{}schedule/backup"{}};}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&in\ :\ std::filesystem::directory\_iterator(way))\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00111}00111\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::is\_regular\_file(in))\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.push\_back(in.path().filename().string());}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00113}00113\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00115}00115\ \ \ \ \ std::sort(\mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.begin(),\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.end(),\ \mbox{\hyperlink{keepAllChanges_8cpp_abab6424383f51b14362476ac5d103f80}{orderVector}});}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00116}00116\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00122}\mbox{\hyperlink{keepAllChanges_8cpp_a107f44c0b7fc6d12c287dfcc850ad6ac}{00122}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{keepAllChanges_8cpp_a107f44c0b7fc6d12c287dfcc850ad6ac}{printAllBackups}}()\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00123}00123\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.size()\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00124}00124\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Backups:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00126}00126\ \ \ \ \ \ \ std::cout\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}.at(i)\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00129}00129\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00130}00130\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ backups"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00132}00132\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00144}\mbox{\hyperlink{keepAllChanges_8cpp_a4b79c42795dce5ebc842c882715c30a8}{00144}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8cpp_a4b79c42795dce5ebc842c882715c30a8}{printChanges}}(\textcolor{keywordtype}{int}\ cdBkp)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00145}00145\ \ \ \textcolor{keywordtype}{unsigned}\ size\ =\ cdBkp;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00146}00146\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <=\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00147}00147\ \ \ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}schedule/alter/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[i],\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00150}00150\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00153}00153\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00156}00156\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ "{}}\ <<\ line\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00158}00158\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00159}00159\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00161}00161\ \ \ \textcolor{comment}{//\ //\ Write\ the\ tree\ in\ the\ file}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00162}00162\ \ \ \textcolor{comment}{//\ for\ (auto\ it\ =\ students.begin();\ it\ !=\ students.end();\ it++)\ \{}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00163}00163\ \ \ \textcolor{comment}{//\ \ \ //\ for\ (auto\ classe\ :\ it-\/>second.getClasses())\ \{}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00164}00164\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ //\ std::cout<<\ it-\/>second.getCode()\ <<\ "{},"{}\ <<\ it-\/>second.getName()}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00165}00165\ \ \ \textcolor{comment}{//\ \ \ <<}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00166}00166\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ "{},"{}}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00167}00167\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ //\ <<\ classe.getUcCode()\ <<\ "{},"{}\ <<\ classe.getClassCode()\ <<}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00168}00168\ \ \ \textcolor{comment}{//\ \ \ std::endl;}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00169}00169\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ file\ <<\ it-\/>second.getStudentCode()\ <<\ "{},"{}\ <<}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00170}00170\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ it-\/>second.getStudentName()\ <<\ "{},"{}}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00171}00171\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ \ \ \ \ \ <<\ classe.getUcCode()\ <<\ "{},"{}\ <<\ classe.getClassCode()\ <<}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00172}00172\ \ \ \textcolor{comment}{//\ \ \ //\ \ \ \ \ \ \ \ std::endl;}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00173}00173\ \ \ \textcolor{comment}{//\ \ \ //\ \}}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00174}00174\ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00186}\mbox{\hyperlink{keepAllChanges_8cpp_a249b75801b03223ccb8b0726b949e582}{00186}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{keepAllChanges_8cpp_a249b75801b03223ccb8b0726b949e582}{backupFile}}(\textcolor{keywordtype}{int}\ cdBkp)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00188}00188\ \ \ std::string\ path\ =\ \textcolor{stringliteral}{"{}schedule/backup/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[cdBkp];}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00190}00190\ \ \ std::ifstream\ backup(path,\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00192}00192\ \ \ \textcolor{keywordflow}{if}\ (!backup)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00193}00193\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00194}00194\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00196}00196\ \ \ std::ofstream\ file(\textcolor{stringliteral}{"{}schedule/students\_classes.csv"{}},\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00198}00198\ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00199}00199\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00200}00200\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00202}00202\ \ \ file\ <<\ backup.rdbuf();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00203}00203\ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00204}00204\ \ \ backup.close();}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00206}00206\ \ \ \textcolor{keywordtype}{unsigned}\ size\ =\ cdBkp;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00207}00207\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <=\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::exists(\textcolor{stringliteral}{"{}schedule/alter/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[cdBkp]))\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00209}00209\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ std::filesystem::remove(\textcolor{stringliteral}{"{}schedule/alter/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[i]);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ std::filesystem::remove(\textcolor{stringliteral}{"{}schedule/backup/"{}}\ +\ \mbox{\hyperlink{keepAllChanges_8cpp_a3b2cd2c5dafc2029b2396f49211cf166}{backups}}[i]);}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00212}00212\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::filesystem::filesystem\_error\ \&e)\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ to\ remove\ the\ file"{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00214}00214\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00215}00215\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00216}00216\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}The\ file\ of\ changes\ not\ exist"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00217}00217\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00218}00218\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keepAllChanges_8cpp_source_l00219}00219\ \}}
+
+\end{DoxyCode}

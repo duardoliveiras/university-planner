@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['operator_3c_0',['operator&lt;',['../structclassInfo.html#a09c4efd32ed423405daff313eb228c6b',1,'classInfo::operator&lt;()'],['../structclassQtd.html#a5d999611c1a9a5a78d4811d78b46d407',1,'classQtd::operator&lt;()'],['../classmyUc.html#a206210b4ca860eb48356669ff39d9b6e',1,'myUc::operator&lt;()']]],
+  ['orderinfostudent_1',['orderinfostudent',['../dbStudents_8cpp.html#aa89e90c98a39c95366e685c8a3e4d86b',1,'orderInfoStudent(int n, std::vector&lt; myStudent &gt; &amp;students):&#160;dbStudents.cpp'],['../dbStudents_8h.html#aa89e90c98a39c95366e685c8a3e4d86b',1,'orderInfoStudent(int n, std::vector&lt; myStudent &gt; &amp;students):&#160;dbStudents.cpp']]],
+  ['orderinfouc_2',['orderinfouc',['../dbUcs_8cpp.html#a9ec2fc8067edc0eab7cb9413ec0425ec',1,'orderInfoUc(int n, std::vector&lt; myUc &gt; &amp;ucs):&#160;dbUcs.cpp'],['../dbUcs_8h.html#a9ec2fc8067edc0eab7cb9413ec0425ec',1,'orderInfoUc(int n, std::vector&lt; myUc &gt; &amp;ucs):&#160;dbUcs.cpp']]],
+  ['orderstudentclass_3',['orderstudentclass',['../dbStudents_8cpp.html#a52b4fcf58d97edb1d3316f66d6ad77b2',1,'orderStudentClass(std::map&lt; std::string, myStudent &gt;::iterator &amp;it, std::map&lt; std::string, myUc &gt; &amp;classes):&#160;dbStudents.cpp'],['../dbStudents_8h.html#a52b4fcf58d97edb1d3316f66d6ad77b2',1,'orderStudentClass(std::map&lt; std::string, myStudent &gt;::iterator &amp;it, std::map&lt; std::string, myUc &gt; &amp;classes):&#160;dbStudents.cpp']]],
+  ['ordervector_4',['ordervector',['../keepAllChanges_8cpp.html#abab6424383f51b14362476ac5d103f80',1,'orderVector(const std::string &amp;str1, const std::string &amp;str2):&#160;keepAllChanges.cpp'],['../keepAllChanges_8h.html#abab6424383f51b14362476ac5d103f80',1,'orderVector(const std::string &amp;str1, const std::string &amp;str2):&#160;keepAllChanges.cpp']]],
+  ['organizerucstudent_5',['organizerUcStudent',['../dbStudents_8cpp.html#a04280b4a5f98bd778fd31b53e03d34de',1,'dbStudents.cpp']]]
+];

@@ -1,0 +1,41 @@
+\doxysection{print.\+h}
+\hypertarget{print_8h_source}{}\label{print_8h_source}\index{src/inputoutput/print.h@{src/inputoutput/print.h}}
+\mbox{\hyperlink{print_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ PRINT\_H}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ PRINT\_H}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{student_8h}{../classes/student.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dbStudents_8h}{../functions/dbStudents.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00016}00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_a6c6e25cf62ae8519c97e3005ba8ac4df}{workingMessage}}();}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00017}00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_a13f57efc209137f0001153b085c9f273}{errorMessage}}();}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00019}00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_a2cee223d85dfb0ba0b70f55e4bfa4e65}{printStudents}}(\textcolor{keyword}{const}\ std::vector<myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00020}00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_ad50dc285a7621700e0f8cdd5020573a1}{printStudent}}(\textcolor{keyword}{const}\ std::map<std::string,\ myStudent>\ \&\mbox{\hyperlink{menu_8cpp_aebf917ceeecc043cb38f38cde0cab8f4}{students}});}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00022}00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_ae601f3a2870ae7d0269063b483554cc4}{printUcClasses}}(\textcolor{keyword}{const}\ std::vector<myUc>\ \&ucVector);}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00023}00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_a9a8c8626d4ba5841b46c3d7b12cba09a}{printUcs}}(\textcolor{keyword}{const}\ std::vector<myUc>\ \&\mbox{\hyperlink{menu_8cpp_abd3260a7a801fa38565162171dc12417}{ucs}});}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00025}00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_a30ec1b76b195a3280f8544148b00ad93}{printStudentSchedules}}(std::map<std::string,\ myStudent>::iterator\ \&it,}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ myUc>\ \&\mbox{\hyperlink{menu_8cpp_a27f9eee2ad8489315e5a724800d709a6}{classes}});}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00027}00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_ab1306f5f2cd68466185b37f47535887a}{printStudentClasses}}(std::map<std::string,\ myStudent>::iterator\ \&it);}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00028}00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{print_8h_adf07536631c1d909463a81084fea8965}{printFreeClasses}}(std::string\ ucCode,}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::vector<classQtd>>\ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00030}00030\ std::list<std::string>\ \mbox{\hyperlink{print_8h_ac5e5b7576477e6a5cfa6c503515ff9ba}{valideFreeClass}}(}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00031}00031\ \ \ \ \ std::map<std::string,\ std::vector<classQtd>>::iterator\ it\_count);}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00032}00032\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{print_8h_aab3d680933f74999770cb2b92a7df47b}{verifyClassCode}}(std::string\ classCode,\ std::string\ ucCode,}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::vector<classQtd>>\ \&\mbox{\hyperlink{menu_8cpp_a4671b2d72a3f2be2c898820dc28bc11f}{count}});}
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{print_8h_source_l00035}00035\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
