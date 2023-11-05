@@ -1,5 +1,15 @@
 #include "read.h"
 
+
+/**
+ * @brief Read and process student and class information from a CSV file.
+ *
+ * This function reads and processes student and class information from a CSV file,
+ * populating a map of students and updating class quantity information based on the data.
+ *
+ * @param count A map of class quantity information.
+ * @return A map of students with associated classes.
+ */
 std::map<std::string, myStudent>
 readStudents(std::map<std::string, std::vector<classQtd>> &count) {
   std::string line;
@@ -70,6 +80,16 @@ readStudents(std::map<std::string, std::vector<classQtd>> &count) {
   return students;
 }
 
+/**
+ * @brief Read and process UC and class information from a CSV file.
+ *
+ * This function reads and processes UC and class information from a CSV file,
+ * populating a map of UCs and their associated classes, as well as updating class quantity information
+ * based on the data.
+ *
+ * @param count A map of class quantity information.
+ * @return A map of UCs and their associated classes.
+ */
 std::map<std::string, std::vector<myUc>>
 readUcs(std::map<std::string, std::vector<classQtd>> &count) {
   std::string line;
@@ -148,6 +168,14 @@ readUcs(std::map<std::string, std::vector<classQtd>> &count) {
   return ucClasses;
 }
 
+/**
+ * @brief Read and process class schedule information from a CSV file.
+ *
+ * This function reads and processes class schedule information from a CSV file,
+ * populating a map of classes and their associated details, including UC code, day, type, start time, and duration.
+ *
+ * @return A map of classes with their associated information.
+ */
 std::map<std::string, myUc> readSchedules() {
   std::string line;
   std::map<std::string, myUc> classes;
