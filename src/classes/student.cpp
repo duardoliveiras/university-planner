@@ -103,7 +103,7 @@ void myStudent::addClass(const myUc &myClass) { classes.push_back(myClass); }
  * @return True if the number of classes is greater than 7, false otherwise.
  */
 bool myStudent::valideQtClasses() {
-  if (classes.size() > 7) {
+  if (classes.size() >= 7) {
     return true;
   }
   return false;
