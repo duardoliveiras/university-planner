@@ -28,9 +28,9 @@ The application is structured around key components and classes. Understanding t
 
 ## Collaboration
 
-- Bernardo Jose Ponce Figueirado de Brito, up202301442
-- Clarisse Maria Teixeira de Carvalho, up202008444
-- Eduardo Oliveira Silva, up202301394
+- [Bernardo](https://github.com/brito-bernardo)
+- [Clarisse](https://github.com/MitsukiS16)
+- [Eduardo](https://github.com/duardoliveiras)
 
 ## Features
 
@@ -74,9 +74,6 @@ The application is structured around key components and classes. Understanding t
 
 - [✔] Doxygen
 
-**Schedule Class**: press: `1` -> `2` -> `1` -> <UcCode>
-**Schedule Student**: press: `1` -> `3` -> <StudentCode>
-**
 
 ## Restrictions
 
@@ -95,26 +92,4 @@ The application is structured around key components and classes. Understanding t
 
 > Undo requests can be accepected or denied
 
-## Known Issues
 
-> Everytime you create a file, you must add it to the Makefile.
-
-## Deadline
-
-Project Deadline: November 3, 2023
-
-
-std::vector<myUc> selectUc(const std::string &str,
-                           const std::map<std::string, myUc> &classes) {
-  std::vector<myUc> selectedUcs;
-
-  for (const auto &pair : classes) {
-    auto ucObj = pair.second;
-
-    if (ucObj.getUcCode() == str) {
-      selectedUcs.push_back(ucObj);
-    }
-  
-
-  return selectedUcs;
-}
